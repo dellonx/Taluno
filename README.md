@@ -22,15 +22,3 @@ Facilitar a contratação de alunos do Senac, permitindo que:
 * **Versionamento:** Git & GitHub
 
 ---
-
-## 📂 Estrutura de Pastas
-
-Para manter a organização, o projeto foi dividido em:
-
-```text
-/ (Raiz)
-├── documentacao/      # Documentos funcionais, diagramas e identidade visual
-└── projeto_taluno/    # CÓDIGO FONTE DA APLICAÇÃO
-    ├── static/        # Arquivos CSS, JS e Imagens
-    ├── templates/     # Arquivos HTML organizados por módulos
-    └── manage.py      # Gerenciador do Django
