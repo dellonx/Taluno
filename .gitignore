@@ -1,0 +1,33 @@
+# === Python & Venv ===
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# === Django ===
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# === Variáveis de Ambiente (SEGURANÇA MÁXIMA) ===
+.env
+.env.local
+
+# === Editores de Código ===
+.vscode/
+.idea/
+*.swp
+
+# === Sistema Operacional ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# === Pastas que geramos mas não subimos ===
+# (Opcional: se você quiser ignorar a pasta de prints dentro da doc)
+documentacao/prints/
