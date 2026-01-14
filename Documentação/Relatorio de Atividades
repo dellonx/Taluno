@@ -66,3 +66,31 @@ As telas estão em fase final de revisão.
 A previsão é concluir essa etapa até amanhã.
 Próximos Passos
 Início da implementação em HTML após a conclusão das revisões.
+
+06/01/2026
+Equipe: Refinamento das telas de "Dashboard" e "Mural" no Canva.
+Tech Lead: Análise técnica da viabilidade das telas para implementação no Django.
+
+07/01/2026
+Equipe: Definição final da Identidade Visual (Tipografia Poppins e Paleta de Cores) no Canva.
+Tech Lead: Configuração do ambiente de desenvolvimento (VS Code) e instalação de extensões.
+
+08/01/2026
+Equipe: Prototipação do fluxo de navegação entre as páginas (UX) no Canva.
+Tech Lead: Criação do repositório Git local e primeiros testes de versionamento.
+
+09/01/2026
+Equipe: Revisão crítica e ajustes nas telas de Home (Landing Page) e Login.
+Tech Lead: Testes iniciais de estrutura HTML para validar o grid do design aprovado.
+
+12/01/2026
+Equipe: Finalização das telas de "Perfil do Aluno" e "Configurações".
+Tech Lead: Definição da Arquitetura de Pastas (MVT) e criação da estrutura templates e static.
+
+13/01/2026
+Equipe: Revisão final do protótipo no Canva para apresentação.
+Tech Lead: Refatoração da estrutura de arquivos, separando módulos de Autenticação e Core para melhor organização.
+
+14/01/2026
+Equipe: Encerramento da versão 1.0 do Design (Canva pronto).
+Tech Lead: Configuração do GitHub remoto, criação de documentação técnica (README.md) e desenvolvimento do template base (base.html).
