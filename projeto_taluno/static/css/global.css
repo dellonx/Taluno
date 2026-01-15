@@ -14,7 +14,7 @@
     
     /* Configurações de Texto e Tamanho */
     --font-main: 'Poppins', sans-serif;
-    --nav-height: 80px;   /* Altura padrão da barra */
+    --nav-height: 100px;   /* Altura padrão da barra */
 }
 
 /* =========================================
@@ -56,19 +56,13 @@ body {
 }
 
 /* --- Logo (Texto ou Imagem) --- */
-.logo-container {
-    font-size: 1.5rem;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    /* Se tiver imagem, o texto se ajusta */
+.logo-container img {
+    height: 80px;
+    width: auto;
+    display: block;
+    cursor: pointer;
 }
 
-.logo-taluno {
-    font-weight: 700; /* Negrito para TALUNO */
-    letter-spacing: 1px;
-}
 
 /* --- Links do Meio --- */
 .nav-links {
