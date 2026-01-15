@@ -1,0 +1,147 @@
+/* =========================================
+   1. VARIÁVEIS GLOBAIS (Style Guide)
+   ========================================= */
+:root {
+    /* Paleta de Cores Oficial */
+    --primary: #9600FF;   /* Roxo Taluno */
+    --secondary: #EA2651; /* Rosa/Vermelho Senac */
+    --blue: #007DFF;      /* Azul Detalhes */
+    
+    /* Cores Neutras */
+    --dark: #1A1A1A;      /* Preto Suave para textos */
+    --light: #F5F5F5;     /* Fundo claro das páginas */
+    --white: #FFFFFF;     /* Branco puro */
+    
+    /* Configurações de Texto e Tamanho */
+    --font-main: 'Poppins', sans-serif;
+    --nav-height: 80px;   /* Altura padrão da barra */
+}
+
+/* =========================================
+   2. RESET BÁSICO
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* =========================================
+   3. NAVBAR (A Mágica do Flexbox)
+   ========================================= */
+.navbar {
+    height: var(--nav-height);
+    
+    /* Gradiente: Azul na esquerda, Roxo no meio, Rosa na direita */
+    background: linear-gradient(90deg, var(--blue) 0%, var(--primary) 50%, var(--secondary) 100%);
+    
+    /* Sombra suave embaixo da barra */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    
+    /* === FLEXBOX CONFIG (O Segredo do Alinhamento) === */
+    display: flex;
+    align-items: center;        /* Alinha verticalmente (cima/baixo) */
+    justify-content: space-between; /* Espalha os itens: Esq - Meio - Dir */
+    padding: 0 5%; /* Margem lateral (respiro) */
+    position: sticky; /* Mantém a barra fixa no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que fique acima de tudo */
+}
+
+/* --- Logo (Texto ou Imagem) --- */
+.logo-container {
+    font-size: 1.5rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Se tiver imagem, o texto se ajusta */
+}
+
+.logo-taluno {
+    font-weight: 700; /* Negrito para TALUNO */
+    letter-spacing: 1px;
+}
+
+/* --- Links do Meio --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 80px; /* Espaço generoso entre os links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500; /* Peso médio (Medium) */
+    font-size: 1.2rem;
+    transition: opacity 0.3s ease;
+    opacity: 0.9;
+}
+
+.nav-links a:hover {
+    opacity: 1; /* Efeito suave ao passar o mouse */
+    transition: 0.3s; /*Tempo de transição para ele aumentar*/
+    font-size: 1.29rem; /*Tamanho que a fonte vai ficar quando passar o mouse*/
+}
+
+/* --- Botão de Login (Direita) --- */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Distância entre o ícone e o texto "Entrar" */
+    
+    color: var(--white) !important;
+    text-decoration: none;
+    font-weight: 700 !important; /* Bold */
+    font-size: 1.1rem;
+    
+    padding: 8px 0; /* Ajuste fino */
+    transition: transform 0.2s;
+}
+
+.btn-login:hover {
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+.login-icon {
+    width: 24px; /* Tamanho do ícone da portinha */
+    height: 24px;
+    fill: currentColor; /* Pega a cor do texto (branco) */
+}
+
+/* =========================================
+   4. FOOTER (Rodapé)
+   ========================================= */
+.footer {
+    /* Gradiente na diagonal para diferenciar da Navbar */
+    background: linear-gradient(135deg, var(--primary) 0%, #4a0080 100%);
+    color: var(--white);
+    padding: 3rem 5%;
+    margin-top: auto; /* Empurra o footer para o final se a página for curta */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Quebra linha em celulares */
+    gap: 20px;
+}
+
+.footer-text p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
