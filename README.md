@@ -18,7 +18,7 @@ Facilitar a contratação de alunos do Senac, permitindo que:
 
 * **Backend:** Python 3 + Django Framework
 * **Frontend:** HTML5, CSS3 (Modularizado), JavaScript
-* **Banco de Dados:** SQLite (Desenvolvimento)
+* **Banco de Dados:** ...
 * **Versionamento:** Git & GitHub
 
 ---
