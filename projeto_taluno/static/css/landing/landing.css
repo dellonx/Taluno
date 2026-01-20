@@ -1,0 +1,103 @@
+/* =========================================
+   NAVBAR DA LANDING PAGE (Visual Exclusivo)
+   ========================================= */
+
+/* Variáveis Locais (só pra garantir que funcione independente do global) */
+:root {
+    --gradient-landing: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --white: #ffffff;
+}
+
+.landing-header {
+    width: 100%;
+    height: 90px; /* Um pouco mais alta para dar presença */
+    background: var(--gradient-landing); /* O Gradiente da imagem */
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* Sombra mais forte na landing */
+}
+
+.landing-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Logo na ponta, Login na outra */
+    align-items: center;
+}
+
+/* --- 1. LOGO --- */
+.landing-logo img {
+    height: 45px; /* Tamanho generoso */
+    display: block;
+    /* Truque: Se sua logo for colorida, isso deixa ela 100% branca igual na foto */
+    filter: brightness(0) invert(1); 
+    transition: opacity 0.3s;
+}
+
+.landing-logo:hover img {
+    opacity: 0.8;
+}
+
+/* --- 2. LINKS DO MEIO --- */
+.landing-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* Espaçamento largo igual da referência */
+}
+
+.landing-nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600; /* Semi-bold */
+    font-size: 1.05rem;
+    transition: transform 0.2s, opacity 0.2s;
+    display: inline-block;
+}
+
+.landing-nav a:hover {
+    opacity: 0.8;
+    transform: translateY(-2px); /* Leve subidinha */
+}
+
+/* --- 3. BOTÃO ENTRAR --- */
+.landing-btn-login {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Distância entre ícone e texto */
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 800; /* Extra bold para destacar */
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.landing-btn-login:hover {
+    background: rgba(255, 255, 255, 0.15); /* Efeito de vidro branco */
+}
+
+/* Ícone SVG do botão */
+.landing-btn-login svg {
+    transition: transform 0.3s;
+}
+
+.landing-btn-login:hover svg {
+    transform: translateX(3px); /* A portinha "anda" pro lado no hover */
+}
+
+/* --- Responsividade (Esconde menus no celular) --- */
+@media (max-width: 900px) {
+    .landing-nav {
+        display: none; /* Some os links */
+    }
+    .landing-logo img {
+        height: 35px;
+    }
+}

@@ -2,25 +2,24 @@
    1. VARIÁVEIS GLOBAIS (Style Guide)
    ========================================= */
 :root {
-    /* Paleta de Cores Oficial */
+    /* --- Cores Institucionais (Antigas) --- */
     --primary: #9600FF;   /* Roxo Taluno */
     --secondary: #EA2651; /* Rosa/Vermelho Senac */
     --blue: #007DFF;      /* Azul Detalhes */
     
-    /* Cores Neutras */
-    --dark: #1A1A1A;      /* Preto Suave para textos */
-    --light: #F5F5F5;     /* Fundo claro das páginas */
-    --white: #FFFFFF;     /* Branco puro */
-    
-    /* Configurações de Texto e Tamanho */
-    --font-main: 'Poppins', sans-serif;
-    --nav-height: 100px;   /* Altura padrão da barra */
-
-    /*Cores NavBar*/
+    /* --- Cores da NOVA Navbar (Adicionadas) --- */
     --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
     --texto-nav: #333333;
     --texto-hover: #0052cc;
     --bg-branco: #ffffff;
+
+    /* --- Cores Neutras --- */
+    --dark: #1A1A1A;      /* Preto Suave */
+    --light: #F5F5F5;     /* Fundo claro */
+    --white: #FFFFFF;     /* Branco puro */
+    
+    /* --- Tipografia --- */
+    --font-main: 'Poppins', 'Segoe UI', sans-serif; /* Juntei as fontes */
 }
 
 /* =========================================
@@ -39,105 +38,107 @@ body {
     line-height: 1.6;
 }
 
-/* =========================================
-   3. NAVBAR (A Mágica do Flexbox)
-   ========================================= */
-.navbar {
-    height: var(--nav-height);
-    
-    /* Gradiente: Azul na esquerda, Roxo no meio, Rosa na direita */
-    background: linear-gradient(90deg, var(--blue) 0%, var(--primary) 50%, var(--secondary) 100%);
-    
-    /* Sombra suave embaixo da barra */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    
-    /* === FLEXBOX CONFIG (O Segredo do Alinhamento) === */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
-    align-items: center;        /* Alinha verticalmente (cima/baixo) */
-    justify-content: space-between; /* Espalha os itens: Esq - Meio - Dir */
-    padding: 0 5%; /* Margem lateral (respiro) */
-    position: sticky; /* Mantém a barra fixa no topo ao rolar */
-    top: 0;
-    z-index: 1000; /* Garante que fique acima de tudo */
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* --- Logo (Texto ou Imagem) --- */
-.logo-container img {
-    height: 80px;
-    width: auto;
+/* =========================================
+   3. HEADER / NAVBAR (A Versão Nova)
+   ========================================= */
+.header-taluno {
+    width: 100%;
+    position: sticky; /* Cola no topo */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* LINHA 1: Top Bar (Gradiente) */
+.top-bar {
+    background: var(--gradient-taluno);
+    padding: 12px 0;
+    color: white;
+}
+
+.logo img {
+    height: 40px; 
     display: block;
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-icons i {
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.top-icons i:hover { transform: scale(1.1); }
+
+.menu-hamburguer {
+    background: none;
+    border: none;
     cursor: pointer;
 }
 
+/* LINHA 2: Nav Bar (Branca) */
+.nav-bar {
+    background: var(--bg-branco);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
 
-/* --- Links do Meio --- */
 .nav-links {
-    display: flex;
     list-style: none;
-    gap: 80px; /* Espaço generoso entre os links */
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--white);
-    font-weight: 500; /* Peso médio (Medium) */
-    font-size: 1.2rem;
-    transition: opacity 0.3s ease;
-    opacity: 0.9;
+    color: var(--texto-nav);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
 }
 
-.nav-links a:hover {
-    opacity: 1; /* Efeito suave ao passar o mouse */
-    transition: 0.3s; /*Tempo de transição para ele aumentar*/
-    font-size: 1.29rem; /*Tamanho que a fonte vai ficar quando passar o mouse*/
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--texto-hover);
+    border-bottom: 3px solid var(--texto-hover);
 }
 
-/* --- Botão de Login (Direita) --- */
-.nav-buttons {
-    display: flex;
-    align-items: center;
-}
-
-.btn-login {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Distância entre o ícone e o texto "Entrar" */
-    
-    color: var(--white) !important;
-    text-decoration: none;
-    font-weight: 700 !important; /* Bold */
-    font-size: 1.1rem;
-    
-    padding: 8px 0; /* Ajuste fino */
-    transition: transform 0.2s;
-}
-
-.btn-login:hover {
-    transform: scale(1.05); /* Leve zoom ao passar o mouse */
-}
-
-.login-icon {
-    width: 24px; /* Tamanho do ícone da portinha */
-    height: 24px;
-    fill: currentColor; /* Pega a cor do texto (branco) */
-}
 
 /* =========================================
-   4. FOOTER (Rodapé)
+   4. FOOTER 
    ========================================= */
 .footer {
-    /* Gradiente na diagonal para diferenciar da Navbar */
     background: linear-gradient(135deg, var(--primary) 0%, #4a0080 100%);
     color: var(--white);
     padding: 3rem 5%;
-    margin-top: auto; /* Empurra o footer para o final se a página for curta */
+    margin-top: auto;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Quebra linha em celulares */
+    flex-wrap: wrap;
     gap: 20px;
 }
 
