@@ -15,6 +15,12 @@
     /* Configurações de Texto e Tamanho */
     --font-main: 'Poppins', sans-serif;
     --nav-height: 100px;   /* Altura padrão da barra */
+
+    /*Cores NavBar*/
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --texto-nav: #333333;
+    --texto-hover: #0052cc;
+    --bg-branco: #ffffff;
 }
 
 /* =========================================
