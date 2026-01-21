@@ -1,0 +1,150 @@
+/* =========================================
+   6. FOOTER (Identidade Visual Roxa)
+   ========================================= */
+:root {
+    /* Adicionando a cor específica desse footer se não tiver */
+    --bg-footer: #5800a2; /* Roxo Sólido da imagem */
+    --footer-text: #ffffff;
+}
+
+.footer-taluno {
+    background-color: var(--bg-footer);
+    color: var(--footer-text);
+    padding: 30px 0 20px 0; /* Espaço em cima e embaixo */
+    margin-top: auto; /* Garante que fique no fundo da página */
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha tudo no centro verticalmente */
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* --- COLUNA 1: LOGO --- */
+.footer-logo {
+    height: 100px;
+    display: block;
+    margin-left: 50px;
+    /* O Truque Mágico: Transforma qualquer logo colorida em BRANCA */
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+/* --- COLUNA 2: LINKS CENTRAIS --- */
+.links-col {
+    text-align: center;
+    flex: 1; /* Ocupa o espaço do meio */
+    margin-right: 200px;
+    margin-left: 150px;
+
+}
+
+.links-col h4 {
+    font-weight: 800; /* Extra Bold */
+    margin-bottom: 10px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: var(--footer-text);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+
+.footer-menu a:hover {
+    opacity: 0.7;
+}
+
+/* --- COLUNA 3: SOCIAL + SETA --- */
+.social-col {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 100px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: var(--footer-text);
+    font-size: 1.5rem; /* Tamanho dos ícones */
+    border: 2px solid rgba(255,255,255,0.2); /* Circulo sutil opcional */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Deixa redondinho */
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+}
+
+/* Botão da Seta (Back to Top) */
+.btn-back-top {
+    background-color: #3e0075; /* Um roxo mais escuro para o botão */
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.btn-back-top:hover {
+    transform: translateY(-5px);
+    background-color: #2a0050;
+}
+
+/* --- BASE: LINHA E COPYRIGHT --- */
+.footer-line {
+    border: 0;
+    height: 2px;
+    background: rgba(255,255,255,255); /* Linha fininha e transparente */
+    margin-bottom: 20px;
+    max-width: 60%;
+}
+
+.footer-bottom p {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Empilha tudo no celular */
+        text-align: center;
+    }
+    
+    .social-col {
+        flex-direction: column;
+    }
+}

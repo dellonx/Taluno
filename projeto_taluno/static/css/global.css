@@ -2,24 +2,28 @@
    1. VARIÁVEIS GLOBAIS (Style Guide)
    ========================================= */
 :root {
-    /* --- Cores Institucionais (Antigas) --- */
-    --primary: #9600FF;   /* Roxo Taluno */
-    --secondary: #EA2651; /* Rosa/Vermelho Senac */
-    --blue: #007DFF;      /* Azul Detalhes */
+    /* --- Cores Institucionais --- */
+    --primary: #9600FF;
+    --secondary: #EA2651;
+    --blue: #007DFF;
     
-    /* --- Cores da NOVA Navbar (Adicionadas) --- */
+    /* --- Cores da Navbar --- */
     --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
     --texto-nav: #333333;
     --texto-hover: #0052cc;
     --bg-branco: #ffffff;
 
+    /* --- Cores do Footer (ADICIONADO) --- */
+    --bg-footer: #5800a2;
+    --footer-text: #ffffff;
+
     /* --- Cores Neutras --- */
-    --dark: #1A1A1A;      /* Preto Suave */
-    --light: #F5F5F5;     /* Fundo claro */
-    --white: #FFFFFF;     /* Branco puro */
+    --dark: #1A1A1A;
+    --light: #F5F5F5;
+    --white: #FFFFFF;
     
     /* --- Tipografia --- */
-    --font-main: 'Poppins', 'Segoe UI', sans-serif; /* Juntei as fontes */
+    --font-main: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 /* =========================================
@@ -36,66 +40,58 @@ body {
     background-color: var(--light);
     color: var(--dark);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o footer vá pro final mesmo com pouco conteúdo */
 }
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* Removemos o display:flex daqui para não bugar elementos que não usam flex */
+    /* Deixamos o flex para as classes específicas (navbar, footer-content) */
 }
 
 /* =========================================
-   3. HEADER / NAVBAR (A Versão Nova)
+   3. HEADER / NAVBAR
    ========================================= */
 .header-taluno {
     width: 100%;
-    position: sticky; /* Cola no topo */
+    position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* LINHA 1: Top Bar (Gradiente) */
 .top-bar {
     background: var(--gradient-taluno);
     padding: 12px 0;
     color: white;
 }
-
-.logo img {
-    height: 40px; 
-    display: block;
-}
-
-.top-icons {
+/* Flexbox específico para o container da Top Bar */
+.top-bar .container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
 }
 
-.top-icons i {
-    font-size: 1.6rem;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
+.logo img { height: 40px; display: block; }
 
+.top-icons { display: flex; align-items: center; gap: 20px; }
+.top-icons i { font-size: 1.6rem; color: white; cursor: pointer; transition: transform 0.2s; }
 .top-icons i:hover { transform: scale(1.1); }
 
-.menu-hamburguer {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* LINHA 2: Nav Bar (Branca) */
+/* NavBar Branca */
 .nav-bar {
     background: var(--bg-branco);
     padding: 15px 0;
     border-bottom: 1px solid #eee;
+}
+.nav-bar .container {
+    display: flex;
+    justify-content: center; /* Centraliza o menu na tela */
 }
 
 .nav-links {
@@ -104,7 +100,6 @@ body {
     width: 100%;
     justify-content: space-between;
     max-width: 800px;
-    margin: 0 auto;
 }
 
 .nav-links a {
@@ -117,32 +112,156 @@ body {
     padding-bottom: 5px;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover, .nav-links a.active {
     color: var(--texto-hover);
     border-bottom: 3px solid var(--texto-hover);
 }
 
+/* =========================================
+   4. NAVBAR LANDING (Se houver no futuro)
+   ========================================= */
+/* (Espaço reservado para o CSS da Landing que fizemos antes) */
 
 /* =========================================
-   4. FOOTER 
+   5. FOOTER (Refatorado e Corrigido)
    ========================================= */
-.footer {
-    background: linear-gradient(135deg, var(--primary) 0%, #4a0080 100%);
-    color: var(--white);
-    padding: 3rem 5%;
+.footer-taluno {
+    background-color: var(--bg-footer);
+    color: var(--footer-text);
+    padding: 40px 0 20px 0;
     margin-top: auto;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Isso substitui as margens manuais! */
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
+    margin-bottom: 30px;
 }
 
-.footer-text p {
-    font-size: 0.9rem;
+/* --- COLUNA 1: LOGO --- */
+.footer-logo {
+    height: 90px; /* Ajustei levemente para não ficar gigante */
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    /* Margin removida: o Flexbox cuida disso */
+}
+
+/* --- COLUNA 2: LINKS CENTRAIS --- */
+.links-col {
+    text-align: center;
+    flex: 1; /* Faz essa coluna ocupar o espaço sobrando no meio */
+}
+
+.links-col h4 {
+    font-weight: 800;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: var(--footer-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+
+.footer-menu a:hover { opacity: 0.7; }
+
+/* --- COLUNA 3: SOCIAL --- */
+.social-col {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Margin removida */
+}
+
+.social-icons { display: flex; gap: 15px; }
+
+.social-icons a {
+    color: var(--footer-text);
+    font-size: 1.4rem;
+    border: 2px solid rgba(255,255,255,0.2);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+}
+
+.btn-back-top {
+    background-color: #3e0075;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.btn-back-top:hover {
+    transform: translateY(-5px);
+    background-color: #2a0050;
+}
+
+/* --- COPYRIGHT --- */
+.footer-line {
+    border: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.4);
+    margin: 0 auto 20px auto; /* Importante: Centraliza a linha */
+    max-width: 80%; /* Deixei um pouco mais largo para ficar elegante */
+}
+
+.footer-bottom p {
+    text-align: center;
+    font-size: 0.85rem;
     opacity: 0.8;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-col {
+        flex-direction: column;
+    }
+    .header-taluno .container, 
+    .nav-bar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }
