@@ -96,3 +96,26 @@ body { font-family: 'Segoe UI', sans-serif; }
     color: var(--texto-hover);
     border-bottom: 3px solid var(--texto-hover); /* Detalhe visual elegante */
 }
+
+/* Tela principal onde contém a coluna do formulário e o container de vagas   */ 
+.vagas-layout{
+    display: flex;
+    gap: 30px; /* Espaço entre o formulário e o container cinza */
+    align-items: flex-start; /* Alinha os itens no topo */
+}
+
+.side-bar{
+    flex: 0 0 500px;
+}
+
+/* container cinza com cards de vagas disponíveis  */
+.vagas-container{
+    background-color: #EEF1F7; /*Aqui e responsavel por deixar o container cinza    */
+    flex: 1; /* ocupa o resto da tela a direita do container            */
+    padding: 400px;
+    min-height: 80vh; /*  é responsavel por garantir que o container ocupe a tela toda */
+    display:flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os cards que virão */
+    
+}
