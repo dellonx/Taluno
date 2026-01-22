@@ -35,16 +35,16 @@ HEAD
             </ul>
         </div>
     </nav>
-HEAD
 
-
-    <!-- é definido o corpo do site onde terá a divisão do container e formulario -->
+    
+</header>
+<!-- é definido o corpo do site onde terá a divisão do container e formulario -->
     <main class="vagas-layout"> 
-        
-        <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
-        <aside class="filtros-sidebar">
             
-            <!--Aqui é responsável pela Barra de Pesquisa-->
+            <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
+        <aside class="filtros-sidebar">
+                
+                <!--Aqui é responsável pela Barra de Pesquisa-->
             <div class="busca-topo">
                 <input type="text" placeholder="Pesquisar..." class="input-busca">
                 <span class="icone-lupa">&#128269;</span>
@@ -57,27 +57,43 @@ HEAD
                     <div class="campo-grupo">
                         <label for="palavra-chave">Palavra chave</label>
                         <div class="input-wrapper">
-                            
+                            <input type="text" id="palavra-chave" name="palavra-chave">
+                            <span class="btn-limpar">&times;</span>
+                                
                         </div>
                     </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Cidade</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Cidade" name="Cidade">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Tipo de vaga</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Tipo de vaga" name="tipo-vaga">
+                            <span class="btn-limpar">&times;</span>        
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
                 </form>
-
-
-
             </div>
-
-
         </aside>
 
         <section class="vagas-container">
 
-            <!-- Aqui é responsável pela estrutura do primeiro card de vagas disponíveis-->
+                <!-- Aqui é responsável pela estrutura do primeiro card de vagas disponíveis-->
             <article class="card-das-vagas">
                 <h3 class="vaga-titulo">vaga para barbeiro temporario </h3>
                 <p class="vaga-empresa">Salão Homem Mais Forte</p>
                 <p class="vaga-endereco">Av. Boa Viagem, 4200 - Recife, PE, 51021-000</p>
-                
-                <!--  Aqui são as informações que ficarão em destaques no cardo (tipo de vaga, carga horaria,turno)-->
+                    
+                    <!--  Aqui são as informações que ficarão em destaques no cardo (tipo de vaga, carga horaria,turno)-->
                 <div class="vaga-badges">
                     <span class="badge">Freelancer</span>
                     <span class="badge">12H</span>
@@ -85,14 +101,14 @@ HEAD
                 </div>
             </article>
 
-            
-            <!-- Aqui é responsável pela estrutura do segundo card de vagas disponíveis-->
+                
+                <!-- Aqui é responsável pela estrutura do segundo card de vagas disponíveis-->
             <article class="card-das-vagas">
                 <h3 class="vaga-titulo">Vaga Desenvolvedor Junior</h3>
                 <p class="vaga-empresa">Simtec Soluções Tecnológicas</p>
                 <p class="vaga-endereco">R. Alfandega, 35 - Recife, PE, 50030-030</p>
-            
-                <!--  Aqui são as informações que ficarão em destaques no cardo (tipo de vaga, carga horaria,turno)-->
+                
+                    <!--  Aqui são as informações que ficarão em destaques no cardo (tipo de vaga, carga horaria,turno)-->
                 <div class="vaga-badges">
                     <span class="badge">Estágio</span>
                     <span class="badge">6H</span>
@@ -100,13 +116,13 @@ HEAD
                 </div>
             </article>
 
-            <!-- Aqui é responsável pela estrutura do terceiro card de vagas disponíveis-->
+                <!-- Aqui é responsável pela estrutura do terceiro card de vagas disponíveis-->
             <article class="card-das-vagas">
                 <h3 class="vaga-titulo">Vaga para Porteiro</h3>
                 <p class="vaga-empresa">Simtec Soluções Tecnológicas</p>
                 <p class="vaga-endereco">R. Alfandega, 35 - Recife, PE, 50030-030</p>
-            
-                <!--  Aqui são as informações que ficarão em destaques no cardo (tipo de vaga, carga horaria,turno)-->
+                
+                    <!--  Aqui são as informações que ficarão em destaques no cardo (tipo de vaga, carga horaria,turno)-->
                 <div class="vaga-badges">
                     <span class="badge">CLT</span>
                     <span class="badge">8H</span>
@@ -114,15 +130,15 @@ HEAD
                 </div>
             </article>
 
-            
+                
 
-            <!-- Aqui é responsável pela estrutura do terceiro card de vagas disponíveis-->
+                <!-- Aqui é responsável pela estrutura do terceiro card de vagas disponíveis-->
             <article class="card-das-vagas">
                 <h3 class="vaga-titulo">Vaga Web Designer</h3>
                 <p class="vaga-empresa">Simtec Soluções Tecnológicas</p>
                 <p class="vaga-endereco">R. Alfandega, 35 - Recife, PE, 50030-030</p>
-            
-                <!--  Aqui são as informações que ficarão em destaques no cardo (tipo de vaga, carga horaria,turno)-->
+                
+                    <!--  Aqui são as informações que ficarão em destaques no cardo (tipo de vaga, carga horaria,turno)-->
                 <div class="vaga-badges">
                     <span class="badge">CLT</span>
                     <span class="badge">8H</span>
@@ -130,7 +146,7 @@ HEAD
                 </div>
             </article>
 
-            <!-- aqui serão os botões que passam/voltam de vagas disponivéis-->
+                <!-- aqui serão os botões que passam/voltam de vagas disponivéis-->
             <nav class="paginacao">
                 <button class="btn-paginacao" aria-label="Página Anterior">&#10094;</button>
 
@@ -139,8 +155,7 @@ HEAD
 
         </section>
     </main>
-</header>
-<main></main>
+
         <!--Inicio do Footer-->
     <footer class="footer-taluno">
     <div class="container footer-content">
