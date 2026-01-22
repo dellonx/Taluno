@@ -10,18 +10,16 @@
 </head>
 <body>
     <main class="auth-container">
-        <section class="auth-form-side">
+        <section class="auth-content">
             <header class="auth-header">
-                <div class="logo-area">
-                    <img src="../../../../static/img/logo/logo_taluno.png" alt="Logo Taluno Senac">
-                </div>
-                <nav class="auth-nav">
-                    <a href="../login.html">LOGIN</a>
-                    <a href="../cadastro.html" class="active">CADASTRO</a>
+                <img src="../../../../static/img/logo/logo_taluno.png" alt="Logo Taluno" class="auth-logo">
+                <nav>
+                    <a href="../login.html" class="auth-nav__link">Login</a>
+                    <a href="../cadastro.html" class="auth-nav__link">Cadastro</a>
                 </nav>
             </header>
 
-            <div class="form-content">
+            <div class="form-wrapper">
                 <div class="back-button">
                     <a href="../login.html">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -31,20 +29,20 @@
                     </a>
                 </div>
 
-                <h1>RECUPERAÇÃO</h1>
-                <p>Digite seu e-mail ou telefone</p>
+                <h1 class="form-title">RECUPERAÇÃO</h1>
+                <p class="form-subtitle">Digite seu e-mail ou telefone</p>
 
                 <form action="#" method="POST">
                     <div class="input-group">
-                        <input type="text" name="identificador" placeholder="usuário@gmail.com" required>
+                        <input type="text" name="identificador" placeholder="usuário@gmail.com" class="input-field" required>
                     </div>
-                    <button type="submit" class="btn-gradient">Enviar</button>
+                    <button type="submit" class="btn btn--full btn--gradient">Enviar</button>
                 </form>
             </div>
         </section>
 
-        <section class="auth-image-side">
-            <img src="../../../../static/img/banners/recuperacao_taluno.jpg" alt="Pessoa trabalhando">
+        <section class="auth-visual">
+            <img src="../../../../static/img/banners/recuperacao_taluno.jpg" alt="Recuperação Taluno" class="visual-image">
         </section>
     </main>
 </body>
