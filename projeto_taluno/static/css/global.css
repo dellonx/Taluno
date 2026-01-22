@@ -77,11 +77,24 @@ body {
     align-items: center;
 }
 
-.logo img { height: 40px; display: block; }
+.logo img { height: 60px; display: block; }
 
-.top-icons { display: flex; align-items: center; gap: 20px; }
-.top-icons i { font-size: 1.6rem; color: white; cursor: pointer; transition: transform 0.2s; }
-.top-icons i:hover { transform: scale(1.1); }
+/* Remove o estilo padrão feio do botão */
+.menu-hamburguer {
+    background: transparent; /* O Pulo do Gato: Deixa ver o gradiente atrás! */
+    border: none;            /* Tira a borda 3D padrão */
+    cursor: pointer;         /* Mãozinha ao passar o mouse */
+    padding: 0;              /* Remove gorduras extras */
+    margin-left: 20px;
+}
+
+/* Garanta que os ícones voltem a ser brancos (se quiser sair do azul de teste) */
+.top-icons i {
+    font-size: 1.6rem;
+    color: white; /* Volta para o branco oficial */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
 
 /* NavBar Branca */
 .nav-bar {
