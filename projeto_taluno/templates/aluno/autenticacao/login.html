@@ -29,18 +29,19 @@
 
                 <form action="" method="post" class="login-form">
                     <div class="input-group">
-                        <img src="../../static/img/icon-user.svg" alt="" class="input-group__icon icon-left">
-                        <input type="email" id="email" name="email" placeholder="E-mail" required class="input-field">
+                        <img src="/projeto_taluno/static/img/icons/perfil.png" alt="" class="input-group__icon icon-left">
+                        <input type="email" id="email" name="email" placeholder="Digite o seu e-mail" required class="input-field">
                     </div>
 
                     <div class="input-group">
-                        <img src="../../static/img/icon-lock.svg" alt="" class="input-group__icon icon-left">
+                        <img src="/projeto_taluno/static/img/icons/cadeado.png" alt="" class="input-group__icon icon-left">
                         
-                        <input type="password" id="password" name="password" placeholder="Senha" required class="input-field">
+                        <input type="password" id="password" name="password" placeholder="Digite a sua senha" required class="input-field">
                         
                         <button type="button" id="togglePassword" class="toggle-password-btn" aria-label="Mostrar senha">
-                            <img src="../../static/img/icon-eye-closed.svg" alt="Mostrar" id="eyeIcon">
-                        </button>
+                            <img src="/projeto_taluno/static/img/icons/olho_aberto.png" id="eyeOpen" alt="Mostrar Senha">
+                            <img src="/projeto_taluno/static/img/icons/olho_coberto.png" id="eyeClosed" class="hide" alt="Ocultar Senha">
+                                </button>
                     </div>
 
                     <div class="form-options">
@@ -67,6 +68,6 @@
 
     </main>
 
-    <script src="../../static/js/auth/login.js"></script>
+    <script src="/projeto_taluno/static/js/autenticacao/autenticacao.js"></script>
 </body>
 </html>

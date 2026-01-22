@@ -129,16 +129,20 @@ body {
     opacity: 0.6;
 }
 
-/* Botão de Toggle de Senha (Olho) */
+/* ... seus estilos anteriores ... */
+
 .toggle-password-btn {
+    /* Mantém o posicionamento que você já tinha */
     position: absolute;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
+    background: none; /* Garante fundo transparente */
     border: none;
     cursor: pointer;
     padding: 0;
+    display: flex; /* Garante alinhamento da imagem */
+    align-items: center;
 }
 
 .toggle-password-btn img {
@@ -150,6 +154,11 @@ body {
 
 .toggle-password-btn:hover img {
     opacity: 1;
+}
+
+/* CLASSE NOVA: Utilitário para esconder o ícone inativo */
+.hide {
+    display: none !important;
 }
 
 /* --- Opções do Formulário --- */
