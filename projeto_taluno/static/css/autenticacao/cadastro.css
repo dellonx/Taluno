@@ -1,0 +1,318 @@
+
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Cores Institucionais */
+    --color-text-dark: #000000;
+    --color-text-gray: #666666;
+    --color-link-blue: #3b5998;
+    --color-border: #CCCCCC;
+    --color-white: #FFFFFF;
+
+    /* Gradiente Oficial Taluno */
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    
+    /* Layout */
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    height: 100vh;
+    background-color: var(--color-white);
+}
+
+/* Container Principal (Split Screen) */
+.auth-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.auth-content {
+    flex: 1; /* Ocupa 50% */
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Interno */
+.auth-header {
+    display: flex;
+    justify-content: flex-start; /* Alinha à esquerda */
+    align-items: center;
+    gap: 4rem; /* Distância fixa entre Logo e Menu */
+    margin-bottom: 4rem;
+}
+
+.auth-logo {
+    height: 40px;
+}
+
+.auth-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.auth-nav__link {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.auth-nav__link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-text-dark);
+}
+
+/* Wrapper do Formulário */
+.form-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 480px; /* Levemente aumentado para caber 2 inputs lado a lado */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Título com Seta de Voltar (Novo no Cadastro) */
+.title-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.back-link img {
+    width: 24px;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.back-link:hover img {
+    transform: translateX(-5px);
+}
+
+.form-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    /* margin-bottom removido daqui quando usado dentro de title-with-icon, 
+       mas mantido se usado sozinho no login */
+}
+/* Se for usar .form-title sozinho (login), adicione style inline ou uma classe auxiliar se precisar margem */
+h1.form-title:not(.title-with-icon h1) {
+    margin-bottom: 2rem;
+}
+
+
+/* --- Inputs e Ícones --- */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #0052cc;
+}
+
+.input-group__icon.icon-left {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: auto;
+    opacity: 0.6;
+}
+
+/* --- SEU CÓDIGO DO BOTÃO (MANTIDO EXATAMENTE COMO PEDIU) --- */
+.toggle-password-btn {
+    /* Mantém o posicionamento que você já tinha */
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Garante fundo transparente */
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex; /* Garante alinhamento da imagem */
+    align-items: center;
+    z-index: 10; /* Garante que fique acima do input */
+}
+
+.toggle-password-btn img {
+    width: 22px;
+    height: auto;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.toggle-password-btn:hover img {
+    opacity: 1;
+}
+
+/* CLASSE NOVA: Utilitário para esconder o ícone inativo */
+.hide {
+    display: none !important;
+}
+
+/* --- NOVAS CLASSES DE LAYOUT PARA CADASTRO --- */
+
+/* Linha para inputs lado a lado (Senhas) */
+.form-row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.form-row .input-group {
+    flex: 1; /* Divide o espaço igualmente */
+}
+
+/* Opções de Formulário (Lembrar/Esqueci) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: var(--color-text-gray);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-me input {
+    margin-right: 0.5rem;
+    accent-color: #0052cc;
+}
+
+.forgot-password-link {
+    text-decoration: none;
+    color: var(--color-link-blue);
+    font-style: italic;
+}
+
+/* Rodapé do form (Ou faça login) */
+.form-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-text-gray);
+}
+
+.link-highlight {
+    color: var(--color-text-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* --- Botão Principal --- */
+.btn {
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--full {
+    width: 100%;
+}
+
+.btn--gradient {
+    background: var(--gradient-taluno);
+    color: var(--color-white);
+}
+
+.btn--gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(166, 0, 166, 0.4);
+}
+
+.auth-visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-image-container {
+    flex-grow: 1;
+    position: relative;
+    height: 100%;
+}
+
+.visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 900px) {
+    .auth-container {
+        flex-direction: column;
+        height: auto; /* Permite scroll no mobile */
+    }
+
+    .auth-visual {
+        display: none;
+    }
+
+    .auth-content {
+        padding: 2rem;
+        min-height: 100vh;
+    }
+    
+    .auth-header {
+        margin-bottom: 2rem;
+        gap: 2rem;
+        flex-direction: column; /* Logo em cima, menu embaixo */
+        align-items: flex-start;
+    }
+    
+    /* No celular, inputs de senha ficam um abaixo do outro */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
