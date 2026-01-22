@@ -106,7 +106,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     align-items: flex-start; /* Alinha os itens no topo */
 }
 
-.side-bar{
+.filtros-sidebar{
     flex: 0 0 500px;
 }
 
@@ -208,8 +208,4 @@ body { font-family: 'Segoe UI', sans-serif; }
     color: #333;
     transform: scale(1.1); /* dá suavidae ao movimento    */
 }
-
-
-    
-
 
