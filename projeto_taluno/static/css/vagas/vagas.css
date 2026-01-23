@@ -70,6 +70,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     background: var(--bg-branco);
     padding: 15px 0;
     border-bottom: 1px solid #eee;
+    z-index: 1000;
 }
 
 .nav-links {
@@ -102,13 +103,12 @@ body { font-family: 'Segoe UI', sans-serif; }
 .vagas-layout{
     background-color: #fff;
     display: flex;
-    gap: 30px; /* Espaço entre o formulário e o container cinza */
+    gap: 5px; /* Espaço entre o formulário e o container cinza */
     align-items: flex-start; /* Alinha os itens no topo */
+    min-height: 120vh; /* Dá uma "folga" vertical para o scroll */
 }
 
-.filtros-sidebar{
-    flex: 0 0 500px;
-}
+
 
 /* container cinza com cards de vagas disponíveis  */
 .vagas-container{
@@ -134,7 +134,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .card-das-vagas:hover{
-    transform: scale(1.05); /* aumenta o tamanho dos cards    */
+    transform: scale(1.03); /* aumenta o tamanho dos cards    */
     transition: all 0.3s ease ;
 }
 
@@ -213,7 +213,11 @@ body { font-family: 'Segoe UI', sans-serif; }
 .filtros-sidebar {
     width: 320px;
     position: sticky;
-    top: 20px; /* Faz ele "grudar" ao rolar a página */
+    
+    flex: 0 0 325px;
+    z-index: 10;
+    top: 20% /* Faz ele "grudar" ao rolar a página */
+    
 }
 
 /* 2. Estilo da Barra de Busca Superior */
@@ -308,7 +312,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     color: white;
     font-weight: bold;
     cursor: pointer;
-    background: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    background: #a600a6;
     transition: transform 0.2s;
 }
 
