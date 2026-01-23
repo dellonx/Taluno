@@ -281,14 +281,21 @@ body {
     object-position: center;
 }
 
-.form-wrapper {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 450px;
-    margin: 0 auto;
+.form-footer {
+    display: block;
     width: 100%;
+    margin-top: 2rem;
+    text-align: center !important; /* Força bruta para centralizar */
+    font-size: 1.0rem;
+    color: var(--color-text-gray);
+}
+
+/* Aumentamos a especificidade para garantir que o link fique preto */
+.form-footer .link-highlight {
+    color: var(--color-text-dark) !important; /* Força o Preto */
+    font-weight: 700 !important;              /* Força o Negrito */
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 @media (max-width: 900px) {
