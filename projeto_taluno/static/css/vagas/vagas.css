@@ -212,20 +212,41 @@ body { font-family: 'Segoe UI', sans-serif; }
 /* 1. Posicionamento do Aside */
 .filtros-sidebar {
     width: 320px;
-    position: sticky;
-    
     flex: 0 0 325px;
     z-index: 10;
-    top: 20% /* Faz ele "grudar" ao rolar a página */
+    padding-top: 15px;
+    position: sticky;
     
 }
 
+/* 2. Estilo da Barra de Busca Superior */
+.busca-topo {
+    position: relative;
+    margin-bottom: 30px;
+}
 
+.input-busca {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: 1px solid #7f7f7f; 
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+.icone-lupa {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a600a6;
+    font-size: 1.2rem;
+}
 
 /* 3. O Container de Filtros (Borda Roxa) */
 .filtros-container {
     background-color: white;
-    border: 1px solid #a600a6; /* Borda fina roxa conforme a imagem */
+
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
