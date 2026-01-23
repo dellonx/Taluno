@@ -104,7 +104,7 @@
 
 /*Desenvolvendo Main*/
 /* SEÇÃO: CONHEÇA O TALUNO */
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -113,7 +113,7 @@
 body {
     background-color: #ffffff;
 }
-
+/*rolagem suave*/
 html {
     scroll-behavior: smooth;
 }
@@ -145,13 +145,27 @@ section {
    =============================== */
 
 .section-padding {
-    padding: 30px 0;
+    padding: 40px 0;
 }
 
 .landing-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 15px;
+}
+.section-divider {
+    width: 100%;
+    max-width: 1200px;
+    height: 1px;
+    margin: 15px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #cfcfcf 10%,
+        #cfcfcf 90%,
+        transparent
+    );
+    opacity: 0.6;
 }
 
 /* ===============================
@@ -192,6 +206,7 @@ section {
         #e6005c 100%
     );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -237,7 +252,7 @@ section {
 
 .sobre-logo-box img {
     width: 400px;
-    height:;
+    height: auto;
 }
 
 /* ===============================
@@ -311,7 +326,7 @@ section {
 
 /* CARD */
 .candidato-card {
-    background-color: ;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -431,7 +446,7 @@ section {
 
 /* BOTÃO */
 .btn-empresario {
-    padding: 12px 28px;
+    padding: 12px 24px;
     background-color: #f57c2f;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
@@ -490,7 +505,7 @@ section {
     font-size: 32px;
     font-weight: 800;
     color: #0066ff;
-    margin-bottom: 64px;
+    margin-bottom: 12px;
     text-align: center;
 }
 
@@ -537,5 +552,88 @@ section {
         font-size: 30px;
     }
 }
+
+/*perguntas frequentes*/
+ .title-blue-landing {
+    background: none;
+    color:  #8a00ff; /* escolha a cor desejada */
+    -webkit-text-fill-color: unset;
+}
+
+.faq-section {
+    background: linear-gradient(180deg, #8a00ff, #5a00c7);
+    color: #fff;
+    text-align: center;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+}
+
+.faq-item {
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 14px 16px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 16px 16px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.newsletter-section {
+    background: linear-gradient(180deg, #3a005f, #20002f);
+    color: #fff;
+    text-align: center;
+    padding: 54px 24px;
+
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 24px;
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    width: 400px;
+}
+
+.newsletter-form button {
+    background: #8a00ff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* CORRIGE ALTURA DA SEÇÃO FAQ */
+.faq-section {
+    padding: 32px 16px !important;
+}
+
 
 
