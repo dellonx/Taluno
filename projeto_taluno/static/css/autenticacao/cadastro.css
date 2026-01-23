@@ -93,7 +93,10 @@ body {
     width: 100%;
 }
 
-/* Título com Seta de Voltar (Novo no Cadastro) */
+/* ... Mantenha o css anterior ... */
+
+
+/* Alinhamento do container do Título + Seta */
 .title-with-icon {
     display: flex;
     align-items: center;
@@ -101,27 +104,31 @@ body {
     margin-bottom: 2rem;
 }
 
-.back-link img {
-    width: 24px;
-    height: auto;
-    transition: transform 0.2s;
+/* Estilo do Link da Seta */
+.back-button {
+    display: flex;         /* Remove espaços extras de linha */
+    align-items: center;   /* Centraliza verticalmente */
+    cursor: pointer;
+    text-decoration: none; 
 }
 
-.back-link:hover img {
-    transform: translateX(-5px);
+/* 1. Define a suavidade da animação no SVG */
+.back-button svg {
+    transition: transform 0.2s ease;
 }
 
-.form-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-text-dark);
-    /* margin-bottom removido daqui quando usado dentro de title-with-icon, 
-       mas mantido se usado sozinho no login */
+/* 2. Define o movimento ao passar o mouse */
+.back-button:hover svg {
+    /* Move 5 pixels para a esquerda (negativo X) */
+    transform: translateX(-5px); 
 }
-/* Se for usar .form-title sozinho (login), adicione style inline ou uma classe auxiliar se precisar margem */
-h1.form-title:not(.title-with-icon h1) {
-    margin-bottom: 2rem;
+
+/* Ajuste do Título para não ter margem extra quando estiver ao lado da seta */
+.title-with-icon .form-title {
+    margin-bottom: 0;
 }
+
+/* ... Continue com o resto do código ... */
 
 
 /* --- Inputs e Ícones --- */
@@ -227,20 +234,6 @@ h1.form-title:not(.title-with-icon h1) {
     font-style: italic;
 }
 
-/* Rodapé do form (Ou faça login) */
-.form-footer {
-    margin-top: 1.5rem;
-    text-align: center;
-    font-size: 0.95rem;
-    color: var(--color-text-gray);
-}
-
-.link-highlight {
-    color: var(--color-text-dark);
-    font-weight: 600;
-    text-decoration: none;
-}
-
 /* --- Botão Principal --- */
 .btn {
     border: none;
@@ -286,6 +279,16 @@ h1.form-title:not(.title-with-icon h1) {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.form-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 @media (max-width: 900px) {

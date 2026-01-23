@@ -19,8 +19,8 @@
                 <img src="/projeto_taluno/static/img/logo/logo_taluno_senac_colorido.png" alt="Logo Taluno Senac" class="auth-logo">
                 
                 <nav class="auth-nav">
-                    <a href="#" class="auth-nav__link active">LOGIN</a>
-                    <a href="#" class="auth-nav__link">CADASTRO</a>
+                    <a href="/projeto_taluno/templates/aluno/autenticacao/login.html" class="auth-nav__link active">LOGIN</a>
+                    <a href="/projeto_taluno/templates/aluno/autenticacao/cadastro.html" class="auth-nav__link">CADASTRO</a>
                 </nav>
             </header>
 
@@ -50,12 +50,16 @@
                             <span class="checkmark"></span>
                             Relembrar
                         </label>
-                        <a href="#" class="forgot-password-link">Esqueci a senha</a>
+                        <a href="/projeto_taluno/templates/aluno/autenticacao/senha/solicitar_senha.html" class="forgot-password-link">Esqueci a senha</a>
                     </div>
 
                     <button type="submit" class="btn btn--gradient btn--full">
                         Login
                     </button>
+
+                    <div class="form-footer">
+                        <span>ou </span><a href="cadastro.html" class="link-highlight">faça cadastro</a>
+                    </div>
 
                 </form>
             </div>
@@ -63,11 +67,11 @@
 
         <aside class="auth-visual">
             <div class="visual-image-container">
-                <img src="/projeto_taluno/static/img/banner/mulheres-trabalhando.png" alt="Mulheres trabalhando juntas" class="visual-image">
+                <img src="/projeto_taluno/static/img/banners/mulheres-trabalhando.png" alt="Mulheres trabalhando juntas" class="visual-image">
         </aside>
 
     </main>
 
-    <script src="/projeto_taluno/static/js/autenticacao/autenticacao.js"></script>
+    <script src="/projeto_taluno/static/js/autenticacao/login.js"></script>
 </body>
 </html>

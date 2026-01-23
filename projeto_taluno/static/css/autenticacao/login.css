@@ -80,16 +80,30 @@ body {
 }
 
 /* Wrapper do Formulário para centralizar verticalmente */
-.form-wrapper {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 450px;
-    margin: 0 auto;
-    width: 100%;
+.back-button {
+    margin-bottom: 1rem;
 }
 
+.back-button svg {
+    transition: transform 0.2s ease;
+}
+
+.back-button a:hover svg {
+    transform: translateX(-5px);
+}
+
+.form-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-text-gray);
+}
+
+.link-highlight {
+    color: var(--color-text-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
 .form-title {
     font-size: 2.5rem;
     font-weight: 700;

@@ -21,15 +21,18 @@
                 
                 <nav class="auth-nav">
                     <a href="login.html" class="auth-nav__link">LOGIN</a>
-                    <a href="#" class="auth-nav__link active">CADASTRO</a>
+                    <a href="cadastro.html" class="auth-nav__link active">CADASTRO</a>
                 </nav>
             </header>
 
             <div class="form-wrapper">
                 
                 <div class="title-with-icon">
-                    <a href="login.html" class="back-link">
-                        <img src="/projeto_taluno/static/img/icons/seta-esquerda.png" alt="Voltar">
+                    <a href="login.html" class="back-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
                     </a>
                     <h1 class="form-title">CADASTRO</h1>
                 </div>
@@ -42,7 +45,7 @@
                     </div>
 
                     <div class="input-group">
-                        <img src="/projeto_taluno/static/img/icons/email.png" alt="" class="input-group__icon icon-left">
+                        <img src="/projeto_taluno/static/img/icons/envelope.png" alt="" class="input-group__icon icon-left">
                         <input type="email" id="email" name="email" placeholder="E-mail" required class="input-field">
                     </div>
 
@@ -60,7 +63,7 @@
 
                         <div class="input-group">
                             <img src="/projeto_taluno/static/img/icons/cadeado.png" alt="" class="input-group__icon icon-left">
-                            <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar senha" required class="input-field">
+                            <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a senha" required class="input-field">
                             
                             <button type="button" id="toggleConfirmar" class="toggle-password-btn" aria-label="Mostrar senha">
                                 <img src="/projeto_taluno/static/img/icons/olho_aberto.png" id="eyeOpen2" alt="Mostrar">
@@ -90,6 +93,6 @@
 
     </main>
 
-    <script src="/projeto_taluno/static/js/autenticacao/autenticacao.js"></script>
+    <script src="/projeto_taluno/static/js/autenticacao/cadastro.js"></script>
 </body>
 </html>
