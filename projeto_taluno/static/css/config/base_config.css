@@ -1,0 +1,77 @@
+/* =========================================
+   SIDEBAR DE CONFIGURAÇÕES
+   ========================================= */
+
+.config-sidebar {
+    background-color: #ffffff; /* Fundo branco */
+    width: 100%;
+    max-width: 300px; /* Largura fixa da lateral */
+    padding: 40px 20px;
+    height: 100%; /* Ocupa a altura disponível */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espaço entre o título e o menu */
+}
+
+/* --- Cabeçalho (Seta + Título) --- */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 10px; /* Alinhamento visual */
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark, #1A1A1A);
+}
+
+.btn-back {
+    color: var(--primary, #9600FF); /* Cor da seta */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.btn-back:hover {
+    transform: translateX(-5px); /* Efeitinho de voltar */
+}
+
+/* --- Lista do Menu --- */
+.settings-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os botões */
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 20px;
+    border-radius: 12px; /* Borda arredondada como no print */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--texto-nav, #333); /* Cor do texto normal */
+    transition: all 0.3s ease;
+    text-align: center; /* Texto centralizado */
+}
+
+/* --- Estado Hover (Passar o mouse) --- */
+.menu-item:hover {
+    background-color: #f0f0f0;
+    color: var(--primary, #9600FF);
+}
+
+/* --- Estado ATIVO (O botão Roxo) --- */
+.menu-item.active {
+    background-color: var(--primary, #9600FF); /* Roxo do Taluno */
+    color: #ffffff; /* Texto branco */
+    box-shadow: 0 4px 15px rgba(150, 0, 255, 0.3); /* Sombra suave */
+}
+
+.menu-item.active:hover {
+    background-color: #7b00cc; /* Um roxo um pouco mais escuro no hover */
+    color: #ffffff;
+}
