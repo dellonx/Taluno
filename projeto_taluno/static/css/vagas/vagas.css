@@ -220,29 +220,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     
 }
 
-/* 2. Estilo da Barra de Busca Superior */
-.busca-topo {
-    position: relative;
-    margin-bottom: 30px;
-}
 
-.input-busca {
-    width: 100%;
-    padding: 12px 45px 12px 20px;
-    border: 2px solid #a600a6; /* Roxo oficial */
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-}
-
-.icone-lupa {
-    position: absolute;
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #a600a6;
-    font-size: 1.2rem;
-}
 
 /* 3. O Container de Filtros (Borda Roxa) */
 .filtros-container {
