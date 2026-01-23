@@ -93,13 +93,13 @@ Comando para criar e entrar na branch:
 ```bash
 git checkout -b feature/nome-da-sua-tarefa
 ```
-
+git branch -m feature/nome-da-sua-tarefa
 ### 🚀 3. Salvando e Enviando (Push)
 Terminou a tarefa ou acabou a aula? Salve na nuvem.
 
 1.  **Adicione e comite suas alterações:**
 
-```bash
+```bashgit branch -m feature/nome-da-sua-tarefa
 git add .
 git commit -m "Explique brevemente o que fez"
 ```

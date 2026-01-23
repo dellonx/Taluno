@@ -1,0 +1,259 @@
+
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Cores Institucionais */
+    --color-text-dark: #000000;
+    --color-text-gray: #666666;
+    --color-link-blue: #3b5998; /* Tom de azul similar ao do "Esqueci a senha" */
+    --color-border: #CCCCCC;
+    --color-white: #FFFFFF;
+
+    /* Gradiente Oficial Taluno */
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    
+    /* Layout */
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+}
+
+/* Reset Básico para esta tela */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    height: 100vh;
+    background-color: var(--color-white);
+}
+
+/* Container Principal (Split Screen) */
+.auth-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.auth-content {
+    flex: 1; /* Ocupa 50% */
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Header Interno (Logo e Links) */
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.auth-logo {
+    height: 40px; /* Ajuste conforme tamanho real da img */
+
+}
+
+.auth-nav__link {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+/* Estilo do link ativo (sublinhado grosso) */
+.auth-nav__link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-text-dark);
+}
+
+/* Wrapper do Formulário para centralizar verticalmente */
+.form-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--color-text-dark);
+}
+
+/* --- Inputs e Ícones --- */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem; /* Padding esquerdo maior para o ícone */
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #0052cc; /* Azul do início do gradiente para foco */
+}
+
+/* Ícones à esquerda */
+.input-group__icon.icon-left {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: auto;
+    opacity: 0.6;
+}
+
+/* ... seus estilos anteriores ... */
+
+.toggle-password-btn {
+    /* Mantém o posicionamento que você já tinha */
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Garante fundo transparente */
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex; /* Garante alinhamento da imagem */
+    align-items: center;
+}
+
+.toggle-password-btn img {
+    width: 22px;
+    height: auto;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.toggle-password-btn:hover img {
+    opacity: 1;
+}
+
+/* CLASSE NOVA: Utilitário para esconder o ícone inativo */
+.hide {
+    display: none !important;
+}
+
+/* --- Opções do Formulário --- */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: var(--color-text-gray);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-me input {
+    margin-right: 0.5rem;
+    accent-color: #0052cc; /* Cor do checkbox quando marcado */
+}
+
+.forgot-password-link {
+    text-decoration: none;
+    color: var(--color-link-blue);
+    font-style: italic;
+}
+
+/* --- Botão Principal --- */
+.btn {
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--full {
+    width: 100%;
+}
+
+/* APLICAÇÃO DO GRADIENTE OFICIAL */
+.btn--gradient {
+    background: var(--gradient-taluno);
+    color: var(--color-white);
+}
+
+.btn--gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(166, 0, 166, 0.4); /* Sombra suave baseada na cor central do gradiente */
+}
+
+.auth-visual {
+    flex: 1; /* Ocupa os outros 50% */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-image-container {
+    flex-grow: 1;
+    position: relative;
+}
+
+/* A imagem deve cobrir toda a área */
+.visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    object-position: center;
+}
+
+.visual-footer-logo {
+    height: 30px; /* Tamanho da logo branca */
+}
+
+@media (max-width: 900px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-visual {
+        display: none; /* Em mobile, geralmente ocultamos a imagem lateral para focar no login */
+    }
+
+    .auth-content {
+        padding: 2rem;
+    }
+    
+    .auth-header {
+        margin-bottom: 2rem;
+    }
+}
