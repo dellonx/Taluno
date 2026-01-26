@@ -101,3 +101,539 @@
         height: 35px;
     }
 }
+
+/*Desenvolvendo Main*/
+/* SEÇÃO: CONHEÇA O TALUNO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+/*rolagem suave*/
+html {
+    scroll-behavior: smooth;
+}
+section {
+    scroll-margin-top: 120px; /* ajuste conforme a altura do header */
+}
+
+/* ===============================
+   BANNER
+   =============================== */
+.banner-taluno {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.banner-taluno img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+/* ===============================
+   SEÇÕES
+   =============================== */
+
+.section-padding {
+    padding: 40px 0;
+}
+
+.landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section-divider {
+    width: 100%;
+    max-width: 1200px;
+    height: 1px;
+    margin: 15px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #cfcfcf 10%,
+        #cfcfcf 90%,
+        transparent
+    );
+    opacity: 0.6;
+}
+
+/* ===============================
+   TÍTULO
+   =============================== */
+/* Agrupa título + card */
+.conheca-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* CENTRALIZA HORIZONTALMENTE */
+}
+
+/* TÍTULO */
+.title-blue-landing {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 60px;
+}
+
+/* CARD */
+.card-sobre-taluno {
+    width: 100%;
+    max-width: 1000px;
+}
+.section-header.center {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.title-blue-landing {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    background: linear-gradient(
+        90deg,
+        #0052cc 0%,
+        #a600a6 50%,
+        #e6005c 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===============================
+   CARD SOBRE TALUNO
+   =============================== */
+
+.card-sobre-taluno {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+
+    border-radius: 18px;
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        #0052cc,
+        #a600a6,
+        #e6005c
+    );
+}
+
+/* Fundo branco interno */
+.card-sobre-taluno::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #ffffff;
+    border-radius: 16px;
+    z-index: 0;
+}
+
+.card-sobre-taluno > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================
+   LOGO TALUNO
+   =============================== */
+
+.sobre-logo-box img {
+    width: 400px;
+    height: auto;
+}
+
+/* ===============================
+   TEXTO
+   =============================== */
+.sobre-description {
+    max-width: 720px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6; /* aproxima as linhas */
+    color: #333;
+}
+
+.sobre-description p {
+    margin-bottom: 8px; /* antes geralmente 16px */
+}
+
+.sobre-description p {
+    margin-bottom: 6px;
+}
+
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+@media (max-width: 768px) {
+    .card-sobre-taluno {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-logo-box img {
+        width: 120px;
+    }
+
+    .title-blue-landing {
+        font-size: 28px;
+    }
+}
+
+/* caditado/*
+
+/* ===============================
+   SEÇÃO: CANDIDATO
+   =============================== */
+
+.candidato-section {
+    background-color: #ffffff;
+    
+}
+
+.candidato-section .title-blue-landing {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #8A00FF; /* mesma cor da imagem */
+}
+
+.candidato-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.candidato-cards {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+
+/* CARD */
+.candidato-card {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+/* ÍCONE QUADRADO */
+.card-icon {
+    width: 160px;
+    height: 160px;
+    background:#8A00FF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    width: 120px;
+    height: auto;
+}
+
+/* BOTÃO */
+.btn-candidato {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #8A00FF;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-candidato:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* TEXTO */
+.candidato-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+@media (max-width: 900px) {
+    .candidato-cards {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+/* ===============================
+   SEÇÃO: EMPRESÁRIO
+   =============================== */
+
+.empresario-section {
+    background-color: #ffffff;
+}
+
+.empresario-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TÍTULO */
+.title-empresario {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #f57c2f; /* laranja da imagem */
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* GRID */
+.empresario-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 72px;
+}
+
+/* CARD */
+.empresario-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+/* ÍCONE */
+.empresario-icon {
+    width: 160px;
+    height: 160px;
+    background-color: #f57c2f;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empresario-icon img {
+    width: 120px;
+    height: auto;
+}
+
+/* BOTÃO */
+.btn-empresario {
+    padding: 12px 24px;
+    background-color: #f57c2f;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-empresario:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* TEXTO */
+.empresario-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .empresario-cards {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .title-empresario {
+        font-size: 2px;
+    }
+}
+
+/*pacerias/*
+
+/* ===============================
+   SEÇÃO: PARCERIAS
+   =============================== */
+
+.parcerias-section {
+    background-color: #ffffff;
+}
+
+.parcerias-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TÍTULO */
+.title-parcerias {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #0066ff;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* GRID DE LOGOS */
+.parcerias-logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 72px;
+    align-items: center;
+}
+
+/* ITEM */
+.parceria-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* LOGO */
+.parceria-item img {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px ;
+}
+
+/* NOME */
+.parceria-item span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .parcerias-logos {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .title-parcerias {
+        font-size: 30px;
+    }
+}
+
+/*perguntas frequentes*/
+ .title-blue-landing {
+    background: none;
+    color:  #8a00ff; /* escolha a cor desejada */
+    -webkit-text-fill-color: unset;
+}
+
+.faq-section {
+    background: linear-gradient(180deg, #8a00ff, #5a00c7);
+    color: #fff;
+    text-align: center;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+}
+
+.faq-item {
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 14px 16px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 16px 16px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.newsletter-section {
+    background: linear-gradient(180deg, #3a005f, #20002f);
+    color: #fff;
+    text-align: center;
+    padding: 54px 24px;
+
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 24px;
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    width: 400px;
+}
+
+.newsletter-form button {
+    background: #8a00ff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* CORRIGE ALTURA DA SEÇÃO FAQ */
+.faq-section {
+    padding: 32px 16px !important;
+}
+
+
+
