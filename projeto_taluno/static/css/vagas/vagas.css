@@ -127,10 +127,21 @@ body { font-family: 'Segoe UI', sans-serif; }
 .card-das-vagas{
     background-color: #fff;
     border: 1px solid #ddd;
+    display: flex;      /* editaval botao      */
+    justify-content: space-between;  /* editavel botao */
+    align-items: center; /* editavel botao */
+    align-items: center;
+    align-items: center; /* Centraliza o botão verticalmente em relação ao texto */
+    justify-content: space-between; /* Empurra o texto para um lado e o botão para o outro */
+    align-items: center;            /* Centraliza o botão verticalmente */
     border-radius: 14px;
     padding: 20px 30px;
     cursor: pointer; /* altera o cursor do mouse para mãozinha */
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* o efeito de sombreamento nos cards de vagas*/
+}
+
+.vaga-conteudo-esquerdo {
+    flex: 1; /* Faz o texto ocupar o máximo de espaço possível, empurrando o botão */
 }
 
 .card-das-vagas:hover{
@@ -208,6 +219,26 @@ body { font-family: 'Segoe UI', sans-serif; }
     color: #333;
     transform: scale(1.1); /* dá suavidae ao movimento    */
 }
+
+.btn-ver-mais{
+    background: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    white-space: nowrap; /* Impede que o texto do botão quebre linha */
+    margin-left: 20px;   /* Garante um respiro entre o texto e o botão */
+    bottom;
+}
+
+.btn-ver-mais:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
 
 /* 1. Posicionamento do Aside */
 .filtros-sidebar {
