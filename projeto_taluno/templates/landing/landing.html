@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../../static/css/global.css">
     <link rel="stylesheet" href="../../static/css/landing/landing.css">
     <link rel="shortcut icon" href="../static/img/icons/favicon_taluno_32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -20,13 +22,13 @@
             <nav class="landing-nav">
                 <ul>
                     <li><a href="#conheca">Conheça o Taluno</a></li>
-                    <li><a href="#aluno">Sou Aluno</a></li>
-                    <li><a href="#empresa">Sou Empresa</a></li>
-                    <li><a href="#suporte">Suporte</a></li>
+                    <li><a href="#candidato">Sou candidato</a></li>
+                    <li><a href="#empresario">Sou empresario</a></li>
+                    <li><a href="#parcerias">Parcerias</a></li>
                 </ul>
             </nav>
 
-            <a href="../../templates/autenticacao/login.html" class="landing-btn-login">
+            <a href="/projeto_taluno/templates/aluno/autenticacao/login.html" class="landing-btn-login">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
                     <polyline points="10 17 15 12 10 7"/>
@@ -36,5 +38,275 @@
             </a>
         </div>
     </header>
-    </body>
+      <main>
+
+    <!-- ================= BANNER PRINCIPAL ================= -->
+    <section class="banner-taluno">
+    <img 
+        src="../../static/img/index/banner-taluno.jpeg" 
+        alt="Banner principal da plataforma Taluno">
+</section>
+
+   <section id="conheca" class="section-padding">
+    <div class="landing-container conheca-wrapper">
+    <div class="section-divider"></div>
+
+        <!-- TÍTULO -->
+        <h2 class="title-blue-landing">CONHEÇA O TALUNO!</h2>
+
+        <!-- CARD -->
+        <div class="card-sobre-taluno">    
+        <div class="card-sobre-taluno card-animado">
+
+            <div class="sobre-logo-box">
+                <img src="../../static/img/index/icone-taluno.png" alt="Ícone Taluno">
+            </div>
+
+            <div class="sobre-description">
+                <p>
+                    <strong>Taluno</strong> foi criado em 2025 com o objetivo de fortalecer
+                    a conexão entre educação e mercado de trabalho.
+                </p>
+                <p>Trata-se de uma plataforma de empregabilidade e desenvolvimento profissional destinada a alunos e egressos do Senac, promovendo a integração com empresas parceiras e contratantes.
+                </p>
+                <p>
+                    A plataforma oferece um ambiente digital seguro e intuitivo para divulgação de vagas, gestão de currículos, acompanhamento de candidaturas e desenvolvimento de competências profissionais, facilitando o processo de recrutamento e seleção.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--candidatos-->
+<section id= "candidato" class="candidato-section section-padding">
+    <div class="landing-container candidato-wrapper">
+ <div class="section-divider"></div>
+        <h2 class="title-blue-landing">CANDIDATO?</h2>
+
+        <div class="candidato-cards">
+
+            <!-- CARD 1 -->
+            <div class="candidato-card">
+                <div class="card-icon">
+                    <img src="../../static/img/index/curriculo.png" alt="Criar currículo">
+                </div>
+                <a href="#" class="btn-candidato">CRIAR CURRÍCULO</a>
+                <p><strong>Adicione suas</strong><br>informações!</p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="candidato-card">
+                <div class="card-icon">
+                    <img src="../../static/img/index/taluno.png" alt="Encontrar vagas">
+                </div>
+                <a href="#" class="btn-candidato">ENCONTRAR VAGAS</a>
+                <p><strong>Encontre a vaga</strong><br>ideal!</p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="candidato-card">
+                <div class="card-icon">
+                    <img src="../../static/img/index/orango.png" alt="Cursos grátis">
+                </div>
+                <a href="#" class="btn-candidato">CURSOS GRÁTIS</a>
+                <p><strong>Aprimore seu</strong><br>currículo!</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--empresario-->
+<section id= "empresario" class="empresario-section section-padding">
+    <div class="landing-container empresario-wrapper">
+ <div class="section-divider"></div>
+        <h2 class="title-empresario">EMPRESÁRIO?</h2>
+
+        <div class="empresario-cards">
+
+            <!-- CARD 1 -->
+            <div class="empresario-card">
+                <div class="empresario-icon">
+                    <img src="../../static/img/index/divulgacao.png" alt="Divulgação de vagas">
+                </div>
+                <a href="#" class="btn-empresario">DIVULGAÇÃO</a>
+                <p><strong>Empresas</strong> publicam<br>vagas na plataforma.</p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="empresario-card">
+                <div class="empresario-icon">
+                    <img src="../../static/img/index/gerenciamento.png" alt="Gerenciamento">
+                </div>
+                <a href="#" class="btn-empresario">GERENCIAMENTO</a>
+                <p><strong>Acompanhamento</strong> e<br>organização dos inscritos.</p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="empresario-card">
+                <div class="empresario-icon">
+                    <img src="../../static/img/index/conexao.png" alt="Conexão">
+                </div>
+                <a href="#" class="btn-empresario">CONEXÃO</a>
+                <p><strong>Acesso direto</strong> a alunos<br>e egressos qualificados.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--Parcerias-->
+<section id="parcerias" class="parcerias-section section-padding">
+    <div class="landing-container parcerias-wrapper">
+ <div class="section-divider"></div>
+        <h2 class="title-parcerias">NOSSAS PARCERIAS</h2>
+
+        <div class="parcerias-logos">
+
+            <!-- PARCEIRO 1 -->
+            <div class="parceria-item">
+                <img src="../../static/img/index/senai.png" alt="Senai">
+                <span>Senai</span>
+            </div>
+
+            <!-- PARCEIRO 2 -->
+            <div class="parceria-item">
+                <img src="../../static/img/index/fecomercio.png" alt="Fecomercio">
+                <span>Fecomercio</span>
+            </div>
+
+            <!-- PARCEIRO 3 -->
+            <div class="parceria-item">
+                <img src="../../static/img/index/sesc.png" alt="Sesc">
+                <span>Sesc</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!---para animação dos cards-->
+<div class="card-landing card-candidato">
+    
+</div>
+
+<div class="card-landing card-empresario">
+    
+</div>
+
+<div class="card-landing card-parceria">
+    
+</div>
+ <div class="section-divider"></div>
+
+ <!--perguntas frequentes-->
+   <h2 class="title-blue-landing">PERGUNTAS<br>FREQUENTES</h2>
+ <section id="faq" class="faq-section section-padding">
+
+    <div class="faq-container">
+
+        <div class="faq-column">
+            <div class="faq-item">
+                <button class="faq-question">O que é o Taluno?</button>
+                <div class="faq-answer">O Taluno é uma plataforma de empregabilidade</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Quem pode utilizar a plataforma Taluno?</button>
+                <div class="faq-answer">Alunos e egressos do Senac.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Como realizar o cadastro na plataforma?</button>
+                <div class="faq-answer">O cadastro é feito diretamente pelo site.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">A utilização do Taluno é gratuita?</button>
+                <div class="faq-answer">Sim, totalmente gratuita.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Como candidatar-se às vagas disponíveis?</button>
+                <div class="faq-answer">Após criar o currículo, basta se candidatar.</div>
+            </div>
+        </div>
+
+        <div class="faq-column">
+            <div class="faq-item">
+                <button class="faq-question">Como as empresas podem divulgar oportunidades?</button>
+                <div class="faq-answer">Empresas cadastradas podem publicar vagas.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">É possível atuar como freelancer?</button>
+                <div class="faq-answer">Sim, quando a vaga permitir.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Como ocorre o contato entre empresas e candidatos?</button>
+                <div class="faq-answer">Por meio da própria plataforma.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Como o Taluno garante a segurança das informações?</button>
+                <div class="faq-answer">Com práticas modernas de segurança digital.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Quais são os canais de suporte?</button>
+                <div class="faq-answer">E-mail e suporte dentro da plataforma.</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="newsletter-section">
+    <h2>FIQUE POR DENTRO DAS NOVIDADES!</h2>
+    <p>Seja o primeiro a receber as notícias e saia na frente da concorrência!</p>
+
+    <form class="newsletter-form">
+        <input type="email" placeholder="Insira seu e-mail" required>
+        <button type="submit">INSCREVER-SE</button>
+    </form>
+</section>
+</main>
+        <!--Inicio do Footer-->
+    <footer class="footer-taluno">
+    <div class="container footer-content">
+        
+        <div class="footer-col logo-col">
+            <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
+        </div>
+
+        <div class="footer-col links-col">
+            <ul class="footer-menu">
+                <li><a href="#">SOBRE TALUNO</a></li>
+                <li><a href="#">POLÍTICA DE COOKIES</a></li>
+                <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+                <li><a href="#">CENTRAL DE AJUDA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col social-col">
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            
+            <a href="#" class="btn-back-top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <hr class="footer-line">
+            <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </div>
+</footer>
+<!--Final do Footer-->
+</body>
 </html>
