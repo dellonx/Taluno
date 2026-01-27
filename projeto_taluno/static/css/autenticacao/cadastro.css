@@ -1,66 +1,63 @@
+/* ==========================================================================
+   CADASTRO.CSS - Estilos Exclusivos da Tela de Cadastro
+   ========================================================================== */
 
+/* 1. VARIÁVEIS E RESET */
 :root {
     --font-primary: 'Poppins', sans-serif;
-    
-    /* Cores Institucionais */
     --color-text-dark: #000000;
     --color-text-gray: #666666;
     --color-link-blue: #3b5998;
     --color-border: #CCCCCC;
     --color-white: #FFFFFF;
-
-    /* Gradiente Oficial Taluno */
     --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
-    
-    /* Layout */
     --border-radius-md: 8px;
-    --border-radius-lg: 12px;
 }
 
-/* Reset Básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: var(--font-primary);
     height: 100vh;
     background-color: var(--color-white);
+    overflow: hidden; 
 }
 
-/* Container Principal (Split Screen) */
-.auth-container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-}
+/* 2. LAYOUT PRINCIPAL */
+.auth-container { display: flex; height: 100vh; width: 100%; }
 
 .auth-content {
-    flex: 1; /* Ocupa 50% */
+    flex: 1;
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
-/* Header Interno */
+.auth-visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-image-container { flex-grow: 1; position: relative; height: 100%; }
+.visual-image { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+/* 3. HEADER (Espaçado) */
 .auth-header {
     display: flex;
-    justify-content: flex-start; /* Alinha à esquerda */
+    justify-content: space-between; /* AFASTADO */
     align-items: center;
-    gap: 4rem; /* Distância fixa entre Logo e Menu */
-    margin-bottom: 4rem;
+    width: 100%;
+    margin-bottom: 3rem;
+    flex-shrink: 0;
 }
 
-.auth-logo {
-    height: 40px;
-}
+.auth-logo { height: 40px; width: auto; }
 
-.auth-nav {
-    display: flex;
-    gap: 2rem;
-}
+.auth-nav { display: flex; gap: 2rem; }
 
 .auth-nav__link {
     text-decoration: none;
@@ -70,7 +67,10 @@ body {
     font-size: 0.9rem;
     position: relative;
     padding-bottom: 4px;
+    transition: opacity 0.3s;
 }
+
+.auth-nav__link:hover { opacity: 0.7; }
 
 .auth-nav__link.active::after {
     content: '';
@@ -82,21 +82,18 @@ body {
     background-color: var(--color-text-dark);
 }
 
-/* Wrapper do Formulário */
+/* 4. FORMULÁRIO E EXTRAS DE CADASTRO */
 .form-wrapper {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 480px; /* Levemente aumentado para caber 2 inputs lado a lado */
+    max-width: 480px; /* Um pouco mais largo para caber 2 inputs */
     margin: 0 auto;
     width: 100%;
 }
 
-/* ... Mantenha o css anterior ... */
-
-
-/* Alinhamento do container do Título + Seta */
+/* Título com Seta Animada */
 .title-with-icon {
     display: flex;
     align-items: center;
@@ -104,38 +101,15 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Estilo do Link da Seta */
-.back-button {
-    display: flex;         /* Remove espaços extras de linha */
-    align-items: center;   /* Centraliza verticalmente */
-    cursor: pointer;
-    text-decoration: none; 
-}
+.title-with-icon .form-title { margin-bottom: 0; }
+.form-title { font-size: 2.5rem; font-weight: 700; color: var(--color-text-dark); }
 
-/* 1. Define a suavidade da animação no SVG */
-.back-button svg {
-    transition: transform 0.2s ease;
-}
+.back-button { display: flex; align-items: center; text-decoration: none; cursor: pointer; }
+.back-button svg { transition: transform 0.2s ease; }
+.back-button:hover svg { transform: translateX(-5px); }
 
-/* 2. Define o movimento ao passar o mouse */
-.back-button:hover svg {
-    /* Move 5 pixels para a esquerda (negativo X) */
-    transform: translateX(-5px); 
-}
-
-/* Ajuste do Título para não ter margem extra quando estiver ao lado da seta */
-.title-with-icon .form-title {
-    margin-bottom: 0;
-}
-
-/* ... Continue com o resto do código ... */
-
-
-/* --- Inputs e Ícones --- */
-.input-group {
-    position: relative;
-    margin-bottom: 1.5rem;
-}
+/* Inputs */
+.input-group { position: relative; margin-bottom: 1.5rem; }
 
 .input-field {
     width: 100%;
@@ -148,9 +122,7 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.input-field:focus {
-    border-color: #0052cc;
-}
+.input-field:focus { border-color: #0052cc; }
 
 .input-group__icon.icon-left {
     position: absolute;
@@ -158,83 +130,34 @@ body {
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
-    height: auto;
     opacity: 0.6;
+    pointer-events: none;
 }
 
-/* --- SEU CÓDIGO DO BOTÃO (MANTIDO EXATAMENTE COMO PEDIU) --- */
+/* Toggle Senha */
 .toggle-password-btn {
-    /* Mantém o posicionamento que você já tinha */
     position: absolute;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    background: none; /* Garante fundo transparente */
+    background: none;
     border: none;
     cursor: pointer;
     padding: 0;
-    display: flex; /* Garante alinhamento da imagem */
-    align-items: center;
-    z-index: 10; /* Garante que fique acima do input */
-}
-
-.toggle-password-btn img {
-    width: 22px;
-    height: auto;
-    opacity: 0.6;
-    transition: opacity 0.2s;
-}
-
-.toggle-password-btn:hover img {
-    opacity: 1;
-}
-
-/* CLASSE NOVA: Utilitário para esconder o ícone inativo */
-.hide {
-    display: none !important;
-}
-
-/* --- NOVAS CLASSES DE LAYOUT PARA CADASTRO --- */
-
-/* Linha para inputs lado a lado (Senhas) */
-.form-row {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-}
-
-.form-row .input-group {
-    flex: 1; /* Divide o espaço igualmente */
-}
-
-/* Opções de Formulário (Lembrar/Esqueci) */
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-    color: var(--color-text-gray);
-}
-
-.remember-me {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    z-index: 10;
 }
 
-.remember-me input {
-    margin-right: 0.5rem;
-    accent-color: #0052cc;
-}
+.toggle-password-btn img { width: 22px; opacity: 0.6; transition: opacity 0.2s; }
+.toggle-password-btn:hover img { opacity: 1; }
+.hide { display: none !important; }
 
-.forgot-password-link {
-    text-decoration: none;
-    color: var(--color-link-blue);
-    font-style: italic;
-}
+/* LAYOUT DUPLO (Exclusivo Cadastro) */
+.form-row { display: flex; gap: 1rem; width: 100%; }
+.form-row .input-group { flex: 1; }
 
-/* --- Botão Principal --- */
+/* Botão */
 .btn {
     border: none;
     border-radius: var(--border-radius-md);
@@ -245,84 +168,34 @@ body {
     font-family: var(--font-primary);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.btn--full { width: 100%; }
+.btn--gradient { background: var(--gradient-taluno); color: var(--color-white); }
+.btn--gradient:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(166, 0, 166, 0.4); }
 
-.btn--full {
-    width: 100%;
-}
-
-.btn--gradient {
-    background: var(--gradient-taluno);
-    color: var(--color-white);
-}
-
-.btn--gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(166, 0, 166, 0.4);
-}
-
-.auth-visual {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-}
-
-.visual-image-container {
-    flex-grow: 1;
-    position: relative;
-    height: 100%;
-}
-
-.visual-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
+/* 5. RODAPÉ */
 .form-footer {
-    display: block;
     width: 100%;
     margin-top: 2rem;
-    text-align: center !important; /* Força bruta para centralizar */
-    font-size: 1.0rem;
+    text-align: center;
+    font-size: 1rem;
     color: var(--color-text-gray);
 }
 
-/* Aumentamos a especificidade para garantir que o link fique preto */
-.form-footer .link-highlight {
-    color: var(--color-text-dark) !important; /* Força o Preto */
-    font-weight: 700 !important;              /* Força o Negrito */
+.link-highlight {
+    color: var(--color-text-dark);
+    font-weight: 700;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
+.link-highlight:hover { text-decoration: underline; color: #a600a6; }
+
+/* 6. MOBILE */
 @media (max-width: 900px) {
-    .auth-container {
-        flex-direction: column;
-        height: auto; /* Permite scroll no mobile */
-    }
-
-    .auth-visual {
-        display: none;
-    }
-
-    .auth-content {
-        padding: 2rem;
-        min-height: 100vh;
-    }
-    
-    .auth-header {
-        margin-bottom: 2rem;
-        gap: 2rem;
-        flex-direction: column; /* Logo em cima, menu embaixo */
-        align-items: flex-start;
-    }
-    
-    /* No celular, inputs de senha ficam um abaixo do outro */
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
+    body { overflow: auto; }
+    .auth-container { flex-direction: column; height: auto; }
+    .auth-visual { display: none; }
+    .auth-content { padding: 2rem; min-height: 100vh; }
+    .auth-header { margin-bottom: 2rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .form-row { flex-direction: column; gap: 0; }
 }
