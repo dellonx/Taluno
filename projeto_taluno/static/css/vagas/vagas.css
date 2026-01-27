@@ -1,3 +1,4 @@
+
 /* --- CONFIGURAÇÕES GERAIS --- */
 :root {
     /* Gradiente inspirado na imagem: Azul -> Roxo -> Rosa */
@@ -69,6 +70,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     background: var(--bg-branco);
     padding: 15px 0;
     border-bottom: 1px solid #eee;
+    z-index: 1000;
 }
 
 .nav-links {
@@ -96,3 +98,267 @@ body { font-family: 'Segoe UI', sans-serif; }
     color: var(--texto-hover);
     border-bottom: 3px solid var(--texto-hover); /* Detalhe visual elegante */
 }
+
+/* Tela principal onde contém a coluna do formulário e o container de vagas   */ 
+.vagas-layout{
+    background-color: #fff;
+    display: flex;
+    gap: 5px; /* Espaço entre o formulário e o container cinza */
+    align-items: flex-start; /* Alinha os itens no topo */
+    min-height: 120vh; /* Dá uma "folga" vertical para o scroll */
+}
+
+
+
+/* container cinza com cards de vagas disponíveis  */
+.vagas-container{
+    background-color: #eef1f7; /*Aqui e responsavel por deixar o container cinza    */
+    flex: 1; /* ocupa o resto da tela a direita do container            */
+    padding: 40px; /* este é o padding principal do container          */
+    padding-left: 200px; /* estes aqui são os padd laterais para deixar os cards centralizados          */
+    padding-right: 150px;
+    min-height: 80vh; /*  é responsavel por garantir que o container ocupe a tela toda */
+    display:flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os cards que virão */    
+}
+
+/* estrutura dos cards    */
+.card-das-vagas{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: flex;      /* editaval botao      */
+    justify-content: space-between;  /* editavel botao */
+    align-items: center; /* editavel botao */
+    align-items: center;
+    align-items: center; /* Centraliza o botão verticalmente em relação ao texto */
+    justify-content: space-between; /* Empurra o texto para um lado e o botão para o outro */
+    align-items: center;            /* Centraliza o botão verticalmente */
+    border-radius: 14px;
+    padding: 20px 30px;
+    cursor: pointer; /* altera o cursor do mouse para mãozinha */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* o efeito de sombreamento nos cards de vagas*/
+}
+
+.vaga-conteudo-esquerdo {
+    flex: 1; /* Faz o texto ocupar o máximo de espaço possível, empurrando o botão */
+}
+
+.card-das-vagas:hover{
+    transform: scale(1.03); /* aumenta o tamanho dos cards    */
+    transition: all 0.3s ease ;
+}
+
+/* Títulos e textos dos cards*/
+.vaga-titulo{
+    color: #007bff; /* Cor azul no título para demonstrar que é um link */
+    font-size: 1.2rem; /* regula o tamanho da fonte*/
+    margin-bottom: 8px; /* responsável pelo espaçamento entre as palavras  */
+}
+
+.vaga-empresa{
+    font-weight: 600; /*expessura da fonte de empresa (negrito)*/
+    color: #0f0f0f;
+    font-size: 12px; /* regula o tamanho da fonte*/
+    margin-bottom: 5px; /* responsável pelo espaçamento entre as palavras  */
+}
+
+.vaga-endereco{
+    color: #555;
+    font-size: 12px; /* regula o tamanho da fonte*/
+    margin-bottom: 15px; /* responsável pelo espaçamento entre as palavras  */
+}
+
+/*Container dos Badges (para alinhar os destaques um ao lado do outro)*/
+.vaga-badges{
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* alinha os badges no meio do card de vagas disponiveis */
+    margin-top: 15px;
+}
+
+.badge{
+    background-color:  #f27133;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center; /* alinha o texto dentro das divs laranjas     */
+    display: inline-block; /* Permite que o elemento aceite largura fixa */
+    min-width: 108px;  /* Garante que todos tenham pelo menos 100px */
+}
+
+.paginacao{
+    display: flex;
+    justify-content: center; /* deixa os botões centralizados no container cinza*/
+    gap:20px;
+    margin-top: 10px; /* Espaço após o último card */
+    padding-bottom: 0px; /*  Quase a mesma coisa do de cima, mas inversamente  */
+}
+
+.btn-paginacao {
+    background-color: #e0e0e0; /*cor do background do caracter do botão   */
+    color: #888; /* cor do botão  */
+    border: none; /* aqui remove a borda do botão*/
+    width: 45px; /*Espaçamento entre os botões*/
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer; /* altera o cursor do mouse     */
+    display: flex ; 
+    align-items: center;
+    justify-content: center; 
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* dá um efeito de responsividade aos botões      */
+.btn-paginacao:hover{
+    background-color: #c2c2c2;
+    color: #333;
+    transform: scale(1.1); /* dá suavidae ao movimento    */
+}
+
+.btn-ver-mais{
+    background-color: #007dff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    white-space: nowrap; /* Impede que o texto do botão quebre linha */
+    margin-left: 20px;   /* Garante um respiro entre o texto e o botão */
+    bottom;
+}
+
+.btn-ver-mais:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    background-color: #0052cc;
+    transition: all 0.3s ease; /* 'all' vigia tudo, '0.3s' é a duração, 'ease' é o ritmo suave */
+}
+
+
+/* 1. Posicionamento do Aside */
+.filtros-sidebar {
+    width: 320px;
+    flex: 0 0 325px;
+    z-index: 10;
+    padding-top: 15px;
+    position: sticky;
+    
+}
+
+/* 2. Estilo da Barra de Busca Superior */
+.busca-topo {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-busca {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    margin-top: 10px;
+    border: 1px solid #7f7f7f; 
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+
+/* 3. O Container de Filtros (Borda Roxa) */
+.filtros-container {
+    background-color: white;
+    border: 1px solid #ccc; 
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.filtros-container2 {
+    
+    border-radius: 20px;
+    padding: 25px;
+    
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filtros-titulo {
+    font-size: 1.0rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #3c3c3c;
+}
+
+.titulo-principal{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 0px;
+
+}
+
+/* 4. Estilo dos Inputs Internos com o "X" */
+.campo-grupo {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.campo-grupo label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1px;
+    color: #555;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    border: 1px solid #555;
+    border-radius: 12px;
+    outline: none;
+}
+
+.btn-limpar {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* 5. Botão Gradiente Taluno */
+.btn-aplicar {
+    width: 80%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background: #a600a6;
+    transition: transform 0.2s;
+}
+
+.btn-aplicar:hover {
+    transform: scale(1.05);
+}
+

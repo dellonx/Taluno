@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno Vagas</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/vagas/vagas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -33,8 +34,163 @@
             </ul>
         </div>
     </nav>
+
+    
 </header>
-<main></main>
+<!-- é definido o corpo do site onde terá a divisão do container e formulario -->
+    <main class="vagas-layout"> 
+            
+            <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
+        <aside class="filtros-sidebar">
+        <div class="filtros-container2">
+            <h1 class="titulo-principal">Pesquisar Vagas</h1>
+            <input type="text" placeholder="" class="input-busca">
+        </div> 
+            
+
+            
+
+            <div class="filtros-container">
+        
+                <h2 class="filtros-titulo">Filtro Avançado</h2>
+                
+
+                <form class="filtros-form">
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Palavra chave</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="palavra-chave" name="palavra-chave">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Cidade</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Cidade" name="Cidade">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Tipo de vaga</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Tipo de vaga" name="tipo-vaga">
+                            <span class="btn-limpar">&times;</span>        
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
+                </form>
+            </div>
+        </aside>
+
+        <section class="vagas-container">
+
+                <!-- Aqui é responsável pela estrutura do primeiro card de vagas disponíveis-->
+            <article class="card-das-vagas">
+
+                <!-- Mexa aqui caso queira alterar as informações card geral-->
+                <div class="vaga-info-bloco">
+                    <h3 class="vaga-titulo">vaga para barbeiro temporario </h3>
+                    <p class="vaga-empresa">Salão Homem Mais Forte</p>
+                    <p class="vaga-endereco">Av. Boa Viagem, 4200 - Recife, PE, 51021-000</p>
+                   
+                    <!-- aqui é responsável por reger as tags destaques-->
+                    <div class="vaga-badges">
+                        <span class="badge">Freelancer</span>
+                        <span class="badge">12H</span>
+                        <span class="badge">Tarde/Noite</span>
+                    </div>
+                
+                </div>
+                <!--aqui e responsavel pelo botão "ver mais"-->
+                <button class="btn-ver-mais">Ver mais</button>
+            
+            </article>
+
+                
+                <!-- Aqui é responsável pela estrutura do segundo card de vagas disponíveis-->
+            <article class="card-das-vagas">
+
+                <!-- Mexa aqui caso queira alterar as informações do 2 card geral-->
+                <div class="vaga-info-bloco">
+                    <h3 class="vaga-titulo">Vaga Desenvolvedor Junior </h3>
+                    <p class="vaga-empresa">Simtec Soluções Tecnológicas</p>
+                    <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
+                   
+                    <!-- aqui é responsável por reger as tags destaques-->
+                    <div class="vaga-badges">
+                        <span class="badge">Estágio</span>
+                        <span class="badge">6H</span>
+                        <span class="badge">Manhã</span>
+                    </div>
+                
+                </div>
+                <!--aqui e responsavel pelo botão "ver mais"-->
+                <button class="btn-ver-mais">Ver mais</button>
+            
+            </article>
+
+
+                <!-- Aqui é responsável pela estrutura do terceiro card de vagas disponíveis-->
+            <article class="card-das-vagas">
+
+                <!-- Mexa aqui caso queira alterar as informações do 3 card geral-->
+                <div class="vaga-info-bloco">
+                    <h3 class="vaga-titulo">vaga para Porteiro </h3>
+                    <p class="vaga-empresa">Simte Soluções Tecnológicas</p>
+                    <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
+                   
+                    <!-- aqui é responsável por reger as tags destaques-->
+                    <div class="vaga-badges">
+                        <span class="badge">CLT</span>
+                        <span class="badge">12H</span>
+                        <span class="badge">Noite</span>
+                    </div>
+                
+                </div>
+                <!--aqui e responsavel pelo botão "ver mais"-->
+                <button class="btn-ver-mais">Ver mais</button>
+            
+            </article>
+
+                
+
+                <!-- Aqui é responsável pela estrutura do quarto card de vagas disponíveis-->
+            <article class="card-das-vagas">
+
+                <!-- Mexa aqui caso queira alterar as informações do 4 card geral-->
+                <div class="vaga-info-bloco">
+                    <h3 class="vaga-titulo">vaga Web Designer</h3>
+                    <p class="vaga-empresa">Simtec Soluções Tecnlógicas</p>
+                    <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
+                   
+                    <!-- aqui é responsável por reger as tags destaques-->
+                    <div class="vaga-badges">
+                        <span class="badge">CLT</span>
+                        <span class="badge">6H</span>
+                        <span class="badge">Manhã</span>
+                    </div>
+                
+                </div>
+                <!--aqui e responsavel pelo botão "ver mais"-->
+                <button class="btn-ver-mais">Ver mais</button>
+            
+            </article>
+
+                <!-- aqui serão os botões que passam/voltam de vagas disponivéis-->
+            <nav class="paginacao">
+                <button class="btn-paginacao" aria-label="Página Anterior">&#10094;</button>
+
+                <button class="btn-paginacao" aria-label="Próxima Página">&#10095;</button>
+            </nav>
+
+        </section>
+    </main>
+
         <!--Inicio do Footer-->
     <footer class="footer-taluno">
     <div class="container footer-content">
