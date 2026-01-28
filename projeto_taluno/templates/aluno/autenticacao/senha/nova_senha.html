@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Senha | Taluno</title>
+    <link rel="stylesheet" href="../../../../static/css/global.css">
+    <link rel="stylesheet" href="../../../../static/css/autenticacao/senha/nova_senha.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="auth-container">
+        <section class="auth-content">
+            <header class="auth-header">
+                <img src="../../../../static/img/logo/logo_taluno.png" alt="Logo Taluno" class="auth-logo">
+                <nav>
+                    <a href="/projeto_taluno/templates/aluno/autenticacao/login.html" class="auth-nav__link">Login</a>
+                    <a href="/projeto_taluno/templates/aluno/autenticacao/cadastro.html" class="auth-nav__link">Cadastro</a>
+                </nav>
+            </header>
+
+            <div class="form-wrapper">
+                <div class="back-button">
+                    <a href="/projeto_taluno/templates/aluno/autenticacao/login.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <h1 class="form-title">RECUPERAÇÃO</h1>
+                <p class="form-subtitle">Crie sua nova credencial de acesso</p>
+
+                <form action="../../inicio/inicio.html" method="GET">
+                    <div class="input-group">
+                        <input type="text" name="codigo" placeholder="Digite o código enviado" class="input-field" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Digite a nova senha" class="input-field" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="confirm_password" placeholder="Confirmar nova senha" class="input-field" required>
+                    </div>
+
+                    <button type="submit" class="btn btn--full btn--gradient">Redefinir Senha</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="auth-visual">
+            <img src="/projeto_taluno/static/img/banners/nova_senha.png" alt="Segurança" class="visual-image">
+        </section>
+    </main>
+</body>
+</html>
