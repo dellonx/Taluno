@@ -1,24 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Selecionamos todos os botões "Ver mais" da lista
     const botoesVerMais = document.querySelectorAll('.btn-ver-mais');
-    
-    // Selecionamos o modal e o botão de voltar
     const modal = document.querySelector('.modal-overlay');
     const btnVoltar = document.querySelector('.btn-voltar-modal');
 
-    // Para cada botão "Ver mais" encontrado, adicionamos o evento de abrir
+    // Elementos de DESTINO dentro do seu Modal
+    const tituloModal = document.querySelector('.vaga-titulo-detalhe');
+    const empresaModal = document.querySelector('.empresa-nome-detalhe');
+    const enderecoModal = document.querySelector('.vaga-localizacao');
+    const tagsContainerModal = document.querySelector('.tags-detalhes');
+
     botoesVerMais.forEach(botao => {
-        botao.addEventListener('click', () => {
-            modal.style.display = 'flex'; // Mostra o modal centralizado
-            console.log("Abrindo detalhes da vaga...");
+        botao.addEventListener('click', function() {
+            // 1. Localiza o card pai do botão clicado
+            const cardPai = this.closest('.card-das-vagas');
+
+            // 2. Extrai os dados deste card específico
+            const tituloVaga = cardPai.querySelector('.vaga-titulo').innerText;
+            const nomeEmpresa = cardPai.querySelector('.vaga-empresa').innerText;
+            const enderecoVaga = cardPai.querySelector('.vaga-endereco').innerText;
+            
+            // Pega as badges (tags laranjas) do card
+            const badgesCard = cardPai.querySelectorAll('.badge');
+
+            // 3. Alimenta o Modal com os dados novos
+            tituloModal.innerText = tituloVaga;
+            empresaModal.innerText = nomeEmpresa;
+            enderecoModal.innerText = enderecoVaga;
+
+            // Limpa as tags antigas do modal e coloca as novas
+            tagsContainerModal.innerHTML = ''; 
+            badgesCard.forEach(badge => {
+                const novaBadge = document.createElement('span');
+                novaBadge.classList.add('badge');
+                novaBadge.innerText = badge.innerText;
+                tagsContainerModal.appendChild(novaBadge);
+            });
+
+            // 4. Abre o modal
+            modal.style.display = 'flex';
         });
     });
 
-    // Evento para fechar o modal ao clicar na seta
+    // Fechar o modal
     if (btnVoltar) {
         btnVoltar.addEventListener('click', () => {
-            modal.style.display = 'none'; // Esconde o modal novamente
-            console.log("Fechando modal.");
+            modal.style.display = 'none';
         });
     }
 });
