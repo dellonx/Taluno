@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taluno | Cadastro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/projeto_taluno/static/css/autenticacao/cadastro.css">
+</head>
+<body>
+
+    <main class="auth-container">
+        
+        <section class="auth-content">
+            <header class="auth-header">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno_senac_colorido.png" alt="Logo Taluno Senac" class="auth-logo">
+                
+                <nav class="auth-nav">
+                    <a href="login.html" class="auth-nav__link">LOGIN</a>
+                    <a href="cadastro.html" class="auth-nav__link active">CADASTRO</a>
+                </nav>
+            </header>
+
+            <div class="form-wrapper">
+                
+                <div class="title-with-icon">
+                    <a href="login.html" class="back-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </a>
+                    <h1 class="form-title">CADASTRO</h1>
+                </div>
+
+                <form action="../inicio/inicio.html" method="GET" class="login-form">
+                    
+                    <div class="input-group">
+                        <img src="/projeto_taluno/static/img/icons/perfil.png" alt="" class="input-group__icon icon-left">
+                        <input type="text" id="nome" name="nome" placeholder="Nome completo" required class="input-field">
+                    </div>
+
+                    <div class="input-group">
+                        <img src="/projeto_taluno/static/img/icons/envelope.png" alt="" class="input-group__icon icon-left">
+                        <input type="email" id="email" name="email" placeholder="E-mail" required class="input-field">
+                    </div>
+
+                    <div class="form-row">
+                        
+                        <div class="input-group">
+                            <img src="/projeto_taluno/static/img/icons/cadeado.png" alt="" class="input-group__icon icon-left">
+                            <input type="password" id="senha" name="senha" placeholder="Senha" required class="input-field">
+                            
+                            <button type="button" id="toggleSenha" class="toggle-password-btn" aria-label="Mostrar senha">
+                                <img src="/projeto_taluno/static/img/icons/olho_aberto.png" id="eyeOpen1" alt="Mostrar">
+                                <img src="/projeto_taluno/static/img/icons/olho_fechado.png" id="eyeClosed1" class="hide" alt="Ocultar">
+                            </button>
+                        </div>
+
+                        <div class="input-group">
+                            <img src="/projeto_taluno/static/img/icons/cadeado.png" alt="" class="input-group__icon icon-left">
+                            <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a senha" required class="input-field">
+                            
+                            <button type="button" id="toggleConfirmar" class="toggle-password-btn" aria-label="Mostrar senha">
+                                <img src="/projeto_taluno/static/img/icons/olho_aberto.png" id="eyeOpen2" alt="Mostrar">
+                                <img src="/projeto_taluno/static/img/icons/olho_coberto.png" id="eyeClosed2" class="hide" alt="Ocultar">
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn btn--gradient btn--full">
+                        Criar conta
+                    </button>
+
+                    <div class="form-footer">
+                        <span>ou </span><a href="login.html" class="link-highlight">faça login</a>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <aside class="auth-visual">
+            <div class="visual-image-container">
+                <img src="/projeto_taluno/static/img/banners/duas_mulheres_trabalhando.png" alt="Duas mulheres trabalhando" class="visual-image">
+            </div>
+        </aside>
+
+    </main>
+
+    <script src="/projeto_taluno/static/js/autenticacao/cadastro.js"></script>
+</body>
+</html>

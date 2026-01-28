@@ -75,6 +75,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
 }
 
 .logo img { height: 60px; display: block; }
@@ -86,14 +87,27 @@ body {
     cursor: pointer;         /* Mãozinha ao passar o mouse */
     padding: 0;              /* Remove gorduras extras */
     margin-left: 20px;
+    opacity: 90%;
+}
+
+.menu-hamburguer :hover {
+    color: white;
+    opacity: 100%;
 }
 
 /* Garanta que os ícones voltem a ser brancos (se quiser sair do azul de teste) */
 .top-icons i {
-    font-size: 1.6rem;
-    color: white; /* Volta para o branco oficial */
+    font-size: 1.9rem;
+    color: rgb(255, 255, 255);
+    opacity: 90%;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.5s;
+}
+
+.top-icons i:hover {
+    color: rgb(255, 255, 255);
+    opacity: 100%;
+    transform: translateY(-3px);
 }
 
 /* NavBar Branca */
@@ -141,7 +155,7 @@ body {
 .footer-taluno {
     background-color: var(--bg-footer);
     color: var(--footer-text);
-    padding: 40px 0 20px 0;
+    padding: 15px 0 15px 0;
     margin-top: auto;
 }
 
@@ -151,16 +165,16 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 /* --- COLUNA 1: LOGO --- */
 .footer-logo {
-    height: 90px; /* Ajustei levemente para não ficar gigante */
+    height: 60px; 
     display: block;
     filter: brightness(0) invert(1);
     opacity: 0.9;
-    /* Margin removida: o Flexbox cuida disso */
+
 }
 
 /* --- COLUNA 2: LINKS CENTRAIS --- */
@@ -181,13 +195,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-left: 50px;
 }
 
 .footer-menu a {
     text-decoration: none;
     color: var(--footer-text);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     transition: opacity 0.3s;
 }
@@ -207,7 +222,7 @@ body {
 .social-icons a {
     color: var(--footer-text);
     font-size: 1.4rem;
-    border: 2px solid rgba(255,255,255,0.2);
+    border: 2px solid rgba(255, 255, 255, 0.521);
     width: 40px;
     height: 40px;
     display: flex;
@@ -239,7 +254,7 @@ body {
 }
 
 .btn-back-top:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     background-color: #2a0050;
 }
 
@@ -247,14 +262,14 @@ body {
 .footer-line {
     border: 0;
     height: 1px;
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
     margin: 0 auto 20px auto; /* Importante: Centraliza a linha */
     max-width: 80%; /* Deixei um pouco mais largo para ficar elegante */
 }
 
 .footer-bottom p {
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     opacity: 0.8;
 }
 

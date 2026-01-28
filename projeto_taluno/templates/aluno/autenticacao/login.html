@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/projeto_taluno/static/css/autenticacao/autenticacao.css">
+    
+    <link rel="stylesheet" href="/projeto_taluno/static/css/autenticacao/login.css">
 </head>
 <body>
 
@@ -27,7 +28,7 @@
             <div class="form-wrapper">
                 <h1 class="form-title">LOGIN</h1>
 
-                <form action="" method="post" class="login-form">
+                <form action="../inicio/inicio.html" method="GET" class="login-form">
                     <div class="input-group">
                         <img src="/projeto_taluno/static/img/icons/perfil.png" alt="" class="input-group__icon icon-left">
                         <input type="email" id="email" name="email" placeholder="Digite o seu e-mail" required class="input-field">
@@ -35,13 +36,12 @@
 
                     <div class="input-group">
                         <img src="/projeto_taluno/static/img/icons/cadeado.png" alt="" class="input-group__icon icon-left">
-                        
                         <input type="password" id="password" name="password" placeholder="Digite a sua senha" required class="input-field">
                         
                         <button type="button" id="togglePassword" class="toggle-password-btn" aria-label="Mostrar senha">
                             <img src="/projeto_taluno/static/img/icons/olho_aberto.png" id="eyeOpen" alt="Mostrar Senha">
                             <img src="/projeto_taluno/static/img/icons/olho_coberto.png" id="eyeClosed" class="hide" alt="Ocultar Senha">
-                                </button>
+                        </button>
                     </div>
 
                     <div class="form-options">
@@ -57,17 +57,20 @@
                         Login
                     </button>
 
+                    <div class="form-footer">
+                        <span>ou </span><a href="/projeto_taluno/templates/aluno/autenticacao/cadastro.html" class="link-highlight">faça cadastro</a>
+                    </div>
                 </form>
             </div>
         </section>
 
         <aside class="auth-visual">
             <div class="visual-image-container">
-                <img src="/projeto_taluno/static/img/banner/mulheres-trabalhando.png" alt="Mulheres trabalhando juntas" class="visual-image">
+                <img src="/projeto_taluno/static/img/banners/mulheres_trabalhando.png" alt="Mulheres trabalhando juntas" class="visual-image">
         </aside>
 
     </main>
 
-    <script src="/projeto_taluno/static/js/autenticacao/autenticacao.js"></script>
+    <script src="/projeto_taluno/static/js/autenticacao/login.js"></script>
 </body>
 </html>
