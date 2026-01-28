@@ -1,0 +1,99 @@
+:root {
+    --gradiente-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --sombra-suave: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+}
+
+/* Banner Superior */
+.banner-mural {
+    background: var(--gradiente-taluno);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    color: white;
+    margin: 20px 0;
+}
+
+/* Estilo dos Cards do Mural */
+.card-post {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #e0e0e0;
+}
+
+/* Botões com Identidade Visual */
+.btn-publicar, .btn-adicionar {
+    background: #0052cc; /* Cor média do gradiente ou o gradiente todo */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-publicar:hover {
+    filter: brightness(1.2);
+}
+
+.user-info {
+    display: flex;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+} 
+
+/* Área de criar post */
+.criar-post {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Caixa de texto */
+.input-post {
+    width: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background: #f4f7f6;
+    padding: 12px 15px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px #ddd;
+    transition: box-shadow 0.2s ease;
+}
+
+/* Foco bonito (adeus quadro feio) */
+.input-post:focus {
+    box-shadow: inset 0 0 0 2px #a600a6;
+    background: #fff;
+}
+
+.btn-publicar {
+    align-self: flex-end;
+    background: #0052cc;
+    color: white;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
