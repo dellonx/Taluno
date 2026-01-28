@@ -116,6 +116,10 @@ body { font-family: 'Segoe UI', sans-serif; }
     z-index: 2000; /* Garante que fique acima do footer roxo */
 }
 
+.modal-overlay.active{
+    display: flex;
+}
+
 /* Seu card que hoje está no canto */
 .modal-card-detalhes {
     background-color: white;
@@ -124,6 +128,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     padding: 40px;
     border-radius: 20px;
     border: 1px solid #797979; /* A linhazinha roxa do protótipo */
+    overflow-y: auto;
 }
 
 .modal-header{
@@ -158,7 +163,29 @@ body { font-family: 'Segoe UI', sans-serif; }
     font-size: 1.1rem;
     cursor: pointer;
 }
+.btn-voltar-modal{
+    background-color: #e0e0e0; /*cor do background do caracter do botão   */
+    color: #888; /* cor do botão  */
+    border: none; /* aqui remove a borda do botão*/
+    width: 45px; /*Espaçamento entre os botões*/
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer; /* altera o cursor do mouse     */
+    display: flex ; 
+    align-items: center;
+    justify-content: center; 
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: absolute;
 
+    top: 125px; /* aqui é responsavel por empurrar o botão pra baixo    */
+    left: 225px; /* aqui é responsavel pra aproximar o botao perto do card    */
+}
 
-
+.btn-voltar-modal:hover{
+    background-color: #c2c2c2;
+    color: white;
+    transform: (1.1);
+}
 

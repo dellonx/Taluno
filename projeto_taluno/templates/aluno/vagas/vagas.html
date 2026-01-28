@@ -97,7 +97,7 @@
                     <h3 class="vaga-titulo">vaga para barbeiro temporario </h3>
                     <p class="vaga-empresa">Salão Homem Mais Forte</p>
                     <p class="vaga-endereco">Av. Boa Viagem, 4200 - Recife, PE, 51021-000</p>
-                   
+
                     <!-- aqui é responsável por reger as tags destaques-->
                     <div class="vaga-badges">
                         <span class="badge">Freelancer</span>
@@ -120,7 +120,7 @@
                     <h3 class="vaga-titulo">Vaga Desenvolvedor Junior </h3>
                     <p class="vaga-empresa">Simtec Soluções Tecnológicas</p>
                     <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
-                   
+
                     <!-- aqui é responsável por reger as tags destaques-->
                     <div class="vaga-badges">
                         <span class="badge">Estágio</span>
@@ -143,7 +143,7 @@
                     <h3 class="vaga-titulo">vaga para Porteiro </h3>
                     <p class="vaga-empresa">Simte Soluções Tecnológicas</p>
                     <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
-                   
+                    
                     <!-- aqui é responsável por reger as tags destaques-->
                     <div class="vaga-badges">
                         <span class="badge">CLT</span>
@@ -167,7 +167,7 @@
                     <h3 class="vaga-titulo">vaga Web Designer</h3>
                     <p class="vaga-empresa">Simtec Soluções Tecnlógicas</p>
                     <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
-                   
+
                     <!-- aqui é responsável por reger as tags destaques-->
                     <div class="vaga-badges">
                         <span class="badge">CLT</span>
@@ -189,6 +189,58 @@
             </nav>
 
         </section>
+
+        <!-- Aqui é reponsável pela estrutura geral do site/modal-->
+        <div class="modal-overlay">
+            <button class="btn-voltar-modal" aria-label="Página Anterior"><h1>&#10094;</h1></button>
+
+            <!--Aqui é responsável pelo container de vagas detalhadas-->
+            <div class="modal-card-detalhes">
+
+                <!-- aqui é um header que auxiliará as ferramentas de pesquisa dos navegadores-->
+                <header class="modal-header">
+
+                    <!-- aqui é onde alteramos a foto de perfil da empresa na hora da vaga-->
+                    <div class="empresa-logo-container">
+                        <img src="/projeto_taluno/static/img/logo/logo_empresa_simtec" alt=""Logo Empresa class="logo-img">
+                    </div>
+
+                    <!-- aqui onde fica as informações gerais do container/modal-->
+                    <div class="vaga-info-principal">
+                        <h2 class="empresa-nome-detalhe">Simtech Soluções Tecnológicas</h2>
+                        <h1 class="vaga-titulo-detalhe">Vaga Desenvolvedor Junior</h1>
+                    </div>
+                    
+                    
+                    <button class="btn-candidatar">Candidatar</button>
+                </header>
+
+                <!-- Aqui é responsável pelas tags laranjas (ou badges como na tela anterior)-->
+                <div class="tags-detalhes">
+                    <span class="badge">estágio</span>
+                    <span class="badge">6H</span>
+                    <span class="badge">Turno</span>
+                </div>
+
+                <p class="vaga-localizacao">Rua do Bom Jesus, nº 1991 - Bairro do Recife, Recife/pe</p>
+
+                <!--Aqui é responsável pela descrição do container de vagas detalhadas-->
+                <div class="vaga-descricao-texto">
+                    <p>Nós, da Simtec, buscamos um(a) Estagiário(a) Dev Júnior para integrar nossa equipe de desenvolvimento. Oferecemos a 
+                        oportunidade de aprendizado em um ambiente colaborativo, no qual será possível participar do desenvolvimento de aplicações web e mobile, apoiar na manutenção de sistemas e 
+                        contribuir com ideias inovadoras. Trata-se de uma 
+                        excelente chance para quem deseja iniciar a carreira em programação e evoluir junto a uma empresa comprometida com a inovação e o crescimento profissional de seus talentos.</p>
+
+                        <ul class="vaga-requesitos">
+                            <li>Apoio no desenvolvimento e manutenção de sistemas</li>
+                            <li>Conhecimentos básicos em HTML, CSS, JavaScript e Git.</li>
+                            <li>Bolsa estágio, vale transporte e possibilidade de efetivação.</li>
+                        </ul>
+                </div>
+                
+            </div>
+        </div>
+
     </main>
 
         <!--Inicio do Footer-->
@@ -230,5 +282,7 @@
     </div>
 </footer>
 <!--Final do Footer-->
+
+<script src="/projeto_taluno/static/js/vagas/vagas.js"></script>
 </body>
 </html>
