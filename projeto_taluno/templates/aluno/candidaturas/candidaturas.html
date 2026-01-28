@@ -5,75 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno | Candidaturas</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/candidaturas/candidaturas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
-        <header class="header-taluno">
-    <div class="top-bar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
-            </a>
-
-            <div class="top-icons">
-                <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
-                <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
+    <header class="header-taluno">
+        <div class="top-bar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
+                </a>
+                <div class="top-icons">
+                    <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
+                    <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <nav class="nav-bar">
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="../inicio/inicio.html">Início</a></li>
-                <li><a href="../vagas/vagas.html">Vagas</a></li>
-                <li><a href="../mural/feed.html">Mural</a></li>
-                <li><a href="../candidaturas/candidaturas.html" class="active">Candidaturas</a></li>
-                <li><a href="../suporte/suporte.html">Suporte</a></li>
-            </ul>
+        <nav class="nav-bar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="../inicio/inicio.html">Início</a></li>
+                    <li><a href="../vagas/vagas.html">Vagas</a></li>
+                    <li><a href="../mural/feed.html">Mural</a></li>
+                    <li><a href="../candidaturas/candidaturas.html" class="active">Candidaturas</a></li>
+                    <li><a href="../suporte/suporte.html">Suporte</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-candidaturas">
+        <div class="container content-wrapper">
+            <section class="filtro-area">
+                <div class="filtro-wrapper">
+                    <label>Filtrar candidaturas</label>
+                    <div class="select-customizado">
+                        <select>
+                            <option>Nenhuma</option>
+                            <option>Em Andamento</option>
+                            <option>Cancelado</option>
+                            <option>Concluído</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lista-candidaturas">
+                <article class="card-candidatura">
+                    <div class="info-vaga">
+                        <h3>Vaga para barbeiro T...</h3>
+                        <p class="empresa">Salão Homem Mais Forte</p>
+                        <p class="local">Av. Boa Viagem, 4200 - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-concluido">Concluído</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura">
+                    <div class="info-vaga">
+                        <h3>Vaga Desenvolvedor Junior</h3>
+                        <p class="empresa">Simtec Soluções Tecnológicas</p>
+                        <p class="local">R. Alfândega, 35 - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-andamento">Em Andamento</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura">
+                    <div class="info-vaga">
+                        <h3>Vaga para Porteiro</h3>
+                        <p class="empresa">Simtec Soluções Tecnológicas</p>
+                        <p class="local">R. Alfândega, 35 - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-cancelado">Cancelado</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+            </section>
+
+            <div class="paginacao-candidaturas">
+                <button class="btn-page"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="btn-page"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
         </div>
-    </nav>
-</header>
-<main></main>
-        <!--Inicio do Footer-->
+    </main>
+
     <footer class="footer-taluno">
-    <div class="container footer-content">
-        
-        <div class="footer-col logo-col">
-            <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
-        </div>
-
-        <div class="footer-col links-col">
-            <ul class="footer-menu">
-                <li><a href="#">SOBRE TALUNO</a></li>
-                <li><a href="#">POLÍTICA DE COOKIES</a></li>
-                <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
-                <li><a href="#">CENTRAL DE AJUDA</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col social-col">
-            <div class="social-icons">
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="container footer-content">
+            <div class="footer-col logo-col">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
             </div>
-            
-            <a href="#" class="btn-back-top">
-                <i class="fa-solid fa-arrow-up"></i>
-            </a>
+            <div class="footer-col links-col">
+                <ul class="footer-menu">
+                    <li><a href="#">SOBRE TALUNO</a></li>
+                    <li><a href="#">POLÍTICA DE COOKIES</a></li>
+                    <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+                    <li><a href="#">CENTRAL DE AJUDA</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col">
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <a href="#" class="btn-back-top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
         </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container">
-            <hr class="footer-line">
-            <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+        <div class="footer-bottom">
+            <div class="container">
+                <hr class="footer-line">
+                <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
         </div>
-    </div>
-</footer>
-<!--Final do Footer-->
+    </footer>
 </body>
 </html>
