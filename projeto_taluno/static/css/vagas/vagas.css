@@ -392,6 +392,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     border-radius: 20px;
     border: 1px solid #797979; /* A linhazinha roxa do protótipo */
     overflow-y: auto;
+    position: relative;
 }
 
 .modal-header{
@@ -399,7 +400,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     align-items: center; /* Alinha tudo verticalmente ao centro      */
     justify-content: center; /* Empurra a foto de perfil a esquerda e o botão para direita   */
     gap: 20px;
-    margin-bottom: 30px; /* espaço para o texto que virá a baixo   */
+    margin-bottom: 10px; /* espaço para o texto que virá a baixo   */
 }
 
 .empresa-logo-container {
@@ -426,6 +427,20 @@ body { font-family: 'Segoe UI', sans-serif; }
     font-size: 1.1rem;
     cursor: pointer;
 }
+
+.tags-detalhes{
+    display: flex;       /* Alinha as tags em linha */
+    gap: 10px;          /* Cria o espaço entre elas */
+    margin-top: 15px;   /* Afasta do título acima */
+    margin-bottom: 30px; /* Afasta do endereço abaixo */
+    justify-content: flex-start; /* Mantém alinhado à esquerda no modal */
+}
+
+.vaga-localizacao{
+    color: #555;
+}
+
+
 .btn-voltar-modal{
     background-color: #e0e0e0; /*cor do background do caracter do botão   */
     color: #888; /* cor do botão  */
@@ -441,6 +456,8 @@ body { font-family: 'Segoe UI', sans-serif; }
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     position: absolute;
+
+    z-index: 10;
 
     top: 125px; /* aqui é responsavel por empurrar o botão pra baixo    */
     left: 225px; /* aqui é responsavel pra aproximar o botao perto do card    */
