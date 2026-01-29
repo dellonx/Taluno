@@ -39,20 +39,20 @@
         <div class="container content-wrapper">
             <section class="filtro-area">
                 <div class="filtro-wrapper">
-                    <label>Filtrar candidaturas</label>
+                    <label for="status-filter">Filtrar candidaturas</label>
                     <div class="select-customizado">
-                        <select>
-                            <option>Nenhuma</option>
-                            <option>Em Andamento</option>
-                            <option>Cancelado</option>
-                            <option>Concluído</option>
+                        <select id="status-filter">
+                            <option value="nenhuma">Nenhuma</option>
+                            <option value="andamento">Em Andamento</option>
+                            <option value="cancelado">Cancelado</option>
+                            <option value="concluido">Concluído</option>
                         </select>
                     </div>
                 </div>
             </section>
 
             <section class="lista-candidaturas">
-                <article class="card-candidatura">
+                <article class="card-candidatura" data-status="concluido">
                     <div class="info-vaga">
                         <h3>Vaga para barbeiro T...</h3>
                         <p class="empresa">Salão Homem Mais Forte</p>
@@ -64,7 +64,7 @@
                     </div>
                 </article>
 
-                <article class="card-candidatura">
+                <article class="card-candidatura" data-status="andamento">
                     <div class="info-vaga">
                         <h3>Vaga Desenvolvedor Junior</h3>
                         <p class="empresa">Simtec Soluções Tecnológicas</p>
@@ -76,7 +76,7 @@
                     </div>
                 </article>
 
-                <article class="card-candidatura">
+                <article class="card-candidatura" data-status="cancelado">
                     <div class="info-vaga">
                         <h3>Vaga para Porteiro</h3>
                         <p class="empresa">Simtec Soluções Tecnológicas</p>
@@ -128,5 +128,6 @@
             </div>
         </div>
     </footer>
+    <script src="/projeto_taluno/static/js/candidatura/candidatura.js"></script>
 </body>
 </html>

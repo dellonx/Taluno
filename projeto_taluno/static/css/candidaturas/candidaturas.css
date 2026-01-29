@@ -1,17 +1,14 @@
-/* Estilo da Seção Principal */
 .main-candidaturas {
     padding: 60px 0;
     background-color: #f4f7f9;
     min-height: 70vh;
 }
 
-/* Container de conteúdo para evitar que os cards estiquem em monitores grandes */
 .content-wrapper {
-    max-width: 900px !important; /* Mantém os cards centralizados e elegantes */
+    max-width: 900px !important;
     margin: 0 auto;
 }
 
-/* Filtros */
 .filtro-area {
     margin-bottom: 35px;
 }
@@ -36,13 +33,13 @@
     cursor: pointer;
 }
 
-/* Cards */
 .lista-candidaturas {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* --- ESTILOS DE TRANSIÇÃO SUAVE --- */
 .card-candidatura {
     background: #fff;
     border-radius: 15px;
@@ -51,6 +48,30 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    
+    /* Propriedades para animação */
+    opacity: 1;
+    transform: scale(1);
+    max-height: 500px; /* Valor alto para permitir expansão */
+    margin-bottom: 20px;
+    transition: 
+        opacity 0.5s ease, 
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+        max-height 0.5s ease, 
+        margin 0.5s ease, 
+        padding 0.5s ease;
+    overflow: hidden;
+}
+
+/* Estado quando o card é filtrado (escondido) */
+.card-hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
 }
 
 .info-vaga h3 {
@@ -69,7 +90,6 @@
     font-size: 0.85rem;
 }
 
-/* Badges e Status */
 .status-wrapper {
     display: flex;
     align-items: center;
@@ -86,7 +106,6 @@
     font-size: 0.9rem;
 }
 
-/* Cores imutáveis dos status */
 .status-concluido { background-color: #4cd137; }
 .status-andamento { background-color: #ffb92e; }
 .status-cancelado { background-color: #d63031; }
@@ -104,7 +123,6 @@
     justify-content: center;
 }
 
-/* Paginação */
 .paginacao-candidaturas {
     display: flex;
     justify-content: center;
