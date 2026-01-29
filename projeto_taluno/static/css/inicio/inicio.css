@@ -136,7 +136,7 @@ body {
 ========================================= */
 .hero-logado {
     min-height: calc(100vh - 130px);
-    background: linear-gradient(135deg, #0052cc, #a600a6, #e6005c);
+     background-image: url("../../img/inicio/banner.inicio.png");
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,6 +163,7 @@ body {
 /* =========================================
    CARDS
 ========================================= */
+
 .hero-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -182,7 +183,7 @@ body {
 .hero-card i {
     font-size: 34px;
     margin-bottom: 18px;
-    background: linear-gradient(90deg, #0052cc, #a600a6, #e6005c);
+    background: linear-gradient( #0052cc);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
