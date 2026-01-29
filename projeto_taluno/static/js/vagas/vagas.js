@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.modal-overlay');
     const btnVoltar = document.querySelector('.btn-voltar-modal');
 
-    // Elementos de DESTINO dentro do seu Modal
     const tituloModal = document.querySelector('.vaga-titulo-detalhe');
     const empresaModal = document.querySelector('.empresa-nome-detalhe');
     const enderecoModal = document.querySelector('.vaga-localizacao');
@@ -12,29 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     botoesVerMais.forEach(botao => {
         botao.addEventListener('click', function() {
-            // 1. Localiza o card pai
             const cardPai = this.closest('.card-das-vagas');
 
-            // 2. Extrai os dados (Texto do Card + Data Attribute do Botão)
+            // Extração dos dados
             const tituloVaga = cardPai.querySelector('.vaga-titulo').innerText;
             const nomeEmpresa = cardPai.querySelector('.vaga-empresa').innerText;
             const enderecoVaga = cardPai.querySelector('.vaga-endereco').innerText;
-            const descricaoVaga = this.getAttribute('data-descricao'); // Captura o data-descricao
-            
-            // Pega as badges do card
+            const descricaoVaga = this.getAttribute('data-descricao'); 
             const badgesCard = cardPai.querySelectorAll('.badge');
 
-            // 3. Alimenta o Modal
+            // Alimentando o Modal
             tituloModal.innerText = tituloVaga;
             empresaModal.innerText = nomeEmpresa;
             enderecoModal.innerText = enderecoVaga;
             
-            // Injeta a descrição (Se houver descrição no botão)
             if (corpoDescricao) {
                 corpoDescricao.innerText = descricaoVaga || "Descrição não informada.";
             }
 
-            // Atualiza as Tags
             tagsContainerModal.innerHTML = ''; 
             badgesCard.forEach(badge => {
                 const novaBadge = document.createElement('span');
@@ -43,15 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 tagsContainerModal.appendChild(novaBadge);
             });
 
-            // 4. Abre o modal
-            modal.style.display = 'flex';
+            // --- INÍCIO DA ANIMAÇÃO DE ENTRADA ---
+            modal.style.display = 'flex'; // Primeiro ativa o display
+            setTimeout(() => {
+                modal.classList.add('active'); // Depois de 10ms adiciona a classe que faz o fade-in
+            }, 10);
         });
     });
 
-    // Fechar o modal
     if (btnVoltar) {
         btnVoltar.addEventListener('click', () => {
-            modal.style.display = 'none';
+            // --- INÍCIO DA ANIMAÇÃO DE SAÍDA ---
+            modal.classList.remove('active'); // Começa a sumir (fade-out)
+            
+            setTimeout(() => {
+                modal.style.display = 'none'; // Só desliga o display depois que a animação acaba
+            }, 300); // 300ms é o tempo que definimos no CSS
         });
     }
 });

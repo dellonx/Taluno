@@ -368,7 +368,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(85, 85, 85, 0.4); /* Escurece o fundo para dar foco */
     
     /* ISSO VAI CENTRALIZAR SEU CARD BRANCO NO MEIO: */
@@ -377,10 +377,13 @@ body { font-family: 'Segoe UI', sans-serif; }
     align-items: center;     /* Centraliza na vertical */
     
     z-index: 2000; /* Garante que fique acima do footer roxo */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Suaviza a entrada */
 }
 
 .modal-overlay.active{
     display: flex;
+    opacity: 1;
 }
 
 /* Seu card que hoje está no canto */
@@ -393,7 +396,12 @@ body { font-family: 'Segoe UI', sans-serif; }
     border: 1px solid #797979; /* A linhazinha roxa do protótipo */
     overflow-y: auto;
     position: relative;
+    transform: scale(0.7); /* começa menor   */
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Efeito elástico */
 }
+
+.modal-overlay.active .modal-card-detalhes {
+    transform: scale(1); /* Volta ao tamanho normal */}
 
 .modal-header{
     display: flex;
@@ -418,7 +426,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-candidatar {
-    background-color: #0052cc; /* cor de fundo do botão */
+    background-color: #007dff; /* cor de fundo do botão */
     color: white; /*cor da letra      */
     border: none; /* retira o excesso de borda */
     padding: 12px 30px;
@@ -426,6 +434,13 @@ body { font-family: 'Segoe UI', sans-serif; }
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
+}
+
+.btn-candidatar:hover{
+    background-color: #004494; /* Um azul um pouco mais escuro */
+    transform: scale(1.03);    /* Aumenta levemente o tamanho */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+    transition: all 0.3s ease; /* 'all' vigia tudo, '0.3s' é a duração, 'ease' é o ritmo suave */
 }
 
 .tags-detalhes{
