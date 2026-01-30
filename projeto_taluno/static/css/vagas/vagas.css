@@ -13,58 +13,6 @@
 
 body { font-family: 'Segoe UI', sans-serif; }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* --- HEADER PRINCIPAL --- */
-.header-taluno {
-    width: 100%;
-    position: sticky; /* Cola no topo ao rolar */
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* LINHA 1: Top Bar (Gradiente) */
-.top-bar {
-    background: var(--gradient-taluno);
-    padding: 12px 0;
-    color: white;
-}
-
-.logo img {
-    height: 40px; /* Ajuste aqui o tamanho da logo */
-    display: block;
-}
-
-.top-icons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Ícones (Requer FontAwesome) */
-.top-icons i {
-    font-size: 1.6rem;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.top-icons i:hover { transform: scale(1.1); }
-
-.menu-hamburguer {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 /* LINHA 2: Nav Bar (Branca) */
 .nav-bar {
     background: var(--bg-branco);
