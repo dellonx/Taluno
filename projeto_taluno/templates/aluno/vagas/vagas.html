@@ -94,7 +94,7 @@
 
                 <!-- Mexa aqui caso queira alterar as informações card geral-->
                 <div class="vaga-info-bloco">
-                    <h3 class="vaga-titulo">vaga para barbeiro temporario </h3>
+                    <h3 class="vaga-titulo">Vaga para barbeiro temporario </h3>
                     <p class="vaga-empresa">Salão Homem Mais Forte</p>
                     <p class="vaga-endereco">Av. Boa Viagem, 4200 - Recife, PE, 51021-000</p>
 
@@ -148,7 +148,7 @@
 
                 <!-- Mexa aqui caso queira alterar as informações do 3 card geral-->
                 <div class="vaga-info-bloco">
-                    <h3 class="vaga-titulo">vaga para Porteiro </h3>
+                    <h3 class="vaga-titulo">Vaga para Porteiro </h3>
                     <p class="vaga-empresa">Simte Soluções Tecnológicas</p>
                     <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
                     
@@ -177,7 +177,7 @@
 
                 <!-- Mexa aqui caso queira alterar as informações do 4 card geral-->
                 <div class="vaga-info-bloco">
-                    <h3 class="vaga-titulo">vaga Web Designer</h3>
+                    <h3 class="vaga-titulo">Vaga Web Designer</h3>
                     <p class="vaga-empresa">Simtec Soluções Tecnlógicas</p>
                     <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
 
@@ -190,19 +190,19 @@
                 
                 </div>
                 <!--aqui e responsavel pelo botão "ver mais"-->
-                <button class="btn-ver-mais" data-descricao="Estamos em busca de um(a) Web Designer para integrar nossa equipe criativa e colaborar com projetos digitais.
-                                                    O profissional atuará na criação de layouts, interfaces e elementos visuais para sites e plataformas online, prezando pela usabilidade e estética.
-                                                    Esta é uma boa oportunidade para quem deseja desenvolver habilidades em design digital e crescer profissionalmente em um ambiente colaborativo.
-                                                    As atividades envolvem criação visual, ajustes em páginas web e apoio no desenvolvimento da identidade digital dos projetos.
-                                                    É desejável ter conhecimentos básicos em design gráfico, ferramentas de criação e noções de web.
-                                                    Oferecemos remuneração compatível, ambiente criativo e oportunidades de evolução profissional.">Ver mais</button>
+                <button class="btn-ver-mais" 
+                data-descricao="Estamos em busca de um(a) Web Designer para integrar nossa equipe criativa e colaborar com projetos digitais.
+                O profissional atuará na criação de layouts, interfaces e elementos visuais para sites e plataformas online, prezando pela usabilidade e estética.
+                Esta é uma boa oportunidade para quem deseja desenvolver habilidades em design digital e crescer profissionalmente em um ambiente colaborativo.
+                As atividades envolvem criação visual, ajustes em páginas web e apoio no desenvolvimento da identidade digital dos projetos.
+                É desejável ter conhecimentos básicos em design gráfico, ferramentas de criação e noções de web.
+                Oferecemos remuneração compatível, ambiente criativo e oportunidades de evolução profissional.">Ver mais</button>
             
             </article>
 
                 <!-- aqui serão os botões que passam/voltam de vagas disponivéis-->
             <nav class="paginacao">
                 <button class="btn-paginacao" aria-label="Página Anterior">&#10094;</button>
-
                 <button class="btn-paginacao" aria-label="Próxima Página">&#10095;</button>
             </nav>
 
@@ -210,47 +210,38 @@
 
         <!-- Aqui é reponsável pela estrutura geral do site/modal-->
         <div class="modal-overlay">
-            <button class="btn-voltar-modal" aria-label="Página Anterior"><h1>&#10094;</h1></button>
-
-            <!--Aqui é responsável pelo container de vagas detalhadas-->
             <div class="modal-card-detalhes">
 
-                <!-- aqui é um header que auxiliará as ferramentas de pesquisa dos navegadores-->
-                <header class="modal-header">
+                <button class="btn-voltar-modal" aria-label="Página Anterior">
+                    <i class="fas fa-chevron-left"></i> </button>
 
-                    <!-- aqui é onde alteramos a foto de perfil da empresa na hora da vaga-->
+                <header class="modal-header">
                     <div class="empresa-logo-container">
-                        <img src="/projeto_taluno/static/img/logo/logo_empresa_simtec." alt=""Logo Empresa class="logo-img">
+                        <img src="/projeto_taluno/static/img/logo/logo_empresa_simtec.png" alt="Logo Empresa" class="logo-img">
                     </div>
 
-                    <!-- aqui onde fica as informações gerais do container/modal-->
                     <div class="vaga-info-principal">
                         <h2 class="empresa-nome-detalhe">Simtech Soluções Tecnológicas</h2>
                         <h1 class="vaga-titulo-detalhe">Vaga Desenvolvedor Junior</h1>
                     </div>
                     
-                    
                     <button class="btn-candidatar">Candidatar</button>
                 </header>
 
-                <!-- Aqui é responsável pelas tags laranjas (ou badges como na tela anterior)-->
                 <div class="tags-detalhes">
                     <span class="badge">estágio</span>
                     <span class="badge">6H</span>
                     <span class="badge">Turno</span>
                 </div>
 
-                <p class="vaga-localizacao">Rua do Bom Jesus, nº 1991 - Bairro do Recife, Recife/pe</p>
+                <p class="vaga-localizacao">Rua do Bom Jesus, nº 1991 - Bairro do Recife, Recife/PE</p>
 
-                <!--Aqui é responsável pela descrição do container de vagas detalhadas-->
                 <div class="vaga-descricao-texto">
                     <p></p>
-
                 </div>
-                
-            </div>
-        </div>
 
+            </div> 
+        </div>
     </main>
 
         <!--Inicio do Footer-->
