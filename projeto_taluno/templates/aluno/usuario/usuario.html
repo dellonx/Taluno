@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taluno | Meu Perfil</title>
+
+    <link rel="stylesheet" href="/projeto_taluno/static/css/aluno/usuario/usuario.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="profile-sidebar">
+            
+            <div class="sidebar-top">
+                <a href="../inicio/inicio.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <div class="avatar-placeholder" id="defaultAvatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                    <img src="" alt="Foto de Perfil" class="profile-avatar hidden" id="realAvatar">
+
+                    <button class="btn-edit-avatar"><i class="fas fa-camera"></i></button>
+                </div>
+
+                <h2 class="user-name">Lucas Júlia Santos</h2>
+                <p class="user-role">Desenvolvedor Full Stack</p>
+                <p class="user-email">lucas.santos@email.com</p>
+            </div>
+
+            <nav class="profile-nav">
+                <button class="nav-btn active">Dados Pessoais</button>
+                <button class="nav-btn">Currículo</button>
+                <button class="nav-btn">Segurança</button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="profile-content">
+            <div class="content-wrapper">
+                
+                <section class="info-section">
+                    <header class="section-header">
+                        <h3><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h3>
+                        <button class="btn-add">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </header>
+
+                    <div class="cards-list">
+                        <div class="info-card">
+                            <div class="card-left">
+                                <h4>Análise e Desenvolvimento de Sistemas</h4>
+                                <span class="card-subtitle">Faculdade Senac Pernambuco</span>
+                                <span class="card-status status-progress">Em andamento</span>
+                                <span class="card-date">Jan 2024 - Dez 2026</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-left">
+                                <h4>Técnico em Informática</h4>
+                                <span class="card-subtitle">ETE - Escola Técnica Estadual</span>
+                                <span class="card-status status-completed">Concluído</span>
+                                <span class="card-date">Jan 2021 - Dez 2023</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <header class="section-header">
+                        <h3><i class="fas fa-code"></i> Habilidades Técnicas</h3>
+                        <button class="btn-add">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </header>
+
+                    <div class="cards-list grid-layout">
+                        <div class="skill-card">
+                            <div class="skill-info">
+                                <i class="fab fa-html5 skill-icon html"></i>
+                                <div>
+                                    <h4>HTML5 & CSS3</h4>
+                                    <span class="skill-level">Avançado</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action delete"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-info">
+                                <i class="fab fa-js skill-icon js"></i>
+                                <div>
+                                    <h4>JavaScript</h4>
+                                    <span class="skill-level">Intermediário</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action delete"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-info">
+                                <i class="fab fa-python skill-icon python"></i>
+                                <div>
+                                    <h4>Python</h4>
+                                    <span class="skill-level">Básico</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action delete"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="/projeto_taluno/static/js/usuario/usuario.js"></script>
+</body>
+</html>
