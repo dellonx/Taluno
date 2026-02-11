@@ -136,11 +136,14 @@ body {
 ========================================= */
 .hero-logado {
     min-height: calc(100vh - 130px);
-     background-image: url("../../img/inicio/banner.inicio.png");
+    background-image: url("/projeto_taluno/static/img/inicio/banner.inicio.png");
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 48px 24px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-content {

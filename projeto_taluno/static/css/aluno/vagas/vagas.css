@@ -41,34 +41,36 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 /* Efeito Hover e Ativo */
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover, .nav-links a.active {
     color: var(--texto-hover);
     border-bottom: 3px solid var(--texto-hover); /* Detalhe visual elegante */
 }
 
-/* Tela principal onde contém a coluna do formulário e o container de vagas   */ 
-.vagas-layout{
+/* Tela principal */
+.vagas-layout {
     background-color: #fff;
     display: flex;
-    gap: 5px; /* Espaço entre o formulário e o container cinza */
-    align-items: flex-start; /* Alinha os itens no topo */
-    min-height: 120vh; /* Dá uma "folga" vertical para o scroll */
+    gap: 0; /* Removi o gap de 5px para o sidebar colar certinho */
+    align-items: flex-start;
+    /* min-height: 120vh;  <-- O VILÃO ESTAVA AQUI! DELETE ISSO. */
+    min-height: 100vh; /* Use 100vh ou deixe sem nada se o body já tiver */
 }
 
-
-
-/* container cinza com cards de vagas disponíveis  */
-.vagas-container{
-    background-color: #eef1f7; /*Aqui e responsavel por deixar o container cinza    */
-    flex: 1; /* ocupa o resto da tela a direita do container            */
-    padding: 40px; /* este é o padding principal do container          */
-    padding-left: 200px; /* estes aqui são os padd laterais para deixar os cards centralizados          */
-    padding-right: 150px;
-    min-height: 80vh; /*  é responsavel por garantir que o container ocupe a tela toda */
-    display:flex;
+/* Container cinza com cards */
+.vagas-container {
+    background-color: #eef1f7;
+    flex: 1; /* Ocupa todo o espaço restante */
+    
+    /* CORREÇÃO DA TELA GRANDE */
+    /* Em vez de padding fixo gigante (200px), use padding padrão */
+    padding: 40px; 
+    
+    /* Se quiser que os cards não fiquem "esticados demais" em telas 4k, use isso: */
+    max-width: 1600px; 
+    
+    display: flex;
     flex-direction: column;
-    gap: 20px; /* Espaçamento entre os cards que virão */    
+    gap: 20px;
 }
 
 /* estrutura dos cards    */
@@ -177,7 +179,6 @@ body { font-family: 'Segoe UI', sans-serif; }
     transition: transform 0.2s, opacity 0.2s;
     white-space: nowrap; /* Impede que o texto do botão quebre linha */
     margin-left: 20px;   /* Garante um respiro entre o texto e o botão */
-    bottom;
 }
 
 .btn-ver-mais:hover {
@@ -396,31 +397,31 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 
-.btn-voltar-modal{
-    background-color: #e0e0e0; /*cor do background do caracter do botão   */
-    color: #888; /* cor do botão  */
-    border: none; /* aqui remove a borda do botão*/
-    width: 45px; /*Espaçamento entre os botões*/
+.btn-voltar-modal {
+    /* ... mantenha as cores e tamanhos ... */
+    background-color: #f58608;
+    color: #ffffff;
+    border: none;
+    width: 45px;
     height: 45px;
     border-radius: 50%;
-    cursor: pointer; /* altera o cursor do mouse     */
-    display: flex ; 
+    cursor: pointer;
+    display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     font-size: 1.2rem;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: absolute;
-
+    position: absolute; /* Absoluto em relação ao Card Branco, não à tela */
+    top: 20px;  /* Fica no cantinho superior */
+    left: 20px; /* Fica no cantinho esquerdo */
     z-index: 10;
-
-    top: 125px; /* aqui é responsavel por empurrar o botão pra baixo    */
-    left: 225px; /* aqui é responsavel pra aproximar o botao perto do card    */
+    opacity: 85%;
 }
 
-.btn-voltar-modal:hover{
-    background-color: #c2c2c2;
+.btn-voltar-modal:hover {
+    background-color: #f58608;
     color: white;
-    transform: (1.1);
+    opacity: 100%;
+    transform: scale(1.1);
 }
-
