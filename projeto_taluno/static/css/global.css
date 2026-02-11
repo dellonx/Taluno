@@ -45,6 +45,13 @@ body {
     min-height: 100vh; /* Garante que o footer vá pro final mesmo com pouco conteúdo */
 }
 
+main {
+    flex: 1; /* Isso faz o main crescer e empurrar o footer para baixo */
+    width: 100%; /* Garante que ele ocupe a largura toda */
+}
+
+/* ... continua seu código do .container ... */
+
 .container {
     max-width: 1200px;
     width: 100%;
