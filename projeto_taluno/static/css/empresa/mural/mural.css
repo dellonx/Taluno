@@ -1,0 +1,90 @@
+.mural-container {
+    background-color: #e4e4e4;
+    padding: 40px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.mural-lista {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mural-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mural-avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mural-conteudo {
+    flex: 1;
+}
+
+.mural-conteudo h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.mural-conteudo p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.mural-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mural-acoes button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.mural-acoes button:hover {
+    opacity: 1;
+}
+
+.acao-like.ativo {
+    color: #7a00ff;
+}
+
+.acao-like {
+    cursor: pointer;
+}
+
+.like-toggle {
+    display: none;
+}
+
+/*padrão*/
+.acao-like i {
+    color: #9ca3af;
+    font-size: 22px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/*ativo*/
+.like-toggle:checked + i {
+    font-size: 22px;
+    color: #7a00ff;
+    transform: scale(1.2);
+}
