@@ -88,9 +88,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* o efeito de sombreamento nos cards de vagas*/
 }
 
-.vaga-conteudo-esquerdo {
-    flex: 1; /* Faz o texto ocupar o máximo de espaço possível, empurrando o botão */
-}
+
 
 .card-das-vagas:hover{
     transform: scale(1.03); /* aumenta o tamanho dos cards    */
@@ -198,12 +196,6 @@ body { font-family: 'Segoe UI', sans-serif; }
     padding-top: 15px;
     position: sticky;
     
-}
-
-/* 2. Estilo da Barra de Busca Superior */
-.busca-topo {
-    position: relative;
-    margin-bottom: 30px;
 }
 
 .input-busca {
