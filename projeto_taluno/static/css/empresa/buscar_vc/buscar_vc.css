@@ -1,0 +1,150 @@
+/* ===============================
+   BUSCAR CVS — TALUNO
+   =============================== */
+
+.layout-cvs {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+    padding: 30px;
+    background: #f5f7fb;
+}
+
+/* FILTRO */
+.filtro-cvs {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.filtro-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-voltar {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.campo-busca {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: white;
+}
+
+.campo-busca input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.lista-filtros {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.lista-filtros li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #eef1f8;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* LISTA DE CANDIDATOS */
+.lista-candidatos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-candidato {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 16px;
+    padding: 18px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    align-items: center;
+}
+
+/* AVATAR */
+.avatar-candidato {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #d8c7f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #6a00ff;
+}
+
+/* INFO */
+.info-candidato strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.info-candidato p {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0;
+}
+
+.info-candidato .pretensao {
+    color: #6a00ff;
+    font-weight: 600;
+}
+
+/* BOTÃO PADRÃO TALUNO */
+.btn-contato {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--gradient-taluno);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .layout-cvs {
+        grid-template-columns: 1fr;
+    }
+}
+.card-candidato {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 16px;
+    padding: 18px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    align-items: center;
+
+    /* TRANSIÇÃO SUAVE */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.card-candidato:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+}

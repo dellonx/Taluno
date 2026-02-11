@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno | Empresa</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/buscar_vc/buscar_vc.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
@@ -39,7 +40,87 @@
 <!--Fim NavBar-->
 
 <main>
+<main class="layout-cvs">
 
+    <!-- COLUNA FILTROS -->
+    <aside class="filtro-cvs">
+        <div class="filtro-header">
+            <span class="btn-voltar">
+                <i class="fa-solid fa-arrow-left"></i>
+            </span>
+            <h3>Filtrar vagas</h3>
+        </div>
+
+        <div class="campo-busca">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Palavra chave">
+        </div>
+
+        <ul class="lista-filtros">
+            <li>Área <span>+</span></li>
+            <li>Experiência <span>+</span></li>
+            <li>Especialização <span>+</span></li>
+            <li>Nível de escolaridade <span>+</span></li>
+        </ul>
+    </aside>
+
+    <!-- LISTA DE CANDIDATOS -->
+    <section class="lista-candidatos">
+
+        <!-- CARD CANDIDATO -->
+        <article class="card-candidato">
+            <div class="avatar-candidato">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="info-candidato">
+                <strong>Candidato de "Especialização"</strong>
+                <p>Nome do candidato</p>
+                <p>Experiência</p>
+                <p>Cidade</p>
+                <p>Nível escolar</p>
+                <p class="pretensao">Pretensão salarial</p>
+            </div>
+
+            <button class="btn-contato">dados de contato</button>
+        </article>
+
+        <!-- REPETIR CARD -->
+        <article class="card-candidato">
+            <div class="avatar-candidato">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="info-candidato">
+                <strong>Candidato de "Especialização"</strong>
+                <p>Nome do candidato</p>
+                <p>Experiência</p>
+                <p>Cidade</p>
+                <p>Nível escolar</p>
+                <p class="pretensao">Pretensão salarial</p>
+            </div>
+
+            <button class="btn-contato">dados de contato</button>
+        </article>
+
+        <article class="card-candidato">
+            <div class="avatar-candidato">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="info-candidato">
+                <strong>Candidato de "Especialização"</strong>
+                <p>Nome do candidato</p>
+                <p>Experiência</p>
+                <p>Cidade</p>
+                <p>Nível escolar</p>
+                <p class="pretensao">Pretensão salarial</p>
+            </div>
+
+            <button class="btn-contato">dados de contato</button>
+        </article>
+
+    </section>
 </main>
 
 <!--Inicio Footer-->
