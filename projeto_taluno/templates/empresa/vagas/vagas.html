@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno | Empresa</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/vaga-empresa/vaga-empresa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
@@ -38,9 +39,81 @@
 </header>
 <!--Fim NavBar-->
 
-<main>
+<!-- estrutura do container principal do site -->
+<main class="layout-container-empresa">
+        <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
+        <aside class="filtros-sidebar">
+
+        <!-- Aqui é responsável pela barra de pesquisa-->
+        <div class="barra-pesquisa">
+            <h1 class="titulo-principal">Pesquisar Vagas</h1>
+            <input type="text" placeholder="" class="input-busca">
+        </div> 
+            
+
+            <div class="filtros-container">
+        
+                <h2 class="filtros-titulo">Filtro Avançado</h2>
+                
+
+                <form class="filtros-form">
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Palavra chave</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="palavra-chave" name="palavra-chave">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Cidade</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Cidade" name="Cidade">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Tipo de vaga</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Tipo de vaga" name="tipo-vaga">
+                            <span class="btn-limpar">&times;</span>        
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
+                </form>
+            </div>
+        </aside>
+        
+        <!--Aqui é responsável pelos cards das vagas da empresa -->
+        <section class="container-vaga-empresa"> 
+            <button class="btn-adicionar-vaga">
+                <span class="icon">+</span> Anunciar Nova Vaga
+            </button>
+
+            <article class="card-vaga-empresa">
+                <div class="vaga-info-gestao">
+                    <h3 class="vaga-titulo">Vaga Desenvolvedor Junior</h3>
+                    <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
+        
+                    <div class="vaga-detalhes-metricas">
+                        <span class="metrica-item"><strong>Status:</strong> Ativa</span>
+                        <span class="metrica-item"><strong>Candidatos:</strong> 57 inscritos</span>
+                        <span class="metrica-item"><strong>Publicada em:</strong> 20/01/2026</span>
+                    </div>
+                </div>
+                <div class="vaga-acao">
+                    <button class="btn-gerenciar">Gerenciar Vaga</button>
+                </div>
+            </article>
+            
+        </section>
 
 </main>
+
 
 <!--Inicio Footer-->
 <footer class="footer-taluno">
