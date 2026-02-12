@@ -1,11 +1,17 @@
-import { useNavigate } from "react-router-dom";
+document.addEventListener("DOMContentLoaded", function () {
 
-function BotaoVoltar() {
-  const navigate = useNavigate();
+    const botao = document.querySelector(".btn-paginacao");
 
-  return (
-    <button type="button" onClick={() => navigate(-1)}>
-      ← Voltar
-    </button>
-  );
-}
+    if (botao) {
+        botao.addEventListener("click", function () {
+
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "../inicio/inicio.html";
+            }
+
+        });
+    }
+
+});
