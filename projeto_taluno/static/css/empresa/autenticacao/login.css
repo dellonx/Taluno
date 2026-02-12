@@ -1,0 +1,243 @@
+/* --- Reset e Configurações Gerais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- Banner Lateral --- */
+.auth-visual {
+    flex: 1.2;
+}
+
+.visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Área de Conteúdo --- */
+.auth-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #fff;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 440px; 
+    margin-bottom: 60px;
+}
+
+.form-title {
+    font-size: 3rem; 
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* --- Grupos de Input --- */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group__icon {
+    position: absolute;
+    left: 22px;
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain;
+}
+
+.input-field {
+    width: 100%;
+    padding: 18px 25px 18px 65px; 
+    border: 2px solid #000;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #2b58f3;
+}
+
+/* --- Botão do Olho --- */
+.toggle-password-btn {
+    position: absolute;
+    right: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye-icon {
+    width: 26px !important;
+}
+
+/* --- Opções (Relembrar/Esqueci) --- */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 15px 30px;
+    font-size: 1.1rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #2b58f3;
+    text-decoration: none;
+    font-style: italic;
+    transition: text-decoration 0.2s;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* --- Botão de Login com Animação --- */
+.btn--gradient {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #2b58f3 0%, #d8308d 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(43, 88, 243, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn--gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(43, 88, 243, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn--gradient:active {
+    transform: translateY(1px);
+}
+
+/* --- Redes Sociais com Efeito Link --- */
+.social-login-separator {
+    text-align: center;
+    margin: 30px 0 15px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-row {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-social, .btn-social-icon {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px;
+    background: #fff;
+    border: 1.5px solid #ccc; /* Borda neutra inicial */
+    border-radius: 40px;
+    font-size: 1.1rem;
+    color: #000; /* Texto preto inicial */
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.btn-social img, .btn-social-icon img {
+    width: 24px !important;
+    height: 24px !important;
+    transition: transform 0.3s ease;
+}
+
+/* Hover: Transforma em Link Azul */
+.btn-social:hover, .btn-social-icon:hover {
+    color: #2b58f3;
+    border-color: #2b58f3;
+    text-decoration: underline;
+}
+
+.btn-social:hover img, .btn-social-icon:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Rodapé --- */
+.auth-footer-brand {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: #8200ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+.link-highlight {
+    font-weight: 700;
+    color: #8200ff;
+    text-decoration: none;
+}
+
+.link-highlight:hover {
+    text-decoration: underline;
+}

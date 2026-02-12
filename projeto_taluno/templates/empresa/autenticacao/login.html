@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taluno | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/autenticacao/login.css">
+</head>
+<body>
+
+    <main class="auth-container">
+        <aside class="auth-visual">
+            <img src="/projeto_taluno/static/img/banners/mulheres_passando_orientacao.png" alt="Taluno" class="visual-image">
+        </aside>
+
+        <section class="auth-content">
+            <div class="form-wrapper">
+                <h1 class="form-title">LOGIN</h1>
+                <p class="subtitle">Mais de <strong>10 mil currículos cadastrados</strong></p>
+
+                <form action="../../inicio/inicio.html" method="GET" class="login-form">
+                    
+                    <div class="input-group">
+                        <img src="/projeto_taluno/static/img/icons/perfil.png" alt="" class="input-group__icon">
+                        <input type="email" id="email" name="email" placeholder="E-mail" required class="input-field">
+                    </div>
+
+                    <div class="input-group">
+                        <img src="/projeto_taluno/static/img/icons/cadeado.png" alt="" class="input-group__icon">
+                        <input type="password" id="senha" name="senha" placeholder="Senha" required class="input-field">
+                        <button type="button" class="toggle-password-btn" id="btn-olho">
+                            <img src="/projeto_taluno/static/img/icons/olho_fechado.png" alt="Ver" class="eye-icon">
+                        </button>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="relembrar"> <span>Relembrar</span>
+                        </label>
+                        <a href="#" class="forgot-password">Esqueci a senha</a>
+                    </div>
+
+                    <button type="submit" class="btn--gradient">Login</button>
+
+                    <p class="social-login-separator">Iniciar sessão com:</p>
+
+                    <div class="social-buttons">
+                        <button type="button" class="btn-social">
+                            <img src="/projeto_taluno/static/img/icons/Google_icon.png" alt="Google"> Google
+                        </button>
+
+                        <div class="social-row">
+                            <button type="button" class="btn-social-icon">
+                                <img src="/projeto_taluno/static/img/icons/Linkedin_icon.png" alt="Linkedin"> Linkedin
+                            </button>
+                            <button type="button" class="btn-social-icon">
+                                <img src="/projeto_taluno/static/img/icons/Facebook_icon.png" alt="Facebook"> Facebook
+                            </button>
+                        </div>
+
+                        <div class="social-row">
+                            <button type="button" class="btn-social-icon">
+                                <img src="/projeto_taluno/static/img/icons/Apple_icon.png" alt="Apple"> Apple
+                            </button>
+                            <button type="button" class="btn-social-icon">
+                                <img src="/projeto_taluno/static/img/icons/Microsoft_icon.png" alt="Microsoft"> Microsoft
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-footer">
+                        <span>É uma empresa? </span><a href="#" class="link-highlight">Criar conta</a>
+                    </div>
+                </form>
+            </div>
+            
+            <footer class="auth-footer-brand">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno_senac_colorido.png" alt="Taluno Senac" class="footer-logo">
+            </footer>
+        </section>
+    </main>
+</body>
+</html>
