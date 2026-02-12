@@ -1,138 +1,103 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. DADOS MOCKADOS
-    let dbChats = [
-        {
-            id: 1,
-            name: "Empresa XPTO",
-            avatar: "/projeto_taluno/static/img/logo/logo_taluno.png",
-            time: "10:30",
-            status: "Online",
-            unread: true, 
-            messages: [{ text: "Olá! Vimos seu perfil.", type: "text", sender: "received" }]
-        },
-        {
-            id: 2,
-            name: "Senac Tecnologia",
-            avatar: "/projeto_taluno/static/img/logo/logo_taluno.png",
-            time: "Ontem",
-            status: "Offline",
-            unread: false,
-            messages: []
-        },
-        {
-            id: 3,
-            name: "DevSolutions",
-            avatar: "/projeto_taluno/static/img/logo/logo_taluno.png",
-            time: "Segunda",
-            status: "Online",
-            unread: false,
-            messages: [
-                { text: "Vaga preenchida.", type: "text", sender: "received" },
-                { text: "Obrigado!", type: "text", sender: "sent" }
-            ]
-        }
-    ];
+    // --- 1. ESTADO DA APLICAÇÃO (Single Source of Truth) ---
+    const State = {
+        currentChatId: null,
+        currentFilter: 'all',
+        selectedFile: null,
+        chats: [
+            {
+                id: 1, name: "Empresa XPTO", avatar: "/projeto_taluno/static/img/logo/xpto.png",
+                time: "10:30", status: "Online", unread: true,
+                messages: [{ text: "Olá! Vimos seu perfil.", type: "text", sender: "received" }]
+            },
+            {
+                id: 2, name: "Senac Tecnologia", avatar: "/projeto_taluno/static/img/logo/senac.png",
+                time: "Ontem", status: "Offline", unread: false, messages: []
+            },
+            {
+                id: 3, name: "DevSolutions", avatar: "/projeto_taluno/static/img/logo/devsolutions.webp",
+                time: "Segunda", status: "Online", unread: false,
+                messages: [
+                    { text: "Vaga preenchida.", type: "text", sender: "received" },
+                    { text: "Obrigado!", type: "text", sender: "sent" }
+                ]
+            }
+        ]
+    };
 
-    let currentChatId = null;
-    let selectedFile = null; 
-    let currentFilter = 'all';
+    // --- 2. CACHE DE ELEMENTOS DOM (Para performance) ---
+    const DOM = {
+        chatList: document.getElementById('chatList'),
+        chatHeader: document.getElementById('chatHeader'),
+        inputArea: document.getElementById('inputArea'),
+        messagesBox: document.getElementById('messagesBox'),
+        headerName: document.getElementById('headerName'),
+        headerAvatar: document.getElementById('headerAvatar'),
+        headerStatus: document.getElementById('headerStatus'),
+        messageInput: document.getElementById('messageInput'),
+        messageForm: document.getElementById('messageForm'),
+        closeChatBtn: document.getElementById('closeChatBtn'),
+        filterBtn: document.getElementById('filterBtn'),
+        filterDropdown: document.getElementById('filterDropdown'),
+        filterOptions: document.querySelectorAll('#filterOptions li'),
+        attachBtn: document.getElementById('attachBtn'),
+        fileInput: document.getElementById('fileInput'),
+        filePreview: document.getElementById('filePreview'),
+        fileName: document.getElementById('fileName'),
+        cancelFileBtn: document.getElementById('cancelFile')
+    };
 
-    // 2. SELETORES
-    const chatList = document.getElementById('chatList');
-    const chatHeader = document.getElementById('chatHeader');
-    const inputArea = document.getElementById('inputArea');
-    const messagesBox = document.getElementById('messagesBox');
-    const headerName = document.getElementById('headerName');
-    const headerAvatar = document.getElementById('headerAvatar');
-    const messageInput = document.getElementById('messageInput');
-    const messageForm = document.getElementById('messageForm');
-    const closeChatBtn = document.getElementById('closeChatBtn');
-    
-    // Extras
-    const filterBtn = document.getElementById('filterBtn');
-    const filterDropdown = document.getElementById('filterDropdown');
-    const attachBtn = document.getElementById('attachBtn');
-    const fileInput = document.getElementById('fileInput');
-    const filePreview = document.getElementById('filePreview');
-    const fileNameDisplay = document.getElementById('fileName');
-    const cancelFileBtn = document.getElementById('cancelFile');
-    const filterOptions = document.querySelectorAll('.filter-dropdown li');
+    // --- 3. FUNÇÕES DE RENDERIZAÇÃO (VIEW) ---
 
-    // 3. RENDERIZAÇÃO DA SIDEBAR
+    // Renderiza a lista lateral
     function renderSidebar() {
-        chatList.innerHTML = '';
+        DOM.chatList.innerHTML = '';
         
-        // Filtra os chats baseado na seleção
-        const filteredChats = dbChats.filter(chat => {
-            if (currentFilter === 'online') return chat.status === 'Online';
-            if (currentFilter === 'unread') return chat.unread === true;
-            return true; // 'all' retorna sempre true
+        const filtered = State.chats.filter(c => {
+            if (State.currentFilter === 'online') return c.status === 'Online';
+            if (State.currentFilter === 'unread') return c.unread;
+            return true;
         });
 
-        if (filteredChats.length === 0) {
-            chatList.innerHTML = '<li style="padding:20px; text-align:center; opacity:0.7; color:white;">Nenhuma conversa encontrada.</li>';
+        if (filtered.length === 0) {
+            DOM.chatList.innerHTML = '<li style="padding:20px; text-align:center; opacity:0.7; color:white;">Nada encontrado.</li>';
             return;
         }
 
-        filteredChats.forEach((chat, index) => {
+        filtered.forEach((chat, index) => {
             const li = document.createElement('li');
-            li.className = `chat-item ${chat.id === currentChatId ? 'active' : ''}`;
-            // Adiciona delay na animação para efeito cascata
-            li.style.animationDelay = `${index * 0.05}s`; 
-            
-            li.onclick = () => openChat(chat.id);
+            li.className = `chat-item ${chat.id === State.currentChatId ? 'active' : ''}`;
+            li.style.animationDelay = `${index * 0.05}s`;
+            li.onclick = () => Actions.openChat(chat.id);
 
-            let lastMsg = "Clique para iniciar...";
+            // Preview da última mensagem
+            let lastMsg = "Nova conversa";
             if(chat.messages.length > 0) {
                 const last = chat.messages[chat.messages.length - 1];
-                lastMsg = last.type === 'file' ? '📎 Arquivo enviado' : last.text;
+                lastMsg = last.type === 'file' ? '📎 Arquivo' : last.text;
             }
 
             const unreadDot = chat.unread ? `<span style="width:10px; height:10px; background:#EA2651; border-radius:50%; margin-left:auto;"></span>` : '';
 
             li.innerHTML = `
-                <div class="avatar-container">
-                    <img src="${chat.avatar}" alt="Logo" class="avatar-img">
-                </div>
+                <div class="avatar-container"><img src="${chat.avatar}" class="avatar-img"></div>
                 <div class="chat-details">
-                    <div class="chat-title">
-                        <h4>${chat.name}</h4>
-                        <span class="time">${chat.time}</span>
-                    </div>
+                    <div class="chat-title"><h4>${chat.name}</h4><span class="time">${chat.time}</span></div>
                     <p>${lastMsg}</p>
                 </div>
                 ${unreadDot}
             `;
-            chatList.appendChild(li);
+            DOM.chatList.appendChild(li);
         });
     }
 
-    // Abertura de Chat
-    window.openChat = function(id) {
-        currentChatId = id;
-        const chat = dbChats.find(c => c.id === id);
-        chat.unread = false; // Marca como lida
-
-        chatHeader.classList.remove('hidden');
-        inputArea.classList.remove('hidden');
-        headerName.innerText = chat.name;
-        headerAvatar.src = chat.avatar;
-        
-        const statusSpan = document.querySelector('.status-indicator');
-        statusSpan.innerHTML = chat.status;
-        statusSpan.style.color = chat.status === 'Online' ? '#4CAF50' : '#999';
-
-        renderSidebar(); // Re-renderiza para atualizar status de lido/active
-        renderMessages(chat.messages);
-        
-        messageInput.focus();
-    };
-
+    // Renderiza a área de mensagens central
     function renderMessages(messages) {
-        messagesBox.innerHTML = '';
-        if (messages.length === 0) {
-            messagesBox.innerHTML = `<div class="empty-state"><p>Nenhuma mensagem.</p></div>`;
+        DOM.messagesBox.innerHTML = '';
+        
+        if (!messages || messages.length === 0) {
+            DOM.messagesBox.innerHTML = '<div class="empty-state"><p>Nenhuma mensagem ainda.</p></div>';
             return;
         }
 
@@ -140,131 +105,152 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.createElement('div');
             div.className = `msg-bubble ${msg.sender}`;
             
-            let contentHtml = msg.text;
+            let content = msg.text;
             if (msg.type === 'file') {
-                contentHtml = `
-                    <div style="font-weight:600; margin-bottom:5px; font-size:0.8rem">ARQUIVO</div>
+                content = `
                     <div class="msg-file">
-                        <i class="fas fa-file-alt"></i>
-                        <span>${msg.text}</span>
-                    </div>
-                `;
+                        <i class="fas fa-file-alt"></i> <span>${msg.text}</span>
+                    </div>`;
             }
 
-            div.innerHTML = `
-                ${contentHtml}
-                <button class="btn-delete" onclick="deleteMessage(${index})"><i class="fas fa-trash"></i></button>
-            `;
-            messagesBox.appendChild(div);
+            // O botão de deletar usa data-index para sabermos qual apagar depois
+            div.innerHTML = `${content} <button class="btn-delete" data-index="${index}"><i class="fas fa-trash"></i></button>`;
+            DOM.messagesBox.appendChild(div);
         });
-        scrollToBottom();
+        
+        DOM.messagesBox.scrollTop = DOM.messagesBox.scrollHeight;
     }
 
-    // 4. LÓGICA DE FILTRO E DROPDOWN
-    filterBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        // Usa classe 'show' para animação CSS
-        filterDropdown.classList.toggle('show');
-        filterDropdown.classList.toggle('hidden');
-    });
+    // --- 4. AÇÕES E LÓGICA (CONTROLLER) ---
+    const Actions = {
+        openChat: (id) => {
+            State.currentChatId = id;
+            const chat = State.chats.find(c => c.id === id);
+            chat.unread = false;
 
-    document.addEventListener('click', () => {
-        filterDropdown.classList.remove('show');
-        setTimeout(() => filterDropdown.classList.add('hidden'), 300); // Espera animação
-    });
+            // Atualiza UI
+            DOM.chatHeader.classList.remove('hidden');
+            DOM.inputArea.classList.remove('hidden');
+            DOM.headerName.innerText = chat.name;
+            DOM.headerAvatar.src = chat.avatar;
+            DOM.headerStatus.innerText = chat.status;
+            DOM.headerStatus.style.color = chat.status === 'Online' ? '#4CAF50' : '#999';
 
-    filterOptions.forEach(opt => {
-        opt.addEventListener('click', () => {
-            filterOptions.forEach(o => o.classList.remove('active'));
+            renderSidebar();
+            renderMessages(chat.messages);
+            DOM.messageInput.focus();
+        },
+
+        closeChat: () => {
+            State.currentChatId = null;
+            DOM.chatHeader.classList.add('hidden');
+            DOM.inputArea.classList.add('hidden');
+            DOM.messagesBox.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon"><i class="far fa-comments"></i></div>
+                    <h3>Inicie uma conversa</h3>
+                    <p>Selecione uma empresa ao lado.</p>
+                </div>`;
+            renderSidebar();
+        },
+
+        sendMessage: (e) => {
+            e.preventDefault();
+            const text = DOM.messageInput.value.trim();
+            if ((!text && !State.selectedFile) || !State.currentChatId) return;
+
+            const chat = State.chats.find(c => c.id === State.currentChatId);
+
+            if (State.selectedFile) {
+                chat.messages.push({ text: State.selectedFile.name, type: 'file', sender: 'sent' });
+                Actions.clearFile();
+            }
+            if (text) {
+                chat.messages.push({ text: text, type: 'text', sender: 'sent' });
+            }
+
+            DOM.messageInput.value = '';
+            renderMessages(chat.messages);
+            renderSidebar();
+
+            // Simula resposta
+            setTimeout(() => {
+                chat.messages.push({ text: "Recebido!", type: 'text', sender: 'received' });
+                if (State.currentChatId === chat.id) renderMessages(chat.messages);
+                renderSidebar();
+            }, 1000);
+        },
+
+        deleteMessage: (index) => {
+            const chat = State.chats.find(c => c.id === State.currentChatId);
+            if (chat) {
+                chat.messages.splice(index, 1);
+                renderMessages(chat.messages);
+                renderSidebar();
+            }
+        },
+
+        handleFileSelect: (e) => {
+            if (e.target.files.length > 0) {
+                State.selectedFile = e.target.files[0];
+                DOM.fileName.innerText = State.selectedFile.name;
+                DOM.filePreview.classList.remove('hidden');
+                DOM.messageInput.focus();
+            }
+        },
+
+        clearFile: () => {
+            State.selectedFile = null;
+            DOM.fileInput.value = '';
+            DOM.filePreview.classList.add('hidden');
+        },
+
+        toggleFilter: (e) => {
+            e.stopPropagation();
+            DOM.filterDropdown.classList.toggle('show');
+            DOM.filterDropdown.classList.toggle('hidden');
+        },
+
+        setFilter: (opt) => {
+            DOM.filterOptions.forEach(o => o.classList.remove('active'));
             opt.classList.add('active');
+            State.currentFilter = opt.getAttribute('data-filter');
             
-            currentFilter = opt.getAttribute('data-filter');
-            
-            if(currentFilter !== 'all') filterBtn.classList.add('filter-active');
-            else filterBtn.classList.remove('filter-active');
-
+            DOM.filterBtn.classList.toggle('active', State.currentFilter !== 'all');
             renderSidebar();
-        });
-    });
-
-    // 5. ANEXO E ENVIO
-    attachBtn.addEventListener('click', () => fileInput.click());
-
-    fileInput.addEventListener('change', (e) => {
-        if (e.target.files.length > 0) {
-            selectedFile = e.target.files[0];
-            fileNameDisplay.innerText = selectedFile.name;
-            filePreview.classList.remove('hidden');
-            messageInput.focus();
         }
-    });
-
-    cancelFileBtn.addEventListener('click', () => {
-        selectedFile = null;
-        fileInput.value = '';
-        filePreview.classList.add('hidden');
-    });
-
-    messageForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const text = messageInput.value.trim();
-        if ((!text && !selectedFile) || !currentChatId) return;
-
-        const chat = dbChats.find(c => c.id === currentChatId);
-
-        if (selectedFile) {
-            chat.messages.push({ text: selectedFile.name, type: 'file', sender: 'sent' });
-            if (text) chat.messages.push({ text: text, type: 'text', sender: 'sent' });
-            selectedFile = null;
-            fileInput.value = '';
-            filePreview.classList.add('hidden');
-        } else {
-            chat.messages.push({ text: text, type: 'text', sender: 'sent' });
-        }
-        
-        messageInput.value = '';
-        renderMessages(chat.messages);
-        renderSidebar();
-
-        setTimeout(() => {
-            chat.messages.push({ text: "Recebido!", type: 'text', sender: 'received' });
-            if (currentChatId === chat.id) renderMessages(chat.messages);
-            renderSidebar();
-        }, 1500);
-    });
-
-    window.deleteMessage = function(index) {
-        if (!currentChatId) return;
-        const chat = dbChats.find(c => c.id === currentChatId);
-        chat.messages.splice(index, 1);
-        renderMessages(chat.messages);
-        renderSidebar();
     };
 
-    function scrollToBottom() {
-        messagesBox.scrollTop = messagesBox.scrollHeight;
-    }
+    // --- 5. EVENT LISTENERS (Ligação) ---
 
-    // CORREÇÃO CRÍTICA: FECHAR CHAT E LIMPAR TELA
-    closeChatBtn.addEventListener('click', () => {
-        currentChatId = null;
-        chatHeader.classList.add('hidden');
-        inputArea.classList.add('hidden');
-        
-        // Restaura o Estado Vazio
-        messagesBox.innerHTML = `
-            <div class="empty-state">
-                <div class="empty-icon">
-                    <i class="far fa-comments"></i>
-                </div>
-                <h3>Inicie uma conversa</h3>
-                <p>Selecione uma empresa ao lado para negociar sua vaga ou tirar dúvidas.</p>
-            </div>
-        `;
-        
-        renderSidebar();
+    // Navegação e Janela
+    DOM.closeChatBtn.addEventListener('click', Actions.closeChat);
+    DOM.messageForm.addEventListener('submit', Actions.sendMessage);
+
+    // Delegação de Evento para Deletar (Performance!)
+    // Em vez de criar um evento para cada botão, criamos um no container pai
+    DOM.messagesBox.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn-delete');
+        if (btn) {
+            Actions.deleteMessage(btn.getAttribute('data-index'));
+        }
     });
 
-    // INICIALIZAÇÃO
+    // Filtros
+    DOM.filterBtn.addEventListener('click', Actions.toggleFilter);
+    document.addEventListener('click', () => {
+        DOM.filterDropdown.classList.remove('show');
+        setTimeout(() => DOM.filterDropdown.classList.add('hidden'), 200);
+    });
+    DOM.filterOptions.forEach(opt => {
+        opt.addEventListener('click', () => Actions.setFilter(opt));
+    });
+
+    // Arquivos
+    DOM.attachBtn.addEventListener('click', () => DOM.fileInput.click());
+    DOM.fileInput.addEventListener('change', Actions.handleFileSelect);
+    DOM.cancelFileBtn.addEventListener('click', Actions.clearFile);
+
+    // Inicialização
     renderSidebar();
 });
