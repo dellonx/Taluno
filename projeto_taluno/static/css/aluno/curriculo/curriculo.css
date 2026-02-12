@@ -9,7 +9,7 @@
 .curriculo-form {
     width: 100%;
     max-width: 900px;
-    background: #ffffff;
+    background: #ebebeb;
     padding: 50px;
     border-radius: 14px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.12);
@@ -89,6 +89,12 @@
     border-radius: 8px;
     cursor: pointer;
 }
+.cancelar:hover {
+    background: #bbb; /* Um cinza um pouco mais escuro */
+    color: #000;      /* Texto fica preto puro para destacar */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(180, 180, 180, 0.4); /* Sombra roxa brilhante */
+}
 
 .salvar {
     background: #9600FF;
@@ -97,4 +103,12 @@
     padding: 12px 30px;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.salvar:hover {
+    background: #7a00cc; /* Um roxo mais profundo/intenso */
+    
+    /* Dica de Design: Efeito de "Levitar" */
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 15px rgba(150, 0, 255, 0.4); /* Sombra roxa brilhante */
 }
