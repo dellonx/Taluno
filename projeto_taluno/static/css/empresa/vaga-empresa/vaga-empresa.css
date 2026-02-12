@@ -63,7 +63,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     display: flex;
     gap: 5px; /* Espaço entre o formulário e o container cinza */
     align-items: flex-start; /* Alinha os itens no topo */
-    min-height: 120vh; /* Dá uma "folga" vertical para o scroll */
+    min-height: calc(100vh - 160px) ; /* Dá uma "folga" vertical para o scroll */
 }
 
 /* 1. Posicionamento do Aside */
@@ -102,6 +102,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     padding: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     text-align: center;
+    margin: 10px;
 }
 
 /*Aqui mexe com o titulo acima da barra de pesquisa */
@@ -185,13 +186,14 @@ body { font-family: 'Segoe UI', sans-serif; }
 /*Aqui é responsavel pelo container cinza onde terá os cards de vagas da empresa*/
 .container-vaga-empresa {
     background-color: #eef1f7;
-    flex: 1; /* Isso faz ele "esticar" para ocupar todo o espaço sobrando */
+    flex: 1;
     padding: 40px; /* Um respiro uniforme em todos os lados */
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     gap: 20px; /* Espaço entre botão e cards */
     align-items: flex-start; /* ISSO impede que o botão e os cards estiquem sozinhos! */
+    align-self: stretch ;
 }
 
 /*Aqui é responsável pelo botão de adicionar vaga, onde poestariomente chamará um modal*/
@@ -235,6 +237,11 @@ body { font-family: 'Segoe UI', sans-serif; }
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     width: 100%; /* Ocupa a largura disponível no container cinza */
+    transition: 0.2s;
+}
+
+.card-vaga-empresa:hover{
+    scale: 1.02;
 }
 
 /*Serve para alinhar e dar harmonia as informações dos cards    */

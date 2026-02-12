@@ -7,24 +7,20 @@
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
     <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/vaga-empresa/vaga-empresa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
-<!--Inicio NavBar-->
 <header class="header-taluno">
     <div class="top-bar">
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
             </a>
-
             <div class="top-icons">
                 <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
                 <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </div>
-
     <nav class="nav-bar">
         <div class="container">
             <ul class="nav-links">
@@ -37,121 +33,96 @@
         </div>
     </nav>
 </header>
-<!--Fim NavBar-->
 
-<!-- estrutura do container principal do site -->
 <main class="layout-container-empresa">
-        <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
-        <aside class="filtros-sidebar">
-
-        <!-- Aqui é responsável pela barra de pesquisa-->
+    <aside class="filtros-sidebar">
         <div class="barra-pesquisa">
             <h1 class="titulo-principal">Pesquisar Vagas</h1>
             <input type="text" placeholder="" class="input-busca">
         </div> 
-            
-
-            <div class="filtros-container">
-        
-                <h2 class="filtros-titulo">Filtro Avançado</h2>
-                
-
-                <form class="filtros-form">
-                    <div class="campo-grupo">
-                        <label for="palavra-chave">Palavra chave</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="palavra-chave" name="palavra-chave">
-                            <span class="btn-limpar">&times;</span>
-                                
-                        </div>
+        <div class="filtros-container">
+            <h2 class="filtros-titulo">Filtro Avançado</h2>
+            <form class="filtros-form">
+                <div class="campo-grupo">
+                    <label for="palavra-chave">Palavra chave</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="palavra-chave" name="palavra-chave">
+                        <span class="btn-limpar">&times;</span>
                     </div>
-
-                    <div class="campo-grupo">
-                        <label for="palavra-chave">Cidade</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="Cidade" name="Cidade">
-                            <span class="btn-limpar">&times;</span>
-                                
-                        </div>
+                </div>
+                <div class="campo-grupo">
+                    <label for="Cidade">Cidade</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="Cidade" name="Cidade">
+                        <span class="btn-limpar">&times;</span>
                     </div>
-
-                    <div class="campo-grupo">
-                        <label for="palavra-chave">Tipo de vaga</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="Tipo de vaga" name="tipo-vaga">
-                            <span class="btn-limpar">&times;</span>        
-                        </div>
+                </div>
+                <div class="campo-grupo">
+                    <label for="tipo-vaga">Tipo de vaga</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="tipo-vaga" name="tipo-vaga">
+                        <span class="btn-limpar">&times;</span>        
                     </div>
+                </div>
+                <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
+            </form>
+        </div>
+    </aside>
+    
+    <section class="container-vaga-empresa"> 
+        <button class="btn-adicionar-vaga">
+            <span class="icon">+</span> Anunciar Nova Vaga
+        </button>
 
-                    <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
-                </form>
+        <article class="card-vaga-empresa">
+            <div class="vaga-info-gestao">
+                <h3 class="vaga-titulo">Vaga Desenvolvedor Junior</h3>
+                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
+                <div class="vaga-detalhes-metricas">
+                    <span class="metrica-item">Status: <span class="metrica-valor status-ativa">Ativa</span></span>
+                    <span class="metrica-item">Candidatos: <span class="metrica-valor">57 inscritos</span></span>
+                    <span class="metrica-item">Publicada em: <span class="metrica-valor">20/01/2026</span></span>
+                </div>
             </div>
-        </aside>
-        
-        <!--Aqui é responsável pelos cards das vagas da empresa -->
-        <section class="container-vaga-empresa"> 
-            <button class="btn-adicionar-vaga">
-                <span class="icon">+</span> Anunciar Nova Vaga
-            </button>
+            <div class="vaga-acao">
+                <button class="btn-gerenciar">Gerenciar Vaga</button>
+            </div>
+        </article>
 
-            <article class="card-vaga-empresa">
-                <div class="vaga-info-gestao">
-                    <h3 class="vaga-titulo">Vaga Desenvolvedor Junior</h3>
-                    <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
-        
-                    <div class="vaga-detalhes-metricas">
-                        <span class="metrica-item">Status: <span class="metrica-valor status-ativa">Ativa</span></span>
-                        <span class="metrica-item">Candidatos: <span class="metrica-valor">57 inscritos</span></span>
-                        <span class="metrica-item">Publicada em: <span class="metrica-valor">20/01/2026</span></span>
-                    </div>
+        <article class="card-vaga-empresa">
+            <div class="vaga-info-gestao">
+                <h3 class="vaga-titulo">Vaga para Porteiro</h3>
+                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
+                <div class="vaga-detalhes-metricas">
+                    <span class="metrica-item">Status: <span class="metrica-valor status-pausada">Pausada</span></span>
+                    <span class="metrica-item">Candidatos: <span class="metrica-valor">12 inscritos</span></span>
+                    <span class="metrica-item">Publicada em: <span class="metrica-valor">02/02/2026</span></span>
                 </div>
-                <div class="vaga-acao">
-                    <button class="btn-gerenciar">Gerenciar Vaga</button>
+            </div>
+            <div class="vaga-acao">
+                <button class="btn-gerenciar">Gerenciar Vaga</button>
+            </div>
+        </article>
+
+        <article class="card-vaga-empresa">
+            <div class="vaga-info-gestao">
+                <h3 class="vaga-titulo">Vaga Web Designer</h3>
+                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
+                <div class="vaga-detalhes-metricas">
+                    <span class="metrica-item">Status: <span class="metrica-valor status-encerrada">Encerrada</span></span>
+                    <span class="metrica-item">Candidatos: <span class="metrica-valor">89 inscritos</span></span>
+                    <span class="metrica-item">Publicada em: <span class="metrica-valor">15/01/2026</span></span>
                 </div>
-            </article>
-            
-
-            <article class="card-vaga-empresa">
-                <div class="vaga-info-gestao">
-                    <h3 class="vaga-titulo">Vaga para Porteiro</h3>
-                    <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
-
-                    <div class="vaga-detalhes-metricas">
-                        <span class="metrica-item">Status: <span class="metrica-valor status-pausada">Pausada</span></span>
-                        <span class="metrica-item">Candidatos: <span class="metrica-valor">12 inscritos</span></span>
-                        <span class="metrica-item">Publicada em: <span class="metrica-valor">02/02/2026</span></span>
-                    </div>
-                </div>
-                <div class="vaga-acao">
-                    <button class="btn-gerenciar">Gerenciar Vaga</button>
-                </div>
-            </article>
-
-            <article class="card-vaga-empresa">
-                <div class="vaga-info-gestao">
-                    <h3 class="vaga-titulo">Vaga Web Designer</h3>
-                    <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
-
-                    <div class="vaga-detalhes-metricas">
-                        <span class="metrica-item">Status: <span class="metrica-valor status-encerrada">Encerrada</span></span>
-                        <span class="metrica-item">Candidatos: <span class="metrica-valor">89 inscritos</span></span>
-                        <span class="metrica-item">Publicada em: <span class="metrica-valor">15/01/2026</span></span>
-                    </div>
-                </div>
-                <div class="vaga-acao">
-                    <button class="btn-gerenciar">Gerenciar Vaga</button>
-                </div>
-            </article>
-
-        
-        
-        </section>
-
+            </div>
+            <div class="vaga-acao">
+                <button class="btn-gerenciar">Gerenciar Vaga</button>
+            </div>
+        </article>
+    </section>
 </main>
 
-
-<!--Inicio Footer-->
-<footer class="footer-taluno">
+        <!--Inicio do Footer-->
+    <footer class="footer-taluno">
     <div class="container footer-content">
         
         <div class="footer-col logo-col">
@@ -188,6 +159,8 @@
         </div>
     </div>
 </footer>
-<!--Fim Footer-->
+<!--Final do Footer-->
+
+<script src="/projeto_taluno/static/js/vagas/vagas.js"></script>
 </body>
 </html>
