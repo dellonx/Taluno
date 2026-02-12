@@ -185,9 +185,9 @@ body { font-family: 'Segoe UI', sans-serif; }
 /*Aqui é responsavel pelo container cinza onde terá os cards de vagas da empresa*/
 .container-vaga-empresa {
     background-color: #eef1f7;
-    flex: 1;
+    flex: 1; /* Isso faz ele "esticar" para ocupar todo o espaço sobrando */
     padding: 40px; /* Um respiro uniforme em todos os lados */
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 20px; /* Espaço entre botão e cards */
@@ -237,10 +237,56 @@ body { font-family: 'Segoe UI', sans-serif; }
     width: 100%; /* Ocupa a largura disponível no container cinza */
 }
 
+/*Serve para alinhar e dar harmonia as informações dos cards    */
 .vaga-detalhes-metricas {
     display: flex;
     gap: 20px;
     margin-top: 15px;
     font-size: 14px;
     color: #555;
+}
+
+/*aqui é onde mexe para alterar a fonte dos textos*/
+.metrica-item strong {
+    color: #333; /**/
+    font-size: 12px;
+}
+
+/*Aqui serve para dar azul destaque aos dados dos cards*/
+.metrica-valor{
+    color: #0056b3;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+/* Cores manuais para o Status */
+.status-ativa {
+    color: #28a745 !important; /* Verde */
+    font-weight: bold;
+}
+
+.status-pausada {
+    color: #ffc107 !important; /* Amarelo/Dourado */
+    font-weight: bold;
+}
+
+.status-encerrada {
+    color: #dc3545 !important; /* Vermelho */
+    font-weight: bold;
+}
+
+/*layout do botão de gerenciar vagas*/
+.btn-gerenciar{
+    background-color: #004494;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-gerenciar:hover{
+    transform: scale(1.05); /*aumenta o tamanho do botão ao passar o cursor em cima*/
 }
