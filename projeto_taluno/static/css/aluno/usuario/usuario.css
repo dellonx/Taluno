@@ -1,5 +1,5 @@
 /* =========================================
-   PERFIL.CSS - Dashboard do Usuário
+   PERFIL.CSS - Dashboard do Usuário Otimizado
    ========================================= */
 
 :root {
@@ -10,669 +10,140 @@
     --bg-light: #f5f7fa;
 }
 
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-light);
-    font-family: 'Poppins', sans-serif;
-}
-
-.dashboard-container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
-
-/* SIDEBAR */
-.profile-sidebar {
-    width: var(--sidebar-width);
-    background: linear-gradient(160deg, #7000c0 0%, #9600FF 40%, #EA2651 100%);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    box-shadow: 5px 0 25px rgba(0,0,0,0.1);
-    z-index: 10;
-    flex-shrink: 0;
-}
-
-.sidebar-top { margin-bottom: 30px; }
-.btn-back { color: white; font-size: 1.2rem; text-decoration: none; transition: transform 0.2s; display: inline-block; }
-.btn-back:hover { transform: translateX(-5px); }
-
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* --- NOVO ESTILO DE AVATAR (CIRCULO PERFEITO) --- */
-.avatar-container {
-    position: relative;
-    margin-bottom: 15px;
-    width: 120px;
-    height: 120px;
-}
-
-/* O Placeholder (Ícone de Usuário) */
-.avatar-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 3.5rem; /* Tamanho do ícone */
-}
-
-/* A Imagem Real (Quando carregada) */
-.profile-avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover; /* ISSO EVITA O ACHATAMENTO */
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* Utilitário para esconder */
+/* --- Base --- */
+body, html { height: 100%; margin: 0; padding: 0; background-color: var(--bg-light); font-family: 'Poppins', sans-serif; }
+.dashboard-container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
 .hidden { display: none !important; }
 
-.btn-edit-avatar {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: white;
-    color: var(--primary-color);
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    transition: transform 0.2s;
-    z-index: 5;
+/* --- Sidebar --- */
+.profile-sidebar {
+    width: var(--sidebar-width); flex-shrink: 0;
+    background: linear-gradient(160deg, #7000c0 0%, #9600FF 40%, #EA2651 100%);
+    color: white; display: flex; flex-direction: column; padding: 30px;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.1); z-index: 10;
 }
+.sidebar-top { margin-bottom: 30px; }
+.btn-back { color: white; font-size: 1.2rem; text-decoration: none; transition: 0.2s; display: inline-block; }
+.btn-back:hover { transform: translateX(-5px); }
+
+/* --- Avatar --- */
+.profile-header { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 40px; }
+.avatar-container { position: relative; margin-bottom: 15px; width: 120px; height: 120px; }
+.avatar-placeholder {
+    width: 100%; height: 100%; border-radius: 50%; background-color: rgba(255, 255, 255, 0.2);
+    border: 4px solid rgba(255, 255, 255, 0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.8); font-size: 3.5rem;
+}
+.profile-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 4px solid rgba(255, 255, 255, 0.3); box-shadow: 0 5px 15px rgba(0,0,0,0.2); position: absolute; top: 0; left: 0; }
+.btn-edit-avatar { position: absolute; bottom: 0; right: 0; background: white; color: var(--primary-color); border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 5; }
 .btn-edit-avatar:hover { transform: scale(1.1); }
 
-/* --- FIM DO ESTILO DE AVATAR --- */
+/* --- Infos Pessoais --- */
+.user-name { font-size: 1.5rem; font-weight: 600; margin-bottom: 5px; }
+.user-role { font-size: 0.9rem; opacity: 0.9; font-weight: 300; }
+.user-email { font-size: 0.8rem; opacity: 0.7; margin-top: 5px; }
 
-.user-name { 
-    font-size: 1.5rem; 
-    font-weight: 600; 
-    margin-bottom: 5px; 
-}
+/* --- Navegação Sidebar --- */
+.profile-nav { display: flex; flex-direction: column; gap: 15px; width: 100%; }
+a.nav-btn { background: transparent; border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 20px; border-radius: 30px; cursor: pointer; font-size: 1rem; text-align: center; text-decoration: none; display: block; transition: 0.3s; }
+a.nav-btn:hover { background: rgba(255,255,255,0.1); border-color: white; }
+a.nav-btn.active { background: white; color: var(--primary-color); font-weight: 600; border-color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
-.user-role { 
-    font-size: 0.9rem; 
-    opacity: 0.9; 
-    font-weight: 300; 
-}
+.sidebar-footer { margin-top: auto; text-align: center; padding-top: 20px; }
+.btn-logout { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.2s; }
+.btn-logout:hover { color: white; }
 
-.user-email { 
-    font-size: 0.8rem; 
-    opacity: 0.7; 
-    margin-top: 5px; 
-}
+/* --- Main Content --- */
+.profile-content { flex: 1; overflow-y: auto; padding: 40px; }
+.content-wrapper { max-width: 900px; margin: 0 auto; }
+.info-section { margin-bottom: 40px; animation: fadeIn 0.5s ease; }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.section-header h3 { font-size: 1.4rem; color: #333; display: flex; align-items: center; gap: 10px; }
+.section-header h3 i { color: var(--primary-color); }
+.btn-add { background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: 0.2s; box-shadow: 0 4px 10px rgba(150, 0, 255, 0.3); }
+.btn-add:hover { background: #7000c0; }
 
-.profile-nav { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
-    width: 100%; 
-}
+/* --- Cards --- */
+.cards-list { display: flex; flex-direction: column; gap: 20px; }
+.grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 
-.nav-btn {
-    background: transparent; 
-    border: 1px solid rgba(255,255,255,0.4);
-    color: white; 
-    padding: 12px 20px; 
-    border-radius: 30px;
-    cursor: pointer; 
-    font-size: 1rem; 
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s; 
-    text-align: center;
-}
-.nav-btn:hover { 
-    background: rgba(255,255,255,0.1); 
-    border-color: white; 
-}
-
-.nav-btn.active { 
-    background: white; 
-    color: var(--primary-color); 
-    font-weight: 600; 
-    border-color: white; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-}
-
-.sidebar-footer { 
-    margin-top: auto; 
-    text-align: center; 
-    padding-top: 20px; 
-}
-.btn-logout { 
-    color: rgba(255,255,255,0.8); 
-    text-decoration: none; 
-    font-size: 0.9rem; 
-    transition: color 0.2s; 
-}
-
-.btn-logout:hover { 
-    color: white; 
-}
-
-/* CONTENT */
-.profile-content { 
-    flex: 1; 
-    background-color: var(--bg-light); 
-    overflow-y: auto; 
-    padding: 40px; 
-}
-
-.content-wrapper { 
-    max-width: 900px; 
-    margin: 0 auto; 
-}
-
-.info-section { 
-    margin-bottom: 40px; 
-    animation: fadeIn 0.5s ease; 
-}
-
-@keyframes 
-fadeIn { 
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
-    } to { 
-        opacity: 1; 
-        transform: translateY(0); 
-    } 
-}
-
-.section-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 20px; 
-}
-
-.section-header h3 { 
-    font-size: 1.4rem; 
-    color: #333; 
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-}
-
-.section-header h3 i { 
-    color: var(--primary-color); 
-}
-
-.btn-add {
-    background: var(--primary-color); 
-    color: white; 
-    border: none; 
-    padding: 10px 20px; 
-    border-radius: 8px; 
-    font-weight: 500; 
-    cursor: pointer; 
-    display: flex; 
-    align-items: center; 
-    gap: 8px; 
-    transition: background 0.2s; 
-    box-shadow: 0 4px 10px rgba(150, 0, 255, 0.3);
-}
-.btn-add:hover { 
-    background: #7000c0; 
-}
-
-.cards-list { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 20px; 
-}
-
-.info-card {
-    background: white; 
-    padding: 25px; 
-    border-radius: 16px; 
-    box-shadow: var(--card-shadow);
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    transition: transform 0.2s; 
-    border: 1px solid transparent;
-}
-
-.info-card:hover { 
-    transform: translateY(-3px); 
-    border-color: rgba(150, 0, 255, 0.1); 
-}
-
-.card-left { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 5px; 
-}
-
-.card-left h4 { 
-    font-size: 1.1rem; 
-    color: #222; 
-    margin-bottom: 2px; 
-}
-
-.card-subtitle { 
-    font-size: 0.95rem; 
-    color: var(--text-muted); 
-}
-
-.card-status { 
-    display: inline-block; 
-    font-size: 0.8rem; 
-    font-weight: 600; 
-    padding: 4px 10px; 
-    border-radius: 20px; 
-    width: fit-content; 
-    margin-top: 5px; 
-}
-
-.status-progress { 
-    background: #FFF4E5; 
-    color: #FF9800; 
-}
-
-.status-completed { 
-    background: #E8F5E9; 
-    color: #4CAF50; 
-}
-
-.card-date { 
-    font-size: 0.85rem; 
-    color: #999; 
-    margin-top: 2px; 
-}
-
-.grid-layout { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    gap: 20px; 
-}
-
-.skill-card {
-    background: white; 
-    padding: 20px; 
-    border-radius: 12px; 
-    box-shadow: var(--card-shadow); 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-}
-
-.skill-info { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-}
-
-.skill-icon { 
-    font-size: 2rem; 
-}
-
-.html { 
-    color: #E34F26; 
-}
-
-.js { 
-    color: #F7DF1E; 
-}
-
-.python { 
-    color: #3776AB; 
-}
-
-.skill-info h4 { 
-    font-size: 1rem; 
-    color: #333; 
-}
-
-.skill-level { 
-    font-size: 0.85rem; 
-    color: var(--text-muted); 
-}
-
-.card-actions { 
-    display: flex; 
-    gap: 10px; 
-}
-
-.btn-action {
-    background: #F0F2F5; 
-    border: none; 
-    width: 35px; 
-    height: 35px; 
-    border-radius: 50%; 
-    cursor: pointer; 
-    color: var(--text-muted); 
-    transition: all 0.2s; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}
-
-.btn-action:hover { 
-    background: #e0e0e0; 
-    color: #333; 
-}
-
-.btn-action.edit:hover { 
-    color: var(--primary-color); 
-    background: rgba(150, 0, 255, 0.1); 
-}
-
-.btn-action.delete:hover { 
-    color: #EA2651; 
-    background: rgba(234, 38, 81, 0.1); 
-}
-
-
-@media (max-width: 900px) {
-    .dashboard-container { 
-        flex-direction: column; 
-        height: auto; 
-        overflow: auto; 
-    }
-
-    .profile-sidebar { 
-        width: 100%; 
-        padding: 20px; 
-        border-radius: 0 0 20px 20px; 
-    }
-
-    .profile-nav { 
-        flex-direction: row; 
-        overflow-x: auto; 
-        padding-bottom: 10px; 
-    }
-
-    .nav-btn { 
-        white-space: nowrap; 
-        padding: 8px 16px; 
-        font-size: 0.9rem; 
-    }
-
-    .profile-content { 
-        padding: 20px; 
-    }
-
-    .info-card { 
-        flex-direction: column; 
-        align-items: flex-start; 
-        gap: 15px; 
-    }
-
-    .card-actions { 
-        align-self: flex-end; 
-    }
-}
-
-/* ... [Mantenha todo o seu CSS anterior aqui] ... */
-
-/* =========================================
-   ESTILOS DE EDIÇÃO DOS CARDS (NOVO)
-   ========================================= */
-
-/* Ajuste para o nav-btn funcionar como link (Tag A) */
-a.nav-btn {
-    text-decoration: none;
-    display: block;
-}
-
-/* =========================================
-   ESTILOS DE EDIÇÃO DOS CARDS (CORRIGIDO)
-   ========================================= */
-
-/* Protege os botões para não serem esmagados e dá um respiro (gap) */
 .info-card, .skill-card {
-    gap: 15px; 
+    background: white; padding: 25px; border-radius: 16px; box-shadow: var(--card-shadow);
+    display: flex; justify-content: space-between; align-items: center; gap: 15px;
+    border: 1px solid transparent; transition: transform 0.2s;
 }
+.info-card:hover { transform: translateY(-3px); border-color: rgba(150, 0, 255, 0.1); }
 
-/* Faz a área da esquerda ocupar o espaço vazio, mas sem vazar (min-width: 0) */
-.card-left, .skill-info {
-    flex: 1;
-    min-width: 0; 
-}
-
-.skill-info .card-left {
-    width: 100%; /* Garante que os inputs da habilidade usem o espaço certinho */
-}
-
-/* Trava o tamanho da área dos botões para eles não encolherem nem sumirem */
-.card-actions {
-    flex-shrink: 0;
-}
-
-/* Campos de entrada corrigidos */
-.edit-input {
-    width: 100%;
-    box-sizing: border-box; /* ESSENCIAL: Faz o padding caber dentro dos 100% sem vazar */
-    padding: 6px 10px;
-    margin-bottom: 5px;
-    border: 1px solid rgba(150, 0, 255, 0.4);
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-    transition: all 0.2s;
-}
-
-.edit-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(150, 0, 255, 0.1);
-}
-
-.edit-title { 
-    font-weight: 600; 
-    font-size: 1.05rem; 
-    color: #333; 
-}
-
-.edit-subtitle { 
-    font-size: 0.9rem; 
-    color: #555; 
-}
-
-.edit-status, .edit-date, .edit-level { 
-    font-size: 0.85rem; 
-    color: #777; 
-}
-
-/* Botão de salvar ativo */
-.btn-action.save-btn {
-    color: #4CAF50 !important;
-    background: rgba(76, 175, 80, 0.1) !important;
-}
-
-/* ... [Mantenha TODO o seu CSS anterior intacto até o final das regras de edição] ... */
-
-/* =========================================
-   ESTILOS DE EDIÇÃO DOS CARDS E CORREÇÕES
-   ========================================= */
-
-a.nav-btn { text-decoration: none; display: block; }
-
-.info-card, .skill-card { gap: 15px; }
-.card-left, .skill-info { flex: 1; min-width: 0; }
+/* Área interna do card preparada para não "esmagar" os botões */
+.card-left, .skill-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.skill-info { flex-direction: row; align-items: center; gap: 15px; }
 .skill-info .card-left { width: 100%; }
-.card-actions { flex-shrink: 0; }
+.card-actions { display: flex; gap: 10px; flex-shrink: 0; }
 
-.edit-input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 6px 10px;
-    margin-bottom: 5px;
-    border: 1px solid rgba(150, 0, 255, 0.4);
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-    transition: all 0.2s;
-}
+.card-left h4, .skill-info h4 { font-size: 1.1rem; color: #222; margin: 0; }
+.card-subtitle { font-size: 0.95rem; color: var(--text-muted); }
+.card-status { display: inline-block; font-size: 0.8rem; font-weight: 600; padding: 4px 10px; border-radius: 20px; width: fit-content; margin-top: 5px; }
+.status-progress { background: #FFF4E5; color: #FF9800; }
+.status-completed { background: #E8F5E9; color: #4CAF50; }
+.card-date { font-size: 0.85rem; color: #999; margin-top: 2px; }
 
-.edit-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(150, 0, 255, 0.1);
-}
+.skill-icon { font-size: 2rem; }
+.html { color: #E34F26; } .js { color: #F7DF1E; } .python { color: #3776AB; }
+.skill-level { font-size: 0.85rem; color: var(--text-muted); }
 
+/* --- Botões de Ação nos Cards --- */
+.btn-action { background: #F0F2F5; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; color: var(--text-muted); transition: 0.2s; display: flex; align-items: center; justify-content: center; }
+.btn-action:hover { background: #e0e0e0; color: #333; }
+.btn-action.edit:hover { color: var(--primary-color); background: rgba(150, 0, 255, 0.1); }
+.btn-action.delete:hover { color: #EA2651; background: rgba(234, 38, 81, 0.1); }
+.btn-action.save-btn { color: #4CAF50 !important; background: rgba(76, 175, 80, 0.1) !important; }
+
+/* --- Edição Inline (Inputs nos Cards) --- */
+.edit-input { width: 100%; box-sizing: border-box; padding: 6px 10px; margin-bottom: 5px; border: 1px solid rgba(150, 0, 255, 0.4); border-radius: 6px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.2s; }
+.edit-input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(150, 0, 255, 0.1); }
 .edit-title { font-weight: 600; font-size: 1.05rem; color: #333; }
 .edit-subtitle { font-size: 0.9rem; color: #555; }
 .edit-status, .edit-date, .edit-level { font-size: 0.85rem; color: #777; }
 
-.btn-action.save-btn { color: #4CAF50 !important; background: rgba(76, 175, 80, 0.1) !important; }
+/* --- Modais --- */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+.modal-box { background: white; width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; transform: translateY(-20px) scale(0.95); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.modal-box.modal-small { max-width: 380px; }
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-overlay.active .modal-box { transform: translateY(0) scale(1); }
 
-/* =========================================
-   MODAIS (POP-UPS) E ANIMAÇÕES
-   ========================================= */
-
-/* Fundo escuro atrás do pop-up */
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    
-    /* Configuração da Animação de Fundo */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-/* A caixinha branca do Pop-up */
-.modal-box {
-    background: white;
-    width: 100%;
-    max-width: 450px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    overflow: hidden;
-    
-    /* Configuração da Animação da Caixa (Começa pequena e desce um pouco) */
-    transform: translateY(-20px) scale(0.95);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Quando o modal ganha a classe 'active' pelo JavaScript */
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-overlay.active .modal-box {
-    transform: translateY(0) scale(1);
-}
-
-/* Header, Body e Footer do Modal */
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
-    border-bottom: 1px solid #eee;
-    background: #FAFAFA;
-}
-
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 25px; border-bottom: 1px solid #eee; background: #FAFAFA; }
 .modal-header h3 { font-size: 1.2rem; color: #333; margin: 0; }
-
-.btn-close-modal {
-    background: none; border: none; font-size: 1.2rem; color: #999;
-    cursor: pointer; transition: 0.2s;
-}
+.btn-close-modal { background: none; border: none; font-size: 1.2rem; color: #999; cursor: pointer; transition: 0.2s; }
 .btn-close-modal:hover { color: #EA2651; transform: scale(1.1); }
 
 .modal-body { padding: 20px 25px; }
-
-.modal-body label {
-    display: block; font-size: 0.85rem; color: #555;
-    margin-bottom: 5px; font-weight: 500;
-}
-
-.modal-input {
-    width: 100%; box-sizing: border-box; padding: 10px 15px;
-    margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px;
-    font-family: 'Poppins', sans-serif; font-size: 0.95rem;
-    transition: 0.2s;
-}
+.text-center { text-align: center; }
+.modal-body label { display: block; font-size: 0.85rem; color: #555; margin-bottom: 5px; font-weight: 500; }
+.modal-input { width: 100%; box-sizing: border-box; padding: 10px 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; transition: 0.2s; }
 .modal-input:focus { border-color: var(--primary-color); outline: none; }
 
-.modal-footer {
-    display: flex; justify-content: flex-end; gap: 10px;
-    padding: 15px 25px; border-top: 1px solid #eee; background: #FAFAFA;
-}
+select.modal-input { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 15px center; background-size: 16px; padding-right: 40px; cursor: pointer; }
+select.modal-input::-ms-expand { display: none; }
 
-.btn-secondary, .btn-primary {
-    padding: 10px 20px; border-radius: 8px; font-family: 'Poppins', sans-serif;
-    font-weight: 500; cursor: pointer; border: none; transition: 0.2s;
-}
+.modal-footer { display: flex; justify-content: flex-end; gap: 10px; padding: 15px 25px; border-top: 1px solid #eee; background: #FAFAFA; }
+.btn-secondary, .btn-primary, .btn-danger { padding: 10px 20px; border-radius: 8px; font-family: 'Poppins', sans-serif; font-weight: 500; cursor: pointer; border: none; transition: 0.2s; }
+.btn-secondary { background: #eee; color: #555; } .btn-secondary:hover { background: #e0e0e0; }
+.btn-primary { background: var(--primary-color); color: white; box-shadow: 0 4px 10px rgba(150,0,255,0.2); } .btn-primary:hover { background: #7000c0; transform: translateY(-2px); }
+.btn-danger { background: #EA2651; color: white; box-shadow: 0 4px 10px rgba(234, 38, 81, 0.2); } .btn-danger:hover { background: #c91f42; transform: translateY(-2px); }
 
-.btn-secondary { background: #eee; color: #555; }
-.btn-secondary:hover { background: #e0e0e0; }
-
-.btn-primary { background: var(--primary-color); color: white; box-shadow: 0 4px 10px rgba(150,0,255,0.2); }
-.btn-primary:hover { background: #7000c0; transform: translateY(-2px); }
-
-/* Animação para cards novos sendo adicionados */
-@keyframes slideInNewCard {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
-}
+/* --- Animações Extras --- */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInNewCard { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
 .new-card-anim { animation: slideInNewCard 0.4s ease forwards; }
 
-/* =========================================
-   CORREÇÃO DOS DROPDOWNS (SELECTS) NOS MODAIS
-   ========================================= */
-
-/* Aplica apenas aos elementos <select> que têm a classe .modal-input */
-select.modal-input {
-    /* 1. Remove o estilo e a seta padrão do navegador */
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    /* 2. Adiciona uma seta SVG limpa como imagem de fundo */
-    /* (Usei um cinza escuro #555 para combinar com o texto) */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    
-    /* 3. Configura a posição da seta */
-    background-repeat: no-repeat;
-    /* Posiciona a 15px da direita e CENTRALIZA verticalmente */
-    background-position: right 15px center;
-    background-size: 16px; /* Tamanho do ícone */
-
-    /* 4. Aumenta o espaço interno na direita para o texto não ficar em cima da seta */
-    padding-right: 40px;
-    
-    cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
-}
-
-/* Corrige um bug específico do IE/Edge antigo que esconde a seta padrão */
-select.modal-input::-ms-expand {
-    display: none;
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .dashboard-container { flex-direction: column; height: auto; overflow: auto; }
+    .profile-sidebar { width: 100%; padding: 20px; border-radius: 0 0 20px 20px; }
+    .profile-nav { flex-direction: row; overflow-x: auto; padding-bottom: 10px; }
+    .nav-btn { white-space: nowrap; padding: 8px 16px; font-size: 0.9rem; }
+    .profile-content { padding: 20px; }
+    .info-card { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .card-actions { align-self: flex-end; }
 }
