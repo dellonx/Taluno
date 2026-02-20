@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Vagas</title>
+    <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/vagas/vagas-empresa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+</head>
+<body>
+    
+    <header class="header-taluno">
+    <div class="top-bar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
+            </a>
+
+            <div class="top-icons">
+                <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
+                <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="../inicio/inicio.html">Início</a></li>
+                <li><a href="../vagas/vagas.html" class="active"> Minhas Vagas</a></li>
+                <li><a href="../mural/feed.html">Mural</a></li>
+                <li><a href="../candidaturas/candidaturas.html">Candidaturas</a></li>
+                <li><a href="../suporte/suporte.html">Suporte</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- estrutura do container principal do site -->
+<main class="layout-container-empresa">
+        <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
+        <aside class="filtros-sidebar">
+
+        <!-- Aqui é responsável pela barra de pesquisa-->
+        <div class="barra-pesquisa">
+            <h1 class="titulo-principal">Pesquisar Vagas</h1>
+            <input type="text" placeholder="" class="input-busca">
+        </div> 
+            
+
+            
+
+            <div class="filtros-container">
+        
+                <h2 class="filtros-titulo">Filtro Avançado</h2>
+                
+
+                <form class="filtros-form">
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Palavra chave</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="palavra-chave" name="palavra-chave">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Cidade</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Cidade" name="Cidade">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Tipo de vaga</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Tipo de vaga" name="tipo-vaga">
+                            <span class="btn-limpar">&times;</span>        
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
+                </form>
+            </div>
+        </aside>
+        
+        <!-- -->
+        <section class="vagas-container"> 
+            
+        </section>
+
+</main>
+
+    <!--Inicio do Footer-->
+    <footer class="footer-taluno">
+    <div class="container footer-content">
+        
+        <div class="footer-col logo-col">
+            <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
+        </div>
+
+        <div class="footer-col links-col">
+            <ul class="footer-menu">
+                <li><a href="#">SOBRE TALUNO</a></li>
+                <li><a href="#">POLÍTICA DE COOKIES</a></li>
+                <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+                <li><a href="#">CENTRAL DE AJUDA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col social-col">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/senacpe/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/SenacPernambuco" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/senacpe/?locale=pt_BR" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/senacpe/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            
+            <a href="#" class="btn-back-top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <hr class="footer-line">
+            <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </div>
+</footer>
+<!--Final do Footer-->
+</body>
+</html>

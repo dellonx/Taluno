@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taluno | Empresa</title>
+    <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/vaga-empresa/modal.css">
+
+</head>
+<body>
+<!--Inicio NavBar-->
+<header class="header-taluno">
+    <div class="top-bar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
+            </a>
+
+            <div class="top-icons">
+                <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
+                <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="../inicio/inicio.html">Início</a></li>
+                <li><a href="../vagas/vagas.html">Minhas Vagas</a></li>
+                <li><a href="../mural/mural.html" class="active">Mural</a></li>
+                <li><a href="../buscar/buscar_cv.html">Buscar CV's</a></li>
+                <li><a href="../suporte/suporte.html">Suporte</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!--Fim NavBar-->
+
+<main>
+    
+    <div class="janela-cadastro-vaga">
+        <header class="header-modal-vaga">
+            <h2 class="titulo-modal">Criar nova vaga</h2>
+            <p class="subtitulo-modal">Preencha as informações abaixo para publicar sua vaga no taluno</p>
+        </header>
+
+        <form class="formulario-criacao-vaga">
+            <div class="campo-vaga">
+                <label>Título da vaga</label>
+                <input type="text" placeholder="Ex: Desenvolvedor Junior">
+            </div>
+
+            <div class="linha-vaga-dupla">
+                <div class="campo-vaga">
+                    <label>Área</label>
+                    <select name="area-vaga">
+                        <option value="">Selecione a área</option>
+                        <option value="ti">TI e Software</option>
+                        <option value="adm">Administração</option>
+                        <option value="design">Design e UX</option>
+                        <option value="mkt">Marketing e Comunicação</option>
+                        <option value="vendas">Vendas e Comercial</option>
+                        <option value="rh">Recursos Humanos</option>
+                        <option value="fin">Financeiro</option>
+                        <option value="eng">Engenharia</option>
+                        <option value="atendimento">Atendimento ao Cliente</option>
+                    </select>
+                </div>
+                <div class="campo-vaga">
+                    <label>Nível de vaga</label>
+                    <select name="nivel-vaga">
+                        <option value="">Selecione o nível</option>
+                        <option value="estagio">Estágio</option>
+                        <option value="junior">Júnior</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="campo-vaga">
+                <label>Descrição da vaga</label>
+                <textarea rows="3" placeholder="Descreva as responsabilidades..."></textarea>
+            </div>
+
+            <div class="divisor-requisitos">
+                <h3>Requisitos Obrigatórios</h3>
+            </div>
+
+            <div class="campo-vaga">
+                <label>Escolaridade mínima</label>
+                <input type="text" placeholder="Ex: Ensino Superior Cursando">
+            </div>
+
+            <div class="linha-vaga-dupla">
+                <div class="campo-vaga">
+                    <label>Curso desejado</label>
+                    <select name="curso">
+                        <option value="">Selecione o curso</option>
+                        <option value="ads">Análise de Sistemas</option>
+                        <option value="dir">Direito</option>
+                        <option value="adm">Administração</option>
+                    </select>
+                </div>
+                <div class="campo-vaga">
+                    <label>Experiência exigida?</label>
+                    <select name="experiencia">
+                        <option value="">Selecione</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                        <option value="indiferente">Indiferente / Não se aplica</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="footer-modal-vaga">
+                <button type="button" class="btn-vaga-cancelar">Cancelar</button>
+                <button type="submit" class="btn-vaga-publicar">Publicar</button>
+            </div>
+        </form>
+    </div>
+    
+</main>
+
+<!--Inicio Footer-->
+<footer class="footer-taluno">
+    <div class="container footer-content">
+        
+        <div class="footer-col logo-col">
+            <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
+        </div>
+
+        <div class="footer-col links-col">
+            <ul class="footer-menu">
+                <li><a href="#">SOBRE TALUNO</a></li>
+                <li><a href="#">POLÍTICA DE COOKIES</a></li>
+                <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+                <li><a href="#">CENTRAL DE AJUDA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col social-col">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/senacpe/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/SenacPernambuco" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/senacpe/?locale=pt_BR" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/senacpe/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            
+            <a href="#" class="btn-back-top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <hr class="footer-line">
+            <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </div>
+</footer>
+<!--Fim Footer-->
+</body>
+</html>

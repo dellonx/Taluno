@@ -1,0 +1,110 @@
+/* Container que escurece o fundo */
+.modal-overlay-vaga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+/* A caixa branca do modal */
+.janela-cadastro-vaga {
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 35px;
+    border-radius: 20px; /* Seguindo o padrão dos seus filtros */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.header-modal-vaga {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.titulo-modal {
+    color: #a600a6; /* Roxo padrão da imagem */
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.subtitulo-modal {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Estilo dos campos */
+.campo-vaga {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.campo-vaga label {
+    font-size: 14px;
+    color: #a600a6; /* Roxo para os labels */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.campo-vaga input, 
+.campo-vaga select, 
+.campo-vaga textarea {
+    padding: 12px;
+    border: 1px solid #a600a6; /* Borda roxa */
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+}
+
+/* Linha com dois campos */
+.linha-vaga-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Divisor de seção */
+.divisor-requisitos {
+    text-align: center;
+    margin: 20px 0;
+    color: #a600a6;
+}
+
+.footer-modal-vaga {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Botões do Modal */
+.btn-vaga-publicar {
+    background-color: #e6005c; /* Rosa/Roxo do botão Publicar */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-vaga-cancelar {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.btn-vaga-publicar:hover {
+    background-color: #c4004e;
+    transform: translateY(-2px);
+}

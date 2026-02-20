@@ -1,0 +1,188 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    /* Gradiente inspirado na imagem: Azul -> Roxo -> Rosa */
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --texto-nav: #333333;
+    --texto-hover: #0052cc;
+    --bg-branco: #ffffff;
+}
+
+/* Remove margens padrão do navegador */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Segoe UI', sans-serif; }
+
+/* LINHA 2: Nav Bar (Branca) */
+.nav-bar {
+    background: var(--bg-branco);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Espalha os itens */
+    max-width: 800px; /* Limita a largura para não ficar muito aberto */
+    margin: 0 auto; /* Centraliza o menu */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto-nav);
+    font-weight: 700; /* Negrito */
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    padding-bottom: 5px; /* Espaço para a borda no hover */
+}
+
+/* Efeito Hover e Ativo */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--texto-hover);
+    border-bottom: 3px solid var(--texto-hover); /* Detalhe visual elegante */
+}
+
+/* Tela principal onde contém a coluna do formulário e o container de vagas   */ 
+.vagas-layout{
+    background-color: #fff;
+    display: flex;
+    gap: 5px; /* Espaço entre o formulário e o container cinza */
+    align-items: flex-start; /* Alinha os itens no topo */
+    min-height: 120vh; /* Dá uma "folga" vertical para o scroll */
+}
+
+
+
+/* Tela principal onde contém a coluna do formulário e o container de vagas  */
+.layout-container-empresa{
+   background-color: #fff;
+    display: flex;
+    gap: 5px; /* Espaço entre o formulário e o container cinza */
+    align-items: flex-start; /* Alinha os itens no topo */
+    min-height: 120vh; /* Dá uma "folga" vertical para o scroll */
+}
+
+/* 1. Posicionamento do Aside */
+.filtros-sidebar {
+    width: 320px;
+    flex: 0 0 325px;
+    z-index: 10;
+    padding-top: 15px;
+    position: sticky;
+    
+}
+
+.input-busca {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    margin-top: 10px;
+    border: 1px solid #7f7f7f; 
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+
+.barra-pesquisa {
+    
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*  O Container de Filtros  */
+.filtros-container {
+    background-color: white;
+    border: 1px solid #ccc; 
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+/*Aqui mexe com o titulo acima da barra de pesquisa */
+.titulo-principal{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+/*Aqui mexe com a estrutura dos titulos do formulario*/
+.filtros-titulo {
+    font-size: 1.0rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #3c3c3c;
+}
+
+/* Estilo dos Inputs Internos com o "X" */
+.campo-grupo {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/*Ele agrupa o título do campo*/
+.campo-grupo label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1px;
+    color: #555;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+/*visual moderno e funcional para as caixas de texto*/
+.input-wrapper input {
+    width: 100%; /*ocupa toda a largura disponivel no container*/
+    padding: 10px 35px 10px 15px; /*cria um espaço interno para o texto não ficar tão perto das bordas*/
+    border: 1px solid #555; /*define uma borda fina e cinza escura*/
+    border-radius: 12px;/*arrendodamento das laterais */
+    outline: none; /*remove aquela borda azul ou preta padrão do navegador*/
+}
+
+/*Aqui é responsavel pelos botões (x) que servem para limpar o filtro*/
+.btn-limpar {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/*Botão Gradiente Taluno */
+.btn-aplicar {
+    width: 80%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background: #a600a6;
+    transition: transform 0.2s;
+}
+
+.btn-aplicar:hover {
+    transform: scale(1.05);
+}
+
+.vagas-container{
+    background-color: #e6005c;
+}
+
