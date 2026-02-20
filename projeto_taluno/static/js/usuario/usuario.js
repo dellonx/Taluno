@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // VARIÁVEIS DE ESTADO
+    let cardParaApagar = null;
+
     /* ============================================================
-       1. UPLOAD DE FOTO (Lógica do Perfil Vazio)
+       1. UPLOAD DE FOTO DE PERFIL
        ============================================================ */
     const avatarBtn = document.querySelector('.btn-edit-avatar');
     const realAvatarImg = document.getElementById('realAvatar');
@@ -27,24 +30,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ============================================================
-       2. DELETAR CARDS E EDITAR CARDS (INLINE)
+       2. MODAIS - ELEMENTOS E FUNÇÕES DE ABRIR/FECHAR
+       ============================================================ */
+    const modalFormacao = document.getElementById('modalFormacao');
+    const modalHabilidade = document.getElementById('modalHabilidade');
+    const modalExcluir = document.getElementById('modalExcluir');
+    
+    function openModal(modal) { modal.classList.add('active'); }
+    function closeModals() {
+        document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+    }
+
+    // Fechar nos botões X ou Cancelar
+    document.querySelectorAll('.btn-close-modal, .btn-cancelar-modal').forEach(btn => {
+        btn.addEventListener('click', closeModals);
+    });
+
+    // Fechar clicando fora da caixa (no fundo escuro)
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) closeModals();
+        });
+    });
+
+    /* ============================================================
+       3. SISTEMA DE EDIÇÃO E EXCLUSÃO NOS CARDS (DELEGAÇÃO)
        ============================================================ */
     document.body.addEventListener('click', function(e) {
         
-        // DELETAR
+        // --- 3.1 CHAMA MODAL DE EXCLUSÃO ---
         const deleteBtn = e.target.closest('.btn-action.delete');
         if (deleteBtn) {
-            const card = deleteBtn.closest('.info-card, .skill-card');
-            if (confirm('tem certeza que deseja apagar?')) {
-                card.style.transition = 'all 0.3s ease';
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.9)';
-                setTimeout(() => card.remove(), 300);
-            }
-            return; // Impede que execute os próximos blocos
+            // Guarda na memória QUAL card foi clicado
+            cardParaApagar = deleteBtn.closest('.info-card, .skill-card');
+            openModal(modalExcluir);
+            return; // Impede a execução das próximas linhas
         }
 
-        // EDITAR E SALVAR
+        // --- 3.2 EDIÇÃO INLINE (LÁPIS E VISTO) ---
         const editBtn = e.target.closest('.btn-action.edit');
         if (editBtn) {
             const card = editBtn.closest('.info-card, .skill-card');
@@ -53,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const isEditing = card.classList.contains('is-editing');
 
             if (!isEditing) {
-                // Entrar no modo edição
+                // Entra no modo edição
                 card.classList.add('is-editing');
                 editBtn.innerHTML = '<i class="fas fa-check"></i>';
                 editBtn.classList.add('save-btn');
@@ -80,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                 }
             } else {
-                // Salvar edição
+                // Salva a edição
                 card.classList.remove('is-editing');
                 editBtn.innerHTML = '<i class="fas fa-pen"></i>';
                 editBtn.classList.remove('save-btn');
@@ -114,45 +137,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ============================================================
-       3. LÓGICA DOS MODAIS (ADICIONAR CARDS)
+       4. CONFIRMAR EXCLUSÃO NO MODAL VERMELHO
        ============================================================ */
-    // Elementos do Modal
-    const modalFormacao = document.getElementById('modalFormacao');
-    const modalHabilidade = document.getElementById('modalHabilidade');
-    const formAddFormacao = document.getElementById('formAddFormacao');
-    const formAddHabilidade = document.getElementById('formAddHabilidade');
+    document.getElementById('btnConfirmarExclusao').addEventListener('click', () => {
+        if (cardParaApagar) {
+            // Animação de sumir
+            cardParaApagar.style.transition = 'all 0.3s ease';
+            cardParaApagar.style.opacity = '0';
+            cardParaApagar.style.transform = 'scale(0.9)';
+            
+            // Remove do HTML após a animação
+            setTimeout(() => {
+                cardParaApagar.remove();
+                cardParaApagar = null; // Limpa a memória para o próximo
+            }, 300);
+        }
+        closeModals(); // Fecha o modal vermelho
+    });
+
+    /* ============================================================
+       5. ADICIONAR NOVOS CARDS VIA FORMULÁRIO (MODAIS)
+       ============================================================ */
     
-    // Contêineres onde os cards vão aparecer
-    const listaFormacoes = document.getElementById('listaFormacoes');
-    const listaHabilidades = document.getElementById('listaHabilidades');
-
-    // Funções de Abrir/Fechar Modal
-    function openModal(modal) { modal.classList.add('active'); }
-    function closeModals() {
-        document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
-    }
-
-    // Eventos nos botões "Adicionar" da tela principal
+    // Abre modais de adição ao clicar nos botões "+"
     document.getElementById('btnAddFormacao').addEventListener('click', () => openModal(modalFormacao));
     document.getElementById('btnAddHabilidade').addEventListener('click', () => openModal(modalHabilidade));
 
-    // Fechar nos botões X ou Cancelar
-    document.querySelectorAll('.btn-close-modal, .btn-cancelar-modal').forEach(btn => {
-        btn.addEventListener('click', closeModals);
-    });
+    // Elementos de destino e formulários
+    const formAddFormacao = document.getElementById('formAddFormacao');
+    const formAddHabilidade = document.getElementById('formAddHabilidade');
+    const listaFormacoes = document.getElementById('listaFormacoes');
+    const listaHabilidades = document.getElementById('listaHabilidades');
 
-    // Fechar clicando fora da caixa (no fundo escuro)
-    document.querySelectorAll('.modal-overlay').forEach(overlay => {
-        overlay.addEventListener('click', (e) => {
-            if(e.target === overlay) closeModals();
-        });
-    });
-
-    // --- SALVAR NOVA FORMAÇÃO ---
+    // Salvar nova Formação
     formAddFormacao.addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita recarregar a página
+        e.preventDefault(); 
         
-        // Pega valores
         const curso = document.getElementById('inputFormCurso').value;
         const inst = document.getElementById('inputFormInst').value;
         const status = document.getElementById('inputFormStatus').value;
@@ -160,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let statusClass = status === 'Concluído' ? 'status-completed' : 'status-progress';
 
-        // Cria o HTML do Card
         const cardHTML = `
             <div class="info-card new-card-anim">
                 <div class="card-left" data-type="formacao">
@@ -176,19 +195,18 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         
-        // Injeta no HTML e limpa
         listaFormacoes.insertAdjacentHTML('beforeend', cardHTML);
         formAddFormacao.reset();
         closeModals();
     });
 
-    // --- SALVAR NOVA HABILIDADE ---
+    // Salvar nova Habilidade
     formAddHabilidade.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const nome = document.getElementById('inputHabNome').value;
         const nivel = document.getElementById('inputHabNivel').value;
-        const icone = document.getElementById('inputHabIcone').value; // ex: 'fas fa-code'
+        const icone = document.getElementById('inputHabIcone').value; 
 
         const cardHTML = `
             <div class="skill-card new-card-anim">
@@ -212,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ============================================================
-       4. LOGOUT
+       6. LOGOUT
        ============================================================ */
     const logoutBtn = document.querySelector('.btn-logout');
     if (logoutBtn) {
@@ -222,22 +240,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// --- LÓGICA DO BOTÃO "SIM, APAGAR" NO MODAL ---
-    document.getElementById('btnConfirmarExclusao').addEventListener('click', () => {
-        if (cardParaApagar) {
-            // Animação de sumir
-            cardParaApagar.style.transition = 'all 0.3s ease';
-            cardParaApagar.style.opacity = '0';
-            cardParaApagar.style.transform = 'scale(0.9)';
-            
-            // Remove do HTML após a animação
-            setTimeout(() => {
-                cardParaApagar.remove();
-                cardParaApagar = null; // Limpa a memória
-            }, 300);
-        }
-        
-        // Fecha o modal
-        modalExcluir.classList.remove('active');
-    });
