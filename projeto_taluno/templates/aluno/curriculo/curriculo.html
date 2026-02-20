@@ -1,9 +1,10 @@
+
 <!DOCTYPE html> <html lang="pt-br"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno Inicio</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
-    <link rel="stylesheet" href="/projeto_taluno/static/css/aluno/inicio/inicio.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/aluno/curriculo/curriculo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
@@ -26,58 +27,118 @@
     <nav class="nav-bar">
         <div class="container">
             <ul class="nav-links">
-                <li><a href="../inicio/inicio.html" class="active">Início</a></li>
+                <li><a href="../inicio/inicio.html">Início</a></li>
                 <li><a href="../vagas/vagas.html">Vagas</a></li>
                 <li><a href="../mural/feed.html">Mural</a></li>
                 <li><a href="../candidaturas/candidaturas.html">Candidaturas</a></li>
-                <li><a href="../curriculo/curriculo.html">Curriculo</a></li>
+                <li><a href="../suporte/suporte.html" class="active">Curriculo</a></li>
             </ul>
         </div>
     </nav>
 </header>
 <!--Fim da NavBar-->
-<!-- ================= MAIN ================= -->
-<main class="inicio-main">
+<main class="curriculo-form-page">
+    <button class="btn-paginacao" aria-label="Voltar">&#10094;</button>
+    <form class="curriculo-form">
 
-    <!-- HERO LOGADO -->
-    <section class="hero-logado">
-        <div class="hero-content">
-            
-            <h1>Olá!</h1>
-            <p>Bem-vindo ao <strong>Taluno</strong>! Aqui você encontra oportunidades, conecta-se com empresas e acompanha sua evolução profissional.</p>
+        <h1>Preencha seu Currículo</h1>
 
-            <div class="hero-cards">
+        <!-- DADOS PESSOAIS -->
+        <section class="form-section">
+            <h2>Dados Pessoais</h2>
 
-                <a href="../curriculo/curriculo.html" class="hero-card">
-                    <i class="fas fa-id-card"></i>
-                    <h3>Meu Currículo</h3>
-                    <span>Atualize suas informações</span>
-                </a>
+            <label>Nome completo</label>
+            <input type="text">
 
-                <a href="../vagas/vagas.html" class="hero-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Buscar Vagas</h3>
-                    <span>Encontre oportunidades</span>
-                </a>
+            <label>Email</label>
+            <input type="email">
 
-                <a href="../candidaturas/candidaturas.html" class="hero-card">
-                    <i class="fas fa-paper-plane"></i>
-                    <h3>Candidaturas</h3>
-                    <span>Acompanhe seus envios</span>
-                </a>
+            <label>Telefone</label>
+            <input type="text">
 
-                <a href="../mural/feed.html" class="hero-card">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Mural</h3>
-                    <span>Veja avisos e novidades</span>
-                </a>
+            <label>Cidade / Estado</label>
+            <input type="text">
 
-            </div>
+            <label>LinkedIn ou Portfólio</label>
+            <input type="text">
+        </section>
+
+        <!-- OBJETIVO -->
+        <section class="form-section">
+            <h2>Objetivo Profissional</h2>
+            <textarea></textarea>
+        </section>
+
+        <!-- EXPERIÊNCIA -->
+        <section class="form-section">
+            <h2>Experiência Profissional</h2>
+
+            <label>Empresa</label>
+            <input type="text">
+
+            <label>Cargo</label>
+            <input type="text">
+
+            <label>Período</label>
+            <input type="text">
+
+            <label>Descrição das atividades</label>
+            <textarea></textarea>
+        </section>
+
+        <!-- FORMAÇÃO -->
+        <section class="form-section">
+            <h2>Formação Acadêmica</h2>
+
+            <label>Curso</label>
+            <input type="text">
+
+            <label>Instituição</label>
+            <input type="text">
+
+            <label>Ano de conclusão</label>
+            <input type="text">
+        </section>
+
+        <!-- HABILIDADES -->
+        <section class="form-section">
+            <h2>Habilidades</h2>
+            <textarea placeholder="Ex: HTML, Comunicação, Trabalho em equipe..."></textarea>
+        </section>
+
+        <!-- IDIOMAS -->
+        <section class="form-section">
+            <h2>Idiomas</h2>
+
+            <label>Idioma</label>
+            <input type="text">
+
+            <label>Nível</label>
+            <input type="text">
+        </section>
+
+        <!-- CURSOS -->
+        <section class="form-section">
+            <h2>Cursos Extras</h2>
+
+            <label>Curso</label>
+            <input type="text">
+
+            <label>Instituição</label>
+            <input type="text">
+
+            <label>Carga Horária</label>
+            <input type="text">
+        </section>
+
+        <div class="acoes">
+            <button type="button" class="cancelar">Cancelar</button>
+            <button type="submit" class="salvar">Salvar Currículo</button>
         </div>
-    </section>
 
+    </form>
 </main>
-        <!--Inicio do Footer-->
+<!--Inicio do Footer-->
    <footer class="footer-taluno">
     <div class="container footer-content">
         
@@ -116,5 +177,6 @@
     </div>
 </footer>
 <!--Final do Footer-->
+
 </body>
 </html>
