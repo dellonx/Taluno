@@ -1,0 +1,113 @@
+
+.empresa-dashboard {
+    background: #d9d9d9;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.hero {
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    display: block;
+}
+
+
+.cta-box {
+    width: 80%;
+    max-width: 1000px;
+    background: #eeeeee;
+    padding: 18px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta-box p {
+    font-size: 15px;
+    color: #4a0072;
+}
+
+.cta-box button {
+    background: linear-gradient(#6a1b9a);
+    border: none;
+    color: white;
+    padding: 8px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.cta-box button:hover {
+    opacity: 0.85;
+}
+
+.vagas-box {
+    width: 80%;
+    max-width: 1000px;
+    background: linear-gradient(180deg, #7b1fa2, #6a1b9a);
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+}
+
+.vagas-box h2 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.vaga-card {
+    background: #f2f2f2;
+    color: #333;
+    padding: 14px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.vaga-card .inscritos {
+    color: #555;
+    font-size: 12px;
+}
+
+.vaga-card a {
+    color: #5e35b1;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.vaga-card:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .cta-box {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .vaga-card {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+}
