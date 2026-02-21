@@ -70,7 +70,7 @@
     </aside>
     
     <section class="container-vaga-empresa"> 
-        <button class="btn-adicionar-vaga">
+        <button class="btn-adicionar-vaga" onclick="abrirModal('modal-cadastro')">
             <span class="icon">+</span> Anunciar Nova Vaga
         </button>
 
@@ -175,6 +175,126 @@
 </footer>
 <!--Final do Footer-->
 
-<script src="/projeto_taluno/static/js/vagas/vagas.js"></script>
+
+                <!-- AQUI É RESPONSÁVEL PELO MODAL DE ADICIONAR NOVA VAGA-->
+
+
+<div class="modal-overlay-vaga" id="modal-cadastro">
+    <!-- Aqui é responsável pela estrutura do modal de adicionar novas vagas-->
+   <div class="janela-cadastro-vaga">
+    <header class="header-modal-vaga">
+        <h2 class="titulo-modal">Criar nova vaga</h2>
+        <p class="subtitulo-modal">Preencha as informações abaixo para publicar sua vaga no taluno</p>
+    </header>
+
+    <!-- aqui é responsável pelo campo de titulo de vaga-->
+    <form class="formulario-criacao-vaga">
+        <div class="campo-vaga">
+            <label>Título da vaga</label>
+            <input type="text" placeholder="Ex: Desenvolvedor Junior">
+        </div>
+    
+    <!-- aqui são as areas disponiveis para escolher-->
+        <div class="linha-vaga-dupla">
+            <div class="campo-vaga">
+                <label>Área</label>
+                <select name="area-vaga">
+                    <option value="">Selecione a área</option>
+                    <option value="ti">TI e Software</option>
+                    <option value="adm">Administração</option>
+                    <option value="design">Design e UX</option>
+                    <option value="mkt">Marketing e Comunicação</option>
+                    <option value="vendas">Vendas e Comercial</option>
+                    <option value="eng">Saúde</option>
+                    <option value="atendimento">Atendimento ao Cliente</option>
+                    <option value="eng">Outros</option>
+                </select>
+            </div>
+
+        <!-- O nível requerido da vaga...-->
+            <div class="campo-vaga">
+                <label>Modalidade</label>
+                <select name="nivel-vaga">
+                    <option value="">Tipo de vaga</option>
+                    <option value="clt">CLT</option>
+                    <option value="estagio">Estágio</option>
+                    <option value="pj">Aprendiz</option>
+                    <option value="temporario">Freelancer</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- descrição da vaga-->
+        <div class="campo-vaga">
+            <label>Descrição da vaga</label>
+            <textarea 
+                id="descricao-vaga" rows="3" placeholder="Descreva as responsabilidades..." oninput="autoExpand(this)">
+            </textarea>
+        </div>
+
+
+        <!--Aqui "separa" as informações necessarias e as adicionais-->
+        <div class="divisor-requisitos">
+            <h3>Informações adicionais</h3>
+        </div>
+
+        <!-- Aqui é a parte de escolaridade-->
+        <div class="linha-vaga-dupla">
+            <div class="campo-vaga">
+                <label for="escolaridade">Escolaridade mínima</label>
+                <select id="escolaridade" name="escolaridade">
+                    <option value="">Selecione a escolaridade</option>
+                    <option value="fundamental">Ensino Fundamental</option>
+                    <option value="medio">Ensino Médio</option>
+                    <option value="superior-cursando">Superior Cursando</option>
+                    <option value="superior-completo">Superior Completo</option>
+                    <option value="pos">Pós / Especialização</option>
+                </select>
+            </div>
+
+            <!-- aqui é escala de trabalho-->
+            <div class="campo-vaga">
+                <label for="escala-vaga">Escala de trabalho</label>
+                <select id="escala-vaga" name="escala-vaga">
+                    <option value="">Selecione a escala</option>
+                    <option value="6x1">6x1 (Folga variável)</option>
+                    <option value="5x2">5x2 (Segunda a Sexta)</option>
+                    <option value="12x36">12hx36h</option>
+                    <option value="hibrido">Híbrido</option>
+                    <option value="remoto">Home Office</option>
+                    <option value="combinar">A combinar</option>
+                </select>
+            </div>
+        </div>
+
+
+    
+        <div class="linha-vaga-dupla">
+             <!--aqui é responsável pelo salário-->
+            <div class="campo-vaga">
+                <label for="salario">Salário</label>
+                <input type="text" placeholder="Informe o salário">
+            </div>
+
+            <!-- experiencia exigida-->
+            <div class="campo-vaga">
+                <label for="experiencia">Experiência exigida?</label>
+                <select id="experiencia">
+                    <option value="nao">Não</option>
+                    <option value="sim">Sim</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="footer-modal-vaga">
+            <button type="button" class="btn-vaga-cancelar" onclick="fecharModal('modal-cadastro')">Cancelar</button>
+            <button type="submit" class="btn-vaga-publicar">Publicar</button>
+        </div>
+    </form>
+    </div>
+
+</div>
+
+<script src="/projeto_taluno/static/js/empresa/vagas/vagas-empresa.js"></script>
 </body>
 </html>
