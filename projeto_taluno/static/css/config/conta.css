@@ -1,0 +1,202 @@
+/* =========================================
+   SIDEBAR DE CONFIGURAÇÕES
+   ========================================= */
+main {
+    display: flex;
+    flex: 1;
+    align-items: stretch; 
+    background-color: #f4f5f7; 
+}
+
+.config-sidebar {
+    background-color: #ffffff; 
+    width: 100%;
+    max-width: 400px; 
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    border-right: 1px solid #e0e0e0; 
+}
+
+/* --- Cabeçalho (Seta + Título) --- */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 10px; /* Alinhamento visual */
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark, #1A1A1A);
+}
+
+.btn-back {
+    color: var(--primary, #9600FF); /* Cor da seta */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.btn-back:hover {
+    transform: translateX(-5px); /* Efeitinho de voltar */
+}
+
+/* --- Lista do Menu --- */
+.settings-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os botões */
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 20px;
+    border-radius: 12px; /* Borda arredondada como no print */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--texto-nav, #333); /* Cor do texto normal */
+    transition: all 0.3s ease;
+    text-align: center; /* Texto centralizado */
+}
+
+/* --- Estado Hover (Passar o mouse) --- */
+.menu-item:hover {
+    background-color: #f0f0f0;
+    color: var(--primary, #9600FF);
+}
+
+/* --- Estado ATIVO (O botão Roxo) --- */
+.menu-item.active {
+    background-color: var(--primary, #9600FF); /* Roxo do Taluno */
+    color: #ffffff; /* Texto branco */
+    box-shadow: 0 4px 15px rgba(150, 0, 255, 0.3); /* Sombra suave */
+}
+
+.menu-item.active:hover {
+    background-color: #7b00cc; /* Um roxo um pouco mais escuro no hover */
+    color: #ffffff;
+}
+
+.config-content {
+    flex: 1; 
+    padding: 60px 80px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o botão na horizontal */
+    justify-content: flex-end; /* Joga o botão lá pra baixo */
+    padding-bottom: 100px; /* Dá um espaço pro rodapé */
+}
+
+/* O Botão Vermelho Gigante */
+.btn-delete-account {
+    background-color: #EA2651; /* Vermelho/Rosa do seu mockup */
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-delete-account:hover {
+    background-color: #c41e42;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(234, 38, 81, 0.4);
+}
+
+/* =========================================
+   O MODAL (A JANELINHA FLUTUANTE)
+   ========================================= */
+
+/* O fundo escuro que cobre a tela toda */
+.modal-delete-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(240, 244, 248, 0.8); /* Um fundo clarinho transparente igual seu print */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    
+    /* ESCONDE O MODAL POR PADRÃO */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Quando o JS colocar a classe 'active', ele aparece */
+.modal-delete-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* A caixa branca no centro */
+.modal-delete-box {
+    background-color: white;
+    padding: 50px 60px;
+    border-radius: 12px;
+    border: 1px solid #797979;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    
+    /* Faz a caixa dar um "pulinho" quando entra */
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-delete-overlay.active .modal-delete-box {
+    transform: translateY(0);
+}
+
+.modal-delete-box h3 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+/* Os botões de dentro da caixa */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btn-cancelar {
+    background-color: #333333;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-confirmar {
+    background-color: #EA2651;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancelar:hover, .btn-confirmar:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
