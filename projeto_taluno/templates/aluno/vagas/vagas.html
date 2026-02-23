@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno Vagas</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/aluno/vagas/vagas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
             </a>
 
             <div class="top-icons">
-                <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
+                <a href="../chat/chat.html" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
                 <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
             </div>
         </div>
@@ -29,12 +30,220 @@
                 <li><a href="../vagas/vagas.html" class="active">Vagas</a></li>
                 <li><a href="../mural/feed.html">Mural</a></li>
                 <li><a href="../candidaturas/candidaturas.html">Candidaturas</a></li>
-                <li><a href="../suporte/suporte.html">Suporte</a></li>
+                <li><a href="../curriculo/curriculo.html">Curriculo</a></li>
             </ul>
         </div>
     </nav>
+
+    
 </header>
-<main></main>
+<!-- é definido o corpo do site onde terá a divisão do container e formulario -->
+    <main class="vagas-layout"> 
+            
+            <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
+        <aside class="filtros-sidebar">
+        <div class="filtros-container2">
+            <h1 class="titulo-principal">Pesquisar Vagas</h1>
+            <input type="text" placeholder="" class="input-busca">
+        </div> 
+            
+
+            
+
+            <div class="filtros-container">
+        
+                <h2 class="filtros-titulo">Filtro Avançado</h2>
+                
+
+                <form class="filtros-form">
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Palavra chave</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="palavra-chave" name="palavra-chave">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Cidade</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Cidade" name="Cidade">
+                            <span class="btn-limpar">&times;</span>
+                                
+                        </div>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="palavra-chave">Tipo de vaga</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="Tipo de vaga" name="tipo-vaga">
+                            <span class="btn-limpar">&times;</span>        
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
+                </form>
+            </div>
+        </aside>
+
+        <section class="vagas-container">
+
+                <!-- Aqui é responsável pela estrutura do primeiro card de vagas disponíveis-->
+            <article class="card-das-vagas">
+
+                <!-- Mexa aqui caso queira alterar as informações card geral-->
+                <div class="vaga-info-bloco">
+                    <h3 class="vaga-titulo">Vaga para barbeiro temporario </h3>
+                    <p class="vaga-empresa">Salão Homem Mais Forte</p>
+                    <p class="vaga-endereco">Av. Boa Viagem, 4200 - Recife, PE, 51021-000</p>
+
+                    <!-- aqui é responsável por reger as tags destaques-->
+                    <div class="vaga-badges">
+                        <span class="badge">Freelancer</span>
+                        <span class="badge">12H</span>
+                        <span class="badge">Tarde/Noite</span>
+                    </div>
+                
+                </div>
+                <!--aqui e responsavel pelo botão "ver mais"-->
+                <button class="btn-ver-mais" data-descricao="Nossa barbearia está em busca de um(a) Barbeiro(a) para fazer parte do nosso time e fortalecer o atendimento ao público.
+                                                    O profissional atuará em um ambiente dinâmico, com foco em cortes masculinos, barba e cuidados estéticos, prezando sempre pela satisfação dos clientes.
+                                                    Essa é uma ótima oportunidade para quem deseja se desenvolver na área, ganhar experiência prática e construir uma carreira sólida no segmento da barbearia.
+                                                    O dia a dia envolve atendimento direto, execução de serviços de barbearia e zelo pela organização do espaço.
+                                                    É importante ter noções básicas de cortes, barba, acabamento e bom relacionamento com os clientes.
+                                                    Oferecemos remuneração compatível, ambiente profissional e chances reais de crescimento.">Ver mais</button>
+                                                                
+            </article>
+
+                
+                <!-- Aqui é responsável pela estrutura do segundo card de vagas disponíveis-->
+            <article class="card-das-vagas">
+
+                <!-- Mexa aqui caso queira alterar as informações do 2 card geral-->
+                <div class="vaga-info-bloco">
+                    <h3 class="vaga-titulo">Vaga Desenvolvedor Junior </h3>
+                    <p class="vaga-empresa">Simtec Soluções Tecnológicas</p>
+                    <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
+
+                    <!-- aqui é responsável por reger as tags destaques-->
+                    <div class="vaga-badges">
+                        <span class="badge">Estágio</span>
+                        <span class="badge">6H</span>
+                        <span class="badge">Manhã</span>
+                    </div>
+                
+                </div>
+                <!--aqui e responsavel pelo botão "ver mais"-->
+                <button class="btn-ver-mais" data-descricao="Nós, da Simtec, buscamos um(a) Estagiário(a) Dev Júnior para integrar nossa equipe de desenvolvimento. Oferecemos a 
+                                                    oportunidade de aprendizado em um ambiente colaborativo, no qual será possível participar do desenvolvimento de aplicações web e mobile, apoiar na manutenção de sistemas e 
+                                                    contribuir com ideias inovadoras. Trata-se de uma 
+                                                    excelente chance para quem deseja iniciar a carreira em programação e evoluir junto a uma empresa comprometida com a inovação e o crescimento profissional de seus talentos.">Ver mais</button>
+            
+            </article>
+
+
+                <!-- Aqui é responsável pela estrutura do terceiro card de vagas disponíveis-->
+            <article class="card-das-vagas">
+
+                <!-- Mexa aqui caso queira alterar as informações do 3 card geral-->
+                <div class="vaga-info-bloco">
+                    <h3 class="vaga-titulo">Vaga para Porteiro </h3>
+                    <p class="vaga-empresa">Simte Soluções Tecnológicas</p>
+                    <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
+                    
+                    <!-- aqui é responsável por reger as tags destaques-->
+                    <div class="vaga-badges">
+                        <span class="badge">CLT</span>
+                        <span class="badge">12H</span>
+                        <span class="badge">Noite</span>
+                    </div>
+                
+                </div>
+                <!--aqui e responsavel pelo botão "ver mais"-->
+                <button class="btn-ver-mais" data-descricao="Estamos contratando Porteiro(a) para atuar no controle de acesso e apoio à rotina do local.
+                                                    O profissional será responsável por recepcionar visitantes, orientar o público e garantir a segurança do ambiente de forma cordial e atenta.
+                                                    A oportunidade é ideal para quem busca estabilidade, gosta de lidar com pessoas e deseja trabalhar em um ambiente organizado e responsável.
+                                                    As atividades incluem controle de entrada e saída, observação do movimento e apoio às normas internas.
+                                                    É desejável ter atenção, postura profissional, comunicação clara e senso de responsabilidade.
+                                                    Oferecemos salário compatível, benefícios e possibilidade de permanência a longo prazo.">Ver mais</button>
+            
+            </article>
+
+                
+
+                <!-- Aqui é responsável pela estrutura do quarto card de vagas disponíveis-->
+            <article class="card-das-vagas">
+
+                <!-- Mexa aqui caso queira alterar as informações do 4 card geral-->
+                <div class="vaga-info-bloco">
+                    <h3 class="vaga-titulo">Vaga Web Designer</h3>
+                    <p class="vaga-empresa">Simtec Soluções Tecnlógicas</p>
+                    <p class="vaga-endereco">R. Alfândega, 35 - Recife, PE, 50030-030</p>
+
+                    <!-- aqui é responsável por reger as tags destaques-->
+                    <div class="vaga-badges">
+                        <span class="badge">CLT</span>
+                        <span class="badge">6H</span>
+                        <span class="badge">Manhã</span>
+                    </div>
+                
+                </div>
+                <!--aqui e responsavel pelo botão "ver mais"-->
+                <button class="btn-ver-mais" 
+                data-descricao="Estamos em busca de um(a) Web Designer para integrar nossa equipe criativa e colaborar com projetos digitais.
+                O profissional atuará na criação de layouts, interfaces e elementos visuais para sites e plataformas online, prezando pela usabilidade e estética.
+                Esta é uma boa oportunidade para quem deseja desenvolver habilidades em design digital e crescer profissionalmente em um ambiente colaborativo.
+                As atividades envolvem criação visual, ajustes em páginas web e apoio no desenvolvimento da identidade digital dos projetos.
+                É desejável ter conhecimentos básicos em design gráfico, ferramentas de criação e noções de web.
+                Oferecemos remuneração compatível, ambiente criativo e oportunidades de evolução profissional.">Ver mais</button>
+            
+            </article>
+
+                <!-- aqui serão os botões que passam/voltam de vagas disponivéis-->
+            <nav class="paginacao">
+                <button class="btn-paginacao" aria-label="Página Anterior">&#10094;</button>
+                <button class="btn-paginacao" aria-label="Próxima Página">&#10095;</button>
+            </nav>
+
+        </section>
+
+        <!-- Aqui é reponsável pela estrutura geral do site/modal-->
+        <div class="modal-overlay">
+            <div class="modal-card-detalhes">
+
+                <button class="btn-voltar-modal" aria-label="Página Anterior">
+                    <i class="fas fa-chevron-left"></i> </button>
+
+                <header class="modal-header">
+                    <div class="empresa-logo-container">
+                        <img src="/projeto_taluno/static/img/logo/logo_empresa_simtec.png" alt="Logo Empresa" class="logo-img">
+                    </div>
+
+                    <div class="vaga-info-principal">
+                        <h2 class="empresa-nome-detalhe">Simtech Soluções Tecnológicas</h2>
+                        <h1 class="vaga-titulo-detalhe">Vaga Desenvolvedor Junior</h1>
+                    </div>
+                    
+                    <button class="btn-candidatar">Candidatar</button>
+                </header>
+
+                <div class="tags-detalhes">
+                    <span class="badge">estágio</span>
+                    <span class="badge">6H</span>
+                    <span class="badge">Turno</span>
+                </div>
+
+                <p class="vaga-localizacao">Rua do Bom Jesus, nº 1991 - Bairro do Recife, Recife/PE</p>
+
+                <div class="vaga-descricao-texto">
+                    <p></p>
+                </div>
+
+            </div> 
+        </div>
+    </main>
+
         <!--Inicio do Footer-->
     <footer class="footer-taluno">
     <div class="container footer-content">
@@ -54,10 +263,10 @@
 
         <div class="footer-col social-col">
             <div class="social-icons">
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/senacpe/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/SenacPernambuco" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/senacpe/?locale=pt_BR" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/senacpe/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
             
             <a href="#" class="btn-back-top">
@@ -74,5 +283,7 @@
     </div>
 </footer>
 <!--Final do Footer-->
+
+<script src="/projeto_taluno/static/js/aluno/vagas/vagas.js"></script>
 </body>
 </html>

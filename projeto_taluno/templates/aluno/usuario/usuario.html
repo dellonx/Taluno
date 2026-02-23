@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taluno | Meu Perfil</title>
+
+    <link rel="stylesheet" href="/projeto_taluno/static/css/aluno/usuario/usuario.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="profile-sidebar">
+            <div class="sidebar-top">
+                <a href="../inicio/inicio.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <div class="avatar-placeholder" id="defaultAvatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <img src="" alt="Foto de Perfil" class="profile-avatar hidden" id="realAvatar">
+                    <button class="btn-edit-avatar"><i class="fas fa-camera"></i></button>
+                </div>
+
+                <h2 class="user-name">Lucas Júlia Santos</h2>
+                <p class="user-role">Desenvolvedor Full Stack</p>
+                <p class="user-email">lucas.santos@email.com</p>
+            </div>
+
+            <nav class="profile-nav">
+                <a href="#" class="nav-btn active">Dados Pessoais</a>
+                <a href="/projeto_taluno/templates/aluno/curriculo/curriculo.html" class="nav-btn">Currículo</a>
+                <a href="#" class="nav-btn">Configurações</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="profile-content">
+            <div class="content-wrapper">
+                
+                <section class="info-section">
+                    <header class="section-header">
+                        <h3><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h3>
+                        <button class="btn-add" id="btnAddFormacao">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </header>
+
+                    <div class="cards-list" id="listaFormacoes">
+                        <div class="info-card">
+                            <div class="card-left" data-type="formacao">
+                                <h4>Análise e Desenvolvimento de Sistemas</h4>
+                                <span class="card-subtitle">Faculdade Senac Pernambuco</span>
+                                <span class="card-status status-progress">Em andamento</span>
+                                <span class="card-date">Jan 2024 - Dez 2026</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-left" data-type="formacao">
+                                <h4>Técnico em Informática</h4>
+                                <span class="card-subtitle">ETE - Escola Técnica Estadual</span>
+                                <span class="card-status status-completed">Concluído</span>
+                                <span class="card-date">Jan 2021 - Dez 2023</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <header class="section-header">
+                        <h3><i class="fas fa-code"></i> Habilidades Técnicas</h3>
+                        <button class="btn-add" id="btnAddHabilidade">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </header>
+
+                    <div class="cards-list grid-layout" id="listaHabilidades">
+                        <div class="skill-card">
+                            <div class="skill-info">
+                                <i class="fab fa-html5 skill-icon html"></i>
+                                <div class="card-left" data-type="habilidade">
+                                    <h4>HTML5 & CSS3</h4>
+                                    <span class="skill-level">Avançado</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-info">
+                                <i class="fab fa-js skill-icon js"></i>
+                                <div class="card-left" data-type="habilidade">
+                                    <h4>JavaScript</h4>
+                                    <span class="skill-level">Intermediário</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modalFormacao">
+        <div class="modal-box">
+            <header class="modal-header">
+                <h3>Adicionar Formação</h3>
+                <button class="btn-close-modal"><i class="fas fa-times"></i></button>
+            </header>
+            <form id="formAddFormacao">
+                <div class="modal-body">
+                    <label>Curso / Título</label>
+                    <input type="text" id="inputFormCurso" class="modal-input" placeholder="Ex: Engenharia de Software" required>
+                    
+                    <label>Instituição</label>
+                    <input type="text" id="inputFormInst" class="modal-input" placeholder="Ex: Universidade XYZ" required>
+                    
+                    <label>Status</label>
+                    <select id="inputFormStatus" class="modal-input" required>
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Concluído">Concluído</option>
+                        <option value="Trancado">Trancado</option>
+                    </select>
+                    
+                    <label>Período</label>
+                    <input type="text" id="inputFormData" class="modal-input" placeholder="Ex: Jan 2023 - Atual" required>
+                </div>
+                <footer class="modal-footer">
+                    <button type="button" class="btn-secondary btn-cancelar-modal">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalHabilidade">
+        <div class="modal-box">
+            <header class="modal-header">
+                <h3>Adicionar Habilidade</h3>
+                <button class="btn-close-modal"><i class="fas fa-times"></i></button>
+            </header>
+            <form id="formAddHabilidade">
+                <div class="modal-body">
+                    <label>Habilidade (Tecnologia/Soft Skill)</label>
+                    <input type="text" id="inputHabNome" class="modal-input" placeholder="Ex: React, Liderança..." required>
+                    
+                    <label>Nível</label>
+                    <select id="inputHabNivel" class="modal-input" required>
+                        <option value="Básico">Básico</option>
+                        <option value="Intermediário">Intermediário</option>
+                        <option value="Avançado">Avançado</option>
+                    </select>
+
+                    <label>Ícone (Opcional)</label>
+                    <select id="inputHabIcone" class="modal-input">
+                        <option value="fas fa-code">Genérico (Código)</option>
+                        <option value="fab fa-react">React</option>
+                        <option value="fab fa-node-js">Node.js</option>
+                        <option value="fab fa-java">Java</option>
+                        <option value="fas fa-users">Equipe / Soft Skill</option>
+                    </select>
+                </div>
+                <footer class="modal-footer">
+                    <button type="button" class="btn-secondary btn-cancelar-modal">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalExcluir">
+        <div class="modal-box modal-small">
+            <header class="modal-header">
+                <h3 style="color: #EA2651;"><i class="fas fa-exclamation-triangle"></i> Excluir Item</h3>
+                <button class="btn-close-modal"><i class="fas fa-times"></i></button>
+            </header>
+            <div class="modal-body text-center">
+                <p style="font-size: 1.05rem; color: #333; margin-bottom: 5px; font-weight: 500;">
+                    Tem certeza que deseja apagar?
+                </p>
+                <p style="font-size: 0.85rem; color: #777;">
+                    Esta ação não poderá ser desfeita.
+                </p>
+            </div>
+            <footer class="modal-footer" style="justify-content: center;">
+                <button type="button" class="btn-secondary btn-cancelar-modal">Cancelar</button>
+                <button type="button" class="btn-danger" id="btnConfirmarExclusao">Sim, apagar</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/projeto_taluno/static/js/usuario/usuario.js"></script>
+</body>
+</html>

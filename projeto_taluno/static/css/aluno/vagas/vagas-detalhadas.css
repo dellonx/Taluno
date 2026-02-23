@@ -1,0 +1,191 @@
+
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    /* Gradiente inspirado na imagem: Azul -> Roxo -> Rosa */
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --texto-nav: #333333;
+    --texto-hover: #0052cc;
+    --bg-branco: #ffffff;
+}
+
+/* Remove margens padrão do navegador */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Segoe UI', sans-serif; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- HEADER PRINCIPAL --- */
+.header-taluno {
+    width: 100%;
+    position: sticky; /* Cola no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* LINHA 1: Top Bar (Gradiente) */
+.top-bar {
+    background: var(--gradient-taluno);
+    padding: 12px 0;
+    color: white;
+}
+
+.logo img {
+    height: 40px; /* Ajuste aqui o tamanho da logo */
+    display: block;
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Ícones (Requer FontAwesome) */
+.top-icons i {
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.top-icons i:hover { transform: scale(1.1); }
+
+.menu-hamburguer {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* LINHA 2: Nav Bar (Branca) */
+.nav-bar {
+    background: var(--bg-branco);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Espalha os itens */
+    max-width: 800px; /* Limita a largura para não ficar muito aberto */
+    margin: 0 auto; /* Centraliza o menu */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto-nav);
+    font-weight: 700; /* Negrito */
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    padding-bottom: 5px; /* Espaço para a borda no hover */
+}
+
+/* Efeito Hover e Ativo */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--texto-hover);
+    border-bottom: 3px solid var(--texto-hover); /* Detalhe visual elegante */
+}
+
+/* O fundo escuro deve cobrir toda a janela do navegador */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(85, 85, 85, 0.4); /* Escurece o fundo para dar foco */
+    
+    /* ISSO VAI CENTRALIZAR SEU CARD BRANCO NO MEIO: */
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center;     /* Centraliza na vertical */
+    
+    z-index: 2000; /* Garante que fique acima do footer roxo */
+}
+
+.modal-overlay.active{
+    display: flex;
+}
+
+/* Seu card que hoje está no canto */
+.modal-card-detalhes {
+    background-color: white;
+    width: 90%;
+    max-width: 900px; /* Largura ideal baseada no seu design */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #797979; /* A linhazinha roxa do protótipo */
+    overflow-y: auto;
+}
+
+.modal-header{
+    display: flex;
+    align-items: center; /* Alinha tudo verticalmente ao centro      */
+    justify-content: center; /* Empurra a foto de perfil a esquerda e o botão para direita   */
+    gap: 20px;
+    margin-bottom: 30px; /* espaço para o texto que virá a baixo   */
+}
+
+.empresa-logo-container {
+    width: 120px; /* deixa o layout quadrado  */
+    height: 120px; /* deixa o layout da foto de perfil quadrado     */
+    background-color: #0052cc ; /* Não sei se este é uil   */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vaga-info-principal{
+    flex: 1; /* faz o texto ocupar o espaço do meio    */
+}
+
+.btn-candidatar {
+    background-color: #0052cc; /* cor de fundo do botão */
+    color: white; /*cor da letra      */
+    border: none; /* retira o excesso de borda */
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.btn-voltar-modal{
+    background-color: #e0e0e0; /*cor do background do caracter do botão   */
+    color: #888; /* cor do botão  */
+    border: none; /* aqui remove a borda do botão*/
+    width: 45px; /*Espaçamento entre os botões*/
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer; /* altera o cursor do mouse     */
+    display: flex ; 
+    align-items: center;
+    justify-content: center; 
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: absolute;
+
+    top: 125px; /* aqui é responsavel por empurrar o botão pra baixo    */
+    left: 225px; /* aqui é responsavel pra aproximar o botao perto do card    */
+}
+
+.btn-voltar-modal:hover{
+    background-color: #c2c2c2;
+    color: white;
+    transform: (1.1);
+}
+

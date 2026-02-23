@@ -1,0 +1,201 @@
+/* ==========================================================================
+   CADASTRO.CSS - Estilos Exclusivos da Tela de Cadastro
+   ========================================================================== */
+
+/* 1. VARIÁVEIS E RESET */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --color-text-dark: #000000;
+    --color-text-gray: #666666;
+    --color-link-blue: #3b5998;
+    --color-border: #CCCCCC;
+    --color-white: #FFFFFF;
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --border-radius-md: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-primary);
+    height: 100vh;
+    background-color: var(--color-white);
+    overflow: hidden; 
+}
+
+/* 2. LAYOUT PRINCIPAL */
+.auth-container { display: flex; height: 100vh; width: 100%; }
+
+.auth-content {
+    flex: 1;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.auth-visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-image-container { flex-grow: 1; position: relative; height: 100%; }
+.visual-image { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+/* 3. HEADER (Espaçado) */
+.auth-header {
+    display: flex;
+    justify-content: space-between; /* AFASTADO */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem;
+    flex-shrink: 0;
+}
+
+.auth-logo { height: 40px; width: auto; }
+
+.auth-nav { display: flex; gap: 2rem; }
+
+.auth-nav__link {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: opacity 0.3s;
+}
+
+.auth-nav__link:hover { opacity: 0.7; }
+
+.auth-nav__link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-text-dark);
+}
+
+/* 4. FORMULÁRIO E EXTRAS DE CADASTRO */
+.form-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 480px; /* Um pouco mais largo para caber 2 inputs */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Título com Seta Animada */
+.title-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.title-with-icon .form-title { margin-bottom: 0; }
+.form-title { font-size: 2.5rem; font-weight: 700; color: var(--color-text-dark); }
+
+.back-button { display: flex; align-items: center; text-decoration: none; cursor: pointer; }
+.back-button svg { transition: transform 0.2s ease; }
+.back-button:hover svg { transform: translateX(-5px); }
+
+/* Inputs */
+.input-group { position: relative; margin-bottom: 1.5rem; }
+
+.input-field {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus { border-color: #0052cc; }
+
+.input-group__icon.icon-left {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Toggle Senha */
+.toggle-password-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.toggle-password-btn img { width: 22px; opacity: 0.6; transition: opacity 0.2s; }
+.toggle-password-btn:hover img { opacity: 1; }
+.hide { display: none !important; }
+
+/* LAYOUT DUPLO (Exclusivo Cadastro) */
+.form-row { display: flex; gap: 1rem; width: 100%; }
+.form-row .input-group { flex: 1; }
+
+/* Botão */
+.btn {
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn--full { width: 100%; }
+.btn--gradient { background: var(--gradient-taluno); color: var(--color-white); }
+.btn--gradient:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(166, 0, 166, 0.4); }
+
+/* 5. RODAPÉ */
+.form-footer {
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-text-gray);
+}
+
+.link-highlight {
+    color: var(--color-text-dark);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link-highlight:hover { text-decoration: underline; color: #a600a6; }
+
+/* 6. MOBILE */
+@media (max-width: 900px) {
+    body { overflow: auto; }
+    .auth-container { flex-direction: column; height: auto; }
+    .auth-visual { display: none; }
+    .auth-content { padding: 2rem; min-height: 100vh; }
+    .auth-header { margin-bottom: 2rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .form-row { flex-direction: column; gap: 0; }
+}
