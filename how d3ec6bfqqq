@@ -1,0 +1,220 @@
+* [33mbe68977[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/criando-mural[m[33m)[m algumas alterações erradas papai
+* [33mf83ec04[m algumas alterações erradas papai
+* [33md3ec6bf[m[33m ([m[1;31morigin/feature/criando-mural-empresa[m[33m, [m[1;32mfeature/criando-mural-empresa[m[33m)[m Criei o mural da empresa
+*   [33mb519afa[m[33m ([m[1;32mmain[m[33m)[m Merge pull request #44 from dellonx/feature/cria-telas-empresa
+[32m|[m[33m\[m  
+[32m|[m * [33m705980c[m Adiciona o CSS EMPRESA
+* [33m|[m [33m9ab9178[m Merge pull request #43 from dellonx/feature/cria-telas-empresa
+[34m|[m[33m\[m[33m|[m 
+[34m|[m * [33m5eebf37[m Cria todas as telas de empresa
+[34m|[m[34m/[m  
+*   [33m993d5ce[m Merge pull request #42 from dellonx/fix/separa-css-empresa-aluno
+[36m|[m[1;31m\[m  
+[36m|[m * [33m6d4bd1c[m Esse código corrige o problema com o CSS, e faz a separação do css empresa e aluno, afim, de deixar mais organizado na hora de codar
+[36m|[m[36m/[m  
+*   [33mde306a1[m Merge pull request #41 from dellonx/fix/corrige_documentação
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33mc6aab24[m Atualiza a documentação de uma forma geral
+[1;32m|[m[1;32m/[m  
+*   [33me45d80a[m Merge pull request #40 from dellonx/feature/contra-tela-vagas-detalhadas
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33m2ef4ae2[m deixando a navbar padrao
+[1;34m|[m * [33m10f29a1[m Finalizei a tela de vagas. (com html, css, js)
+[1;34m|[m * [33me726b08[m a tela está 90% concluída, só falta algumas alterações de ux
+[1;34m|[m * [33m5dce9c6[m consegui conectar o js e deixar ele responsivo com as vagas disponiveis. agora só falta finalizar o design do do container
+[1;34m|[m * [33mf3f5540[m Terminei o modal da tela de vagas, porém precisa ser editado e precisa abrir as quatros telas
+[1;34m|[m * [33mafeecd7[m criei o container de vagas detalhadas conforme o canva. não está concluído ainda, porém está bem encaminhado
+* [1;35m|[m   [33m834807e[m Merge pull request #33 from dellonx/feature/criando-inicio
+[1;36m|[m[31m\[m [1;35m\[m  
+[1;36m|[m * [1;35m|[m [33m4004ac0[m fiz as correções na tela de inicio
+[1;36m|[m * [1;35m|[m [33med56c0b[m terminei a tela de inicio
+[1;36m|[m * [1;35m|[m [33m591d823[m alterações na tela de inicio
+* [31m|[m [1;35m|[m   [33m43af5fe[m Merge branch 'feature/criando-mural' into main
+[32m|[m[33m\[m [31m\[m [1;35m\[m  
+[32m|[m * [31m|[m [1;35m|[m [33m6b108a9[m criei a tela de mural, ainda não funcional, onde mostra a demonstração de como ficrão os comentários
+[32m|[m * [31m|[m [1;35m|[m [33m3837d37[m coloquei um 'oi'
+[32m|[m [31m|[m[31m/[m [1;35m/[m  
+* [31m|[m [1;35m|[m   [33mb713d0e[m Merge pull request #38 from dellonx/feature/tela-de-candidatura
+[34m|[m[35m\[m [31m\[m [1;35m\[m  
+[34m|[m * [31m\[m [1;35m\[m   [33m4a7ef6d[m Merge pull request #37 from dellonx/main
+[34m|[m [36m|[m[34m\[m [31m\[m [1;35m\[m  
+[34m|[m [36m|[m[34m/[m [31m/[m [1;35m/[m  
+[34m|[m[34m/[m[36m|[m [31m|[m [1;35m|[m   
+* [36m|[m [31m|[m [1;35m|[m [33m3c8b385[m Merge branch 'feature/tela-de-candidatura' into main
+[1;32m|[m[36m\[m[36m|[m [31m|[m [1;35m|[m 
+[1;32m|[m * [31m|[m [1;35m|[m [33m300a915[m html e css da tela de candidatura em andamento
+[1;32m|[m [1;35m|[m [31m|[m[1;35m/[m  
+[1;32m|[m [1;35m|[m[1;35m/[m[31m|[m   
+* [1;35m|[m [31m|[m   [33m61a808c[m Merge pull request #35 from dellonx/style/ajustes-no-footer
+[1;34m|[m[1;35m\[m [1;35m\[m [31m\[m  
+[1;34m|[m * [1;35m|[m [31m|[m [33mf7ecf3f[m faz ajustes no footer, e na navbar
+[1;34m|[m[1;34m/[m [1;35m/[m [31m/[m  
+* [1;35m|[m [31m|[m   [33m15b42ca[m Merge pull request #34 from dellonx/feature/atualizando-links-footer
+[1;36m|[m[31m\[m [1;35m\[m [31m\[m  
+[1;36m|[m * [1;35m|[m [31m|[m [33m505bc13[m esse commit atualiza os links do footer. Agora estão linkados e funcionais
+[1;36m|[m[1;36m/[m [1;35m/[m [31m/[m  
+* [1;35m|[m [31m|[m   [33m9e6d262[m Merge pull request #25 from dellonx/feature/tela-nova-senha
+[32m|[m[33m\[m [1;35m\[m [31m\[m  
+[32m|[m * [1;35m|[m [31m|[m [33m2e86200[m linkando todas as telas, linkando a tela de redefinir a senha para a tela de inicio.html
+[32m|[m * [1;35m|[m [31m|[m   [33m15692bc[m Merge branch 'main' into feature/tela-nova-senha
+[32m|[m [34m|[m[32m\[m [1;35m\[m [31m\[m  
+[32m|[m [34m|[m[32m/[m [1;35m/[m [31m/[m  
+[32m|[m[32m/[m[34m|[m [1;35m|[m [31m|[m   
+* [34m|[m [1;35m|[m [31m|[m   [33m6001864[m Merge pull request #32 from dellonx/apaga-pasta-nao-utilizada
+[1;35m|[m[1;31m\[m [34m\[m [1;35m\[m [31m\[m  
+[1;35m|[m [1;31m|[m[1;35m_[m[34m|[m[1;35m/[m [31m/[m  
+[1;35m|[m[1;35m/[m[1;31m|[m [34m|[m [31m|[m   
+[1;35m|[m * [34m|[m [31m|[m [33m40969fb[m apaga uma pasta nomeada como Taluno, porém, essa pasta não tem código
+[1;35m|[m[1;35m/[m [34m/[m [31m/[m  
+* [34m|[m [31m|[m   [33mb929be6[m Merge pull request #22 from dellonx/feature/criacao-das-vagas-atualizadas
+[1;32m|[m[1;33m\[m [34m\[m [31m\[m  
+[1;32m|[m * [34m|[m [31m|[m [33mcd1b04b[m Conclusão definitiva do site de vagas (pelo menos eu acho dessa vez)
+[1;32m|[m * [34m|[m [31m|[m [33mf2026a1[m mais uma atualização (adicionei os botoes, mas ainda nao está alinhado)
+[1;32m|[m * [34m|[m [31m|[m [33m088f34e[m Mais uma atualização do site de vagas. terminei o formulario e só precisa dos botões do card de vagas disponiveis
+[1;32m|[m * [34m|[m [31m|[m [33mfe30867[m fazendo as alterações solicitadas pela equipe
+[1;32m|[m * [34m|[m [31m|[m [33m0542d0c[m Conclusão da tela de vagas
+[1;32m|[m * [34m|[m [31m|[m [33m20d6cc7[m Conclui a tela de vagas
+[1;32m|[m * [34m|[m [31m|[m [33m3193254[m Terminei a tela de criação de vagas. só precisa refinar
+[1;32m|[m * [34m|[m [31m|[m   [33m84a5378[m salvando antes de atualizar
+[1;32m|[m [1;34m|[m[1;35m\[m [34m\[m [31m\[m  
+[1;32m|[m * [1;35m|[m [34m|[m [31m|[m [33m966210c[m Salvando progresso antes de salvar a main
+[1;32m|[m * [1;35m|[m [34m|[m [31m|[m [33m8527611[m Adicionei os cards das vagas disponiveis no container cinza
+* [1;35m|[m [1;35m|[m [34m|[m [31m|[m   [33m3df31a5[m Merge pull request #26 from dellonx/feature/tela-de-cadrastro
+[31m|[m[31m\[m [1;35m\[m [1;35m\[m [34m\[m [31m\[m  
+[31m|[m [31m|[m[31m_[m[1;35m|[m[31m_[m[1;35m|[m[31m_[m[34m|[m[31m/[m  
+[31m|[m[31m/[m[31m|[m [1;35m|[m [1;35m|[m [34m|[m   
+[31m|[m * [1;35m|[m [1;35m|[m [34m|[m [33m9fdc515[m telas de cadastro e login completas
+[31m|[m * [1;35m|[m [1;35m|[m [34m|[m [33mc11e0d0[m tela de cadastro e login finalizadas!
+[31m|[m * [1;35m|[m [1;35m|[m [34m|[m [33m750d1fa[m tela de cadastro e login atualizada
+[31m|[m * [1;35m|[m [1;35m|[m [34m|[m   [33mf3ccd7c[m Merge remote-tracking branch 'origin/main' into feature/tela-de-cadrastro
+[31m|[m [32m|[m[33m\[m [1;35m\[m [1;35m\[m [34m\[m  
+[31m|[m * [33m|[m [1;35m|[m [1;35m|[m [34m|[m [33m211bde8[m criação de tela de cadastro
+[31m|[m [1;35m|[m [33m|[m[1;35m_[m[1;35m|[m[1;35m/[m [34m/[m  
+[31m|[m [1;35m|[m[1;35m/[m[33m|[m [1;35m|[m [34m|[m   
+* [1;35m|[m [33m|[m [1;35m|[m [34m|[m   [33m088abe1[m Merge pull request #30 from dellonx/docs/atualizacao-readme
+[34m|[m[35m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m  
+[34m|[m * [1;35m|[m [33m|[m [1;35m|[m [34m|[m [33m0cf248e[m docs: atualiza instrucoes no README
+[34m|[m[34m/[m [1;35m/[m [33m/[m [1;35m/[m [34m/[m  
+* [1;35m|[m [33m|[m [1;35m|[m [34m|[m   [33m15dd9f4[m Merge pull request #29 from dellonx/feature/adiciona-imagem
+[36m|[m[1;31m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m  
+[36m|[m * [1;35m|[m [33m|[m [1;35m|[m [34m|[m [33m96874b5[m adiciona uma foto das mulheres passando orientacoes para tela de login
+[36m|[m * [1;35m|[m [33m|[m [1;35m|[m [34m|[m   [33ma213201[m Merge branch 'main' of https://github.com/dellonx/Taluno
+[36m|[m [1;32m|[m[36m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m  
+[36m|[m [1;32m|[m[36m/[m [1;35m/[m [33m/[m [1;35m/[m [34m/[m  
+[36m|[m[36m/[m[1;32m|[m [1;35m|[m [33m|[m [1;35m|[m [34m|[m   
+* [1;32m|[m [1;35m|[m [33m|[m [1;35m|[m [34m|[m   [33m4ea92d0[m Merge pull request #28 from dellonx/tela-index-linkado
+[1;34m|[m[1;35m\[m [1;32m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m  
+[1;34m|[m * [1;32m|[m [1;35m|[m [33m|[m [1;35m|[m [34m|[m [33md497cac[m adiciona o link quando a pessoa aperta no botão entrar, para ela fazer o login
+[1;34m|[m[1;34m/[m [1;32m/[m [1;35m/[m [33m/[m [1;35m/[m [34m/[m  
+* [1;32m|[m [1;35m|[m [33m|[m [1;35m|[m [34m|[m   [33md47ddb6[m Merge pull request #24 from dellonx/feature/index-finalizado
+[1;36m|[m[31m\[m [1;32m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m  
+[1;36m|[m * [1;32m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m   [33m4308524[m tela do index finalizado com o footer
+[1;36m|[m [32m|[m[1;36m\[m [1;32m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m  
+[1;36m|[m [32m|[m[1;36m/[m [1;32m/[m [1;35m/[m [33m/[m [1;35m/[m [34m/[m  
+[1;36m|[m[1;36m/[m[32m|[m [1;32m|[m [1;35m|[m [33m|[m [1;35m|[m [34m|[m   
+* [32m|[m [1;32m|[m [1;35m|[m [33m|[m [1;35m|[m [34m|[m   [33m05d4db4[m Merge pull request #21 from dellonx/fix/coloca-barra-mural
+[34m|[m[35m\[m [32m\[m [1;32m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m  
+[34m|[m * [32m|[m [1;32m|[m [1;35m|[m [33m|[m [1;35m|[m [34m|[m [33m9366f7d[m adiciona a barra no mural.html
+[34m|[m[34m/[m [32m/[m [1;32m/[m [1;35m/[m [33m/[m [1;35m/[m [34m/[m  
+* [32m|[m [1;32m|[m [1;35m|[m [33m|[m [1;35m|[m [34m|[m   [33me10759c[m Merge pull request #20 from dellonx/feature/correcao-da-imagem-logo
+[33m|[m[1;31m\[m [32m\[m [1;32m\[m [1;35m\[m [33m\[m [1;35m\[m [34m\[m  
+[33m|[m [1;31m|[m[33m_[m[32m|[m[33m_[m[1;32m|[m[33m_[m[1;35m|[m[33m/[m [1;35m/[m [34m/[m  
+[33m|[m[33m/[m[1;31m|[m [32m|[m [1;32m|[m [1;35m|[m [1;35m|[m [34m|[m   
+[33m|[m * [32m|[m [1;32m|[m [1;35m|[m [1;35m|[m [34m|[m [33me3caa6f[m apaga a tela da configuracao e corrige apenas a imagem
+[33m|[m * [32m|[m [1;32m|[m [1;35m|[m [1;35m|[m [34m|[m [33m376b1cd[m corrige a imagem da logo, e coloca a imagem correta em branco
+[33m|[m[33m/[m [32m/[m [1;32m/[m [1;35m/[m [1;35m/[m [34m/[m  
+[33m|[m * [1;32m|[m [1;35m|[m [1;35m|[m [34m|[m [33m633a079[m atualizacao no index
+[33m|[m * [1;32m|[m [1;35m|[m [1;35m|[m [34m|[m [33m5c0151b[m[33m ([m[1;31morigin/feature/criando-index[m[33m)[m index terminado
+[33m|[m * [1;32m|[m [1;35m|[m [1;35m|[m [34m|[m [33mf5c28d2[m finalizei a tela de index
+[33m|[m * [1;32m|[m [1;35m|[m [1;35m|[m [34m|[m [33me0e03fc[m tela de index terminada
+[33m|[m * [1;32m|[m [1;35m|[m [1;35m|[m [34m|[m [33m38c9aba[m dei inicio a tela de index(não terminado)
+[33m|[m [1;35m|[m [1;32m|[m[1;35m_[m[1;35m|[m[1;35m/[m [34m/[m  
+[33m|[m [1;35m|[m[1;35m/[m[1;32m|[m [1;35m|[m [34m|[m   
+[33m|[m [1;35m|[m * [1;35m|[m [34m|[m [33mb35c48a[m adiciona os links para tela de cadastro e esqueci senha
+[33m|[m [1;35m|[m[33m/[m [1;35m/[m [34m/[m  
+[33m|[m[33m/[m[1;35m|[m [1;35m|[m [34m|[m   
+[33m|[m [1;35m|[m [1;35m|[m * [33m161eaec[m Tela de nova senha finalizada (falta linkar).
+[33m|[m [1;35m|[m[33m_[m[1;35m|[m[33m/[m  
+[33m|[m[33m/[m[1;35m|[m [1;35m|[m   
+* [1;35m|[m [1;35m|[m   [33m9f9448b[m[33m ([m[1;31morigin/feature/tela-de-recuperacao[m[33m)[m fix: correção de bugs no código
+[1;32m|[m[1;33m\[m [1;35m\[m [1;35m\[m  
+[1;32m|[m * [1;35m\[m [1;35m\[m   [33m101d7c8[m Merge pull request #14 from dellonx/feature/tela-de-login
+[1;32m|[m [1;35m|[m[1;35m\[m [1;35m\[m [1;35m\[m  
+[1;32m|[m [1;35m|[m [1;35m|[m[1;35m_[m[1;35m|[m[1;35m/[m  
+[1;32m|[m [1;35m|[m[1;35m/[m[1;35m|[m [1;35m|[m   
+[1;32m|[m [1;35m|[m * [1;35m|[m   [33mb7406a6[m fix: migra css do login para o novo arquivo autenticacao.css
+[1;32m|[m [1;35m|[m [1;36m|[m[31m\[m [1;35m\[m  
+[1;32m|[m [1;35m|[m [1;36m|[m * [1;35m|[m [33m3728519[m tela de login com front-end completo! Ainda não está linkada.
+[1;32m|[m [1;35m|[m [1;36m|[m * [1;35m|[m [33m1dccc35[m salvando progresso antes de atualizar
+[1;32m|[m [1;35m|[m [1;36m|[m * [1;35m|[m [33m505cb28[m pagina de login atualizado
+[1;32m|[m [1;35m|[m * [31m|[m [1;35m|[m   [33mc417c66[m fix: migra css do login para o novo arquivo autenticacao.css
+[1;32m|[m [1;35m|[m [31m|[m[1;35m\[m [31m\[m [1;35m\[m  
+[1;32m|[m [1;35m|[m [31m|[m[1;35m/[m [31m/[m [1;35m/[m  
+[1;32m|[m [1;35m|[m[1;35m/[m[31m|[m [31m/[m [1;35m/[m   
+[1;32m|[m [1;35m|[m [31m|[m[31m/[m [1;35m/[m    
+[1;32m|[m * [31m|[m [1;35m|[m   [33m09679d9[m Merge pull request #12 from dellonx/feature/adiciona-footer
+[1;32m|[m [1;35m|[m[35m\[m [31m\[m [1;35m\[m  
+[1;32m|[m [1;35m|[m [35m|[m[1;35m_[m[31m|[m[1;35m/[m  
+[1;32m|[m [1;35m|[m[1;35m/[m[35m|[m [31m|[m   
+[1;32m|[m [1;35m|[m * [31m|[m [33m91a18ca[m Adiciona menu hamburguer, chat e footer em todas as paginas
+[1;32m|[m [1;35m|[m * [31m|[m [33mff491d5[m adiciona footer
+[1;32m|[m [1;35m|[m * [31m|[m [33m0cf990c[m Adiciona o Footer, menu hamburguer e chat
+[1;32m|[m [1;35m|[m[1;35m/[m [31m/[m  
+[1;32m|[m [1;35m|[m * [33m370096e[m criei a tela de login conforme orientado e informado. criando também esoaço para implementação de js
+[1;32m|[m [1;35m|[m[1;35m/[m  
+* [1;35m|[m [33mccae952[m vinculação das paginas login e cadastro
+* [1;35m|[m [33ma5970ce[m Tela de recupeção html e css completo (falta linkar)!
+* [1;35m|[m [33m59025f5[m Salvando progresso antes de atualiazar a main...
+* [1;35m|[m [33m6854349[m html e css da tela de recuperação finalizado
+[1;35m|[m[1;35m/[m  
+*   [33m873fd2d[m[33m ([m[1;31morigin/style/fiz-css-da-pagina-sobre[m[33m)[m Merge pull request #11 from dellonx/feature/padronizacao-navbar
+[36m|[m[1;31m\[m  
+[36m|[m *   [33mae8cacc[m fix: resolve conflito aceitando a pasta inicio e removendo index
+[36m|[m [1;32m|[m[36m\[m  
+[36m|[m [1;32m|[m[36m/[m  
+[36m|[m[36m/[m[1;32m|[m   
+* [1;32m|[m   [33m416cba3[m Merge pull request #5 from dellonx/feature/criei-pasta-empresa
+[1;34m|[m[1;35m\[m [1;32m\[m  
+[1;34m|[m * [1;32m|[m [33m201d9ba[m teste teste teste
+[1;34m|[m[1;34m/[m [1;32m/[m  
+* [1;32m|[m   [33mdf31ed1[m Merge pull request #4 from dellonx/dellonx-patch-1
+[1;36m|[m[31m\[m [1;32m\[m  
+[1;36m|[m * [1;32m|[m [33m8b925bd[m Modify database description in README
+[1;36m|[m[1;36m/[m [1;32m/[m  
+* [1;32m|[m   [33m0b72dd3[m Merge pull request #3 from dellonx/feature/navbar-corrigida
+[32m|[m[33m\[m [1;32m\[m  
+[32m|[m [33m|[m * [33madbf194[m Padronizaa navbar das paginas
+[32m|[m [33m|[m[33m/[m  
+[32m|[m * [33me3d285d[m implementa a navbar responsiva nos apps e corrige o link de navegação do Inicio para Vagas
+[32m|[m[32m/[m  
+*   [33md17f581[m Resolve conflito no README
+[34m|[m[35m\[m  
+[34m|[m *   [33m8637d39[m Merge pull request #2 from dellonx/feature/adicionando-novas-pastas-partials-e-core
+[34m|[m [36m|[m[1;31m\[m  
+[34m|[m [36m|[m * [33m9efdd67[m Adicionando as atualizações para a NavBar e passando isso pra landing page
+[34m|[m [36m|[m[36m/[m  
+* [36m/[m [33m9f318b1[m documentação atualizada com as alterações necessárias
+[36m|[m[36m/[m  
+* [33mb6ca88a[m icons
+* [33mda89015[m Adicionando a Logo em Imagem
+* [33m313874e[m Adicionando a NavBar
+* [33mb6b4f43[m Update activity report with team and tech lead tasks
+* [33m9abe70a[m atualizacao de todas as pastas do projeto
+* [33m5aef54a[m Reestruturacao das pastas do Taluno
+* [33m5a02f03[m Delete Taluno-main/templates/navbar.html
+* [33md492c13[m Delete Taluno-main/templates/footer.html
+* [33mf02ac09[m Delete Taluno-main/templates/base.html
+* [33ma6b74bb[m Create base.html
+* [33me7a2389[m Delete base.html
+* [33ma74a7e4[m base do html
+* [33m324933d[m Arquitetura de Software (html)
+*   [33mb915d6c[m Merge pull request #1 from dellonx/documentação
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33mf71cb2b[m Add activity report for January 5, 2026
+[1;32m|[m * [33md0df023[m Atualiza relatório de atividades com novos detalhes
+[1;32m|[m * [33m5e7505d[m novas atualizações do projeto taluno
+[1;32m|[m * [33m0ca6524[m Delete Documentação/Relatorio de Atividades.pdf
+[1;32m|[m * [33m94508eb[m Create Relatorio de Atividades
+[1;32m|[m * [33m69b4286[m Documentação
+[1;32m|[m[1;32m/[m  
+* [33m5946e23[m Initial commit
