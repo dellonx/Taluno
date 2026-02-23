@@ -191,6 +191,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     min-height: 80vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 20px; /* Espaço entre botão e cards */
     align-items: flex-start; /* ISSO impede que o botão e os cards estiquem sozinhos! */
     align-self: stretch ;
@@ -214,6 +215,8 @@ body { font-family: 'Segoe UI', sans-serif; }
     gap: 10px; /* Espaço entre o "+" e o texto */
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    
 }
 
 .btn-adicionar-vaga:hover {

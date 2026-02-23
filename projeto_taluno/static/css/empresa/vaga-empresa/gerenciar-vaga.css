@@ -1,0 +1,246 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    /* Gradiente inspirado na imagem: Azul -> Roxo -> Rosa */
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --texto-nav: #333333;
+    --texto-hover: #0052cc;
+    --bg-branco: #ffffff;
+}
+
+/* Remove margens padrão do navegador */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Segoe UI', sans-serif; }
+
+/* LINHA 2: Nav Bar (Branca) */
+.nav-bar {
+    background: var(--bg-branco);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Espalha os itens */
+    max-width: 800px; /* Limita a largura para não ficar muito aberto */
+    margin: 0 auto; /* Centraliza o menu */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto-nav);
+    font-weight: 700; /* Negrito */
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    padding-bottom: 5px; /* Espaço para a borda no hover */
+}
+
+/* Efeito Hover e Ativo */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--texto-hover);
+    border-bottom: 3px solid var(--texto-hover); /* Detalhe visual elegante */
+}
+
+/* Tela principal onde contém a coluna do formulário e o container de vagas   */ 
+
+
+            /*------   AQUI É RESPONSÁVEL PELO CSS DO PRIMEIRO MODAL (ADICIONAR NOVA VAGA) ----*/
+
+/* Container que escurece o fundo */
+.modal-overlay-vaga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*Força o overlay a ocupar a tela inteira do navegador*/
+    width: 100vw;      
+    height: 100vh;      
+    background-color: rgba(0, 0, 0, 0.6);
+    /*centraliza o modal horizontalmente e verticalmente*/
+    display: flex;
+    justify-content: center; /* Move o conteúdo para o meio (Eixo Horizontal) */
+    align-items: flex-start;     /* Move o conteúdo para o meio (Eixo Vertical) */
+    overflow-y: auto; /* ATIVA O SCROLL aqui! */
+
+    z-index: 3000; /* Garante que fique acima da Navbar e Footer */
+    padding: 40px 0; /* Dá um respiro para o modal não colar na borda da tela */
+    
+    /* Configuração da animação */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+
+}
+
+/* Esconde o modal por padrão */
+.modal-overlay-vaga {
+    display: none; /* Muda para 'flex' via JS para mostrar */
+    position: fixed;
+    
+}
+
+/* Classe auxiliar para mostrar o modal via JavaScript */
+.modal-overlay-vaga.ativo {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+            /*------                    FIM DO CODIGO CSS DO PRIMEIRO MODAL                ----*/
+
+/* A caixa branca do modal */
+.janela-cadastro-vaga {
+    background-color: #fff;
+    width: 90%;
+    max-height: none;
+    max-width: 650px; /* Limita a largura para não ficar esticado em monitores grandes */
+    margin-bottom: 40px; 
+    
+    /* Garante que o conteúdo interno não encoste nas bordas */
+    padding: 35px;
+    border-radius: 20px;
+    
+    /* A janela branca (Conteúdo) com efeito de subida */
+    transform: translateY(30px); /* Começa 30px abaixo da posição final */
+    transition: transform 0.4s ease-out;
+    /* ... seus outros estilos (background, padding, etc) ... */
+}
+
+
+/* Cabeçalho do formulário centralizado */
+.header-modal-vaga {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Título principal com o roxo padrão da marca */
+.titulo-modal {
+    color: #a600a6; /* Cor característica do projeto */
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+/* Subtítulo informativo em cinza para não competir com o título */
+.subtitulo-modal {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Container individual de cada campo (Label + Input/Select) */
+.campo-vaga {
+    display: flex;
+    flex-direction: column; /* Alinha o label acima do campo */
+    margin-bottom: 15px;
+}
+
+/* Estilização dos rótulos (labels) para dar destaque e clareza */
+.campo-vaga label {
+    font-size: 14px;
+    color: #a600a6; /* Mantém a identidade visual nos campos */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilização geral de todos os campos de entrada */
+.campo-vaga input,
+.campo-vaga select,
+.campo-vaga textarea {
+    padding: 12px;
+    border: 1px solid #a600a6; /* Mantém a identidade visual com a borda roxa */
+    border-radius: 12px;
+    outline: none; /* Remove o contorno padrão do navegador ao focar no campo */
+    font-family: inherit;
+}
+
+.campo-vaga textarea {
+    min-height: 100px; /* Tamanho inicial */
+    max-height: 600px; /* Limite para não deformar demais o modal */
+    resize: none; /* Impede o usuário de puxar o cantinho manualmente */
+}
+
+/* Sistema de grade para colocar dois campos na mesma linha */
+.linha-vaga-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide o espaço em duas colunas iguais */
+    gap: 20px; /* Espaçamento entre os campos da mesma linha */
+}
+
+/* Divisor visual para a seção de requisitos/informações adicionais */
+.divisor-requisitos {
+    text-align: center;
+    margin: 20px 0;
+    color: #a600a6;
+}
+
+/* Alinhamento dos botões de ação no final do modal */
+.footer-modal-vaga {
+    display: flex;
+    justify-content: flex-end; /* Empurra os botões para a direita */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Botões do Modal */
+.btn-vaga-publicar {
+    background-color: #e6005c; /* Rosa/Roxo do botão Publicar */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Botão principal de ação (Publicar) */
+.btn-vaga-publicar {
+    background-color: #e6005c; /* Cor de destaque (Rosa/Roxo) */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s; /* Suaviza a mudança de cor no hover */
+}
+
+/* Botão de desistência (Cancelar) */
+.btn-vaga-cancelar {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse: escurece a cor e sobe levemente o botão */
+.btn-vaga-publicar:hover {
+    background-color: #c4004e; 
+    transform: translateY(-2px); /* Feedback visual de "clicável" */
+}
+
+.btn-vaga-cancelar:hover {
+    transform: translateY(-2px);
+}
+
+/*Aqui é responsavél pelo segundo modal*/
+
+.btn-excluir-vaga {
+    background-color: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-excluir-vaga:hover {
+    background-color: #ff4d4d;
+    color: white;
+}

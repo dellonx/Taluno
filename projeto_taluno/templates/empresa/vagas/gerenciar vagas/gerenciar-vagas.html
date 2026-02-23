@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno | Empresa</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
-    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/vaga-empresa/vaga-empresa.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/vaga-empresa/gerenciar-vaga.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -35,104 +35,7 @@
 </header>
 
 <main class="layout-container-empresa">
-    <aside class="filtros-sidebar">
-        <div class="barra-pesquisa">
-            <h1 class="titulo-principal">Pesquisar Vagas</h1>
-            <input type="text" placeholder="" class="input-busca">
-        </div> 
-        <div class="filtros-container">
-            <h2 class="filtros-titulo">Filtro Avançado</h2>
-            <form class="filtros-form">
-                <div class="campo-grupo">
-                    <label for="palavra-chave">Palavra chave</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="palavra-chave" name="palavra-chave">
-                        <span class="btn-limpar">&times;</span>
-                    </div>
-                </div>
-                <div class="campo-grupo">
-                    <label for="Cidade">Cidade</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="Cidade" name="Cidade">
-                        <span class="btn-limpar">&times;</span>
-                    </div>
-                </div>
-                <div class="campo-grupo">
-                    <label for="tipo-vaga">Tipo de vaga</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="tipo-vaga" name="tipo-vaga">
-                        <span class="btn-limpar">&times;</span>        
-                    </div>
-                </div>
-                <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
-            </form>
-        </div>
-    </aside>
-    
-    <section class="container-vaga-empresa"> 
-        <button class="btn-adicionar-vaga" onclick="abrirModal('modal-cadastro')">
-            <span class="icon">+</span> Anunciar Nova Vaga
-        </button>
-
-        <article class="card-vaga-empresa">
-            <div class="vaga-info-gestao">
-                <h3 class="vaga-titulo">Vaga Desenvolvedor Junior</h3>
-                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
-                <div class="vaga-detalhes-metricas">
-                    <span class="metrica-item">Status: <span class="metrica-valor status-ativa">Ativa</span></span>
-                    <span class="metrica-item">Candidatos: <span class="metrica-valor">57 inscritos</span></span>
-                    <span class="metrica-item">Publicada em: <span class="metrica-valor">20/01/2026</span></span>
-                </div>
-            </div>
-            <div class="vaga-acao">
-                <button class="btn-gerenciar">Gerenciar Vaga</button>
-            </div>
-        </article>
-
-        <article class="card-vaga-empresa">
-            <div class="vaga-info-gestao">
-                <h3 class="vaga-titulo">Vaga para Porteiro</h3>
-                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
-                <div class="vaga-detalhes-metricas">
-                    <span class="metrica-item">Status: <span class="metrica-valor status-pausada">Pausada</span></span>
-                    <span class="metrica-item">Candidatos: <span class="metrica-valor">12 inscritos</span></span>
-                    <span class="metrica-item">Publicada em: <span class="metrica-valor">02/02/2026</span></span>
-                </div>
-            </div>
-            <div class="vaga-acao">
-                <button class="btn-gerenciar">Gerenciar Vaga</button>
-            </div>
-        </article>
-
-        <article class="card-vaga-empresa">
-            <div class="vaga-info-gestao">
-                <h3 class="vaga-titulo">Vaga Web Designer</h3>
-                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
-                <div class="vaga-detalhes-metricas">
-                    <span class="metrica-item">Status: <span class="metrica-valor status-encerrada">Encerrada</span></span>
-                    <span class="metrica-item">Candidatos: <span class="metrica-valor">89 inscritos</span></span>
-                    <span class="metrica-item">Publicada em: <span class="metrica-valor">15/01/2026</span></span>
-                </div>
-            </div>
-            <div class="vaga-acao">
-                <button class="btn-gerenciar">Gerenciar Vaga</button>
-            </div>
-        </article>
-
-         </article>
-
-        <div class="btn-pgn">
-                <!-- aqui serão os botões que passam/voltam de vagas disponivéis-->
-            <nav class="paginacao">
-                <button class="btn-paginacao" onclick="paginaAnterior()" aria-label="Página Anterior">&#10094;</button>
-                <button class="btn-paginacao" onclick="proximaPagina()" aria-label="Próxima Página">&#10095;</button>
-            </nav>
-        </div>
-    
-        </section>
-
-
-    </section>
+   
 </main>
 
         <!--Inicio do Footer-->
@@ -293,6 +196,48 @@
     </form>
     </div>
 
+</div>
+
+<!--Aqui é responsável pela a estrutura do segundo modal-->
+
+<div class="modal-overlay-vaga ativo" id="modal-gerenciar">
+    <div class="janela-cadastro-vaga">
+        <header class="header-modal-vaga">
+            <h2 class="titulo-modal">Gerenciar Vaga</h2>
+            <p class="subtitulo-modal">Edite as informações ou altere o status da publicação</p>
+        </header>
+
+        <form class="formulario-criacao-vaga" id="form-gerenciar">
+            <div class="campo-vaga">
+                <label>Título da vaga</label>
+                <input type="text" id="edit-titulo-vaga">
+            </div>
+
+            <div class="linha-vaga-dupla">
+                <div class="campo-vaga">
+                    <label>Status</label>
+                    <select id="edit-status-vaga">
+                        <option value="Ativa">Ativa</option>
+                        <option value="Pausada">Pausada</option>
+                        <option value="Encerrada">Encerrada</option>
+                    </select>
+                </div>
+                <div class="campo-vaga">
+                    <label>Salário</label>
+                    <input type="text" id="edit-salario-vaga">
+                </div>
+            </div>
+
+            <div class="footer-modal-vaga">
+                <button type="button" class="btn-vaga-cancelar" onclick="fecharModal('modal-gerenciar')">Cancelar</button>
+                <button type="submit" class="btn-vaga-publicar">Salvar Alterações</button>
+            </div>
+        </form>
+        
+        <button type="button" class="btn-excluir-vaga" style="margin-top: 15px; color: red; border: 1px solid red; background: none; padding: 10px; border-radius: 12px; cursor: pointer;">
+            Excluir Vaga
+        </button>
+    </div>
 </div>
 
 <script src="/projeto_taluno/static/js/empresa/vagas/vagas-empresa.js"></script>
