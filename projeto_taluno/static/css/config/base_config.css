@@ -1,16 +1,22 @@
 /* =========================================
    SIDEBAR DE CONFIGURAÇÕES
    ========================================= */
+main {
+    display: flex;
+    flex: 1;
+    align-items: stretch; 
+    background-color: #f4f5f7; 
+}
 
 .config-sidebar {
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #ffffff; 
     width: 100%;
-    max-width: 300px; /* Largura fixa da lateral */
+    max-width: 300px; 
     padding: 40px 20px;
-    height: 100%; /* Ocupa a altura disponível */
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espaço entre o título e o menu */
+    gap: 40px; 
+    border-right: 1px solid #e0e0e0; 
 }
 
 /* --- Cabeçalho (Seta + Título) --- */
