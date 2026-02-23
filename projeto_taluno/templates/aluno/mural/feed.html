@@ -6,7 +6,8 @@
     <title>Taluno | Mural</title>
 
     <!-- CSS Global (Sistema Logado) -->
-    <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="../../../static/css/global.css">
+
     <!-- CSS Específico do Mural -->
     <link rel="stylesheet" href="../../../static/css/aluno/mural/mural.css">
 
@@ -49,24 +50,26 @@
 
     <!-- Banner do Mural -->
     <section class="banner-mural">
-        <p>Você concluiu um curso? Conte sua experiência no mercado de trabalho!</p>
-        <button class="btn-adicionar">Adicionar Publicação</button>
+        <p>Concluiu um curso? Conta pra gente como foi sua experiência e o que você aprendeu no caminho!</p>
+        
     </section>
 
     <!-- Criar Post -->
-    <section class="card-post criar-post">
+<section class="card-post criar-post">
     <div class="user-info">
-        <img src="../../../static/img/perfil/mulher_sorrindo.png" alt="Avatar" class="avatar">
+        <img src="../../../static/img/perfil/perfil_default.png" alt="Avatar" class="avatar">
         <textarea
+            id="postInput"
             class="input-post"
             placeholder="Conte sua experiência..."
             rows="3"
         ></textarea>
     </div>
-    <button class="btn-publicar">Publicar</button>
+    <button id="btnPublicar" class="btn-publicar">Publicar</button>
 </section>
 
-    <!-- Post -->
+<!-- Feed -->
+<section id="feedPosts">
     <article class="card-post">
         <div class="user-info">
             <img src="../../../static/img/perfil/perfil_default.png" alt="Avatar" class="avatar">
@@ -75,18 +78,11 @@
         <p>
             Curso excelente! Conteúdo bem organizado, professores didáticos e exemplos práticos que realmente ajudam no aprendizado.
         </p>
+        <button class="btn-excluir" aria-label="Excluir publicação">
+    🗑️
+</button>
     </article>
-
-    <article class="card-post">
-        <div class="user-info">
-            <img src="../../../static/img/perfil/perfil_default.png" alt="Avatar" class="avatar">
-            <strong>Alanna</strong>
-        </div>
-        <p>
-            Curso muito bom, com aulas claras e objetivas. Apenas alguns módulos poderiam ser um pouco mais aprofundados.
-        </p>
-    </article>
-
+</section>
 </main>
 
 <!-- FOOTER -->
@@ -129,6 +125,7 @@
     </div>
 
 </footer>
+<script src="../../../static/js/aluno/mural/mural.js"></script>
 <!--Final do Footer-->
 </body>
 </html >

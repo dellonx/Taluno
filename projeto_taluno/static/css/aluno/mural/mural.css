@@ -1,11 +1,11 @@
 :root {
-    --gradiente-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --gradiente-taluno: linear-gradient(90deg, #6900b2);
     --sombra-suave: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f7f6;
+    background-color: #dddddd;
     margin: 0;
 }
 
@@ -15,6 +15,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.4;
     padding: 15px 30px;
     border-radius: 8px;
     color: white;
@@ -25,6 +28,7 @@ body {
 .card-post {
     background: white;
     border-radius: 10px;
+    position: relative;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: var(--sombra-suave);
@@ -83,7 +87,7 @@ body {
 
 /* Foco bonito (adeus quadro feio) */
 .input-post:focus {
-    box-shadow: inset 0 0 0 2px #a600a6;
+    box-shadow: inset 0 0 0 2px #6900b2;
     background: #fff;
 }
 
@@ -95,5 +99,31 @@ body {
     padding: 8px 22px;
     border-radius: 20px;
     font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-excluir {
+   position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #a600a6;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-excluir:hover {
+     transform: scale(1.15);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-publicar {
+    background: linear-gradient(90deg, #0052cc);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
 }
