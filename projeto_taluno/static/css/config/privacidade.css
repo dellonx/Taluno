@@ -1,0 +1,173 @@
+/* =========================================
+   SIDEBAR DE CONFIGURAÇÕES
+   ========================================= */
+main {
+    display: flex;
+    flex: 1;
+    align-items: stretch; 
+    background-color: #f4f5f7; 
+}
+
+.config-sidebar {
+    background-color: #ffffff; 
+    width: 100%;
+    max-width: 400px; 
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    border-right: 1px solid #e0e0e0; 
+}
+
+/* --- Cabeçalho (Seta + Título) --- */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 10px; /* Alinhamento visual */
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark, #1A1A1A);
+}
+
+.btn-back {
+    color: var(--primary, #9600FF); /* Cor da seta */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.btn-back:hover {
+    transform: translateX(-5px); /* Efeitinho de voltar */
+}
+
+/* --- Lista do Menu --- */
+.settings-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os botões */
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 20px;
+    border-radius: 12px; /* Borda arredondada como no print */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--texto-nav, #333); /* Cor do texto normal */
+    transition: all 0.3s ease;
+    text-align: center; /* Texto centralizado */
+}
+
+/* --- Estado Hover (Passar o mouse) --- */
+.menu-item:hover {
+    background-color: #f0f0f0;
+    color: var(--primary, #9600FF);
+}
+
+/* --- Estado ATIVO (O botão Roxo) --- */
+.menu-item.active {
+    background-color: var(--primary, #9600FF); /* Roxo do Taluno */
+    color: #ffffff; /* Texto branco */
+    box-shadow: 0 4px 15px rgba(150, 0, 255, 0.3); /* Sombra suave */
+}
+
+.menu-item.active:hover {
+    background-color: #7b00cc; /* Um roxo um pouco mais escuro no hover */
+    color: #ffffff;
+}
+
+.config-content {
+    flex: 1; 
+    padding: 60px 80px; 
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+/* O painel que segura as linhas */
+.settings-panel {
+    width: 100%;
+    max-width: 800px; 
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Deixei o gap um pouquinho menor aqui para os toggles ficarem mais agrupados */
+    margin-top: 40px;
+}
+
+/* =========================================
+   CAIXAS DE TOGGLE (LIGA/DESLIGA)
+   ========================================= */
+
+.toggle-box {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #e6e6e6; 
+    padding: 15px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 750px; 
+}
+
+.toggle-text {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* O "Corpo" do Botão Liga/Desliga */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+/* Esconde o checkbox original */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* O fundo do botão */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #888888;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* A bolinha branca */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Quando ligado (roxo) */
+input:checked + .slider {
+    background-color: var(--primary, #9600FF); 
+}
+
+/* Empurra a bolinha */
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
