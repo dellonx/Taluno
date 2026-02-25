@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taluno | Empresa</title>
+    <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/vaga-empresa/modal.css">
+
+</head>
+<body>
+<!--Inicio NavBar-->
+<header class="header-taluno">
+    <div class="top-bar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
+            </a>
+
+            <div class="top-icons">
+                <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
+                <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="../inicio/inicio.html">Início</a></li>
+                <li><a href="../vagas/vagas.html">Minhas Vagas</a></li>
+                <li><a href="../mural/mural.html" class="active">Mural</a></li>
+                <li><a href="../buscar/buscar_cv.html">Buscar CV's</a></li>
+                <li><a href="../suporte/suporte.html">Suporte</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!--Fim NavBar-->
+
+<main>
+    
+<div class="modal-overlay-vaga" id="modal-cadastro">
+    <!-- Aqui é responsável pela estrutura do modal de adicionar novas vagas-->
+   <div class="janela-cadastro-vaga">
+    <header class="header-modal-vaga">
+        <h2 class="titulo-modal">Criar nova vaga</h2>
+        <p class="subtitulo-modal">Preencha as informações abaixo para publicar sua vaga no taluno</p>
+    </header>
+
+    <!-- aqui é responsável pelo campo de titulo de vaga-->
+    <form class="formulario-criacao-vaga">
+        <div class="campo-vaga">
+            <label>Título da vaga</label>
+            <input type="text" placeholder="Ex: Desenvolvedor Junior">
+        </div>
+    
+    <!-- aqui são as areas disponiveis para escolher-->
+        <div class="linha-vaga-dupla">
+            <div class="campo-vaga">
+                <label>Área</label>
+                <select name="area-vaga">
+                    <option value="">Selecione a área</option>
+                    <option value="ti">TI e Software</option>
+                    <option value="adm">Administração</option>
+                    <option value="design">Design e UX</option>
+                    <option value="mkt">Marketing e Comunicação</option>
+                    <option value="vendas">Vendas e Comercial</option>
+                    <option value="eng">Saúde</option>
+                    <option value="atendimento">Atendimento ao Cliente</option>
+                    <option value="eng">Outros</option>
+                </select>
+            </div>
+
+        <!-- O nível requerido da vaga...-->
+            <div class="campo-vaga">
+                <label>Modalidade</label>
+                <select name="nivel-vaga">
+                    <option value="">Tipo de vaga</option>
+                    <option value="clt">CLT</option>
+                    <option value="estagio">Estágio</option>
+                    <option value="pj">Aprendiz</option>
+                    <option value="temporario">Freelancer</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- descrição da vaga-->
+        <div class="campo-vaga">
+            <label>Descrição da vaga</label>
+            <textarea rows="3" placeholder="Descreva as responsabilidades..."></textarea>
+        </div>
+
+
+        <!--Aqui "separa" as informações necessarias e as adicionais-->
+        <div class="divisor-requisitos">
+            <h3>Informações adicionais</h3>
+        </div>
+
+        <!-- Aqui é a parte de escolaridade-->
+        <div class="linha-vaga-dupla">
+            <div class="campo-vaga">
+                <label for="escolaridade">Escolaridade mínima</label>
+                <select id="escolaridade" name="escolaridade">
+                    <option value="">Selecione a escolaridade</option>
+                    <option value="fundamental">Ensino Fundamental</option>
+                    <option value="medio">Ensino Médio</option>
+                    <option value="superior-cursando">Superior Cursando</option>
+                    <option value="superior-completo">Superior Completo</option>
+                    <option value="pos">Pós / Especialização</option>
+                </select>
+            </div>
+
+            <!-- aqui é escala de trabalho-->
+            <div class="campo-vaga">
+                <label for="escala-vaga">Escala de trabalho</label>
+                <select id="escala-vaga" name="escala-vaga">
+                    <option value="">Selecione a escala</option>
+                    <option value="6x1">6x1 (Folga variável)</option>
+                    <option value="5x2">5x2 (Segunda a Sexta)</option>
+                    <option value="12x36">12hx36h</option>
+                    <option value="hibrido">Híbrido</option>
+                    <option value="remoto">Home Office</option>
+                    <option value="combinar">A combinar</option>
+                </select>
+            </div>
+        </div>
+
+
+    
+        <div class="linha-vaga-dupla">
+             <!--aqui é responsável pelo salário-->
+            <div class="campo-vaga">
+                <label for="salario">Salário</label>
+                <input type="text" placeholder="Informe o salário">
+            </div>
+
+            <!-- experiencia exigida-->
+            <div class="campo-vaga">
+                <label for="experiencia">Experiência exigida?</label>
+                <select id="experiencia">
+                    <option value="nao">Não</option>
+                    <option value="sim">Sim</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="footer-modal-vaga">
+            <button type="button" class="btn-vaga-cancelar">Cancelar</button>
+            <button type="submit" class="btn-vaga-publicar">Publicar</button>
+        </div>
+    </form>
+    </div>
+
+</div>
+    
+
+</main>
+
+<!--Inicio Footer-->
+<footer class="footer-taluno">
+    <div class="container footer-content">
+        
+        <div class="footer-col logo-col">
+            <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
+        </div>
+
+        <div class="footer-col links-col">
+            <ul class="footer-menu">
+                <li><a href="#">SOBRE TALUNO</a></li>
+                <li><a href="#">POLÍTICA DE COOKIES</a></li>
+                <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+                <li><a href="#">CENTRAL DE AJUDA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col social-col">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/senacpe/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/SenacPernambuco" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/senacpe/?locale=pt_BR" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/senacpe/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            
+            <a href="#" class="btn-back-top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <hr class="footer-line">
+            <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </div>
+</footer>
+<!--Fim Footer-->
+</body>
+</html>
