@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações Complementares | Taluno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/autenticacao/cadastro_adicional.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <section class="auth-visual">
+            <img src="/projeto_taluno/static/img/banners/mulheres_reuniao.png.jpg" alt="Equipe" class="visual-image">
+            <div class="overlay-gradient"></div>
+
+            <div class="visual-content">
+                <div class="welcome-text">
+                    <h1>Quase lá!</h1>
+                    <p>Personalize o perfil da sua empresa para se conectar com os melhores talentos.</p>
+                </div>
+            </div>
+
+            <div class="footer-brand">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno" class="logo-hero">
+            </div>
+        </section>
+
+        <section class="auth-form-section">
+            <div class="form-wrapper">
+                
+                <div class="progress-container">
+                    <span class="step-label">PASSO 2 DE 2</span>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="header-text">
+                    <h1>Informações Complementares</h1>
+                    <p>Destaque sua empresa para os candidatos do Senac.</p>
+                </div>
+
+                <form action="/dashboard" method="POST" class="grid-form">
+                    
+                    <div class="field-group full">
+                        <input type="url" class="input-field" placeholder="Site da empresa (URL)">
+                    </div>
+
+                    <div class="field-group full">
+                        <input type="number" class="input-field" placeholder="Número de funcionários">
+                        <small class="helper-text">Informe o total de colaboradores hoje.</small>
+                    </div>
+
+                    <div class="field-group full">
+                        <textarea class="input-field textarea-field" placeholder="Cultura, missão e valores"></textarea>
+                    </div>
+
+                    <h3 class="section-subtitle">Redes Sociais (Opcional)</h3>
+
+                    <div class="social-grid">
+                        <div class="social-input">
+                            <i class="fab fa-linkedin"></i>
+                            <input type="text" placeholder="LinkedIn">
+                        </div>
+                        <div class="social-input">
+                            <i class="fab fa-instagram"></i>
+                            <input type="text" placeholder="Instagram">
+                        </div>
+                        <div class="social-input">
+                            <i class="fab fa-facebook"></i>
+                            <input type="text" placeholder="Facebook">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Concluir Cadastro <i class="fas fa-check-circle"></i>
+                    </button>
+
+                    <div class="skip-container">
+                        <a href="#" class="skip-link">Pular e completar depois</a>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

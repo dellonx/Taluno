@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Empresarial | Taluno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/autenticacao/cadastro_empresarial.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <section class="auth-visual">
+            <img src="/projeto_taluno/static/img/banners/duas_mulheres_trabalhando.png" alt="Equipe Taluno" class="visual-image">
+            <div class="overlay-gradient"></div>
+
+            <div class="visual-content">
+                <ul class="checklist-premium">
+                    <li><i class="fas fa-check"></i> Cadastre sua empresa</li>
+                    <li><i class="fas fa-check"></i> Publique oportunidades</li>
+                    <li><i class="fas fa-check"></i> Acompanhe candidatos</li>
+                    <li><i class="fas fa-check"></i> Selecione talentos</li>
+                </ul>
+            </div>
+
+            <div class="footer-brand">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno Senac" class="logo-hero">
+            </div>
+        </section>
+
+        <section class="auth-form-section">
+            <div class="form-wrapper">
+                
+                <div class="progress-container">
+                    <span class="step-label">PASSO 1 DE 2</span>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <div class="header-text">
+                    <h1>CADASTRO EMPRESARIAL</h1>
+                    <p>Cadastre sua empresa abaixo:</p>
+                </div>
+
+                <form action="cadastro_adicional.html" method="POST" class="grid-form">
+                    <div class="field-group full">
+                        <input type="text" class="input-field" placeholder="Nome da empresa" required>
+                    </div>
+
+                    <div class="field-group third">
+                        <input type="text" class="input-field" placeholder="CNPJ" required>
+                    </div>
+                    <div class="field-group third">
+                        <input type="number" class="input-field" placeholder="Nº Funcionários">
+                    </div>
+                    <div class="field-group third">
+                        <input type="text" class="input-field" placeholder="CEP" required>
+                    </div>
+
+                    <div class="field-group third">
+                        <input type="text" class="input-field" placeholder="Nome" required>
+                    </div>
+                    <div class="field-group third">
+                        <input type="text" class="input-field" placeholder="Sobrenome" required>
+                    </div>
+                    <div class="field-group third">
+                        <input type="email" class="input-field" placeholder="E-mail" required>
+                    </div>
+
+                    <div class="field-group half">
+                        <input type="tel" class="input-field" placeholder="Celular" required>
+                    </div>
+                    <div class="field-group half">
+                        <input type="tel" class="input-field" placeholder="Telefone">
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Continuar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
