@@ -65,6 +65,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     padding: 40px;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 20px; /*espaçamento eentre os elementos*/
  }
 
@@ -74,13 +75,20 @@ body { font-family: 'Segoe UI', sans-serif; }
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 30px;
+    box-sizing: border-box;
+    
+}
+.vaga-metricas {
+    display: flex;
+    justify-content: flex-end; /* Garante alinhamento interno à direita */
+    flex-grow: 1; /* Faz esse container ocupar o espaço restante */
 }
 
 .info-principal{
     display: flex;
     align-items: center;
     gap: 20px;
+    flex: 1;
 }
 
 /*aqui é responsável para editar a imagem*/
@@ -125,6 +133,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
 }
 
+
 /*isso serve para destacar o número no botão de candidatos*/ 
 .badge-count {
     background-color: white;
@@ -159,3 +168,149 @@ body { font-family: 'Segoe UI', sans-serif; }
     color: #212529;
 }
 
+.conteudo-principal{
+    display: grid;
+    grid-template-columns: 1fr 320px; /*Esquerda flexível. direita fixa*/
+    gap: 30px;
+    align-items: start;
+}
+
+/*Coluna da da esquerda*/
+.box-descricao{
+    background-color: #f1f3f5;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.box-descricao h3, .box-descricao h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+/*Coluna da direita - Painel de status */
+
+.card-status{
+    background-color: #f1f3f5;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*Aqui altera o card que envolve os botões*/
+.botoes-status{
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    background: #adb5bd;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*AQUI ALTERA OS BOTÕES*/
+.btn-status {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    background: #adb5bd; /* Cor padrão cinza */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Estado: ATIVA (Verde) */
+.btn-status.ativa {
+    background-color: #00c853; 
+    color: white;
+    border-color: #00c853;
+}
+
+/* Estado: PAUSADA (Amarelo/Laranja) */
+.btn-status.pausada {
+    background-color: #ffb300; 
+    color: white;
+    border-color: #ffb300;
+}
+
+/* Estado: ENCERRADA (Vermelho) */
+.btn-status.encerrada {
+    background-color: #ff5252; 
+    color: white;
+    border-color: #ff5252;
+}
+
+/* aqui é responsável pelo container das tags laranja */
+.tags-vaga {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/*aqui são os badges da telea*/
+.badge{
+    background-color: #f27133 ;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+     text-align: center; /* alinha o texto dentro das divs laranjas     */
+    display: inline-block; /* Permite que o elemento aceite largura fixa */
+    min-width: 100px;  /* Garante que todos tenham pelo menos 100px */
+}
+
+.rodape-acoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #e9ecef; /* Linha sutil de separação */
+}
+
+.acoes-direita {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-excluir {
+    background-color: #fceaea; /* Vermelho bem clarinho */
+    color: #e63946;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-voltar {
+    background-color: #dee2e6;
+    color: #495057;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-editar {
+    background-color: #3b82f6; /* Azul vibrante */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
