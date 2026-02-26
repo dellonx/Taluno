@@ -314,3 +314,146 @@ body { font-family: 'Segoe UI', sans-serif; }
     background-color: #2563eb;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
+
+
+/*Aqui é o CSS do modal de edição de vagas*/
+
+/* Container que escurece o fundo */
+.modal-overlay-vaga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;      
+    height: 100vh;      
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* JS muda para 'flex' */
+    justify-content: center; 
+    align-items: center;     
+    z-index: 3000; 
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+/* Classe que o JS ativa para mostrar o modal */
+.modal-overlay-vaga.ativo {
+    display: flex !important;
+}
+
+/* A caixa branca do modal */
+.janela-cadastro-vaga {
+    background-color: #fff;
+    width: 90%;
+    max-width: 650px; 
+    margin: 0 auto; 
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    /* Se o conteúdo for maior que a tela do usuário, ele cria scroll interno */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Cabeçalho do formulário */
+.header-modal-vaga {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.titulo-modal {
+    color: #a600a6; /* Roxo padrão */
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.subtitulo-modal {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Campos do formulário */
+.campo-vaga {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 15px;
+}
+
+.campo-vaga label {
+    font-size: 14px;
+    color: #a600a6; 
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.campo-vaga input,
+.campo-vaga select,
+.campo-vaga textarea {
+    padding: 12px;
+    border: 1px solid #a600a6; 
+    border-radius: 12px;
+    outline: none; 
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Sistema de grade (lado a lado) */
+.linha-vaga-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+/* Divisor de Requisitos */
+.divisor-requisitos {
+    text-align: center;
+    margin: 20px 0;
+    color: #a600a6;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.divisor-requisitos h3 {
+    font-size: 18px;
+}
+
+/* Botões do final do Modal */
+.footer-modal-vaga {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Botão Salvar (Rosa/Roxo de destaque) */
+.btn-vaga-publicar {
+    background-color: #e6005c; 
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-vaga-publicar:hover {
+    background-color: #c4004e; 
+    transform: translateY(-2px);
+}
+
+/* Botão Cancelar */
+.btn-vaga-cancelar {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-vaga-cancelar:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+}
