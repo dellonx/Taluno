@@ -1,0 +1,178 @@
+/* PROJETO TALUNO - PADRONIZAÇÃO SÊNIOR
+    Estilo: Recuperação de Senha (Sem Rolagem / Split Screen)
+*/
+
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Cores Institucionais */
+    --color-text-dark: #000000;
+    --color-text-gray: #666666;
+    --color-border: #CCCCCC;
+    --color-white: #FFFFFF;
+
+    /* Gradiente Oficial Projeto Taluno */
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    
+    /* Layout */
+    --border-radius-md: 8px;
+}
+
+/* 1. Reset e Bloqueio de Scroll */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Impede rolagem vertical */
+    font-family: var(--font-primary);
+    background-color: var(--color-white);
+}
+
+/* 2. Layout Principal */
+.auth-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* 3. Coluna de Conteúdo */
+.auth-content {
+    flex: 1; 
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.auth-logo {
+    height: 40px; 
+    width: auto;
+}
+
+/* Navegação e Interação de Cor */
+.auth-nav__link {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: 400; /* Sem negrito conforme solicitado */
+    margin-left: 2rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.auth-nav__link:hover {
+    color: #a600a6; /* Mudança de cor no hover */
+}
+
+/* 4. Centralização do Formulário */
+.form-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.back-button {
+    margin-bottom: 1rem;
+}
+
+.back-button svg {
+    transition: transform 0.2s ease;
+}
+
+.back-button a:hover svg {
+    transform: translateX(-5px);
+}
+
+.form-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+}
+
+.form-subtitle {
+    color: var(--color-text-gray);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* 5. Inputs */
+.input-group {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #0052cc;
+}
+
+/* 6. Botão com Animação */
+.btn {
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.2s ease, 
+                filter 0.3s ease;
+}
+
+.btn--full { width: 100%; }
+
+.btn--gradient {
+    background: var(--gradient-taluno);
+    color: var(--color-white);
+}
+
+.btn--gradient:hover {
+    transform: translateY(-2px) scale(1.02); /* Pequena animação de escala */
+    filter: brightness(1.1);
+    box-shadow: 0 4px 15px rgba(166, 0, 166, 0.4);
+}
+
+/* 7. Coluna Visual */
+.auth-visual {
+    flex: 1;
+    overflow: hidden;
+}
+
+.visual-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 8. Responsividade */
+@media (max-width: 900px) {
+    .auth-visual { display: none; }
+    body, html { overflow-y: auto; }
+}

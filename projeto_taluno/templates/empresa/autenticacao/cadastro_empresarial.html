@@ -44,46 +44,44 @@
                     <p>Cadastre sua empresa abaixo:</p>
                 </div>
 
-                <form action="cadastro_adicional.html" method="POST" class="grid-form">
+                <form action="cadastro_adicional.html" method="GET" class="grid-form">
                     <div class="field-group full">
-                        <input type="text" class="input-field" placeholder="Nome da empresa" required>
+                        <input type="text" name="empresa" class="input-field" placeholder="Nome da empresa" required>
                     </div>
 
                     <div class="field-group third">
-                        <input type="text" class="input-field" placeholder="CNPJ" required>
+                        <input type="text" name="cnpj" class="input-field" placeholder="CNPJ" required>
                     </div>
                     <div class="field-group third">
-                        <input type="number" class="input-field" placeholder="Nº Funcionários">
+                        <input type="number" name="funcionarios" class="input-field" placeholder="Nº Funcionários">
                     </div>
                     <div class="field-group third">
-                        <input type="text" class="input-field" placeholder="CEP" required>
+                        <input type="text" name="cep" class="input-field" placeholder="CEP" required>
                     </div>
 
                     <div class="field-group third">
-                        <input type="text" class="input-field" placeholder="Nome" required>
+                        <input type="text" name="nome" class="input-field" placeholder="Nome" required>
                     </div>
                     <div class="field-group third">
-                        <input type="text" class="input-field" placeholder="Sobrenome" required>
+                        <input type="text" name="sobrenome" class="input-field" placeholder="Sobrenome" required>
                     </div>
                     <div class="field-group third">
-                        <input type="email" class="input-field" placeholder="E-mail" required>
+                        <input type="email" name="email" class="input-field" placeholder="E-mail" required>
                     </div>
 
                     <div class="field-group half">
-                        <input type="tel" class="input-field" placeholder="Celular" required>
+                        <input type="tel" name="celular" class="input-field" placeholder="Celular" required>
                     </div>
                     <div class="field-group half">
-                        <input type="tel" class="input-field" placeholder="Telefone">
+                        <input type="tel" name="telefone" class="input-field" placeholder="Telefone">
                     </div>
 
                     <button type="submit" class="btn-primary">
                         Continuar <i class="fas fa-arrow-right"></i>
                     </button>
                 </form>
-
             </div>
         </section>
     </div>
-
 </body>
 </html>

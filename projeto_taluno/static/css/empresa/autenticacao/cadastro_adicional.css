@@ -6,13 +6,13 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-body { height: 100vh; overflow: hidden; background: #fff; }
+body { min-height: 100vh; overflow-x: hidden; background: #fff; }
 
-.auth-container { display: flex; height: 100vh; width: 100vw; }
+.auth-container { display: flex; min-height: 100vh; width: 100vw; }
 
-/* --- LADO ESQUERDO: IGUAL À PÁGINA 1 --- */
+/* --- LADO ESQUERDO: VISUAL --- */
 .auth-visual {
-    flex: 1; /* Proporção 1:1.2 para bater com a primeira página */
+    flex: 1;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,6 @@ body { height: 100vh; overflow: hidden; background: #fff; }
 
 .visual-content { position: relative; z-index: 3; }
 
-/* Ajuste de Nitidez do Texto sobre a Imagem */
 .welcome-text h1 { 
     color: white; 
     font-size: 3.5rem; 
@@ -51,10 +50,9 @@ body { height: 100vh; overflow: hidden; background: #fff; }
     max-width: 450px; 
     line-height: 1.5;
     font-weight: 500;
-    text-shadow: 1px 2px 8px rgba(0,0,0,0.6);
 }
 
-/* RODAPÉ PADRONIZADO (80px) */
+/* RODAPÉ DO BANNER */
 .footer-brand {
     position: absolute;
     bottom: 0; left: 0; width: 100%;
@@ -65,7 +63,7 @@ body { height: 100vh; overflow: hidden; background: #fff; }
 }
 .logo-hero { height: 40px; }
 
-/* --- LADO DIREITO --- */
+/* --- LADO DIREITO: FORMULÁRIO --- */
 .auth-form-section { flex: 1.2; display: flex; justify-content: center; align-items: center; padding: 40px; }
 .form-wrapper { width: 100%; max-width: 600px; }
 
@@ -73,16 +71,24 @@ body { height: 100vh; overflow: hidden; background: #fff; }
 .progress-track { width: 100%; height: 6px; background: #F0F0F0; border-radius: 10px; margin: 10px 0 30px; }
 .progress-fill { height: 100%; background: var(--gradient-taluno); border-radius: 10px; }
 
-.header-text h1 { color: var(--purple-brand); font-weight: 800; font-size: 2.2rem; }
+.header-text h1 { color: var(--purple-brand); font-weight: 800; font-size: 2.2rem; margin-bottom: 10px; }
+.header-text p { color: var(--text-gray); margin-bottom: 25px; }
+
 .grid-form { display: flex; flex-direction: column; gap: 15px; }
 
+/* INPUTS */
 .input-field {
     width: 100%; padding: 16px; border-radius: 12px; border: 2px solid #EEE;
-    background: #F9FAFB; font-size: 1rem;
+    background: #F9FAFB; font-size: 1rem; transition: 0.3s;
 }
+.input-field:focus { outline: none; border-color: #A600A6; background: white; }
 
 .textarea-field { height: 100px; resize: none; }
 
+.helper-text { font-size: 0.75rem; color: var(--text-gray); margin-top: -10px; margin-left: 5px; }
+
+/* REDES SOCIAIS */
+.section-subtitle { font-size: 1rem; font-weight: 700; color: var(--purple-brand); margin-top: 10px; }
 .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .social-input {
     display: flex; align-items: center; background: #F9FAFB;
@@ -91,19 +97,58 @@ body { height: 100vh; overflow: hidden; background: #fff; }
 .social-input i { color: var(--purple-brand); margin-right: 8px; }
 .social-input input { border: none; background: transparent; padding: 12px 0; width: 100%; outline: none; }
 
-.btn-primary {
-    width: 100%; max-width: 350px; padding: 18px; border-radius: 50px;
-    background: var(--gradient-taluno); color: white; font-weight: 700;
-    margin: 20px auto 10px; cursor: pointer; border: none;
-    display: flex; justify-content: center; align-items: center; gap: 10px;
+/* --- BOTÕES DE AÇÃO --- */
+.actions-launcher {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
 }
 
-/* Ajuste do Link Pular */
-.skip-container { width: 100%; text-align: center; margin-top: 10px; }
-.skip-link { 
-    color: var(--text-gray); 
-    text-decoration: none; 
-    font-size: 0.9rem; 
+.btn-primary {
+    width: 100%; 
+    max-width: 400px; 
+    padding: 18px; 
+    border-radius: 50px;
+    background: var(--gradient-taluno); 
+    color: white; 
+    font-weight: 700;
+    cursor: pointer; 
+    border: none;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px;
     transition: 0.3s;
 }
-.skip-link:hover { color: var(--purple-brand); text-decoration: underline; }
+
+.btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 15px rgba(166, 0, 166, 0.2); }
+
+/* Botão Pular estilizado para alta visibilidade */
+.btn-secondary {
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+    border-radius: 50px;
+    border: 2px solid #A600A6;
+    background: white;
+    color: #A600A6;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #fdf2ff;
+    border-color: var(--purple-brand);
+    color: var(--purple-brand);
+}
+
+@media (max-width: 900px) {
+    .auth-visual { display: none; }
+    .auth-form-section { flex: 1; }
+}

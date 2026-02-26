@@ -42,19 +42,19 @@
                     <p>Destaque sua empresa para os candidatos do Senac.</p>
                 </div>
 
-                <form action="/dashboard" method="POST" class="grid-form">
+                <form action="/projeto_taluno/templates/empresa/inicio/inicio.html" method="GET" class="grid-form">
                     
                     <div class="field-group full">
-                        <input type="url" class="input-field" placeholder="Site da empresa (URL)">
+                        <input type="url" name="site" class="input-field" placeholder="Site da empresa (URL)" required>
                     </div>
 
                     <div class="field-group full">
-                        <input type="number" class="input-field" placeholder="Número de funcionários">
+                        <input type="number" name="total_colaboradores" class="input-field" placeholder="Número de funcionários" required>
                         <small class="helper-text">Informe o total de colaboradores hoje.</small>
                     </div>
 
                     <div class="field-group full">
-                        <textarea class="input-field textarea-field" placeholder="Cultura, missão e valores"></textarea>
+                        <textarea name="cultura" class="input-field textarea-field" placeholder="Cultura, missão e valores" required></textarea>
                     </div>
 
                     <h3 class="section-subtitle">Redes Sociais (Opcional)</h3>
@@ -62,27 +62,28 @@
                     <div class="social-grid">
                         <div class="social-input">
                             <i class="fab fa-linkedin"></i>
-                            <input type="text" placeholder="LinkedIn">
+                            <input type="text" name="linkedin" placeholder="LinkedIn">
                         </div>
                         <div class="social-input">
                             <i class="fab fa-instagram"></i>
-                            <input type="text" placeholder="Instagram">
+                            <input type="text" name="instagram" placeholder="Instagram">
                         </div>
                         <div class="social-input">
                             <i class="fab fa-facebook"></i>
-                            <input type="text" placeholder="Facebook">
+                            <input type="text" name="facebook" placeholder="Facebook">
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-primary">
-                        Concluir Cadastro <i class="fas fa-check-circle"></i>
-                    </button>
+                    <div class="actions-launcher">
+                        <button type="submit" class="btn-primary">
+                            Concluir Cadastro <i class="fas fa-check-circle"></i>
+                        </button>
 
-                    <div class="skip-container">
-                        <a href="#" class="skip-link">Pular e completar depois</a>
+                        <a href="/projeto_taluno/templates/empresa/inicio/inicio.html" class="btn-secondary">
+                            Pular e completar depois
+                        </a>
                     </div>
                 </form>
-
             </div>
         </section>
     </div>

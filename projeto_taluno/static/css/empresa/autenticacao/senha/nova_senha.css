@@ -1,0 +1,146 @@
+/* PROJETO TALUNO - Nova Senha
+   Atualização: Fundo Totalmente Branco e Sem Rolagem
+*/
+
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --color-text-dark: #000000;
+    --color-text-gray: #666666;
+    --color-border: #000000; /* Borda preta conforme print anterior */
+    --color-white: #FFFFFF;
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --border-radius-md: 10px;
+}
+
+/* Reset e Trava de Scroll */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Remove rolagem */
+    background-color: var(--color-white); /* Fundo Totalmente Branco */
+    font-family: var(--font-primary);
+}
+
+.auth-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-white);
+}
+
+/* Lado do Formulário */
+.auth-content {
+    flex: 1;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+}
+
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo { height: 40px; }
+
+.auth-nav__link {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-size: 14px;
+    margin-left: 25px;
+    text-transform: uppercase;
+    font-weight: 400; /* Sem negrito */
+    transition: color 0.3s ease;
+}
+
+.auth-nav__link:hover {
+    color: #a600a6;
+}
+
+/* Centralização do conteúdo */
+.form-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--color-text-dark);
+}
+
+.form-subtitle {
+    color: var(--color-text-gray);
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+.input-group { margin-bottom: 15px; }
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    border: 1.5px solid var(--color-text-dark); /* Borda preta sólida */
+    border-radius: var(--border-radius-md);
+    outline: none;
+    font-family: var(--font-primary);
+}
+
+/* Botão com Gradiente e Animação */
+.btn {
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.btn--full { width: 100%; }
+
+.btn--gradient {
+    background: var(--gradient-taluno);
+    color: var(--color-white);
+    margin-top: 10px;
+}
+
+.btn--gradient:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+/* Lado Visual */
+.auth-visual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white); /* Garantindo fundo branco aqui também */
+}
+
+.visual-image {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .auth-visual { display: none; }
+    body, html { overflow-y: auto; }
+}
