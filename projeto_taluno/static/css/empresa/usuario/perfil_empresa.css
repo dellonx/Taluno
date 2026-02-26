@@ -1,5 +1,5 @@
 /* =========================================
-   PERFIL.CSS - Dashboard do Usuário Otimizado
+   PERFIL_EMPRESA.CSS - Dashboard Corporativo
    ========================================= */
 
 :root {
@@ -7,7 +7,7 @@
     --card-shadow: 0 4px 20px rgba(0,0,0,0.05);
     --primary-color: #9600FF;
     --text-muted: #666;
-    --bg-light: #f5f7fa;
+    --bg-light: #f5f7fa; 
 }
 
 /* =========================================
@@ -35,16 +35,16 @@ body, html {
 /* =========================================
    SIDEBAR (Lateral Esquerda)
    ========================================= */
-.profile-sidebar {
+.profile-sidebar { 
     width: var(--sidebar-width); 
-    flex-shrink: 0;
-    background: linear-gradient(160deg, #7000c0 0%, #9600FF 40%, #EA2651 100%);
+    flex-shrink: 0; 
+    background: linear-gradient(160deg, #7000c0 0%, #9600FF 40%, #EA2651 100%); 
     color: white; 
     display: flex; 
     flex-direction: column; 
-    padding: 30px;
+    padding: 30px; 
     box-shadow: 5px 0 25px rgba(0,0,0,0.1); 
-    z-index: 10;
+    z-index: 10; 
 }
 
 .sidebar-top { 
@@ -63,9 +63,7 @@ body, html {
     transform: translateX(-5px); 
 }
 
-/* =========================================
-   AVATAR E CABEÇALHO DO PERFIL
-   ========================================= */
+/* --- Logo da Empresa --- */
 .profile-header { 
     display: flex; 
     flex-direction: column; 
@@ -81,25 +79,26 @@ body, html {
     height: 120px; 
 }
 
-.avatar-placeholder {
+.avatar-placeholder { 
     width: 100%; 
     height: 100%; 
     border-radius: 50%; 
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2); 
     border: 4px solid rgba(255, 255, 255, 0.3); 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
     display: flex; 
     align-items: center; 
     justify-content: center; 
     color: rgba(255, 255, 255, 0.8); 
-    font-size: 3.5rem;
+    font-size: 3.5rem; 
 }
 
 .profile-avatar { 
     width: 100%; 
     height: 100%; 
     border-radius: 50%; 
-    object-fit: cover; 
+    object-fit: contain; 
+    background: white; 
     border: 4px solid rgba(255, 255, 255, 0.3); 
     box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
     position: absolute; 
@@ -130,7 +129,6 @@ body, html {
     transform: scale(1.1); 
 }
 
-/* --- Infos Pessoais --- */
 .user-name { 
     font-size: 1.5rem; 
     font-weight: 600; 
@@ -149,9 +147,7 @@ body, html {
     margin-top: 5px; 
 }
 
-/* =========================================
-   NAVEGAÇÃO E FOOTER DA SIDEBAR
-   ========================================= */
+/* --- Navegação --- */
 .profile-nav { 
     display: flex; 
     flex-direction: column; 
@@ -261,7 +257,7 @@ a.nav-btn.active {
 }
 
 /* =========================================
-   CARDS DE FORMAÇÃO E HABILIDADE
+   CARDS DE VAGAS E BENEFÍCIOS
    ========================================= */
 .cards-list { 
     display: flex; 
@@ -276,7 +272,7 @@ a.nav-btn.active {
     gap: 20px; 
 }
 
-.info-card, .skill-card {
+.info-card, .feature-card {
     background: white; 
     padding: 25px; 
     border-radius: 16px; 
@@ -285,7 +281,7 @@ a.nav-btn.active {
     justify-content: space-between; 
     align-items: center; 
     gap: 15px;
-    border: 1px solid transparent; 
+    border: 1px solid #e0e4e8;
     transition: transform 0.2s;
 }
 
@@ -294,8 +290,7 @@ a.nav-btn.active {
     border-color: rgba(150, 0, 255, 0.1); 
 }
 
-/* Área interna do card preparada para não "esmagar" os botões */
-.card-left, .skill-info { 
+.card-left, .feature-info { 
     flex: 1; 
     min-width: 0; 
     display: flex; 
@@ -303,13 +298,13 @@ a.nav-btn.active {
     gap: 5px; 
 }
 
-.skill-info { 
+.feature-info { 
     flex-direction: row; 
     align-items: center; 
     gap: 15px; 
 }
 
-.skill-info .card-left { 
+.feature-info .card-left { 
     width: 100%; 
 }
 
@@ -319,8 +314,7 @@ a.nav-btn.active {
     flex-shrink: 0; 
 }
 
-/* Textos e Detalhes dos Cards */
-.card-left h4, .skill-info h4 { 
+.card-left h4, .feature-info h4 { 
     font-size: 1.1rem; 
     color: #222; 
     margin: 0; 
@@ -342,13 +336,13 @@ a.nav-btn.active {
 }
 
 .status-progress { 
-    background: #FFF4E5; 
-    color: #FF9800; 
+    background: #E8F5E9; 
+    color: #4CAF50; 
 }
 
 .status-completed { 
-    background: #E8F5E9; 
-    color: #4CAF50; 
+    background: #FFF4E5; 
+    color: #FF9800; 
 }
 
 .card-date { 
@@ -357,15 +351,11 @@ a.nav-btn.active {
     margin-top: 2px; 
 }
 
-.skill-icon { 
+.feature-icon { 
     font-size: 2rem; 
 }
 
-.html { color: #E34F26; } 
-.js { color: #F7DF1E; } 
-.python { color: #3776AB; }
-
-.skill-level { 
+.feature-level { 
     font-size: 0.85rem; 
     color: var(--text-muted); 
 }
@@ -406,7 +396,7 @@ a.nav-btn.active {
 }
 
 /* =========================================
-   EDIÇÃO INLINE (Inputs dentro dos Cards)
+   EDIÇÃO INLINE
    ========================================= */
 .edit-input { 
     width: 100%; 
@@ -442,7 +432,7 @@ a.nav-btn.active {
 }
 
 /* =========================================
-   MODAIS (POP-UPS)
+   MODAIS E ANIMAÇÕES
    ========================================= */
 .modal-overlay { 
     position: fixed; 
@@ -484,7 +474,6 @@ a.nav-btn.active {
     transform: translateY(0) scale(1); 
 }
 
-/* Cabeçalho do Modal */
 .modal-header { 
     display: flex; 
     justify-content: space-between; 
@@ -514,7 +503,6 @@ a.nav-btn.active {
     transform: scale(1.1); 
 }
 
-/* Corpo do Modal */
 .modal-body { 
     padding: 20px 25px; 
 }
@@ -548,7 +536,6 @@ a.nav-btn.active {
     outline: none; 
 }
 
-/* Correção Select Padrão */
 select.modal-input { 
     appearance: none; 
     -webkit-appearance: none; 
@@ -560,11 +547,6 @@ select.modal-input {
     cursor: pointer; 
 }
 
-select.modal-input::-ms-expand { 
-    display: none; 
-}
-
-/* Rodapé do Modal */
 .modal-footer { 
     display: flex; 
     justify-content: flex-end; 
@@ -615,9 +597,6 @@ select.modal-input::-ms-expand {
     transform: translateY(-2px); 
 }
 
-/* =========================================
-   ANIMAÇÕES EXTRAS
-   ========================================= */
 @keyframes fadeIn { 
     from { opacity: 0; transform: translateY(20px); } 
     to { opacity: 1; transform: translateY(0); } 
@@ -632,9 +611,6 @@ select.modal-input::-ms-expand {
     animation: slideInNewCard 0.4s ease forwards; 
 }
 
-/* =========================================
-   RESPONSIVIDADE (Celulares e Tablets)
-   ========================================= */
 @media (max-width: 900px) {
     .dashboard-container { 
         flex-direction: column; 
@@ -664,7 +640,7 @@ select.modal-input::-ms-expand {
         padding: 20px; 
     }
     
-    .info-card { 
+    .info-card, .feature-card { 
         flex-direction: column; 
         align-items: flex-start; 
         gap: 15px; 
