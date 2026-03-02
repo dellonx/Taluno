@@ -36,10 +36,7 @@
 
 <main class="layout-container-empresa">
     <aside class="filtros-sidebar">
-        <div class="barra-pesquisa">
-            <h1 class="titulo-principal">Pesquisar Vagas</h1>
-            <input type="text" placeholder="" class="input-busca">
-        </div> 
+        
         <div class="filtros-container">
             <h2 class="filtros-titulo">Filtro Avançado</h2>
             <form class="filtros-form">
@@ -270,8 +267,15 @@
         <div class="linha-vaga-dupla">
              <!--aqui é responsável pelo salário-->
             <div class="campo-vaga">
-                <label for="salario">Salário</label>
-                <input type="text" id="salario-vaga" placeholder="Informe o salário">
+                <label for="salario-vaga">Faixa Salarial</label>
+                    <select id="salario-vaga" name="salario-vaga">
+                        <option value="combinar">A combinar</option>
+                        <option value="1.412,00">R$ 1.412,00 (Mínimo)</option>
+                        <option value="1.500 - 2.000">R$ 1.500,00 a R$ 2.000,00</option>
+                        <option value="2.000 - 3.000">R$ 2.000,00 a R$ 3.000,00</option>
+                        <option value="3.000 - 5.000">R$ 3.000,00 a R$ 5.000,00</option>
+                        <option value="5.000+">Acima de R$ 5.000,00</option>
+                    </select>
             </div>
 
             <!-- experiencia exigida-->

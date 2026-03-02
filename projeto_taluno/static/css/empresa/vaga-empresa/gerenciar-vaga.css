@@ -175,17 +175,30 @@ body { font-family: 'Segoe UI', sans-serif; }
     align-items: start;
 }
 
-/*Coluna da da esquerda*/
-.box-descricao{
+/* Coluna da esquerda - Onde a descrição aparece */
+.box-descricao {
     background-color: #f1f3f5;
     padding: 25px;
     border-radius: 12px;
+    /* Adicione estas linhas abaixo: */
+    width: 100%;            /* Garante que ocupe a largura da coluna */
+    overflow-wrap: break-word; /* Força a quebra de palavras gigantes */
+    word-wrap: break-word;     /* Compatibilidade para navegadores antigos */
+}
+
+/* Alvo específico para o texto dentro da descrição */
+.box-descricao p {
+    white-space: pre-wrap;     /* Preserva as quebras de linha que o usuário deu (Enter) */
+    word-break: break-word;    /* Garante que o texto não "escape" do fundo cinza */
+    line-height: 1.6;          /* Melhora a leitura do texto */
 }
 
 .box-descricao h3, .box-descricao h4 {
     margin-top: 0;
     color: #333;
 }
+
+
 
 /*Coluna da direita - Painel de status */
 
@@ -245,23 +258,22 @@ body { font-family: 'Segoe UI', sans-serif; }
 /* aqui é responsável pelo container das tags laranja */
 .tags-vaga {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
-    margin-bottom: 12px;
+    flex-direction: column; /* Alinha um abaixo do outro */
+    align-items: flex-start; /* Garante que comecem na esquerda */
+    gap: 8px;               /* Espaçamento entre eles */
+    margin-top: 20px;
 }
 
-/*aqui são os badges da telea*/
-.badge{
-    background-color: #f27133 ;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 8px;
-    font-size: 13px;
+.badge {
+    background-color: #ff7f45;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 6px;
     font-weight: bold;
-     text-align: center; /* alinha o texto dentro das divs laranjas     */
-    display: inline-block; /* Permite que o elemento aceite largura fixa */
-    min-width: 100px;  /* Garante que todos tenham pelo menos 100px */
+    font-size: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;     /* Impede que o texto quebre dentro do badge */
+    display: inline-block;   /* Garante que o badge só ocupe o tamanho do texto */
 }
 
 .rodape-acoes {
