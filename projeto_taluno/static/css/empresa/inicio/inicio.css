@@ -1,4 +1,3 @@
-
 .empresa-dashboard {
     background: #d9d9d9;
     padding: 40px 0;
@@ -7,8 +6,8 @@
     align-items: center;
     gap: 30px;
     font-family: 'Poppins', sans-serif;
+    min-height: 80vh;
 }
-
 
 .hero {
     width: 80%;
@@ -21,7 +20,6 @@
     width: 100%;
     display: block;
 }
-
 
 .cta-box {
     width: 80%;
@@ -39,8 +37,9 @@
     color: #4a0072;
 }
 
+/* Cor do botão restaurada para o roxo sólido original */
 .cta-box button {
-    background: linear-gradient(#6a1b9a);
+    background: #6a1b9a;
     border: none;
     color: white;
     padding: 8px 22px;
@@ -69,32 +68,32 @@
     font-weight: 600;
 }
 
-.vaga-card {
-    background: #f2f2f2;
-    color: #333;
-    padding: 14px 20px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+/* Estado Vazio dentro da box roxa */
+.vagas-empty-state {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    font-size: 13px;
+    gap: 10px;
 }
 
-.vaga-card .inscritos {
-    color: #555;
-    font-size: 12px;
+.vagas-empty-state i {
+    font-size: 2.5rem;
+    opacity: 0.8;
 }
 
-.vaga-card a {
-    color: #5e35b1;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
+.vagas-empty-state p {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.vaga-card:last-child {
-    margin-bottom: 0;
+.vagas-empty-state span {
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
 
 /* ===== RESPONSIVO ===== */
@@ -102,12 +101,6 @@
     .cta-box {
         flex-direction: column;
         gap: 10px;
-        text-align: center;
-    }
-
-    .vaga-card {
-        flex-direction: column;
-        gap: 6px;
         text-align: center;
     }
 }
