@@ -49,7 +49,7 @@
 
                 <div class="vaga-metricas">
                     <button class="btn-candidatos">
-                        Candidatos <span class="badge-count">45</span>
+                        Candidatos <span class="badge-count">8</span>
                     </button>
                 </div>
             </div>
@@ -169,106 +169,161 @@
             <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
         </div>
     </div>
-</footer>
+    </footer>
 <!--Final do Footer-->
 
-<div class="modal-overlay-vaga" id="modal-edicao">
-    <div class="janela-cadastro-vaga">
-        <header class="header-modal-vaga">
-            <h2 class="titulo-modal">Editar vaga</h2>
-            <p class="subtitulo-modal">Altere as informações abaixo para atualizar sua vaga no taluno</p>
-        </header>
+    <!-- AQUI É O MODAL DE EDIÇÃO DE INFORMAÇÕES -->
+    <div class="modal-overlay-vaga" id="modal-edicao">
+        <div class="janela-cadastro-vaga">
+            <header class="header-modal-vaga">
+                <h2 class="titulo-modal">Editar vaga</h2>
+                <p class="subtitulo-modal">Altere as informações abaixo para atualizar sua vaga no taluno</p>
+            </header>
 
-        <form id="formulario-edicao-vaga" class="formulario-criacao-vaga">
-            <div class="campo-vaga">
-                <label>Título da vaga</label>
-                <input type="text" id="edit-titulo" placeholder="Ex: Desenvolvedor Junior">
-            </div>
-        
-            <div class="linha-vaga-dupla">
+            <form id="formulario-edicao-vaga" class="formulario-criacao-vaga">
                 <div class="campo-vaga">
-                    <label>Área</label>
-                    <select id="edit-area" name="area-vaga">
-                        <option value="">Selecione a área</option>
-                        <option value="ti">TI e Software</option>
-                        <option value="adm">Administração</option>
-                        <option value="design">Design e UX</option>
-                        <option value="mkt">Marketing e Comunicação</option>
-                        <option value="vendas">Vendas e Comercial</option>
-                        <option value="saude">Saúde</option>
-                        <option value="atendimento">Atendimento ao Cliente</option>
-                        <option value="outros">Outros</option>
-                    </select>
+                    <label>Título da vaga</label>
+                    <input type="text" id="edit-titulo" placeholder="Ex: Desenvolvedor Junior">
+                </div>
+            
+                <div class="linha-vaga-dupla">
+                    <div class="campo-vaga">
+                        <label>Área</label>
+                        <select id="edit-area" name="area-vaga">
+                            <option value="">Selecione a área</option>
+                            <option value="ti">TI e Software</option>
+                            <option value="adm">Administração</option>
+                            <option value="design">Design e UX</option>
+                            <option value="mkt">Marketing e Comunicação</option>
+                            <option value="vendas">Vendas e Comercial</option>
+                            <option value="saude">Saúde</option>
+                            <option value="atendimento">Atendimento ao Cliente</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-vaga">
+                        <label>Modalidade</label>
+                        <select id="edit-modalidade" name="nivel-vaga">
+                            <option value="">Tipo de vaga</option>
+                            <option value="clt">CLT</option>
+                            <option value="estagio">Estágio</option>
+                            <option value="pj">Aprendiz</option>
+                            <option value="temporario">Freelancer</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="campo-vaga">
-                    <label>Modalidade</label>
-                    <select id="edit-modalidade" name="nivel-vaga">
-                        <option value="">Tipo de vaga</option>
-                        <option value="clt">CLT</option>
-                        <option value="estagio">Estágio</option>
-                        <option value="pj">Aprendiz</option>
-                        <option value="temporario">Freelancer</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="campo-vaga">
-                <label>Descrição da vaga</label>
-                <textarea id="edit-descricao" rows="3" placeholder="Descreva as responsabilidades..." oninput="autoExpand(this)"></textarea>
-            </div>
-
-            <div class="divisor-requisitos">
-                <h3>Informações adicionais</h3>
-            </div>
-
-            <div class="linha-vaga-dupla">
-                <div class="campo-vaga">
-                    <label for="edit-escolaridade">Escolaridade mínima</label>
-                    <select id="edit-escolaridade">
-                        <option value="">Selecione a escolaridade</option>
-                        <option value="fundamental">Ensino Fundamental</option>
-                        <option value="medio">Ensino Médio</option>
-                        <option value="superior-cursando">Superior Cursando</option>
-                        <option value="superior-completo">Superior Completo</option>
-                        <option value="pos">Pós / Especialização</option>
-                    </select>
+                    <label>Descrição da vaga</label>
+                    <textarea id="edit-descricao" rows="3" placeholder="Descreva as responsabilidades..." oninput="autoExpand(this)"></textarea>
                 </div>
 
-                <div class="campo-vaga">
-                    <label for="edit-escala">Escala de trabalho</label>
-                    <select id="edit-escala">
-                        <option value="">Selecione a escala</option>
-                        <option value="6x1">6x1 (Folga variável)</option>
-                        <option value="5x2">5x2 (Segunda a Sexta)</option>
-                        <option value="12x36">12hx36h</option>
-                        <option value="hibrido">Híbrido</option>
-                        <option value="remoto">Home Office</option>
-                        <option value="combinar">A combinar</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="linha-vaga-dupla">
-                <div class="campo-vaga">
-                    <label for="edit-salario">Salário</label>
-                    <input type="text" id="edit-salario" placeholder="Informe o salário">
+                <div class="divisor-requisitos">
+                    <h3>Informações adicionais</h3>
                 </div>
 
-                <div class="campo-vaga">
-                    <label for="edit-experiencia">Experiência exigida?</label>
-                    <select id="edit-experiencia">
-                        <option value="nao">Não</option>
-                        <option value="sim">Sim</option>
-                    </select>
+                <div class="linha-vaga-dupla">
+                    <div class="campo-vaga">
+                        <label for="edit-escolaridade">Escolaridade mínima</label>
+                        <select id="edit-escolaridade">
+                            <option value="">Selecione a escolaridade</option>
+                            <option value="fundamental">Ensino Fundamental</option>
+                            <option value="medio">Ensino Médio</option>
+                            <option value="superior-cursando">Superior Cursando</option>
+                            <option value="superior-completo">Superior Completo</option>
+                            <option value="pos">Pós / Especialização</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-vaga">
+                        <label for="edit-escala">Escala de trabalho</label>
+                        <select id="edit-escala">
+                            <option value="">Selecione a escala</option>
+                            <option value="6x1">6x1 (Folga variável)</option>
+                            <option value="5x2">5x2 (Segunda a Sexta)</option>
+                            <option value="12x36">12hx36h</option>
+                            <option value="hibrido">Híbrido</option>
+                            <option value="remoto">Home Office</option>
+                            <option value="combinar">A combinar</option>
+                        </select>
+                    </div>
                 </div>
+
+                <div class="linha-vaga-dupla">
+                    <div class="campo-vaga">
+                        <label for="edit-salario">Salário</label>
+                        <input type="text" id="edit-salario" placeholder="Informe o salário">
+                    </div>
+
+                    <div class="campo-vaga">
+                        <label for="edit-experiencia">Experiência exigida?</label>
+                        <select id="edit-experiencia">
+                            <option value="nao">Não</option>
+                            <option value="sim">Sim</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="footer-modal-vaga">
+                    <button type="button" class="btn-vaga-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-vaga-publicar">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--AQUI É A ESTRUTURA DO SEGUNDO MODAL DA TELA DE GERENCIAR VAGAS(CANDIDATOS)-->
+    <div class="modal-overlay-vaga" id="modal-lista-candidatos">
+        <div class="janela-candidatos">
+            <header class="header-candidatos">
+                <div class="titulo-vaga-container">
+                    <h2 id="modal-candidatos-titulo">Desenvolvedor de software</h2>
+                    <div class="divisor-vertical"></div>
+                    <h3>Andamento</h3>
+                </div>
+            </header>
+
+            <div class="tabela-container">
+                <table class="tabela-candidatos">
+                    <thead>
+                        <tr class="cabecalho-roxo">
+                            <th>Candidatos</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Allan Dellon</td>
+                            <td class="status-aprovado">Aprovado</td>
+                            <td>
+                                <div class="acoes-botoes">
+                                    <button class="btn-acao aprovar">Aprovar</button>
+                                    <button class="btn-acao reprovar">reprovar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Anna sem nina</td>
+                            <td class="status-analise">Análise</td>
+                            <td>
+                                <div class="acoes-botoes borda-roxo">
+                                    <button class="btn-acao aprovar">Aprovar</button>
+                                    <button class="btn-acao reprovar">reprovar</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="footer-modal-vaga">
-                <button type="button" class="btn-vaga-cancelar" onclick="fecharModal('modal-edicao')">Cancelar</button>
-                <button type="submit" class="btn-vaga-publicar">Salvar Alterações</button>
-            </div>
-        </form>
+            <footer class="footer-candidatos">
+                <button type="button" class="btn-voltar-cinza">Voltar</button>
+                <button class="btn-avancar-fase">Avançar fase</button>
+            </footer>
+        </div>
+    </div>
     </div>
 </div>
 <script src="/projeto_taluno/static/js/empresa/vagas/vagas-empresa.js"></script>

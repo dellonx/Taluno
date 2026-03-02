@@ -44,21 +44,21 @@
             <h2 class="filtros-titulo">Filtro Avançado</h2>
             <form class="filtros-form">
                 <div class="campo-grupo">
-                    <label for="palavra-chave">Palavra chave</label>
+                    <label for="status-vaga">Andamento da vaga</label>
                     <div class="input-wrapper">
                         <input type="text" id="palavra-chave" name="palavra-chave">
                         <span class="btn-limpar">&times;</span>
                     </div>
                 </div>
                 <div class="campo-grupo">
-                    <label for="Cidade">Cidade</label>
+                    <label for="Modalidade">Modalidade</label>
                     <div class="input-wrapper">
                         <input type="text" id="Cidade" name="Cidade">
                         <span class="btn-limpar">&times;</span>
                     </div>
                 </div>
                 <div class="campo-grupo">
-                    <label for="tipo-vaga">Tipo de vaga</label>
+                    <label for="ârea">Ârea</label>
                     <div class="input-wrapper">
                         <input type="text" id="tipo-vaga" name="tipo-vaga">
                         <span class="btn-limpar">&times;</span>        
@@ -191,7 +191,7 @@
     <form class="formulario-criacao-vaga">
         <div class="campo-vaga">
             <label>Título da vaga</label>
-            <input type="text" id="titulo-vaga" placeholder="Ex: Desenvolvedor Junior">
+            <input type="text" id="titulo-vaga" placeholder="Ex: Desenvolvedor Junior" required>
         </div>
     
     <!-- aqui são as areas disponiveis para escolher-->
@@ -227,9 +227,7 @@
         <!-- descrição da vaga-->
         <div class="campo-vaga">
             <label>Descrição da vaga</label>
-            <textarea 
-                id="descricao-vaga" rows="3" placeholder="Descreva as responsabilidades..." oninput="autoExpand(this)">
-            </textarea>
+            <textarea id="descricao-vaga" rows="3" placeholder="..." oninput="autoExpand(this)" required></textarea>
         </div>
 
 
