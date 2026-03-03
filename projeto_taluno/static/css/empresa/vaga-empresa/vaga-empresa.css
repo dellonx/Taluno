@@ -480,7 +480,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Botões do Modal */
 .btn-vaga-publicar {
-    background-color: #e6005c; /* Rosa/Roxo do botão Publicar */
+    background-color: #9600ff; /* Rosa/Roxo do botão Publicar */
     color: white;
     border: none;
     padding: 12px 30px;
@@ -492,7 +492,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Botão principal de ação (Publicar) */
 .btn-vaga-publicar {
-    background-color: #e6005c; /* Cor de destaque (Rosa/Roxo) */
+    background-color: #9600ff; /* Cor de destaque (Rosa/Roxo) */
     color: white;
     border: none;
     padding: 12px 30px;
@@ -504,8 +504,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Botão de desistência (Cancelar) */
 .btn-vaga-cancelar {
-    background-color: transparent;
-    color: #666;
+     color: #666;
     border: 1px solid #ccc;
     padding: 12px 25px;
     border-radius: 12px;
@@ -514,7 +513,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Efeito ao passar o mouse: escurece a cor e sobe levemente o botão */
 .btn-vaga-publicar:hover {
-    background-color: #c4004e; 
+    background-color: #7a00cc; 
     transform: translateY(-2px); /* Feedback visual de "clicável" */
 }
 

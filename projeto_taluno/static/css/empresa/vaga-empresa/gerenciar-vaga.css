@@ -116,11 +116,11 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* O Botão de candidatos conforme gradiente */
 .btn-candidatos {
-    background: linear-gradient(90deg, #6366f1, #d946ef); /* Gradiente roxo para rosa */
+    background: #9600ff; /* Gradiente roxo para rosa */
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 50px; /* Formato de pílula */
+    border-radius: 12px; 
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -213,9 +213,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 /*Aqui altera o card que envolve os botões*/
 .botoes-status{
     padding: 10px;
-    border: 1px solid #ced4da;
     border-radius: 20px;
-    background: #adb5bd;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -265,7 +263,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .badge {
-    background-color: #ff7f45;
+    background-color: #E00080;
     color: #fff;
     padding: 6px 15px;
     border-radius: 6px;
@@ -311,6 +309,11 @@ body { font-family: 'Segoe UI', sans-serif; }
     cursor: pointer;
 }
 
+.btn-voltar:hover{
+    scale: 1.05;
+    transition: 0.5s;
+}
+
 .btn-editar {
     background-color: #3b82f6; /* Azul vibrante */
     color: white;
@@ -325,6 +328,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .btn-editar:hover {
     background-color: #2563eb;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    scale: 1.03;
 }
 
 
@@ -439,7 +443,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Botão Salvar (Rosa/Roxo de destaque) */
 .btn-vaga-publicar {
-    background-color: #e6005c; 
+    background-color: #9600ff; 
     color: white;
     border: none;
     padding: 12px 30px;
@@ -450,15 +454,15 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-vaga-publicar:hover {
-    background-color: #c4004e; 
+    background-color: #7a00cc; 
     transform: translateY(-2px);
 }
 
 /* Botão Cancelar */
 .btn-vaga-cancelar {
-    background-color: transparent;
     color: #666;
     border: 1px solid #ccc;
+    border: none;
     padding: 12px 25px;
     border-radius: 12px;
     cursor: pointer;
@@ -535,7 +539,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .acoes-botoes {
     display: inline-flex;
     gap: 10px;
-    background-color: #ccc;
+    background-color: #ffffff;
     padding: 5px 15px;
     border-radius: 20px;
 }
@@ -566,8 +570,8 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-voltar-cinza {
-    background-color: #ddd;
-    color: white;
+    color: #666;
+    border: 1px solid #ccc;
     border: none;
     padding: 10px 30px;
     border-radius: 20px;
@@ -583,4 +587,17 @@ body { font-family: 'Segoe UI', sans-serif; }
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* Note que NÃO tem espaço entre o 'a' e o '.nome-perfil' */
+a.nome-perfil {
+    text-decoration: none !important; /* Remove o traçado */
+    color: #000000 !important;        /* Força a cor preta */
+    font-weight: bold;                 /* Mantém o destaque */
+}
+
+/* Efeito ao passar o mouse */
+a.nome-perfil:hover {
+    color: #8b2cf5 !important;        /* Troca para o roxo do seu tema */
+    text-decoration: underline !important; /* Opcional: o traçado aparece só aqui */
 }
