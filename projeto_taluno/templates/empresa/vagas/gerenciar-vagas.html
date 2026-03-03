@@ -70,6 +70,7 @@
         <div class="conteudo-principal">
             <section class="coluna-detalhes">
                 <div class="box-descricao">
+                    <!-- O Js está criando o texto e ignora este aqui, mas por algum motivo quando eu tentei remover o texto, parou de aparecer no site-->
                     <h3>Descrição da Vaga</h3>
                     <p>Estamos em busca de um profissional responsável e atencioso para atuar como
                         Porteiro, garantindo a segurança e organização do ambiente. Será responsável
@@ -109,7 +110,7 @@
             <div class="acoes-direita">
                 <button class="btn-voltar">Voltar</button>
                 <button class="btn-candidatos">
-                        Candidatos <span class="badge-count">8</span>
+                        Candidatos <span class="badge-count">7</span>
                 </button>
         </footer>
 
@@ -171,7 +172,7 @@
             <form id="formulario-edicao-vaga" class="formulario-criacao-vaga">
                 <div class="campo-vaga">
                     <label>Título da vaga</label>
-                    <input type="text" id="edit-titulo" placeholder="Ex: Desenvolvedor Junior">
+                    <input type="text" id="edit-titulo" placeholder="Ex: Desenvolvedor Junior" required>
                 </div>
             
                 <div class="linha-vaga-dupla">
@@ -186,7 +187,7 @@
                             <option value="vendas">Vendas e Comercial</option>
                             <option value="saude">Saúde</option>
                             <option value="atendimento">Atendimento ao Cliente</option>
-                            <option value="outros">Outros</option>
+                            <option value="outros">Outras Areas</option>
                         </select>
                     </div>
 
@@ -204,7 +205,7 @@
 
                 <div class="campo-vaga">
                     <label>Descrição da vaga</label>
-                    <textarea id="edit-descricao" rows="3" placeholder="Descreva as responsabilidades..." oninput="autoExpand(this)"></textarea>
+                    <textarea id="edit-descricao" rows="3" placeholder="..." oninput="autoExpand(this)" required></textarea>
                 </div>
 
                 <div class="divisor-requisitos">
@@ -241,7 +242,14 @@
                 <div class="linha-vaga-dupla">
                     <div class="campo-vaga">
                         <label for="edit-salario">Salário</label>
-                        <input type="text" id="edit-salario" placeholder="Informe o salário">
+                        <select id="edit-salario" name="salario-vaga">
+                            <option value="combinar">A combinar</option>
+                            <option value="1.412,00">R$ 1.412,00 (Mínimo)</option>
+                            <option value="1.500 - 2.000">R$ 1.500,00 a R$ 2.000,00</option>
+                            <option value="2.000 - 3.000">R$ 2.000,00 a R$ 3.000,00</option>
+                            <option value="3.000 - 5.000">R$ 3.000,00 a R$ 5.000,00</option>
+                            <option value="5.000+">Acima de R$ 5.000,00</option>
+                        </select>
                     </div>
 
                     <div class="campo-vaga">
@@ -252,12 +260,17 @@
                         </select>
                     </div>
                 </div>
-
+                
                 <div class="footer-modal-vaga">
-                    <button type="button" class="btn-vaga-cancelar">Cancelar</button>
+                    <button type="button" class="btn-vaga-cancelar" onclick="fecharModal('modal-edicao')">Cancelar</button>
                     <button type="submit" class="btn-vaga-publicar">Salvar Alterações</button>
                 </div>
-            </form>
+                    
+            </div>
+
+                
+</form>
+            
         </div>
     </div>
 
@@ -282,8 +295,9 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!--Aqui são os candidatos aprovados ou não para passar para proxima fase-->
                         <tr>
-                            <td class="nome-perfil">Allan Dellon</td>
+                            <td class><a href="/projeto_taluno/templates/" class="nome-perfil" >Allan Dellon</a></td>
                             <td class="status-aprovado">Aprovado</td>
                             <td>
                                 <div class="acoes-botoes">
@@ -292,8 +306,64 @@
                                 </div>
                             </td>
                         </tr>
+
                         <tr>
-                            <td class><a href="/projeto_taluno/templates/aluno/usuario/usuario.html" class="nome-perfil" >Anna sem nina</a></td>
+                            <td class><a href="/projeto_taluno/templates/" class="nome-perfil" >Anna sem nina</a></td>
+                            <td class="status-analise">Análise</td>
+                            <td>
+                                <div class="acoes-botoes">
+                                    <button class="btn-acao aprovar">Aprovar</button>
+                                    <button class="btn-acao reprovar">reprovar</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class><a href="/projeto_taluno/templates/" class="nome-perfil" >Ernande Ferreira</a></td>
+                            <td class="status-analise">Análise</td>
+                            <td>
+                                <div class="acoes-botoes">
+                                    <button class="btn-acao aprovar">Aprovar</button>
+                                    <button class="btn-acao reprovar">reprovar</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class><a href="/projeto_taluno/templates/" class="nome-perfil" >Allana Beatriz</a></td>
+                            <td class="status-analise">Análise</td>
+                            <td>
+                                <div class="acoes-botoes">
+                                    <button class="btn-acao aprovar">Aprovar</button>
+                                    <button class="btn-acao reprovar">reprovar</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class><a href="/projeto_taluno/templates/" class="nome-perfil" >Lucas Lira</a></td>
+                            <td class="status-analise">Análise</td>
+                            <td>
+                                <div class="acoes-botoes">
+                                    <button class="btn-acao aprovar">Aprovar</button>
+                                    <button class="btn-acao reprovar">reprovar</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class><a href="/projeto_taluno/templates/" class="nome-perfil" >Rico Soares</a></td>
+                            <td class="status-analise">Análise</td>
+                            <td>
+                                <div class="acoes-botoes">
+                                    <button class="btn-acao aprovar">Aprovar</button>
+                                    <button class="btn-acao reprovar">reprovar</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class><a href="/projeto_taluno/templates/" class="nome-perfil" >João Vitor</a></td>
                             <td class="status-analise">Análise</td>
                             <td>
                                 <div class="acoes-botoes">

@@ -221,40 +221,67 @@ if (formCriar && !formCriar.id.includes('edicao')) {
     });
 }
 
-    // Edição de Vaga Existente
-    const formEditar = document.getElementById('formulario-edicao-vaga');
-    if (formEditar) {
-        formEditar.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const index = localStorage.getItem('vagaSelecionadaIndex');
-            let lista = JSON.parse(localStorage.getItem('minhasVagas')) || [];
+ // Edição de Vaga Existente (VERSÃO CORRIGIDA)
+const formEditar = document.getElementById('formulario-edicao-vaga');
+if (formEditar) {
+    formEditar.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const index = localStorage.getItem('vagaSelecionadaIndex');
+        let lista = JSON.parse(localStorage.getItem('minhasVagas')) || [];
+
+        if (index !== null && lista[index]) {
+            // Captura os textos das opções para as Tags ficarem corretas
+            const selArea = document.getElementById('edit-area');
+            const selEscolaridade = document.getElementById('edit-escolaridade');
+            const selEscala = document.getElementById('edit-escala');
+            const selSalario = document.getElementById('edit-salario');
 
             lista[index].titulo = document.getElementById('edit-titulo').value.trim();
             lista[index].descricao = document.getElementById('edit-descricao').value.trim();
-            lista[index].area = document.getElementById('edit-area')?.value || lista[index].area;
-            lista[index].escolaridade = document.getElementById('edit-escolaridade')?.value || lista[index].escolaridade;
-            lista[index].escala = document.getElementById('edit-escala').value;
-            lista[index].salario = document.getElementById('edit-salario').value;
-            lista[index].experiencia = document.getElementById('edit-experiencia')?.value || lista[index].experiencia;
+            
+            // Aqui garantimos que a TAG salve o texto bonitinho (ex: "Design e UX")
+            lista[index].area = selArea.options[selArea.selectedIndex].text;
+            lista[index].escolaridade = selEscolaridade.options[selEscolaridade.selectedIndex].text;
+            lista[index].escala = selEscala.options[selEscala.selectedIndex].text;
+            lista[index].salario = selSalario.options[selSalario.selectedIndex].value; // Salário mantemos o valor
+            lista[index].experiencia = document.getElementById('edit-experiencia').value;
 
             localStorage.setItem('minhasVagas', JSON.stringify(lista));
+            
             fecharModal('modal-edicao');
+            
+            // Recarrega os detalhes e as TAGS na tela imediatamente
             carregarDetalhesGerenciamento(); 
-        });
-    }
+            alert("Informações atualizadas com sucesso!");
+        }
+    });
+}
 });
 
-// --- 6. EVENTOS DE CLIQUE ---
+// --- 6. EVENTOS DE CLIQUE (UNIFICADOS E CORRIGIDOS) ---
 
 document.addEventListener('click', (e) => {
+    
+    // 1. VOLTAR / CANCELAR / FECHAR MODAIS
+    if (e.target.closest('.btn-voltar-cinza') || e.target.classList.contains('btn-vaga-cancelar')) {
+        fecharModal('modal-edicao');
+        fecharModal('modal-lista-candidatos');
+        return;
+    }
+
+    // 2. VOLTAR PARA A PÁGINA DE LISTAGEM (Botão principal da tela)
     if (e.target.classList.contains('btn-voltar') || e.target.closest('.btn-voltar')) {
         window.location.href = "vagas.html";
         return;
     }
+
+    // 3. ABRIR MODAL DE CANDIDATOS
     if (e.target.classList.contains('btn-candidatos') || e.target.closest('.btn-candidatos')) {
         abrirCandidatos();
         return;
     }
+
+    // 4. ALTERAR STATUS DA VAGA (Ativa, Pausada, Encerrada)
     if (e.target.classList.contains('btn-status')) {
         const index = localStorage.getItem('vagaSelecionadaIndex');
         let lista = JSON.parse(localStorage.getItem('minhasVagas'));
@@ -271,25 +298,40 @@ document.addEventListener('click', (e) => {
             localStorage.setItem('minhasVagas', JSON.stringify(lista));
         }
     }
+
+    // 5. EDITAR VAGA (Preencher e Abrir Modal)
     if (e.target.classList.contains('btn-editar')) {
         const index = localStorage.getItem('vagaSelecionadaIndex');
         const listaVagas = JSON.parse(localStorage.getItem('minhasVagas'));
+        
         if (index !== null && listaVagas[index]) {
             const vaga = listaVagas[index];
+            
             document.getElementById('edit-titulo').value = vaga.titulo || "";
-            document.getElementById('edit-area').value = vaga.area || "";
-            document.getElementById('edit-escolaridade').value = vaga.escolaridade || "";
-            document.getElementById('edit-escala').value = vaga.escala || "";
             document.getElementById('edit-descricao').value = vaga.descricao || "";
             document.getElementById('edit-salario').value = vaga.salario || "";
             document.getElementById('edit-experiencia').value = vaga.experiencia || "nao";
+
+            const selecionarPorTexto = (idSelect, textoAlvo) => {
+                const select = document.getElementById(idSelect);
+                if (!select || !textoAlvo) return;
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].text === textoAlvo) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            };
+
+            selecionarPorTexto('edit-area', vaga.area);
+            selecionarPorTexto('edit-escolaridade', vaga.escolaridade);
+            selecionarPorTexto('edit-escala', vaga.escala);
+
             abrirModal('modal-edicao');
         }
     }
-    if (e.target.classList.contains('btn-vaga-cancelar') || e.target.classList.contains('btn-voltar-cinza')) {
-        fecharModal('modal-edicao');
-        fecharModal('modal-lista-candidatos');
-    }
+
+    // 6. EXCLUIR VAGA
     if (e.target.classList.contains('btn-excluir')) {
         if (confirm("Deseja realmente excluir esta vaga?")) {
             const index = localStorage.getItem('vagaSelecionadaIndex');
@@ -298,5 +340,38 @@ document.addEventListener('click', (e) => {
             localStorage.setItem('minhasVagas', JSON.stringify(lista));
             window.location.href = "vagas.html";
         }
+    }
+
+    // 7. APROVAR / REPROVAR CANDIDATOS (Tabela)
+    if (e.target.classList.contains('aprovar')) {
+        const linha = e.target.closest('tr');
+        const statusCelula = linha.querySelector('td:nth-child(2)');
+        statusCelula.textContent = 'Aprovado';
+        statusCelula.style.color = '#2ecc71';
+    }
+
+    if (e.target.classList.contains('reprovar')) {
+        const linha = e.target.closest('tr');
+        const statusCelula = linha.querySelector('td:nth-child(2)');
+        statusCelula.textContent = 'Reprovado';
+        statusCelula.style.color = '#e91e63';
+    }
+});
+
+
+document.addEventListener('click', function(e) {
+
+    if (e.target.classList.contains('aprovar')) {
+        const linha = e.target.closest('tr'); // Identifica a linha da Anna ou do Allan
+        const statusCelula = linha.querySelector('td:nth-child(2)'); // Segunda coluna de status
+        statusCelula.textContent = 'Aprovado';
+        statusCelula.style.color = '#2ecc71'; // Cor verde
+    }
+
+    if (e.target.classList.contains('reprovar')) {
+        const linha = e.target.closest('tr');
+        const statusCelula = linha.querySelector('td:nth-child(2)');
+        statusCelula.textContent = 'Reprovado';
+        statusCelula.style.color = '#e91e63'; // Cor rosa/vermelha
     }
 });
