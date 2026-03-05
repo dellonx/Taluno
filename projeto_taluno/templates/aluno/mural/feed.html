@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno | Mural</title>
+
+    <!-- CSS Global (Sistema Logado) -->
+   <link rel="stylesheet" href="../../../static/css/global.css">
+    <!-- CSS Específico do Mural -->
     <link rel="stylesheet" href="../../../static/css/aluno/mural/mural.css">
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
 
@@ -11,122 +15,127 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-
-<!-- HEADER -->
-<header class="header-taluno">
-    <div class="top-bar">
-        <div class="container"> 
-            <a href="../inicio/inicio.html" class="logo">
-                <img src="../../../static/img/logo/logo_taluno.png" alt="Taluno | Senac">
-            </a>
-
-            <div class="top-icons">
-                <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
-                <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
+    
+    <!-- HEADER -->
+    <header class="header-taluno">
+        <div class="top-bar">
+            <div class="container">
+                <a href="../inicio/inicio.html" class="logo">
+                    <img src="../../../static/img/logo/logo_taluno.png" alt="Taluno | Senac">
+                </a>
+                
+                <div class="top-icons">
+                    <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
+                    <button class="menu-hamburguer"><i class="fas fa-bars"></i></button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <nav class="nav-bar">
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="../inicio/inicio.html">Início</a></li>
-                <li><a href="../vagas/vagas.html">Vagas</a></li>
-                <li><a href="../mural/feed.html" class="active">Mural</a></li>
-                <li><a href="../candidaturas/candidaturas.html">Candidaturas</a></li>
-                <li><a href="../curriculo/curriculo.html">Curriculo</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<!-- MAIN -->
-<main class="container">
-
-    <!-- Banner do Mural -->
-    <section class="banner-mural">
-        <p>Você concluiu um curso? Conte sua experiência no mercado de trabalho!</p>
-        <button class="btn-adicionar">Adicionar Publicação</button>
-    </section>
-
-    <!-- Criar Post -->
-    <section class="card-post criar-post">
-    <div class="user-info">
-        <img src="../../../static/img/perfil/mulher_sorrindo.png" alt="Avatar" class="avatar">
-        <textarea
-            class="input-post"
-            placeholder="Conte sua experiência..."
-            rows="3"
-        ></textarea>
-    </div>
-    <button class="btn-publicar">Publicar</button>
-</section>
-
-    <!-- Post -->
-    <article class="card-post">
-        <div class="user-info">
-            <img src="../../../static/img/perfil/perfil_default.png" alt="Avatar" class="avatar">
-            <strong>Maya</strong>
-        </div>
-        <p>
-            Curso excelente! Conteúdo bem organizado, professores didáticos e exemplos práticos que realmente ajudam no aprendizado.
-        </p>
-    </article>
-
-    <article class="card-post">
-        <div class="user-info">
-            <img src="../../../static/img/perfil/perfil_default.png" alt="Avatar" class="avatar">
-            <strong>Alanna</strong>
-        </div>
-        <p>
-            Curso muito bom, com aulas claras e objetivas. Apenas alguns módulos poderiam ser um pouco mais aprofundados.
-        </p>
-    </article>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="footer-taluno">
-    <div class="container footer-content">
-
-        <div class="footer-col logo-col">
-            <img src="../../../static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
-        </div>
-
-        <div class="footer-col links-col">
-            <ul class="footer-menu">
-                <li><a href="#">SOBRE TALUNO</a></li>
-                <li><a href="#">POLÍTICA DE COOKIES</a></li>
-                <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
-                <li><a href="#">CENTRAL DE AJUDA</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col social-col">
-            <div class="social-icons">
-                <a href="https://www.instagram.com/senacpe/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/SenacPernambuco" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.facebook.com/senacpe/?locale=pt_BR" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/company/senacpe/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        
+        <nav class="nav-bar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="../inicio/inicio.html">Início</a></li>
+                    <li><a href="../vagas/vagas.html">Vagas</a></li>
+                    <li><a href="../mural/feed.html" class="active">Mural</a></li>
+                    <li><a href="../candidaturas/candidaturas.html">Candidaturas</a></li>
+                    <li><a href="../suporte/suporte.html">Suporte</a></li>
+                </ul>
             </div>
-
-            <a href="#" class="btn-back-top">
-                <i class="fa-solid fa-arrow-up"></i>
-            </a>
+        </nav>
+    </header>
+    
+    <!-- MAIN -->
+    <main class="container">
+        
+        <!-- Banner do Mural -->
+        <section class="banner-mural">
+            <p>Você concluiu um curso? Conte sua experiência no mercado de trabalho!</p>
+        </section>
+        
+        <!-- Criar Post -->
+        <section class="card-post criar-post">
+            <div class="user-info">
+                <img src="../../../static/img/perfil/perfil_default.png" alt="Avatar" class="avatar">
+                <textarea
+                id="postInput"
+                class="input-post"
+                placeholder="Conte sua experiência..."
+                rows="3"
+                ></textarea>
+            </div>
+            <button id="btnPublicar" class="btn-publicar">Publicar</button>
+        </section>
+        
+        <!-- Feed -->
+        <section id="feedPosts">
+            
+            <article class="card-post">
+                <div class="user-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlSZgbZ3Vvm4uA0--o-KfPihd4LZgK0oCMhw&s" alt="Avatar" class="avatar">
+                    <strong>Maya</strong>
+                </div>
+                <p>
+                    Curso excelente! Conteúdo bem organizado, professores didáticos e exemplos práticos que realmente ajudam no aprendizado.
+                </p>
+            </article>
+            
+            <article class="card-post">
+                <div class="user-info">
+                    <img src="https://img.freepik.com/fotos-premium/uma-mulher-de-negocios-elegante-e-confiante-a-sorrir_589812-528.jpg?semt=ais_hybrid&w=740&q=80" alt="Avatar" class="avatar">
+                    <strong>Alanna</strong>
+                </div>
+                <p>
+                    Curso muito bom, com aulas claras e objetivas. Apenas alguns módulos poderiam ser um pouco mais aprofundados.
+                </p>
+            </article>
+            
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer class="footer-taluno">
+        <div class="container footer-content">
+            
+            <div class="footer-col logo-col">
+                <img src="../../../static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
+            </div>
+            
+            <div class="footer-col links-col">
+                <ul class="footer-menu">
+                    <li><a href="#">SOBRE TALUNO</a></li>
+                    <li><a href="#">POLÍTICA DE COOKIES</a></li>
+                    <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+                    <li><a href="#">CENTRAL DE AJUDA</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col social-col">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/senacpe/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/SenacPernambuco" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/senacpe/?locale=pt_BR" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/senacpe/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                
+                <a href="#" class="btn-back-top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+            
         </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container">
-            <hr class="footer-line">
-            <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <hr class="footer-line">
+                <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
         </div>
-    </div>
-
+        
+        
 </footer>
 <!--Final do Footer-->
+<script src="../../../static/js/aluno/mural/mural.js"></script>
+
 </body>
 </html >
