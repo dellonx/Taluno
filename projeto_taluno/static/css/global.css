@@ -104,7 +104,8 @@ main {
 
 /* Garanta que os ícones voltem a ser brancos (se quiser sair do azul de teste) */
 .top-icons i {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+    margin-left: 10px;
     color: rgb(255, 255, 255);
     opacity: 90%;
     cursor: pointer;
