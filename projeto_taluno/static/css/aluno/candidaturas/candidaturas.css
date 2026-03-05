@@ -5,9 +5,9 @@
     min-height: 70vh;
 }
 
-/* Container de conteúdo para evitar que os cards estiquem em monitores grandes */
+/* Container de conteúdo centralizado */
 .content-wrapper {
-    max-width: 900px !important; /* Mantém os cards centralizados e elegantes */
+    max-width: 900px !important;
     margin: 0 auto;
 }
 
@@ -34,9 +34,15 @@
     background: #fff;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
 }
 
-/* Cards */
+.select-customizado select:focus {
+    border-color: #0084ff;
+}
+
+/* Lista de Cards */
 .lista-candidaturas {
     display: flex;
     flex-direction: column;
@@ -51,8 +57,20 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.card-candidatura:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* Esconder cards via JS */
+.card-candidatura.hidden {
+    display: none;
+}
+
+/* Informações da Vaga */
 .info-vaga h3 {
     color: #0084ff;
     font-size: 1.2rem;
@@ -84,13 +102,15 @@
     min-width: 155px;
     text-align: center;
     font-size: 0.9rem;
+    text-transform: capitalize;
 }
 
-/* Cores imutáveis dos status */
+/* Cores dos Status */
 .status-concluido { background-color: #4cd137; }
 .status-andamento { background-color: #ffb92e; }
 .status-cancelado { background-color: #d63031; }
 
+/* Botão de Fechar (X) */
 .btn-fechar {
     background: #333;
     color: #fff;
@@ -102,6 +122,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s;
+}
+
+.btn-fechar:hover {
+    background: #e6005c; /* Cor de destaque ao deletar */
 }
 
 /* Paginação */
@@ -124,4 +149,29 @@
     align-items: center;
     justify-content: center;
     font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-page:hover {
+    background-color: #0084ff;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-candidatura {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .status-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .badge {
+        width: 100%;
+    }
 }
