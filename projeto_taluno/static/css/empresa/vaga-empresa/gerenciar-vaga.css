@@ -1,0 +1,614 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    /* Gradiente inspirado na imagem: Azul -> Roxo -> Rosa */
+    --gradient-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
+    --texto-nav: #333333;
+    --texto-hover: #0052cc;
+    --bg-branco: #ffffff;
+}
+
+/* Remove margens padrão do navegador */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Segoe UI', sans-serif; }
+
+/* LINHA 2: Nav Bar (Branca) */
+.nav-bar {
+    background: var(--bg-branco);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Espalha os itens */
+    max-width: 800px; /* Limita a largura para não ficar muito aberto */
+    margin: 0 auto; /* Centraliza o menu */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto-nav);
+    font-weight: 700; /* Negrito */
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    padding-bottom: 5px; /* Espaço para a borda no hover */
+}
+
+/* Efeito Hover e Ativo */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--texto-hover);
+    border-bottom: 3px solid var(--texto-hover); /* Detalhe visual elegante */
+}
+
+/*COnfiguração do fundo da página para destacar o card*/
+.dashboard-container{
+    background-color: #e9ecef;/*Um cinza claro para dar contraste com o branco*/
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+ /*O container Principal(Card Branco*/ 
+ .card-gerenciamento-vaga{
+    background-color: #fff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px; /*espaçamento eentre os elementos*/
+ }
+
+
+.header-vaga{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+.vaga-metricas {
+    display: flex;
+    justify-content: flex-end; /* Garante alinhamento interno à direita */
+    flex-grow: 1; /* Faz esse container ocupar o espaço restante */
+}
+
+.info-principal{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+/*aqui é responsável para editar a imagem*/
+.foto-vaga img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /*deixa redondo*/
+    object-fit: cover;
+    background-color: #ccc;
+}
+
+/*aqui mexe no titulo*/
+.titulo-vaga {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.nome-empresa {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* O Botão de candidatos conforme gradiente */
+.btn-candidatos {
+    background: #9600ff; /* Gradiente roxo para rosa */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px; 
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease;
+}
+
+.btn-candidatos:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+
+/*isso serve para destacar o número no botão de candidatos*/ 
+.badge-count {
+    background-color: white;
+    color: black;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+/* Aqui é a estrutura da barra de indicadores*/
+.barra-indicadores{
+    display: flex;
+    gap: 40px;
+    background-color: #f8f9fa;
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.indicador-item{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.indicador-item .valor-box {
+    background-color: #dee2e6; /* Cinza um pouco mais escuro para o box */
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #212529;
+}
+
+.conteudo-principal{
+    display: grid;
+    grid-template-columns: 1fr 320px; /*Esquerda flexível. direita fixa*/
+    gap: 30px;
+    align-items: start;
+}
+
+/* Coluna da esquerda - Onde a descrição aparece */
+.box-descricao {
+    background-color: #f1f3f5;
+    padding: 25px;
+    border-radius: 12px;
+    /* Adicione estas linhas abaixo: */
+    width: 100%;            /* Garante que ocupe a largura da coluna */
+    overflow-wrap: break-word; /* Força a quebra de palavras gigantes */
+    word-wrap: break-word;     /* Compatibilidade para navegadores antigos */
+}
+
+/* Alvo específico para o texto dentro da descrição */
+.box-descricao p {
+    white-space: pre-wrap;     /* Preserva as quebras de linha que o usuário deu (Enter) */
+    word-break: break-word;    /* Garante que o texto não "escape" do fundo cinza */
+    line-height: 1.6;          /* Melhora a leitura do texto */
+}
+
+.box-descricao h3, .box-descricao h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+
+
+/*Coluna da direita - Painel de status */
+
+.card-status{
+    background-color: #f1f3f5;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*Aqui altera o card que envolve os botões*/
+.botoes-status{
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*AQUI ALTERA OS BOTÕES*/
+.btn-status {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    background: #adb5bd; /* Cor padrão cinza */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Estado: ATIVA (Verde) */
+.btn-status.ativa {
+    background-color: #00c853; 
+    color: white;
+    border-color: #00c853;
+}
+
+/* Estado: PAUSADA (Amarelo/Laranja) */
+.btn-status.pausada {
+    background-color: #ffb300; 
+    color: white;
+    border-color: #ffb300;
+}
+
+/* Estado: ENCERRADA (Vermelho) */
+.btn-status.encerrada {
+    background-color: #ff5252; 
+    color: white;
+    border-color: #ff5252;
+}
+
+/* aqui é responsável pelo container das tags laranja */
+.tags-vaga {
+    display: flex;
+    flex-direction: column; /* Alinha um abaixo do outro */
+    align-items: flex-start; /* Garante que comecem na esquerda */
+    gap: 8px;               /* Espaçamento entre eles */
+    margin-top: 20px;
+}
+
+.badge {
+    background-color: #E00080;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;     /* Impede que o texto quebre dentro do badge */
+    display: inline-block;   /* Garante que o badge só ocupe o tamanho do texto */
+}
+
+.rodape-acoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #e9ecef; /* Linha sutil de separação */
+}
+
+.acoes-direita {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-excluir {
+    background-color: #fceaea; /* Vermelho bem clarinho */
+    color: #e63946;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-voltar {
+    background-color: #dee2e6;
+    color: #495057;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-voltar:hover{
+    scale: 1.05;
+    transition: 0.5s;
+}
+
+.btn-editar {
+    background-color: #3b82f6; /* Azul vibrante */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    scale: 1.03;
+}
+
+
+/*Aqui é o CSS do modal de edição de vagas*/
+
+/* Container que escurece o fundo */
+.modal-overlay-vaga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;      
+    height: 100vh;      
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* JS muda para 'flex' */
+    justify-content: center; 
+    align-items: center;     
+    z-index: 3000; 
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+/* Classe que o JS ativa para mostrar o modal */
+.modal-overlay-vaga.ativo {
+    display: flex !important;
+}
+
+/* A caixa branca do modal */
+.janela-cadastro-vaga {
+    background-color: #fff;
+    width: 90%;
+    max-width: 650px; 
+    margin: 0 auto; 
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    /* Se o conteúdo for maior que a tela do usuário, ele cria scroll interno */
+    max-height: 90vh;
+    overflow-y: auto;
+  
+}
+
+
+
+/* Cabeçalho do formulário */
+.header-modal-vaga {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.titulo-modal {
+    color: #a600a6; /* Roxo padrão */
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.subtitulo-modal {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Campos do formulário */
+.campo-vaga {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 15px;
+}
+
+.campo-vaga label {
+    font-size: 14px;
+    color: #a600a6; 
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.campo-vaga input,
+.campo-vaga select,
+.campo-vaga textarea {
+    padding: 12px;
+    border: 1px solid #a600a6; 
+    border-radius: 12px;
+    outline: none; 
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Sistema de grade (lado a lado) */
+.linha-vaga-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+/* Divisor de Requisitos */
+.divisor-requisitos {
+    text-align: center;
+    margin: 20px 0;
+    color: #a600a6;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.divisor-requisitos h3 {
+    font-size: 18px;
+}
+
+/* Botões do final do Modal */
+.footer-modal-vaga {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Linha sutil para separar do formulário */
+    width: 100%;
+}
+
+/* Botão Salvar (Rosa/Roxo de destaque) */
+.btn-vaga-publicar {
+    background-color: #9600ff; 
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-vaga-publicar:hover {
+    background-color: #7a00cc; 
+    transform: translateY(-2px);
+}
+
+/* Botão Cancelar */
+.btn-vaga-cancelar {
+    color: #666;
+    border: 1px solid #ccc;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-vaga-cancelar:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+}
+
+/*AQUI É RESPONSÁVEL PELO MODAL DE CANDIDATOS */
+
+
+
+/* Card Branco Principal */
+.janela-candidatos {
+    background-color: white;
+    width: 90%;
+    max-width: 850px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalho */
+.titulo-vaga-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.divisor-vertical {
+    width: 4px;
+    height: 40px;
+    background-color: #a600a6;
+}
+
+/* Tabela Estilizada */
+.tabela-container {
+    margin-top: 10px;
+}
+
+.tabela-candidatos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cabecalho-roxo {
+    background-color: #a600a6;
+    color: white;
+}
+
+.cabecalho-roxo th {
+    padding: 12px;
+    text-align: center;
+}
+
+.tabela-candidatos td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Status Cores */
+.status-aprovado { color: #28a745; }
+.status-analise { color: #e6005c; }
+.status-reprovado { color: #dc3545; }
+
+/* Botões de Ação na Tabela */
+.acoes-botoes {
+    display: inline-flex;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.acoes-botoes.borda-roxo {
+    border: 2px solid #a600a6;
+}
+
+.btn-acao {
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-acao.aprovar { background-color: #28a745; }
+.btn-acao.reprovar { background-color: #e6005c; }
+
+/* Rodapé */
+.footer-candidatos {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-voltar-cinza {
+    color: #666;
+    border: 1px solid #ccc;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-avancar-fase {
+    background: #9600ff ; /* Degradê azul/roxo */
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-avancar-fase:hover{
+    background-color: #a600a6;
+}
+
+/* Note que NÃO tem espaço entre o 'a' e o '.nome-perfil' */
+a.nome-perfil {
+    text-decoration: none !important; /* Remove o traçado */
+    color: #000000 !important;        /* Força a cor preta */
+    font-weight: bold;                 /* Mantém o destaque */
+}
+
+/* Efeito ao passar o mouse */
+a.nome-perfil:hover {
+    color: #8b2cf5 !important;        /* Troca para o roxo do seu tema */
+    text-decoration: underline !important; /* Opcional: o traçado aparece só aqui */
+}
+

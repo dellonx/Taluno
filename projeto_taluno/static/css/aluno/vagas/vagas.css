@@ -90,9 +90,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* o efeito de sombreamento nos cards de vagas*/
 }
 
-.vaga-conteudo-esquerdo {
-    flex: 1; /* Faz o texto ocupar o máximo de espaço possível, empurrando o botão */
-}
+
 
 .card-das-vagas:hover{
     transform: scale(1.03); /* aumenta o tamanho dos cards    */
@@ -191,7 +189,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 
-/* 1. Posicionamento do Aside */
+/*  Posicionamento do Aside */
 .filtros-sidebar {
     width: 320px;
     flex: 0 0 325px;
@@ -201,24 +199,10 @@ body { font-family: 'Segoe UI', sans-serif; }
     
 }
 
-/* 2. Estilo da Barra de Busca Superior */
-.busca-topo {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.input-busca {
-    width: 100%;
-    padding: 10px 35px 10px 15px;
-    margin-top: 10px;
-    border: 1px solid #7f7f7f; 
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-}
 
 
-/* 3. O Container de Filtros (Borda Roxa) */
+
+/*  O Container de Filtros (Borda Roxa) */
 .filtros-container {
     background-color: white;
     border: 1px solid #ccc; 
@@ -244,14 +228,9 @@ body { font-family: 'Segoe UI', sans-serif; }
     color: #3c3c3c;
 }
 
-.titulo-principal{
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 0px;
 
-}
 
-/* 4. Estilo dos Inputs Internos com o "X" */
+/*  Estilo dos Inputs Internos com o "X" */
 .campo-grupo {
     text-align: left;
     margin-bottom: 15px;
@@ -293,7 +272,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     cursor: pointer;
 }
 
-/* 5. Botão Gradiente Taluno */
+/*  Botão Gradiente Taluno */
 .btn-aplicar {
     width: 80%;
     margin-top: 10px;
