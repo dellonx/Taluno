@@ -1,99 +1,133 @@
-:root {
-    --gradiente-taluno: linear-gradient(90deg, #0052cc 0%, #a600a6 50%, #e6005c 100%);
-    --sombra-suave: 0 4px 10px rgba(0,0,0,0.1);
-}
+/*CONTAINER PRINCIPAL*/
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f7f6;
-    margin: 0;
+main.container{
+    max-width: 900px;
+    margin: 40px auto;
 }
+   /* BANNER DO MURAL */
 
-/* Banner Superior */
-.banner-mural {
-    background: var(--gradiente-taluno);
+.banner-mural{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    border-radius: 8px;
-    color: white;
-    margin: 20px 0;
-}
-
-/* Estilo dos Cards do Mural */
-.card-post {
-    background: white;
+    justify-content: space-between;
+    padding: 18px 24px;
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: var(--sombra-suave);
-    border: 1px solid #e0e0e0;
-}
-
-/* Botões com Identidade Visual */
-.btn-publicar, .btn-adicionar {
-    background: #0052cc; /* Cor média do gradiente ou o gradiente todo */
     color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+    font-size: 18px;
+    font-weight: 500;
+    background: #6a19eb;
+    margin-bottom: 30px;
 }
 
-.btn-publicar:hover {
-    filter: brightness(1.2);
+.banner-mural p{
+    margin:0;
 }
 
-.user-info {
-    display: flex;
-    gap: 15px;
+
+/*CARD CRIAR POST*/
+
+.criar-post{
+    display:flex;
+    flex-direction:column;
+    background:#f2f2f2;
+    border-radius:10px;
+    padding:18px;
+    border:4px solid #d8d8d8;
+    margin-bottom:30px;
 }
 
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-} 
 
-/* Área de criar post */
-.criar-post {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+/* USER INFO */
+
+.user-info{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
 }
 
-/* Caixa de texto */
-.input-post {
-    width: 100%;
-    border: none;
-    resize: none;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    background: #f4f7f6;
-    padding: 12px 15px;
-    border-radius: 12px;
-    box-shadow: inset 0 0 0 1px #ddd;
-    transition: box-shadow 0.2s ease;
+
+/* AVATAR */
+
+.avatar{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    object-fit:cover;
 }
 
-/* Foco bonito (adeus quadro feio) */
-.input-post:focus {
-    box-shadow: inset 0 0 0 2px #a600a6;
-    background: #fff;
+
+/* INPUT POST */
+
+.input-post{
+    width:100%;
+    border:none;
+    resize:none;
+    font-size:16px;
+    outline:none;
+    background:transparent;
 }
 
-.btn-publicar {
-    align-self: flex-end;
-    background: #0052cc;
-    color: white;
-    border: none;
-    padding: 8px 22px;
-    border-radius: 20px;
-    font-weight: 600;
-    cursor: pointer;
+
+
+/* BOTÃO PUBLICAR */
+
+.btn-publicar{
+    align-self:flex-end;
+    margin-top:10px;
+    background:#6a19eb;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.2s;
+}
+
+.btn-publicar:hover{
+    transform:scale(1.05);
+}
+
+
+
+/*POSTS DO MURAL*/
+
+.card-post{
+
+    position:relative;
+    background:#f5f5f5;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:22px;
+    border:2px solid #dcdcdc;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card-post strong{
+    font-size:16px;
+}
+
+.card-post p{
+    margin-top:10px;
+    line-height:1.5;
+}
+
+
+
+/*BOTÃO EXCLUIR (LIXEIRA)*/
+
+.btn-excluir{
+    position:absolute;
+    top:12px;
+    right:12px;
+
+    background:transparent;
+    border:none;
+    color:#e6005c;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.btn-excluir:hover{
+    transform:scale(1.2);
 }
