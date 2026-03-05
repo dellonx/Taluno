@@ -80,24 +80,6 @@ body {
     height: 60px;
 }
 
-.top-icons {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.menu-hamburguer {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.top-icons i {
-    font-size: 1.6rem;
-    color: white;
-    cursor: pointer;
-}
-
 /* NAV BAR */
 .nav-bar {
     background: var(--bg-branco);
