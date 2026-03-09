@@ -16,9 +16,10 @@
                     <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
                 </a>
                 <div class="top-icons">
-                    <a href="../chat/chat.html" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
-                    <a href="../config/informacoes.html"><button class="menu-hamburguer"><i class="fas fa-bars"></i></button></a>
-                </div>
+                    <a href="../chat/chat.html" class="nav-icon" title="Chat"><i class="fas fa-comment-dots"></i></a>
+                    <a href="../usuario/usuario.html" class="nav-icon" title="Meu Perfil"><i class="fas fa-user"></i></a>
+                    <a href="../config/conta.html" class="nav-icon" title="Configurações"><i class="fas fa-gear"></i></a>
+            </div>
             </div>
         </div>
 
@@ -29,7 +30,7 @@
                     <li><a href="../vagas/vagas.html">Vagas</a></li>
                     <li><a href="../mural/feed.html">Mural</a></li>
                     <li><a href="../candidaturas/candidaturas.html" class="active">Candidaturas</a></li>
-                    <li><a href="../curriculo/curriculo.html">Curriculo</a></li>
+                    <li><a href="../curriculo/curriculo.html">Currículo</a></li>
                 </ul>
             </div>
         </nav>
@@ -41,20 +42,20 @@
                 <div class="filtro-wrapper">
                     <label>Filtrar candidaturas</label>
                     <div class="select-customizado">
-                        <select>
-                            <option>Nenhuma</option>
-                            <option>Em Andamento</option>
-                            <option>Cancelado</option>
-                            <option>Concluído</option>
+                        <select id="filtroStatus">
+                            <option value="todos">Todos</option>
+                            <option value="andamento">Em Andamento</option>
+                            <option value="cancelado">Cancelado</option>
+                            <option value="concluido">Concluído</option>
                         </select>
                     </div>
                 </div>
             </section>
 
-            <section class="lista-candidaturas">
-                <article class="card-candidatura">
+            <section class="lista-candidaturas" id="listaCandidaturas">
+                <article class="card-candidatura" data-status="concluido">
                     <div class="info-vaga">
-                        <h3>Vaga para barbeiro T...</h3>
+                        <h3>Vaga para Barbeiro Profissional</h3>
                         <p class="empresa">Salão Homem Mais Forte</p>
                         <p class="local">Av. Boa Viagem, 4200 - Recife, PE</p>
                     </div>
@@ -63,6 +64,116 @@
                         <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
                     </div>
                 </article>
+
+                <article class="card-candidatura" data-status="andamento">
+                    <div class="info-vaga">
+                        <h3>Desenvolvedor Front-end Júnior</h3>
+                        <p class="empresa">Tech Solutions PE</p>
+                        <p class="local">Rua do Apolo, 120 - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-andamento">Em Andamento</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura" data-status="cancelado">
+                    <div class="info-vaga">
+                        <h3>Auxiliar Administrativo</h3>
+                        <p class="empresa">Comércio Varejista Ltda</p>
+                        <p class="local">Rua Nova, 45 - Olinda, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-cancelado">Cancelado</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura" data-status="andamento">
+                    <div class="info-vaga">
+                        <h3>Estágio em Design UI/UX</h3>
+                        <p class="empresa">Creative Agency</p>
+                        <p class="local">Espinheiro - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-andamento">Em Andamento</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura" data-status="concluido">
+                    <div class="info-vaga">
+                        <h3>Recepcionista Bilíngue</h3>
+                        <p class="empresa">Hotel Maré Alta</p>
+                        <p class="local">Boa Viagem - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-concluido">Concluído</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura" data-status="cancelado">
+                    <div class="info-vaga">
+                        <h3>Vendedor de Loja</h3>
+                        <p class="empresa">Moda Fashion</p>
+                        <p class="local">Shopping Recife - PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-cancelado">Cancelado</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura" data-status="andamento">
+                    <div class="info-vaga">
+                        <h3>Suporte Técnico TI</h3>
+                        <p class="empresa">InfraNet Brasil</p>
+                        <p class="local">Ilha do Leite - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-andamento">Em Andamento</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura" data-status="concluido">
+                    <div class="info-vaga">
+                        <h3>Assistente de Marketing</h3>
+                        <p class="empresa">Digital Growth</p>
+                        <p class="local">Graças - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-concluido">Concluído</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura" data-status="andamento">
+                    <div class="info-vaga">
+                        <h3>Analista de Dados Pleno</h3>
+                        <p class="empresa">Data Analytics Co.</p>
+                        <p class="local">Porto Digital - Recife, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-andamento">Em Andamento</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-candidatura" data-status="cancelado">
+                    <div class="info-vaga">
+                        <h3>Cozinheiro Profissional</h3>
+                        <p class="empresa">Restaurante Sabor do Porto</p>
+                        <p class="local">Bairro Novo - Olinda, PE</p>
+                    </div>
+                    <div class="status-wrapper">
+                        <span class="badge status-cancelado">Cancelado</span>
+                        <button class="btn-fechar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </article>
+            </section>
+        </div>
     </main>
 
     <footer class="footer-taluno">
@@ -97,5 +208,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="/projeto_taluno/static/js/aluno/candidaturas/candidaturas.js"></script>
 </body>
 </html>

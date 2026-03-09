@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taluno | Perfil da Empresa</title>
+
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/usuario/perfil_empresa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="profile-sidebar">
+            <div class="sidebar-top">
+                <a href="../inicio/inicio.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <div class="avatar-placeholder" id="defaultAvatar">
+                        <i class="fas fa-building"></i> </div>
+                    <img src="" alt="Logo da Empresa" class="profile-avatar hidden" id="realAvatar">
+                    <button class="btn-edit-avatar" title="Atualizar Logo"><i class="fas fa-camera"></i></button>
+                </div>
+
+                <h2 class="user-name">Tech Solutions S/A</h2>
+                <p class="user-role">Tecnologia da Informação</p>
+                <p class="user-email">contato@techsolutions.com</p>
+            </div>
+
+            <nav class="profile-nav">
+                <a href="/projeto_taluno/templates/empresa/perfil_empresa/perfil_empresa.html" class="nav-btn active">Dados da Empresa</a>
+                <a href="/projeto_taluno/templates/empresa/vagas/vagas.html" class="nav-btn">Minhas Vagas</a>
+                <a href="/projeto_taluno/templates/empresa/config/base.html" class="nav-btn">Configurações</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="/projeto_taluno/templates/empresa/autenticacao/login.html" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="profile-content">
+            <div class="content-wrapper">
+                
+                <section class="info-section">
+                    <header class="section-header">
+                        <h3><i class="fas fa-briefcase"></i> Gestão de Vagas</h3>
+                        <button class="btn-add" id="btnAddVaga">
+                            <i class="fas fa-plus"></i> Nova Vaga
+                        </button>
+                    </header>
+
+                    <div class="cards-list" id="listaVagas">
+                        <div class="info-card">
+                            <div class="card-left" data-type="vaga">
+                                <h4>Estágio em Desenvolvimento Front-end</h4>
+                                <span class="card-subtitle">Recife, PE (Híbrido)</span>
+                                <span class="card-status status-progress">Aberta</span>
+                                <span class="card-date">Publicada em: 26 Fev 2026</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-left" data-type="vaga">
+                                <h4>Desenvolvedor Back-end Júnior (Python)</h4>
+                                <span class="card-subtitle">Remoto - Brasil</span>
+                                <span class="card-status status-completed">Fechada</span>
+                                <span class="card-date">Publicada em: 10 Jan 2026</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <header class="section-header">
+                        <h3><i class="fas fa-gift"></i> Benefícios Oferecidos</h3>
+                        <button class="btn-add" id="btnAddBeneficio">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </header>
+
+                    <div class="cards-list grid-layout" id="listaBeneficios">
+                        <div class="feature-card">
+                            <div class="feature-info">
+                                <i class="fas fa-utensils feature-icon" style="color: #EA2651;"></i>
+                                <div class="card-left" data-type="beneficio">
+                                    <h4>Vale Alimentação</h4>
+                                    <span class="feature-level">Cartão Flash Flex (R$ 800)</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-info">
+                                <i class="fas fa-laptop-house feature-icon" style="color: var(--primary-color);"></i>
+                                <div class="card-left" data-type="beneficio">
+                                    <h4>Home Office</h4>
+                                    <span class="feature-level">Ajuda de custo mensal</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-action edit" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button class="btn-action delete" title="Excluir"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modalVaga">
+        <div class="modal-box">
+            <header class="modal-header">
+                <h3>Publicar Nova Vaga</h3>
+                <button class="btn-close-modal"><i class="fas fa-times"></i></button>
+            </header>
+            <form id="formAddVaga">
+                <div class="modal-body">
+                    <label>Título da Vaga</label>
+                    <input type="text" id="inputVagaTitulo" class="modal-input" placeholder="Ex: Analista de Dados Pleno" required>
+                    
+                    <label>Localização / Modalidade</label>
+                    <input type="text" id="inputVagaLocal" class="modal-input" placeholder="Ex: São Paulo, SP (Híbrido)" required>
+                    
+                    <label>Status Inicial</label>
+                    <select id="inputVagaStatus" class="modal-input" required>
+                        <option value="Aberta">Aberta (Ativa)</option>
+                        <option value="Pausada">Pausada (Oculta)</option>
+                    </select>
+                    
+                    <label>Data de Publicação</label>
+                    <input type="text" id="inputVagaData" class="modal-input" value="Publicada em: 26 Fev 2026" required>
+                </div>
+                <footer class="modal-footer">
+                    <button type="button" class="btn-secondary btn-cancelar-modal">Cancelar</button>
+                    <button type="submit" class="btn-primary">Publicar</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalBeneficio">
+        <div class="modal-box">
+            <header class="modal-header">
+                <h3>Adicionar Benefício</h3>
+                <button class="btn-close-modal"><i class="fas fa-times"></i></button>
+            </header>
+            <form id="formAddBeneficio">
+                <div class="modal-body">
+                    <label>Nome do Benefício</label>
+                    <input type="text" id="inputBenNome" class="modal-input" placeholder="Ex: Plano de Saúde" required>
+                    
+                    <label>Detalhes (Descrição Curta)</label>
+                    <input type="text" id="inputBenDetalhe" class="modal-input" placeholder="Ex: SulAmérica Nacional" required>
+
+                    <label>Ícone Representativo</label>
+                    <select id="inputBenIcone" class="modal-input">
+                        <option value="fas fa-heartbeat">Saúde / Coração</option>
+                        <option value="fas fa-utensils">Alimentação</option>
+                        <option value="fas fa-laptop-house">Home Office</option>
+                        <option value="fas fa-bus">Transporte</option>
+                        <option value="fas fa-graduation-cap">Educação / Cursos</option>
+                        <option value="fas fa-gift">Genérico (Presente)</option>
+                    </select>
+                </div>
+                <footer class="modal-footer">
+                    <button type="button" class="btn-secondary btn-cancelar-modal">Cancelar</button>
+                    <button type="submit" class="btn-primary">Adicionar</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalExcluir">
+        <div class="modal-box modal-small">
+            <header class="modal-header">
+                <h3 style="color: #EA2651;"><i class="fas fa-exclamation-triangle"></i> Excluir Item</h3>
+                <button class="btn-close-modal"><i class="fas fa-times"></i></button>
+            </header>
+            <div class="modal-body text-center">
+                <p style="font-size: 1.05rem; color: #333; margin-bottom: 5px; font-weight: 500;">
+                    Tem certeza que deseja apagar?
+                </p>
+                <p style="font-size: 0.85rem; color: #777;">
+                    Esta ação não poderá ser desfeita e removerá este item do perfil da empresa.
+                </p>
+            </div>
+            <footer class="modal-footer" style="justify-content: center;">
+                <button type="button" class="btn-secondary btn-cancelar-modal">Cancelar</button>
+                <button type="button" class="btn-danger" id="btnConfirmarExclusao">Sim, apagar</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/projeto_taluno/static/js/empresa/perfil_empresa/perfil_empresa.js"></script>
+</body>
+</html>

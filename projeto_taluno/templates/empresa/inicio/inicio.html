@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno | Empresa</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/inicio/inicio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
-<!--Inicio NavBar-->
 <header class="header-taluno">
     <div class="top-bar">
         <div class="container">
@@ -18,8 +17,9 @@
             </a>
 
             <div class="top-icons">
-                <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
-                <a href="../config/informacoes.html"><button class="menu-hamburguer"><i class="fas fa-bars"></i></button></a>
+                <a href="../chat/chat.html" class="nav-icon" title="Chat"><i class="fas fa-comment-dots"></i></a>
+                <a href="../perfil_empresa/perfil_empresa.html" class="nav-icon" title="Meu Perfil"><i class="fas fa-user"></i></a>
+                <a href="../config/conta.html" class="nav-icon" title="Configurações"><i class="fas fa-gear"></i></a>
             </div>
         </div>
     </div>
@@ -31,18 +31,37 @@
                 <li><a href="../vagas/vagas.html">Minhas Vagas</a></li>
                 <li><a href="../mural/mural.html">Mural</a></li>
                 <li><a href="../buscar/buscar_cv.html">Buscar CV's</a></li>
-                <li><a href="../suporte/suporte.html">Suporte</a></li>
             </ul>
         </div>
     </nav>
 </header>
-<!--Fim NavBar-->
-
 <main>
+<section class="empresa-dashboard">
 
+    <div class="hero">
+        <img src="/projeto_taluno/static/img/index/banner-taluno.jpeg" alt="Taluno Banner">
+    </div>
+
+    <div class="cta-box">
+        <p>Crie sua nova vaga agora e comece a contratar hoje mesmo!</p>
+        <a href="../vagas/vagas.html" class="btn-nova-vaga" style="text-decoration: none;">
+            <button style="cursor: pointer;">Nova vaga</button>
+        </a>
+    </div>
+
+    <div class="vagas-box">
+        <h2>Minhas vagas recentes</h2>
+
+        <div class="vagas-empty-state">
+            <i class="fas fa-briefcase"></i>
+            <p>Você ainda não possui vagas publicadas.</p>
+            <span>Suas vagas aparecerão aqui assim que você criá-las.</span>
+        </div>
+    </div>
+
+</section>
 </main>
 
-<!--Inicio Footer-->
 <footer class="footer-taluno">
     <div class="container footer-content">
         
@@ -80,6 +99,5 @@
         </div>
     </div>
 </footer>
-<!--Fim Footer-->
 </body>
 </html>

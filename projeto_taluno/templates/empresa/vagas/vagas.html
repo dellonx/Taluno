@@ -5,25 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taluno | Empresa</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/vaga-empresa/vaga-empresa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
-<!--Inicio NavBar-->
 <header class="header-taluno">
     <div class="top-bar">
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
             </a>
-
             <div class="top-icons">
-                <a href="#" class="icon-chat"><i class="fas fa-comment-dots"></i></a>
-                <a href="../config/informacoes.html"><button class="menu-hamburguer"><i class="fas fa-bars"></i></button></a>
+                <a href="../chat/chat.html" class="nav-icon" title="Chat"><i class="fas fa-comment-dots"></i></a>
+                <a href="../perfil_empresa/perfil_empresa.html" class="nav-icon" title="Meu Perfil"><i class="fas fa-user"></i></a>
+                <a href="../config/conta.html" class="nav-icon" title="Configurações"><i class="fas fa-gear"></i></a>
             </div>
         </div>
     </div>
-
     <nav class="nav-bar">
         <div class="container">
             <ul class="nav-links">
@@ -31,19 +29,111 @@
                 <li><a href="../vagas/vagas.html" class="active">Minhas Vagas</a></li>
                 <li><a href="../mural/mural.html">Mural</a></li>
                 <li><a href="../buscar/buscar_cv.html">Buscar CV's</a></li>
-                <li><a href="../suporte/suporte.html">Suporte</a></li>
             </ul>
         </div>
     </nav>
 </header>
-<!--Fim NavBar-->
 
-<main>
+<main class="layout-container-empresa">
+    <aside class="filtros-sidebar">
+        
+        <div class="filtros-container">
+            <h2 class="filtros-titulo">Filtro Avançado</h2>
+            <form class="filtros-form">
+                <div class="campo-grupo">
+                    <label for="status-vaga">Andamento da vaga</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="palavra-chave" name="palavra-chave">
+                        <span class="btn-limpar">&times;</span>
+                    </div>
+                </div>
+                <div class="campo-grupo">
+                    <label for="Modalidade">Modalidade</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="Cidade" name="Cidade">
+                        <span class="btn-limpar">&times;</span>
+                    </div>
+                </div>
+                <div class="campo-grupo">
+                    <label for="ârea">Ârea</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="tipo-vaga" name="tipo-vaga">
+                        <span class="btn-limpar">&times;</span>        
+                    </div>
+                </div>
+                <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
+            </form>
+        </div>
+    </aside>
+    
+    <section class="container-vaga-empresa"> 
+        <button class="btn-adicionar-vaga" onclick="abrirModal('modal-cadastro')">
+            <span class="icon">+</span> Anunciar Nova Vaga
+        </button>
 
+        <article class="card-vaga-empresa">
+            <div class="vaga-info-gestao">
+                <h3 class="vaga-titulo">Vaga Desenvolvedor Junior</h3>
+                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
+                <div class="vaga-detalhes-metricas">
+                    <span class="metrica-item">Status: <span class="metrica-valor status-ativa">Ativa</span></span>
+                    <span class="metrica-item">Candidatos: <span class="metrica-valor">57 inscritos</span></span>
+                    <span class="metrica-item">Publicada em: <span class="metrica-valor">20/01/2026</span></span>
+                </div>
+            </div>
+            <div class="vaga-acao">
+                <button class="btn-gerenciar">Gerenciar Vaga</button>
+            </div>
+        </article>
+
+        <article class="card-vaga-empresa">
+            <div class="vaga-info-gestao">
+                <h3 class="vaga-titulo">Vaga para Porteiro</h3>
+                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
+                <div class="vaga-detalhes-metricas">
+                    <span class="metrica-item">Status: <span class="metrica-valor status-pausada">Pausada</span></span>
+                    <span class="metrica-item">Candidatos: <span class="metrica-valor">12 inscritos</span></span>
+                    <span class="metrica-item">Publicada em: <span class="metrica-valor">02/02/2026</span></span>
+                </div>
+            </div>
+            <div class="vaga-acao">
+                <button class="btn-gerenciar">Gerenciar Vaga</button>
+            </div>
+        </article>
+
+        <article class="card-vaga-empresa">
+            <div class="vaga-info-gestao">
+                <h3 class="vaga-titulo">Vaga Web Designer</h3>
+                <p class="vaga-empresa-ref">Simtec Soluções Tecnológicas</p>
+                <div class="vaga-detalhes-metricas">
+                    <span class="metrica-item">Status: <span class="metrica-valor status-encerrada">Encerrada</span></span>
+                    <span class="metrica-item">Candidatos: <span class="metrica-valor">89 inscritos</span></span>
+                    <span class="metrica-item">Publicada em: <span class="metrica-valor">15/01/2026</span></span>
+                </div>
+            </div>
+            <div class="vaga-acao">
+                <button class="btn-gerenciar">Gerenciar Vaga</button>
+            </div>
+        </article>
+
+         </article>
+
+        <div class="btn-pgn">
+                <!-- aqui serão os botões que passam/voltam de vagas disponivéis-->
+            <nav class="paginacao">
+                <button class="btn-paginacao" onclick="paginaAnterior()" aria-label="Página Anterior">&#10094;</button>
+                <button class="btn-paginacao" onclick="proximaPagina()" aria-label="Próxima Página">&#10095;</button>
+            </nav>
+        </div>
+    
+        </section>
+
+
+    </section>
 </main>
 
-<!--Inicio Footer-->
-<footer class="footer-taluno">
+        <!--Inicio do Footer-->
+    <footer class="footer-taluno">
     <div class="container footer-content">
         
         <div class="footer-col logo-col">
@@ -80,6 +170,133 @@
         </div>
     </div>
 </footer>
-<!--Fim Footer-->
+<!--Final do Footer-->
+
+
+                <!-- AQUI É RESPONSÁVEL PELO MODAL DE ADICIONAR NOVA VAGA-->
+
+
+<div class="modal-overlay-vaga" id="modal-cadastro">
+    <!-- Aqui é responsável pela estrutura do modal de adicionar novas vagas-->
+   <div class="janela-cadastro-vaga">
+    <header class="header-modal-vaga">
+        <h2 class="titulo-modal">Criar nova vaga</h2>
+        <p class="subtitulo-modal">Preencha as informações abaixo para publicar sua vaga no taluno</p>
+    </header>
+
+    <!-- aqui é responsável pelo campo de titulo de vaga-->
+    <form class="formulario-criacao-vaga">
+        <div class="campo-vaga">
+            <label>Título da vaga</label>
+            <input type="text" id="titulo-vaga" placeholder="Ex: Desenvolvedor Junior" required>
+        </div>
+    
+    <!-- aqui são as areas disponiveis para escolher-->
+        <div class="linha-vaga-dupla">
+            <div class="campo-vaga">
+                <label>Área</label>
+                <select name="area-vaga">
+                    <option value="">Selecione a área</option>
+                    <option value="ti">TI e Software</option>
+                    <option value="adm">Administração</option>
+                    <option value="design">Design e UX</option>
+                    <option value="mkt">Marketing e Comunicação</option>
+                    <option value="vendas">Vendas e Comercial</option>
+                    <option value="eng">Saúde</option>
+                    <option value="atendimento">Atendimento ao Cliente</option>
+                    <option value="eng">Outros</option>
+                </select>
+            </div>
+
+        <!-- O nível requerido da vaga...-->
+            <div class="campo-vaga">
+                <label>Modalidade</label>
+                <select name="nivel-vaga">
+                    <option value="">Tipo de vaga</option>
+                    <option value="clt">CLT</option>
+                    <option value="estagio">Estágio</option>
+                    <option value="pj">Aprendiz</option>
+                    <option value="temporario">Freelancer</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- descrição da vaga-->
+        <div class="campo-vaga">
+            <label>Descrição da vaga</label>
+            <textarea id="descricao-vaga" rows="3" placeholder="Descreva as responsabilidades..." oninput="autoExpand(this)" required></textarea>
+        </div>
+
+
+        <!--Aqui "separa" as informações necessarias e as adicionais-->
+        <div class="divisor-requisitos">
+            <h3>Informações adicionais</h3>
+        </div>
+
+        <!-- Aqui é a parte de escolaridade-->
+        <div class="linha-vaga-dupla">
+            <div class="campo-vaga">
+                <label for="escolaridade">Escolaridade mínima</label>
+                <select id="escolaridade" name="escolaridade">
+                    <option value="">Selecione a escolaridade</option>
+                    <option value="fundamental">Ensino Fundamental</option>
+                    <option value="medio">Ensino Médio</option>
+                    <option value="superior-cursando">Superior Cursando</option>
+                    <option value="superior-completo">Superior Completo</option>
+                    <option value="pos">Pós / Especialização</option>
+                </select>
+            </div>
+
+            <!-- aqui é escala de trabalho-->
+            <div class="campo-vaga">
+                <label for="escala-vaga">Escala de trabalho</label>
+                <select id="escala-vaga" name="escala-vaga">
+                    <option value="">Selecione a escala</option>
+                    <option value="6x1">6x1 (Folga variável)</option>
+                    <option value="5x2">5x2 (Segunda a Sexta)</option>
+                    <option value="12x36">12hx36h</option>
+                    <option value="hibrido">Híbrido</option>
+                    <option value="remoto">Home Office</option>
+                    <option value="combinar">A combinar</option>
+                </select>
+            </div>
+        </div>
+
+
+    
+        <div class="linha-vaga-dupla">
+             <!--aqui é responsável pelo salário-->
+            <div class="campo-vaga">
+                <label for="salario-vaga">Faixa Salarial</label>
+                    <select id="salario-vaga" name="salario-vaga">
+                        <option value="combinar">A combinar</option>
+                        <option value="1.412,00">R$ 1.412,00 (Mínimo)</option>
+                        <option value="1.500 - 2.000">R$ 1.500,00 a R$ 2.000,00</option>
+                        <option value="2.000 - 3.000">R$ 2.000,00 a R$ 3.000,00</option>
+                        <option value="3.000 - 5.000">R$ 3.000,00 a R$ 5.000,00</option>
+                        <option value="5.000+">Acima de R$ 5.000,00</option>
+                    </select>
+            </div>
+
+            <!-- experiencia exigida-->
+            <div class="campo-vaga">
+                <label for="experiencia">Experiência exigida?</label>
+                <select id="experiencia">
+                    <option value="nao">Não</option>
+                    <option value="sim">Sim</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="footer-modal-vaga">
+            <button type="button" class="btn-vaga-cancelar" onclick="fecharModal('modal-cadastro')">Cancelar</button>
+            <button type="submit" class="btn-vaga-publicar">Publicar</button>
+        </div>
+    </form>
+    </div>
+
+</div>
+
+<script src="/projeto_taluno/static/js/empresa/vagas/vagas-empresa.js"></script>
 </body>
 </html>
