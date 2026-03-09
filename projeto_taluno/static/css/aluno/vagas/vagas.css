@@ -99,7 +99,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Títulos e textos dos cards*/
 .vaga-titulo{
-    color: #007bff; /* Cor azul no título para demonstrar que é um link */
+    color: #1A1A1A; /* Cor azul no título para demonstrar que é um link */
     font-size: 1.2rem; /* regula o tamanho da fonte*/
     margin-bottom: 8px; /* responsável pelo espaçamento entre as palavras  */
 }
@@ -126,7 +126,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .badge{
-    background-color:  #f27133;
+    background-color:  #E00080;
     color: white;
     padding: 5px 20px;
     border-radius: 8px;
@@ -169,7 +169,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-ver-mais{
-    background-color: #007dff;
+    background-color: #004494;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -290,23 +290,22 @@ body { font-family: 'Segoe UI', sans-serif; }
     transform: scale(1.05);
 }
 
-/* O fundo escuro deve cobrir toda a janela do navegador */
+/* O fundo escuro cobre todo o navegador */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(85, 85, 85, 0.4); /* Escurece o fundo para dar foco */
     
-    /* ISSO VAI CENTRALIZAR SEU CARD BRANCO NO MEIO: */
+    /* isso centraliza o card no meio */
     display: none;
     justify-content: center; /* Centraliza na horizontal */
     align-items: center;     /* Centraliza na vertical */
     
-    z-index: 2000; /* Garante que fique acima do footer roxo */
-    opacity: 0;
-    transition: opacity 0.3s ease; /* Suaviza a entrada */
+    z-index: 2000;
+    transition: opacity 0.3s ease;
 }
 
 .modal-overlay.active{
@@ -314,101 +313,145 @@ body { font-family: 'Segoe UI', sans-serif; }
     opacity: 1;
 }
 
-/* Seu card que hoje está no canto */
+/* responsável pelo modal de maneira geral */
 .modal-card-detalhes {
     background-color: white;
     width: 90%;
-    max-width: 900px; /* Largura ideal baseada no seu design */
+    max-width: 1100px; 
+    min-height: 500px; 
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid #797979; /* A linhazinha roxa do protótipo */
+    border: 1px solid #797979; 
     overflow-y: auto;
-    position: relative;
-    transform: scale(0.7); /* começa menor   */
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Efeito elástico */
 }
 
-.modal-overlay.active .modal-card-detalhes {
-    transform: scale(1); /* Volta ao tamanho normal */}
 
-.modal-header{
-    display: flex;
-    align-items: center; /* Alinha tudo verticalmente ao centro      */
-    justify-content: center; /* Empurra a foto de perfil a esquerda e o botão para direita   */
-    gap: 20px;
-    margin-bottom: 10px; /* espaço para o texto que virá a baixo   */
-}
 
-.empresa-logo-container {
-    width: 120px; /* deixa o layout quadrado  */
-    height: 120px; /* deixa o layout da foto de perfil quadrado     */
-    background-color: #0052cc ; /* Não sei se este é uil   */
-    border-radius: 12px;
+/*AQUI É RESPONSÁVEL POR EDITAR A FOTO DE PERFIL*/
+.perfil-foto-container {
+    width: 120px;          
+    height: 120px;         
+    border-radius: 50%;    
+    overflow: hidden;     
+    border: 2px solid #ddd; 
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;   
 }
 
-.vaga-info-principal{
-    flex: 1; /* faz o texto ocupar o espaço do meio    */
+/* AQUIA A IMAGEM É EDITADA PARA FICAR REDONDA */
+.foto-perfil-arredondada {
+    width: 100%;           
+    height: 100%;          
+    object-fit: cover;     
+    object-position: center; 
 }
 
+/*AQUI O BOTÃO DE CANDIDATAR */
 .btn-candidatar {
-    background-color: #007dff; /* cor de fundo do botão */
-    color: white; /*cor da letra      */
-    border: none; /* retira o excesso de borda */
+    background: #9600ff; 
+    color: white;
+    border: none;
     padding: 12px 30px;
-    border-radius: 8px;
+    border-radius: 12px; 
     font-weight: bold;
-    font-size: 1.1rem;
     cursor: pointer;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease;
 }
 
 .btn-candidatar:hover{
-    background-color: #004494; /* Um azul um pouco mais escuro */
-    transform: scale(1.03);    /* Aumenta levemente o tamanho */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
-    transition: all 0.3s ease; /* 'all' vigia tudo, '0.3s' é a duração, 'ease' é o ritmo suave */
-}
-
-.tags-detalhes{
-    display: flex;       /* Alinha as tags em linha */
-    gap: 10px;          /* Cria o espaço entre elas */
-    margin-top: 15px;   /* Afasta do título acima */
-    margin-bottom: 30px; /* Afasta do endereço abaixo */
-    justify-content: flex-start; /* Mantém alinhado à esquerda no modal */
-}
-
-.vaga-localizacao{
-    color: #555;
-}
-
-
-.btn-voltar-modal {
-    /* ... mantenha as cores e tamanhos ... */
-    background-color: #f58608;
-    color: #ffffff;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: absolute; /* Absoluto em relação ao Card Branco, não à tela */
-    top: 20px;  /* Fica no cantinho superior */
-    left: 20px; /* Fica no cantinho esquerdo */
-    z-index: 10;
-    opacity: 85%;
-}
-
-.btn-voltar-modal:hover {
-    background-color: #f58608;
     color: white;
-    opacity: 100%;
-    transform: scale(1.1);
+    background-color: #7a00cc; 
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+
+/*AQUI O BOTÃO DE VOLTAR */
+.btn-voltar-modal{
+    background-color: #dee2e6;
+    color: #495057;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.btn-voltar-modal:hover{
+    background-color: #c2c2c2;
+    color: white;
+    transform: (1.1);
+    transition: 0.2s;
+}
+
+/* Container que segura as duas partes */
+.modal-container-duplo {
+    display: flex;
+    gap: 0;
+    width: 100%;
+}
+
+/* Lado Esquerdo  */
+.modal-sidebar-empresa {
+    width: 35%;
+    border-right: 1px solid #7a2cb5; /* Linha roxa divisória */
+    padding-right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Lado Direito */
+.modal-conteudo-vaga {
+    width: 65%;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.tags-detalhes-vertical {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;             
+    width: 70%;           
+    margin-top: 20px;
+}
+
+/*aqui é responsável pelas tags badges*/
+.badge {
+    background-color: #E00080; 
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center; 
+    display: block;     
+    font-size: 13px;       
+    letter-spacing: 0.5px;  
+    line-height: 1.2;      
+}
+
+/* descrição do texto da vaga */
+.vaga-descricao-box-cinza {
+    background-color: #f0f0f0;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    flex-grow: 1; 
+}
+
+.modal-footer-acoes {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 15px;                 
+    margin-top: 25px;          
+    padding-bottom: 10px;      
 }
