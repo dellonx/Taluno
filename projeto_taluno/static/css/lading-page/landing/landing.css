@@ -69,14 +69,14 @@
 .landing-btn-login {
     display: flex;
     align-items: center;
-    gap: 10px; /* Distância entre ícone e texto */
+    gap: 5px; /* Distância entre ícone e texto */
     color: var(--white);
     text-decoration: none;
     font-weight: 800; /* Extra bold para destacar */
-    font-size: 1.1rem;
-    padding: 10px 20px;
+    font-size: 0.9rem;
+    padding: 5px 10px;
     border-radius: 8px;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .landing-btn-login:hover {
@@ -90,6 +90,13 @@
 
 .landing-btn-login:hover svg {
     transform: translateX(3px); /* A portinha "anda" pro lado no hover */
+}
+
+/* --- 4. CAIXA DE AÇÕES (Agrupa os botões de Login) --- */
+.landing-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* MÁGICA AQUI: Aumente ou diminua esse número para afastar ou colar os botões! */
 }
 
 /* --- Responsividade (Esconde menus no celular) --- */
