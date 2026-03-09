@@ -16,7 +16,7 @@
 
     /* --- Cores Neutras --- */
     --dark: #1A1A1A;
-    --light: #F5F5F5;
+    --light: #d80f0f;
     --white: #FFFFFF;
 
     /* --- Tipografia --- */
@@ -117,7 +117,6 @@ body {
    HERO / INÍCIO
 ========================================= */
 .hero-logado {
-    min-height: calc(100vh - 130px);
     background: #d9d9d9;
     display: flex;
     align-items: center;
