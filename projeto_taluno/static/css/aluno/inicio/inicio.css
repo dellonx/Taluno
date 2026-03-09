@@ -118,7 +118,7 @@ body {
 ========================================= */
 .hero-logado {
     min-height: calc(100vh - 130px);
-    background-image: url("/projeto_taluno/static/img/inicio/banner.inicio.png");
+    background: #d9d9d9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,7 +132,7 @@ body {
     max-width: 1100px;
     width: 100%;
     text-align: center;
-    color: #ffffff;
+    color: #000000;
 }
 
 .hero-content h1 {
@@ -268,4 +268,43 @@ body {
     .hero-content h1 {
         font-size: 32px;
     }
+}
+/* ===============================
+   DASHBOARD TALUNO
+   =============================== */
+
+.empresa-dashboard{
+    background: #d9d9d9;
+    padding: 40px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* BANNER */
+.hero{
+    width: 92%;
+    max-width: 1400px;
+
+    margin: 30px auto 0 auto; /* espaço em cima */
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.hero {
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    display: block;
 }
