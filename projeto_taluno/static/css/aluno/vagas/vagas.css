@@ -50,27 +50,21 @@ body { font-family: 'Segoe UI', sans-serif; }
 .vagas-layout {
     background-color: #fff;
     display: flex;
-    gap: 0; /* Removi o gap de 5px para o sidebar colar certinho */
-    align-items: flex-start;
-    /* min-height: 120vh;  <-- O VILÃO ESTAVA AQUI! DELETE ISSO. */
-    min-height: 100vh; /* Use 100vh ou deixe sem nada se o body já tiver */
+    gap: 0;
+    align-items: stretch;
+    min-height: 100vh; 
 }
 
 /* Container cinza com cards */
 .vagas-container {
     background-color: #eef1f7;
-    flex: 1; /* Ocupa todo o espaço restante */
-    
-    /* CORREÇÃO DA TELA GRANDE */
-    /* Em vez de padding fixo gigante (200px), use padding padrão */
-    padding: 40px; 
-    
-    /* Se quiser que os cards não fiquem "esticados demais" em telas 4k, use isso: */
-    max-width: 1600px; 
-    
+    flex: 1; 
+    padding: 20px; 
+    /*max-width: 1600px; */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
+    min-height: 100%;
 }
 
 /* estrutura dos cards    */
@@ -93,7 +87,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 
 .card-das-vagas:hover{
-    transform: scale(1.03); /* aumenta o tamanho dos cards    */
+    transform: scale(1.02); /* aumenta o tamanho dos cards    */
     transition: all 0.3s ease ;
 }
 
@@ -125,17 +119,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     margin-top: 15px;
 }
 
-.badge{
-    background-color:  #E00080;
-    color: white;
-    padding: 5px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 12px;
-    text-align: center; /* alinha o texto dentro das divs laranjas     */
-    display: inline-block; /* Permite que o elemento aceite largura fixa */
-    min-width: 108px;  /* Garante que todos tenham pelo menos 100px */
-}
+
 
 .paginacao{
     display: flex;
@@ -200,8 +184,6 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 
-
-
 /*  O Container de Filtros (Borda Roxa) */
 .filtros-container {
     background-color: white;
@@ -210,6 +192,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     padding: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     text-align: center;
+    margin: 10px;
 }
 
 .filtros-container2 {
@@ -227,7 +210,12 @@ body { font-family: 'Segoe UI', sans-serif; }
     margin-bottom: 10px;
     color: #3c3c3c;
 }
+ .vaga-localizacao{
+    color: #3c3c3c;
+    font-size: 14px;
+    margin-top: 5px;
 
+ }
 
 
 /*  Estilo dos Inputs Internos com o "X" */
@@ -288,6 +276,35 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 .btn-aplicar:hover {
     transform: scale(1.05);
+}
+
+.input-busca {
+    width: 100%;
+    max-width: 400px; /* Ajuste a largura como preferir */
+    padding: 12px 25px;
+    
+    /* O SEGREDO DO VISUAL: */
+    border: 1px solid #999; /* Traçado fino ao redor */
+    border-radius: 50px;    /* Valor alto para criar o efeito arredondado (pílula) */
+    
+    background-color: transparent;
+    font-size: 16px;
+    color: #555;
+    text-align: center;     /* Centraliza o texto "Pesquisar vagas" */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao clicar para digitar */
+.input-busca:focus {
+    border-color: #a3169e; /* Muda a cor do traçado ao focar */
+    box-shadow: 0 0 5px rgba(163, 22, 158, 0.2);
+}
+
+/* Ajuste do placeholder */
+.input-busca::placeholder {
+    color: #666;
+    opacity: 1;
 }
 
 /* O fundo escuro cobre todo o navegador */
@@ -426,17 +443,22 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*aqui é responsável pelas tags badges*/
 .badge {
-    background-color: #E00080; 
+    background-color: #E00080;
     color: white;
-    padding: 10px;
+    padding: 6px 12px;  
     border-radius: 8px;
     font-weight: bold;
     text-transform: uppercase;
-    text-align: center; 
-    display: block;     
-    font-size: 13px;       
-    letter-spacing: 0.5px;  
-    line-height: 1.2;      
+    text-align: center;
+    
+    /* Mude aqui */
+    display: inline-flex;  
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;      
+    
+    font-size: 11px;
+    letter-spacing: 0.5px;
 }
 
 /* descrição do texto da vaga */
@@ -446,8 +468,21 @@ body { font-family: 'Segoe UI', sans-serif; }
     border-radius: 15px;
     margin-top: 20px;
     flex-grow: 1; 
+    max-height: 350px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #f0f0f0;
 }
 
+
+.vaga-descricao-box-cinza::-webkit-scrollbar {
+    width: 6px;
+}
+
+.vaga-descricao-box-cinza::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+}
 .modal-footer-acoes {
     display: flex;
     justify-content: flex-end; 
