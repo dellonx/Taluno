@@ -43,8 +43,8 @@
             <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
         <aside class="filtros-sidebar">
         <div class="filtros-container2">
-            <h1 class="titulo-principal">Pesquisar Vagas</h1>
-            <input type="text" placeholder="" class="input-busca">
+            
+            <input type="text" placeholder="Pesquisar Vagas" class="input-busca">
         </div> 
             
 
@@ -208,40 +208,7 @@
 
         </section>
 
-        <!-- Aqui é reponsável pela estrutura geral do site/modal-->
-        <div class="modal-overlay">
-            <div class="modal-card-detalhes">
-
-                <button class="btn-voltar-modal" aria-label="Página Anterior">
-                    <i class="fas fa-chevron-left"></i> </button>
-
-                <header class="modal-header">
-                    <div class="empresa-logo-container">
-                        <img src="/projeto_taluno/static/img/logo/logo_empresa_simtec.png" alt="Logo Empresa" class="logo-img">
-                    </div>
-
-                    <div class="vaga-info-principal">
-                        <h2 class="empresa-nome-detalhe">Simtech Soluções Tecnológicas</h2>
-                        <h1 class="vaga-titulo-detalhe">Vaga Desenvolvedor Junior</h1>
-                    </div>
-                    
-                    <button class="btn-candidatar">Candidatar</button>
-                </header>
-
-                <div class="tags-detalhes">
-                    <span class="badge">estágio</span>
-                    <span class="badge">6H</span>
-                    <span class="badge">Turno</span>
-                </div>
-
-                <p class="vaga-localizacao">Rua do Bom Jesus, nº 1991 - Bairro do Recife, Recife/PE</p>
-
-                <div class="vaga-descricao-texto">
-                    <p></p>
-                </div>
-
-            </div> 
-        </div>
+        
     </main>
 
         <!--Inicio do Footer-->
@@ -283,6 +250,68 @@
     </div>
 </footer>
 <!--Final do Footer-->
+
+<!-- Aqui é reponsável pela estrutura geral do site/modal-->
+        <div class="modal-overlay">  
+            <div class="modal-card-detalhes">
+        
+
+                <div class="modal-container-duplo">
+            
+                <aside class="modal-sidebar-empresa">
+                    <!--AQUI É ONDE EDITA A FOTO DE PERFIL DA EMPRESA-->
+                    <div class="perfil-foto-container">
+                        <img src="/projeto_taluno/static/img/logo/logo_empresa_simtec.png" alt="Logo do perfil da empresa" class="foto-perfil-arredondada">
+                    </div>
+                
+                    <!--aQUI É ONDE EDITA O NOME DA EMPRESA-->
+                    <h2 class="empresa-nome-detalhe">Simtech Soluções Tecnológicas</h2>
+
+                    <!-- AQUI É RESPONSÁVEL POR EDITAR OS BADGES-->
+                    <div class="tags-detalhes-vertical">
+                        <span class="badge">ÁREA</span>
+                        <span class="badge">MODALIDADE</span>
+                        <span class="badge">ESCOLARIDADE</span>
+                        <span class="badge">ESCALA</span>
+                        <span class="badge">SALÁRIO</span>
+                        <span class="badge">EXPERIÊNCIA</span>
+                    </div>
+                </aside>
+
+
+                <main class="modal-conteudo-vaga">
+                    <header class="header-vaga-direita">
+                        <div class="titulo-grupo">
+                            <h1 class="vaga-titulo-detalhe">Vaga Desenvolvedor Junior</h1>
+                            <p class="vaga-localizacao">Rua do Bom Jesus, nº 1991 - Bairro do Recife, Recife/PE</p>
+                        </div>
+                    </header>
+
+                    <!-- AQUI É ONDE É ALTERADO O TEXTO DO CONTAINER DE DESCRIÇÃO DE VAGA-->
+                    <div class="vaga-descricao-box-cinza">
+                        <p>Desenvolvedor com sólida experiência em criação e manutenção de aplicações, capaz de transformar 
+                            ideias em soluções digitais eficientes. Atua em todas as etapas do ciclo de desenvolvimento,
+                            desde a análise de requisitos até a entrega final, sempre com foco em qualidade, desempenho
+                            e usabilidade. Possui domínio de linguagens de programação, frameworks modernos e boas práticas
+                            de arquitetura de software. É comprometido com aprendizado contínuo, colaboração em equipe e
+                            inovação tecnológica, buscando constantemente aprimorar processos e entregar resultados que 
+                            agreguem valor ao negócio.</p>
+                    
+                        <ul class="vaga-requesitos">
+                        
+                        </ul>
+                    </div>
+
+                    <!--AQUI É RESPONSÁVEL POR EDITAR OA BOTÕES DO FINAL DO MODAL-->
+                    <footer class="modal-footer-acoes">
+                        <button class="btn-voltar-modal">Voltar</button>
+                        <button class="btn-candidatar">candidatar</button>
+                    </footer>
+                </main>
+
+            </div>
+        </div>
+    </div>
 
 <script src="/projeto_taluno/static/js/aluno/vagas/vagas.js"></script>
 </body>
