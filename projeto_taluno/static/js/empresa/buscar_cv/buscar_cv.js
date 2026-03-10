@@ -35,13 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsCandidatos = document.querySelectorAll('.card-candidato');
 
     const gapMinimo = 500; 
+    // Captura o valor máximo definido no HTML (agora é 10000)
     const maxPossivel = parseInt(sliderMax.max);
 
     function atualizarTrilhaCor() {
         let valMin = parseInt(sliderMin.value);
         let valMax = parseInt(sliderMax.value);
-        let percent1 = ((valMin - sliderMin.min) / (sliderMin.max - sliderMin.min)) * 100;
-        let percent2 = ((valMax - sliderMax.min) / (sliderMax.max - sliderMax.min)) * 100;
+        
+        // Calcula a porcentagem correta baseada no min e max reais
+        let minRange = parseInt(sliderMin.min);
+        let maxRange = parseInt(sliderMax.max);
+        
+        let percent1 = ((valMin - minRange) / (maxRange - minRange)) * 100;
+        let percent2 = ((valMax - minRange) / (maxRange - minRange)) * 100;
+        
         sliderTrack.style.background = `linear-gradient(to right, #ccc ${percent1}%, #6a00ff ${percent1}%, #6a00ff ${percent2}%, #ccc ${percent2}%)`;
     }
 
@@ -49,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let valMin = parseInt(sliderMin.value);
         let valMax = parseInt(sliderMax.value);
 
+        // Impede que as bolinhas se cruzem ou cheguem muito perto
         if (valMax - valMin <= gapMinimo) {
             if (this === sliderMin) {
                 sliderMin.value = valMax - gapMinimo;
@@ -57,10 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Atualiza texto do Mínimo
         valorMinText.textContent = `R$ ${parseInt(sliderMin.value).toLocaleString('pt-BR')}`;
         
+        // Atualiza texto do Máximo: se chegar no limite, mostra "+ R$ 10.000"
         if (parseInt(sliderMax.value) === maxPossivel) {
-            valorMaxText.textContent = "Todos";
+            valorMaxText.textContent = "+ R$ 10.000";
         } else {
             valorMaxText.textContent = `R$ ${parseInt(sliderMax.value).toLocaleString('pt-BR')}`;
         }
@@ -116,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarTrilhaCor();
 
     /* ============================================================
-       4. LÓGICA SIMPLIFICADA DOS MODAIS
+       4. LÓGICA SIMPLIFICADA DOS MODAIS (MVP)
        ============================================================ */
     // Fecha o modal se clicar no fundo preto
     document.querySelectorAll('.modal-overlay').forEach(modal => {

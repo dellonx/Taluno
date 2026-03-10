@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taluno | Empresa</title>
+    <title>Taluno | Buscar CVs</title>
     <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
     <link rel="stylesheet" href="/projeto_taluno/static/css/empresa/buscar_vc/buscar_vc.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
-<!--Inicio NavBar-->
+
 <header class="header-taluno">
     <div class="top-bar">
         <div class="container">
@@ -37,12 +36,9 @@
         </div>
     </nav>
 </header>
-<!--Fim NavBar-->
 
-<main>
 <main class="layout-cvs">
 
-    <!-- COLUNA FILTROS -->
     <aside class="filtro-cvs">
         <div class="filtro-header">
             <span class="btn-voltar">
@@ -53,84 +49,469 @@
 
         <div class="campo-busca">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Palavra chave">
+            <input type="text" placeholder="Buscar por palavra chave...">
+        </div>
+
+        <div class="filtro-salarial">
+            <div class="salarial-header">
+                <span id="valorMin">R$ 1.000</span>
+                <span id="valorMax">Todos</span>
+            </div>
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack"></div>
+                <input type="range" min="1000" max="15000" value="1000" id="sliderMin" step="500">
+                <input type="range" min="1000" max="15000" value="15000" id="sliderMax" step="500">
+            </div>
         </div>
 
         <ul class="lista-filtros">
-            <li>Área <span>+</span></li>
-            <li>Experiência <span>+</span></li>
-            <li>Especialização <span>+</span></li>
-            <li>Nível de escolaridade <span>+</span></li>
+            <li class="filtro-grupo">
+                <div class="filtro-titulo">Área <i class="fas fa-chevron-down"></i></div>
+                <div class="filtro-opcoes">
+                    <label><input type="checkbox" value="ti"> <span>T.I. / Tecnologia</span></label>
+                    <label><input type="checkbox" value="adm"> <span>Administração</span></label>
+                    <label><input type="checkbox" value="saude"> <span>Saúde</span></label>
+                </div>
+            </li>
+
+            <li class="filtro-grupo">
+                <div class="filtro-titulo">Especialização <i class="fas fa-chevron-down"></i></div>
+                <div class="filtro-opcoes">
+                    <label><input type="checkbox" value="frontend"> <span>Front-end</span></label>
+                    <label><input type="checkbox" value="backend"> <span>Back-end</span></label>
+                    <label><input type="checkbox" value="dados"> <span>Banco de Dados</span></label>
+                    <label><input type="checkbox" value="redes"> <span>Redes e Infra</span></label>
+                    <label><input type="checkbox" value="rh"> <span>Recursos Humanos</span></label>
+                </div>
+            </li>
+
+            <li class="filtro-grupo">
+                <div class="filtro-titulo">Experiência <i class="fas fa-chevron-down"></i></div>
+                <div class="filtro-opcoes">
+                    <label><input type="checkbox" value="aprendiz"> <span>Jovem Aprendiz</span></label>
+                    <label><input type="checkbox" value="estagio"> <span>Estagiário</span></label>
+                    <label><input type="checkbox" value="junior"> <span>Júnior</span></label>
+                    <label><input type="checkbox" value="senior"> <span>Pleno / Sênior</span></label>
+                </div>
+            </li>
+
+            <li class="filtro-grupo">
+                <div class="filtro-titulo">Escolaridade <i class="fas fa-chevron-down"></i></div>
+                <div class="filtro-opcoes">
+                    <label><input type="checkbox" value="medio"> <span>Ensino Médio</span></label>
+                    <label><input type="checkbox" value="tecnico"> <span>Ensino Técnico</span></label>
+                    <label><input type="checkbox" value="superior"> <span>Ensino Superior</span></label>
+                </div>
+            </li>
         </ul>
     </aside>
 
-    <!-- LISTA DE CANDIDATOS -->
     <section class="lista-candidatos">
-
-        <!-- CARD CANDIDATO -->
-        <article class="card-candidato">
-            <div class="avatar-candidato">
-                <i class="fa-solid fa-user"></i>
-            </div>
-
+        <article class="card-candidato" data-filtros="ti aprendiz medio" data-salario="1500">
+            <div class="avatar-candidato"><i class="fa-solid fa-user"></i></div>
             <div class="info-candidato">
-                <strong>Candidato de "Especialização"</strong>
-                <p>Nome do candidato</p>
-                <p>Experiência</p>
-                <p>Cidade</p>
-                <p>Nível escolar</p>
-                <p class="pretensao">Pretensão salarial</p>
+                <strong>Juvelino Alcantara Dias Pinto</strong>
+                <p>CPF: XXX.XXX.XXX-XX</p>
+                <p>Experiência: Jovem aprendiz de T.I.</p>
+                <p>Cidade: Cabo de Santo Agostinho</p>
+                <p>Nível escolar: Ensino médio completo</p>
+                <p class="pretensao">Pretensão salarial: R$ 1.500,00</p>
             </div>
-
-            <button class="btn-contato">dados de contato</button>
+            <button class="btn-contato" onclick="abrirModal('modal-juvelino')">Ver Currículo</button>
         </article>
 
-        <!-- REPETIR CARD -->
-        <article class="card-candidato">
-            <div class="avatar-candidato">
-                <i class="fa-solid fa-user"></i>
-            </div>
-
+        <article class="card-candidato" data-filtros="adm junior superior rh" data-salario="2200">
+            <div class="avatar-candidato"><i class="fa-solid fa-user"></i></div>
             <div class="info-candidato">
-                <strong>Candidato de "Especialização"</strong>
-                <p>Nome do candidato</p>
-                <p>Experiência</p>
-                <p>Cidade</p>
-                <p>Nível escolar</p>
-                <p class="pretensao">Pretensão salarial</p>
+                <strong>Maria Clara Gomes</strong>
+                <p>CPF: XXX.XXX.XXX-XX</p>
+                <p>Experiência: Assistente Administrativa Júnior</p>
+                <p>Cidade: Recife</p>
+                <p>Nível escolar: Ensino Superior (Cursando)</p>
+                <p class="pretensao">Pretensão salarial: R$ 2.200,00</p>
             </div>
-
-            <button class="btn-contato">dados de contato</button>
+            <button class="btn-contato" onclick="abrirModal('modal-maria')">Ver Currículo</button>
         </article>
 
-        <article class="card-candidato">
-            <div class="avatar-candidato">
-                <i class="fa-solid fa-user"></i>
-            </div>
-
+        <article class="card-candidato" data-filtros="ti senior superior frontend" data-salario="8500">
+            <div class="avatar-candidato"><i class="fa-solid fa-user"></i></div>
             <div class="info-candidato">
-                <strong>Candidato de "Especialização"</strong>
-                <p>Nome do candidato</p>
-                <p>Experiência</p>
-                <p>Cidade</p>
-                <p>Nível escolar</p>
-                <p class="pretensao">Pretensão salarial</p>
+                <strong>João Pedro da Silva</strong>
+                <p>CPF: XXX.XXX.XXX-XX</p>
+                <p>Experiência: Desenvolvedor Front-end Sênior</p>
+                <p>Cidade: Olinda</p>
+                <p>Nível escolar: Ensino Superior Completo</p>
+                <p class="pretensao">Pretensão salarial: R$ 8.500,00</p>
             </div>
-
-            <button class="btn-contato">dados de contato</button>
+            <button class="btn-contato" onclick="abrirModal('modal-joao')">Ver Currículo</button>
         </article>
 
+        <article class="card-candidato" data-filtros="saude tecnico junior" data-salario="1800">
+            <div class="avatar-candidato"><i class="fa-solid fa-user"></i></div>
+            <div class="info-candidato">
+                <strong>Ana Beatriz Lira</strong>
+                <p>CPF: XXX.XXX.XXX-XX</p>
+                <p>Experiência: Técnica de Enfermagem Júnior</p>
+                <p>Cidade: Jaboatão dos Guararapes</p>
+                <p>Nível escolar: Ensino Técnico Completo</p>
+                <p class="pretensao">Pretensão salarial: R$ 1.800,00</p>
+            </div>
+            <button class="btn-contato" onclick="abrirModal('modal-ana')">Ver Currículo</button>
+        </article>
+
+        <article class="card-candidato" data-filtros="ti estagio superior frontend" data-salario="1200">
+            <div class="avatar-candidato"><i class="fa-solid fa-user"></i></div>
+            <div class="info-candidato">
+                <strong>Carlos Eduardo Souza</strong>
+                <p>CPF: XXX.XXX.XXX-XX</p>
+                <p>Experiência: Estagiário em Front-end (React)</p>
+                <p>Cidade: Igarassu</p>
+                <p>Nível escolar: Ensino Superior Cursando</p>
+                <p class="pretensao">Pretensão salarial: R$ 1.200,00</p>
+            </div>
+            <button class="btn-contato" onclick="abrirModal('modal-carlos')">Ver Currículo</button>
+        </article>
+
+        <article class="card-candidato" data-filtros="ti senior superior dados" data-salario="6000">
+            <div class="avatar-candidato"><i class="fa-solid fa-user"></i></div>
+            <div class="info-candidato">
+                <strong>Fernanda Lima Almeida</strong>
+                <p>CPF: XXX.XXX.XXX-XX</p>
+                <p>Experiência: Analista de Banco de Dados Pleno (SQL/NoSQL)</p>
+                <p>Cidade: Recife</p>
+                <p>Nível escolar: Ensino Superior Completo</p>
+                <p class="pretensao">Pretensão salarial: R$ 6.000,00</p>
+            </div>
+            <button class="btn-contato" onclick="abrirModal('modal-fernanda')">Ver Currículo</button>
+        </article>
+
+        <article class="card-candidato" data-filtros="ti junior tecnico backend" data-salario="3000">
+            <div class="avatar-candidato"><i class="fa-solid fa-user"></i></div>
+            <div class="info-candidato">
+                <strong>Lucas Mendes Ferreira</strong>
+                <p>CPF: XXX.XXX.XXX-XX</p>
+                <p>Experiência: Desenvolvedor Back-end Júnior (Python)</p>
+                <p>Cidade: Paulista</p>
+                <p>Nível escolar: Ensino Técnico Completo</p>
+                <p class="pretensao">Pretensão salarial: R$ 3.000,00</p>
+            </div>
+            <button class="btn-contato" onclick="abrirModal('modal-lucas')">Ver Currículo</button>
+        </article>
     </section>
 </main>
 
-<!--Inicio Footer-->
+<div class="modal-overlay" id="modal-juvelino">
+    <div class="modal-box modal-cv">
+        <header class="modal-header header-cv">
+            <div class="header-cv-info">
+                <div class="avatar-candidato modal-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h3>Juvelino Alcantara Dias Pinto</h3>
+                    <p class="user-role">Jovem Aprendiz de T.I. • Cabo de Sto. Agostinho</p>
+                </div>
+            </div>
+            <button class="btn-close-modal" onclick="fecharModal('modal-juvelino')"><i class="fas fa-times"></i></button>
+        </header>
+        <div class="modal-body body-cv">
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h4>
+                <div class="cards-list">
+                    <div class="info-card">
+                        <div class="card-left">
+                            <h5 class="card-title-cv">Ensino Médio</h5>
+                            <span class="card-subtitle">Escola Estadual Professor Benedito</span>
+                            <span class="card-status status-completed">Concluído</span>
+                            <span class="card-date">Concluído em Dez 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-code"></i> Habilidades</h4>
+                <div class="cards-list grid-layout-cv">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <i class="fas fa-laptop skill-icon" style="color:#555"></i>
+                            <div class="card-left">
+                                <h5 class="card-title-cv">Informática Básica</h5>
+                                <span class="skill-level">Intermediário</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <i class="fas fa-users skill-icon" style="color:#007dff"></i>
+                            <div class="card-left">
+                                <h5 class="card-title-cv">Trabalho em Equipe</h5>
+                                <span class="skill-level">Avançado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="fecharModal('modal-juvelino')">Fechar</button>
+            <button type="button" class="btn-primary" onclick="window.location.href='../chat/chat.html'">Entrar em Contato</button>
+        </footer>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-maria">
+    <div class="modal-box modal-cv">
+        <header class="modal-header header-cv">
+            <div class="header-cv-info">
+                <div class="avatar-candidato modal-avatar" style="color: #EA2651; background: #fad2db;"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h3>Maria Clara Gomes</h3>
+                    <p class="user-role">Assistente Administrativa Júnior • Recife</p>
+                </div>
+            </div>
+            <button class="btn-close-modal" onclick="fecharModal('modal-maria')"><i class="fas fa-times"></i></button>
+        </header>
+        <div class="modal-body body-cv">
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h4>
+                <div class="cards-list">
+                    <div class="info-card">
+                        <div class="card-left">
+                            <h5 class="card-title-cv">Bacharelado em Administração</h5>
+                            <span class="card-subtitle">Universidade Federal de Pernambuco (UFPE)</span>
+                            <span class="card-status status-progress">Cursando (6º Período)</span>
+                            <span class="card-date">Previsão: Dez 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-briefcase"></i> Habilidades Administrativas</h4>
+                <div class="cards-list grid-layout-cv">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <i class="fas fa-file-excel skill-icon" style="color:#217346"></i>
+                            <div class="card-left">
+                                <h5 class="card-title-cv">Excel e Planilhas</h5>
+                                <span class="skill-level">Avançado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <i class="fas fa-comments skill-icon" style="color:#6a00ff"></i>
+                            <div class="card-left">
+                                <h5 class="card-title-cv">Atendimento</h5>
+                                <span class="skill-level">Avançado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="fecharModal('modal-maria')">Fechar</button>
+            <button type="button" class="btn-primary" onclick="window.location.href='../chat/chat.html'">Entrar em Contato</button>
+        </footer>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-joao">
+    <div class="modal-box modal-cv">
+        <header class="modal-header header-cv">
+            <div class="header-cv-info">
+                <div class="avatar-candidato modal-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h3>João Pedro da Silva</h3>
+                    <p class="user-role">Desenvolvedor Front-end Sênior • Olinda</p>
+                </div>
+            </div>
+            <button class="btn-close-modal" onclick="fecharModal('modal-joao')"><i class="fas fa-times"></i></button>
+        </header>
+        <div class="modal-body body-cv">
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h4>
+                <div class="cards-list">
+                    <div class="info-card">
+                        <div class="card-left">
+                            <h5 class="card-title-cv">Engenharia de Software</h5>
+                            <span class="card-subtitle">CESAR School</span>
+                            <span class="card-status status-completed">Concluído</span>
+                            <span class="card-date">Jan 2016 - Dez 2020</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-code"></i> Habilidades Técnicas</h4>
+                <div class="cards-list grid-layout-cv">
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <i class="fab fa-react skill-icon" style="color:#61DBFB"></i>
+                            <div class="card-left">
+                                <h5 class="card-title-cv">React JS</h5>
+                                <span class="skill-level">Especialista</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <i class="fab fa-js skill-icon" style="color:#F7DF1E"></i>
+                            <div class="card-left">
+                                <h5 class="card-title-cv">JavaScript/TypeScript</h5>
+                                <span class="skill-level">Especialista</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="fecharModal('modal-joao')">Fechar</button>
+            <button type="button" class="btn-primary" onclick="window.location.href='../chat/chat.html'">Entrar em Contato</button>
+        </footer>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-ana">
+    <div class="modal-box modal-cv">
+        <header class="modal-header header-cv">
+            <div class="header-cv-info">
+                <div class="avatar-candidato modal-avatar" style="color: #4CAF50; background: #E8F5E9;"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h3>Ana Beatriz Lira</h3>
+                    <p class="user-role">Técnica de Enfermagem Júnior • Jaboatão</p>
+                </div>
+            </div>
+            <button class="btn-close-modal" onclick="fecharModal('modal-ana')"><i class="fas fa-times"></i></button>
+        </header>
+        <div class="modal-body body-cv">
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h4>
+                <div class="cards-list">
+                    <div class="info-card">
+                        <div class="card-left">
+                            <h5 class="card-title-cv">Técnico em Enfermagem</h5>
+                            <span class="card-subtitle">Senac</span>
+                            <span class="card-status status-completed">Concluído</span>
+                            <span class="card-date">Dez 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="fecharModal('modal-ana')">Fechar</button>
+            <button type="button" class="btn-primary" onclick="window.location.href='../chat/chat.html'">Entrar em Contato</button>
+        </footer>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-carlos">
+    <div class="modal-box modal-cv">
+        <header class="modal-header header-cv">
+            <div class="header-cv-info">
+                <div class="avatar-candidato modal-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h3>Carlos Eduardo Souza</h3>
+                    <p class="user-role">Estagiário em Front-end • Igarassu</p>
+                </div>
+            </div>
+            <button class="btn-close-modal" onclick="fecharModal('modal-carlos')"><i class="fas fa-times"></i></button>
+        </header>
+        <div class="modal-body body-cv">
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h4>
+                <div class="cards-list">
+                    <div class="info-card">
+                        <div class="card-left">
+                            <h5 class="card-title-cv">Sistemas de Informação</h5>
+                            <span class="card-subtitle">Faculdade XPTO</span>
+                            <span class="card-status status-progress">Cursando (3º Período)</span>
+                            <span class="card-date">Previsão: Dez 2027</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="fecharModal('modal-carlos')">Fechar</button>
+            <button type="button" class="btn-primary" onclick="window.location.href='../chat/chat.html'">Entrar em Contato</button>
+        </footer>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-fernanda">
+    <div class="modal-box modal-cv">
+        <header class="modal-header header-cv">
+            <div class="header-cv-info">
+                <div class="avatar-candidato modal-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h3>Fernanda Lima Almeida</h3>
+                    <p class="user-role">Analista de Banco de Dados Pleno • Recife</p>
+                </div>
+            </div>
+            <button class="btn-close-modal" onclick="fecharModal('modal-fernanda')"><i class="fas fa-times"></i></button>
+        </header>
+        <div class="modal-body body-cv">
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h4>
+                <div class="cards-list">
+                    <div class="info-card">
+                        <div class="card-left">
+                            <h5 class="card-title-cv">Ciência da Computação</h5>
+                            <span class="card-subtitle">UFPE</span>
+                            <span class="card-status status-completed">Concluído</span>
+                            <span class="card-date">Dez 2019</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="fecharModal('modal-fernanda')">Fechar</button>
+            <button type="button" class="btn-primary" onclick="window.location.href='../chat/chat.html'">Entrar em Contato</button>
+        </footer>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-lucas">
+    <div class="modal-box modal-cv">
+        <header class="modal-header header-cv">
+            <div class="header-cv-info">
+                <div class="avatar-candidato modal-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h3>Lucas Mendes Ferreira</h3>
+                    <p class="user-role">Desenvolvedor Back-end Júnior • Paulista</p>
+                </div>
+            </div>
+            <button class="btn-close-modal" onclick="fecharModal('modal-lucas')"><i class="fas fa-times"></i></button>
+        </header>
+        <div class="modal-body body-cv">
+            <section class="cv-section">
+                <h4 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h4>
+                <div class="cards-list">
+                    <div class="info-card">
+                        <div class="card-left">
+                            <h5 class="card-title-cv">Técnico em Informática</h5>
+                            <span class="card-subtitle">IFPE</span>
+                            <span class="card-status status-completed">Concluído</span>
+                            <span class="card-date">Dez 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="fecharModal('modal-lucas')">Fechar</button>
+            <button type="button" class="btn-primary" onclick="window.location.href='../chat/chat.html'">Entrar em Contato</button>
+        </footer>
+    </div>
+</div>
+
 <footer class="footer-taluno">
     <div class="container footer-content">
-        
         <div class="footer-col logo-col">
             <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
         </div>
-
         <div class="footer-col links-col">
             <ul class="footer-menu">
                 <li><a href="#">SOBRE TALUNO</a></li>
@@ -139,7 +520,6 @@
                 <li><a href="#">CENTRAL DE AJUDA</a></li>
             </ul>
         </div>
-
         <div class="footer-col social-col">
             <div class="social-icons">
                 <a href="https://www.instagram.com/senacpe/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -147,13 +527,9 @@
                 <a href="https://www.facebook.com/senacpe/?locale=pt_BR" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.linkedin.com/company/senacpe/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
-            
-            <a href="#" class="btn-back-top">
-                <i class="fa-solid fa-arrow-up"></i>
-            </a>
+            <a href="#" class="btn-back-top"><i class="fa-solid fa-arrow-up"></i></a>
         </div>
     </div>
-
     <div class="footer-bottom">
         <div class="container">
             <hr class="footer-line">
@@ -161,6 +537,7 @@
         </div>
     </div>
 </footer>
-<!--Fim Footer-->
+
+<script src="/projeto_taluno/static/js/empresa/buscar_cv/buscar_cv.js"></script>
 </body>
 </html>
