@@ -36,15 +36,29 @@
     </nav>
 </header>
 <!--Fim da NavBar-->
+
 <!-- ================= MAIN ================= -->
- <main class="empresa-dashboard">
+ <main> 
+    
+    <section class="empresa-dashboard">
+        <div class="hero" id="carrossel-inicio">
+            <a href="#" class="banner-slide ativo">
+                <img src="../../../static/img/banners/banner-taluno.jpeg" alt="banner Taluno">
+            </a>
 
-    <section class="hero">
-        <img src="/projeto_taluno/static/img/index/banner-taluno.jpeg" alt="Banner Taluno">
+            <a href="https://orango.senac.br/" target="_blank" class="banner-slide">
+                <img src="../../../static/img/banners/banner_orango.jpeg" alt="banner Orango">
+            </a>
+
+            <a href="https://cachola.senac.br/?locale=pt" target="_blank" class="banner-slide">
+                <img src="../../../static/img/banners/banner_cachola.jpeg" alt="banner Cachola">
+            </a>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
     </section>
-
-</main>
-<main class="inicio-main">
 
     <!-- HERO LOGADO -->
     <section class="hero-logado">
@@ -119,5 +133,6 @@
     </div>
 </footer>
 <!--Final do Footer-->
+<script src="../../../static/js/aluno/inicio/carrossel.js"></script>
 </body>
 </html>
