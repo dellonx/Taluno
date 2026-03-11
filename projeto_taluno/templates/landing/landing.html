@@ -28,14 +28,25 @@
                 </ul>
             </nav>
 
-            <a href="/projeto_taluno/templates/aluno/autenticacao/login.html" class="landing-btn-login">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
-                    <polyline points="10 17 15 12 10 7"/>
-                    <line x1="15" y1="12" x2="3" y2="12"/>
-                </svg>
-                Entrar
-            </a>
+            <div class="landing-actions">
+                <a href="../aluno/autenticacao/login.html" class="landing-btn-login">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                        <polyline points="10 17 15 12 10 7"/>
+                        <line x1="15" y1="12" x2="3" y2="12"/>
+                    </svg>
+                    Login Aluno
+                </a>
+
+                <a href="../empresa/autenticacao/login.html" class="landing-btn-login">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                        <polyline points="10 17 15 12 10 7"/>
+                        <line x1="15" y1="12" x2="3" y2="12"/>
+                    </svg>
+                    Login Empresa
+                </a>
+            </div>
         </div>
     </header>
       <main>
@@ -90,7 +101,7 @@
                 <div class="card-icon">
                     <img src="../../static/img/index/curriculo.png" alt="Criar currículo">
                 </div>
-                <a href="#" class="btn-candidato">CRIAR CURRÍCULO</a>
+        
                 <p><strong>Adicione suas</strong><br>informações!</p>
             </div>
 
@@ -99,7 +110,7 @@
                 <div class="card-icon">
                     <img src="../../static/img/index/taluno.png" alt="Encontrar vagas">
                 </div>
-                <a href="#" class="btn-candidato">ENCONTRAR VAGAS</a>
+               
                 <p><strong>Encontre a vaga</strong><br>ideal!</p>
             </div>
 
@@ -108,7 +119,7 @@
                 <div class="card-icon">
                     <img src="../../static/img/index/orango.png" alt="Cursos grátis">
                 </div>
-                <a href="#" class="btn-candidato">CURSOS GRÁTIS</a>
+              
                 <p><strong>Aprimore seu</strong><br>currículo!</p>
             </div>
 
@@ -128,7 +139,7 @@
                 <div class="empresario-icon">
                     <img src="../../static/img/index/divulgacao.png" alt="Divulgação de vagas">
                 </div>
-                <a href="#" class="btn-empresario">DIVULGAÇÃO</a>
+               
                 <p><strong>Empresas</strong> publicam<br>vagas na plataforma.</p>
             </div>
 
@@ -137,7 +148,7 @@
                 <div class="empresario-icon">
                     <img src="../../static/img/index/gerenciamento.png" alt="Gerenciamento">
                 </div>
-                <a href="#" class="btn-empresario">GERENCIAMENTO</a>
+               
                 <p><strong>Acompanhamento</strong> e<br>organização dos inscritos.</p>
             </div>
 
@@ -146,7 +157,7 @@
                 <div class="empresario-icon">
                     <img src="../../static/img/index/conexao.png" alt="Conexão">
                 </div>
-                <a href="#" class="btn-empresario">CONEXÃO</a>
+               
                 <p><strong>Acesso direto</strong> a alunos<br>e egressos qualificados.</p>
             </div>
 
@@ -204,55 +215,75 @@
 
         <div class="faq-column">
             <div class="faq-item">
-                <button class="faq-question">O que é o Taluno?</button>
-                <div class="faq-answer">O Taluno é uma plataforma de empregabilidade</div>
+                <button class="faq-question">O que é o Taluno?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">O Taluno é uma plataforma de empregabilidade criada para conectar alunos e egressos do Senac ao mercado de trabalho. Por meio dela, é possível encontrar oportunidades profissionais, divulgar vagas e facilitar o contato entre candidatos e empresas parceiras.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Quem pode utilizar a plataforma Taluno?</button>
-                <div class="faq-answer">Alunos e egressos do Senac.</div>
+                <button class="faq-question">Quem pode utilizar a plataforma Taluno?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">A plataforma é destinada principalmente a alunos e egressos do Senac, permitindo que eles tenham acesso a oportunidades profissionais e desenvolvam suas carreiras com apoio de empresas parceiras.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Como realizar o cadastro na plataforma?</button>
-                <div class="faq-answer">O cadastro é feito diretamente pelo site.</div>
+                <button class="faq-question">Como realizar o cadastro na plataforma?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">O cadastro pode ser realizado diretamente pelo site do Taluno. Basta acessar a área de cadastro, preencher as informações solicitadas e criar seu perfil profissional para começar a utilizar os recursos da plataforma.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">A utilização do Taluno é gratuita?</button>
-                <div class="faq-answer">Sim, totalmente gratuita.</div>
+                <button class="faq-question">A utilização do Taluno é gratuita?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">Sim. O acesso e a utilização da plataforma são totalmente gratuitos para alunos e egressos do Senac que desejam buscar oportunidades profissionais e desenvolver sua carreira.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Como candidatar-se às vagas disponíveis?</button>
-                <div class="faq-answer">Após criar o currículo, basta se candidatar.</div>
+                <button class="faq-question">Como candidatar-se às vagas disponíveis?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">Após realizar o cadastro e completar seu currículo na plataforma, você poderá visualizar as vagas disponíveis e se candidatar diretamente às oportunidades que correspondam ao seu perfil.</div>
             </div>
         </div>
 
         <div class="faq-column">
             <div class="faq-item">
-                <button class="faq-question">Como as empresas podem divulgar oportunidades?</button>
-                <div class="faq-answer">Empresas cadastradas podem publicar vagas.</div>
+                <button class="faq-question">Como as empresas podem divulgar oportunidades?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">Empresas parceiras podem cadastrar suas oportunidades diretamente na plataforma Taluno, descrevendo requisitos, atividades e informações sobre a vaga, facilitando o processo de recrutamento e seleção.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">É possível atuar como freelancer?</button>
-                <div class="faq-answer">Sim, quando a vaga permitir.</div>
+                <button class="faq-question">É possível atuar como freelancer?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">Sim. Dependendo do tipo de vaga divulgada pela empresa, podem existir oportunidades para trabalhos temporários, projetos específicos ou atividades como freelancer.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Como ocorre o contato entre empresas e candidatos?</button>
-                <div class="faq-answer">Por meio da própria plataforma.</div>
+                <button class="faq-question">Como ocorre o contato entre empresas e candidatos?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">O contato acontece diretamente por meio da plataforma. As empresas podem visualizar os perfis dos candidatos inscritos e entrar em contato para dar continuidade ao processo seletivo.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Como o Taluno garante a segurança das informações?</button>
-                <div class="faq-answer">Com práticas modernas de segurança digital.</div>
+                <button class="faq-question">Como o Taluno garante a segurança das informações?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">A plataforma utiliza boas práticas de segurança digital e proteção de dados, garantindo que as informações dos usuários sejam armazenadas e utilizadas de forma responsável.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Quais são os canais de suporte?</button>
-                <div class="faq-answer">E-mail e suporte dentro da plataforma.</div>
+                <button class="faq-question">Quais são os canais de suporte?
+                     <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">Os usuários podem contar com suporte por meio de canais disponibilizados na própria plataforma, como e-mail ou atendimento online, para esclarecer dúvidas e receber orientações.</div>
             </div>
         </div>
 
@@ -308,5 +339,34 @@
     </div>
 </footer>
 <!--Final do Footer-->
+<script src="../../static/js/landing/faq.js"></script>
+<script>
+document.querySelectorAll(".faq-question").forEach(function(question){
+
+    question.addEventListener("click", function(){
+
+        const item = this.parentElement;
+        const answer = item.querySelector(".faq-answer");
+
+        // fecha outros
+        document.querySelectorAll(".faq-item").forEach(function(i){
+            if(i !== item){
+                i.classList.remove("active");
+                i.querySelector(".faq-answer").style.display = "none";
+            }
+        });
+
+        if(item.classList.contains("active")){
+            item.classList.remove("active");
+            answer.style.display = "none";
+        } else {
+            item.classList.add("active");
+            answer.style.display = "block";
+        }
+
+    });
+
+});
+</script>
 </body>
 </html>

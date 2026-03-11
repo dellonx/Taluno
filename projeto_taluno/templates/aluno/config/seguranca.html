@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taluno | Configuração</title>
+    <link rel="stylesheet" href="/projeto_taluno/static/css/global.css">
+    <link rel="stylesheet" href="/projeto_taluno/static/css/config/seguranca.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="header-taluno">
+    <div class="top-bar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac">
+            </a>
+
+            <div class="top-icons">
+                    <a href="../chat/chat.html" class="nav-icon" title="Chat"><i class="fas fa-comment-dots"></i></a>
+                    <a href="../usuario/usuario.html" class="nav-icon" title="Meu Perfil"><i class="fas fa-user"></i></a>
+                    <a href="../config/informacoes.html" class="nav-icon" title="Configurações"><i class="fas fa-gear"></i></a>
+                </div>
+        </div>
+    </div>
+</header>
+<!--Fim da NavBar-->
+
+<main>
+    <aside class="config-sidebar">
+    
+    <div class="sidebar-header">
+          <a href="../inicio/inicio.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <h2>Configurações</h2>
+    </div>
+
+    <nav class="settings-nav">
+        <ul>
+                <li><a href="../config/informacoes.html" class="menu-item">Informações da conta</a></li> 
+                <li><a href="../config/seguranca.html" class="menu-item active">Segurança</a></li>
+                <li><a href="../config/preferencias.html" class="menu-item">Preferências</a></li>
+                <li><a href="../config/privacidade.html" class="menu-item">Privacidade</a></li>
+                <li><a href="../config/conta.html" class="menu-item">Conta</a></li>
+            </ul>
+    </nav>
+
+</aside>
+<section class="config-content">
+    <div class="settings-panel">
+        
+        <div class="config-row">
+            <span class="config-label">Senha Atual</span>
+            <div class="input-wrapper-config">
+                <input type="password" value="1234567890" readonly>
+                <i class="fas fa-pencil"></i>
+            </div>
+        </div>
+
+        <div class="config-row">
+            <span class="config-label">Nova senha</span>
+            <div class="input-wrapper-config">
+                <input type="password" value="1234567890" readonly>
+                <i class="fas fa-pencil"></i>
+            </div>
+        </div>
+
+        <div class="config-row">
+            <span class="config-label">Confirmar senha</span>
+            <div class="input-wrapper-config">
+                <input type="password" value="1234567890" readonly>
+                <i class="fas fa-pencil"></i>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;"></div> 
+
+        <div class="toggle-box">
+            <span class="toggle-text">Notificação por E-mail</span>
+            <label class="switch">
+                <input type="checkbox" checked> <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="toggle-box">
+            <span class="toggle-text">Receber notificações de novas vagas</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+    </div>
+</section>
+</main>
+
+<!--Inicio do Footer-->
+<footer class="footer-taluno">
+    <div class="container footer-content">
+        
+        <div class="footer-col logo-col">
+            <img src="/projeto_taluno/static/img/logo/logo_taluno.png" alt="Taluno | Senac" class="footer-logo">
+        </div>
+
+        <div class="footer-col links-col">
+            <ul class="footer-menu">
+                <li><a href="#">SOBRE TALUNO</a></li>
+                <li><a href="#">POLÍTICA DE COOKIES</a></li>
+                <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+                <li><a href="#">CENTRAL DE AJUDA</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col social-col">
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            
+            <a href="#" class="btn-back-top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <hr class="footer-line">
+            <p>TALUNO 2025. TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </div>
+</footer>
+<!--Final do Footer-->
+</body>
+</html>

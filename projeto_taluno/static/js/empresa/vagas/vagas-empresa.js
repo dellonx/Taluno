@@ -196,20 +196,29 @@ if (formCriar && !formCriar.id.includes('edicao')) {
             return;
         }
 
-        // CAPTURA CORRIGIDA:
-        const novaVaga = {
-            titulo: titulo,
-            descricao: descricao,
-            // Aqui pegamos pelos nomes/IDs que estão no seu HTML
-            area: document.querySelector('select[name="area-vaga"]')?.options[document.querySelector('select[name="area-vaga"]').selectedIndex].text || "",
-            modalidade: document.querySelector('select[name="nivel-vaga"]')?.value || "",
-            escolaridade: document.getElementById('escolaridade')?.options[document.getElementById('escolaridade').selectedIndex].text || "",
-            escala: document.getElementById('escala-vaga')?.options[document.getElementById('escala-vaga').selectedIndex].text || "",
-            salario: document.getElementById('salario-vaga')?.value || "",
-            experiencia: document.getElementById('experiencia')?.value || "nao",
-            data: new Date().toLocaleDateString('pt-BR'),
-            status: "Ativa"
-        };
+        
+                    // 1. Pegamos os valores brutos primeiro
+            const valorSalario = document.getElementById('salario-vaga')?.value;
+            const valorExperiencia = document.getElementById('experiencia')?.value;
+
+            // 2. CAPTURA CORRIGIDA E MELHORADA:
+            const novaVaga = {
+                titulo: titulo,
+                descricao: descricao,
+                area: document.querySelector('select[name="area-vaga"]')?.options[document.querySelector('select[name="area-vaga"]').selectedIndex].text || "Geral",
+                modalidade: document.querySelector('select[name="nivel-vaga"]')?.value || "Não informada",
+                escolaridade: document.getElementById('escolaridade')?.options[document.getElementById('escolaridade').selectedIndex].text || "Não informada",
+                escala: document.getElementById('escala-vaga')?.options[document.getElementById('escala-vaga').selectedIndex].text || "Não informada",
+                
+                // --- MELHORIA AQUI: Salário com R$ ---
+                salario: valorSalario ? `R$ ${valorSalario}` : "A combinar",
+                
+                // --- MELHORIA AQUI: Tradução de Sim/Não ---
+                experiencia: (valorExperiencia === "sim" || valorExperiencia === "Sim") ? "Com experiência" : "Sem experiência",
+                
+                data: new Date().toLocaleDateString('pt-BR'),
+                status: "Ativa"
+            };
 
         let lista = JSON.parse(localStorage.getItem('minhasVagas')) || [];
         lista.push(novaVaga);
