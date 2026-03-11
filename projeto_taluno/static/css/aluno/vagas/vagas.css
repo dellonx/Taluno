@@ -217,8 +217,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
  }
 
-
-/*  Estilo dos Inputs Internos com o "X" */
+/* Estilo dos Grupos (Mantém igual) */
 .campo-grupo {
     text-align: left;
     margin-bottom: 15px;
@@ -235,12 +234,31 @@ body { font-family: 'Segoe UI', sans-serif; }
     position: relative;
 }
 
-.input-wrapper input {
+/* APLICA O ESTILO TANTO PARA INPUT QUANTO PARA SELECT */
+.input-wrapper input, 
+.input-wrapper select {
     width: 100%;
-    padding: 10px 35px 10px 15px;
+    padding: 10px 15px; /* Ajustei para ficar uniforme */
     border: 1px solid #555;
     border-radius: 12px;
     outline: none;
+    background-color: white; /* Garante fundo branco no select */
+    font-family: inherit;
+    appearance: none; /* Remove a seta padrão do navegador */
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+/* Espaçamento extra apenas para o input que tem o "X" */
+.input-wrapper input {
+    padding-right: 35px;
+}
+
+/* Seta customizada apenas para o Select (para não ficar vazio) */
+.input-wrapper select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
 }
 
 .btn-limpar {
@@ -260,7 +278,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     cursor: pointer;
 }
 
-/*  Botão Gradiente Taluno */
+/* Botão Aplicar (Mantém igual) */
 .btn-aplicar {
     width: 80%;
     margin-top: 10px;
@@ -272,11 +290,15 @@ body { font-family: 'Segoe UI', sans-serif; }
     cursor: pointer;
     background: #a600a6;
     transition: transform 0.2s;
+    display: block; /* Garante que o margin: auto funcione se quiser centralizar */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-aplicar:hover {
     transform: scale(1.05);
 }
+
 
 .input-busca {
     width: 100%;
@@ -430,6 +452,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     display: flex;
     flex-direction: column;
 }
+
 
 
 

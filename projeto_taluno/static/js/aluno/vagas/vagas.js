@@ -29,34 +29,38 @@ function renderizarVagasPaginadas() {
     const fim = inicio + vagasPorPagina;
     const vagasParaExibir = vagasLocalStorage.slice(inicio, fim);
 
-    vagasParaExibir.forEach(vaga => {
-        const novoCard = document.createElement('article');
-        novoCard.classList.add('card-das-vagas');
-        
-        // Aqui injetamos todos os dados da vaga dentro de "data-attributes" no botão
-        novoCard.innerHTML = `
-            <div class="vaga-info-bloco">
-                <h3 class="vaga-titulo">${vaga.titulo}</h3>
-                <p class="vaga-empresa">Simtec Soluções Tecnológicas</p>
-                <p class="vaga-endereco">${vaga.cidade || 'Recife, PE'}</p>
-                <div class="vaga-badges">
-                    <span class="badge">${vaga.modalidade || 'Não informada'}</span>
-                    <span class="badge">Ativa</span>
-                </div>
+   vagasParaExibir.forEach(vaga => {
+    const novoCard = document.createElement('article');
+    novoCard.classList.add('card-das-vagas');
+    
+    novoCard.innerHTML = `
+        <div class="vaga-info-bloco">
+            <h3 class="vaga-titulo">${vaga.titulo}</h3>
+            <p class="vaga-empresa">Simtec Soluções Tecnológicas</p>
+            <p class="vaga-endereco">${vaga.cidade || 'Recife, PE'}</p>
+            
+            <div class="vaga-badges">
+                <span class="badge">${vaga.area || 'Geral'}</span>
+                
+                <span class="badge">${vaga.salario || 'A combinar'}</span>
+                
+                <span class="badge">${vaga.modalidade || 'Não informada'}</span>
             </div>
-            <button class="btn-ver-mais" 
-                data-titulo="${vaga.titulo}"
-                data-descricao="${vaga.descricao || 'Sem descrição.'}"
-                data-area="${vaga.area || 'Geral'}"
-                data-modalidade="${vaga.modalidade || 'Não informada'}"
-                data-escolaridade="${vaga.escolaridade || 'Não informada'}"
-                data-escala="${vaga.escala || 'Não informada'}"
-                data-salario="${vaga.salario || 'A combinar'}"
-                data-experiencia="${vaga.experiencia || 'Sem experiência'}"
-            >Ver mais</button>
-        `;
-        containerVagas.insertBefore(novoCard, barraPaginacao);
-    });
+        </div>
+        
+        <button class="btn-ver-mais" 
+            data-titulo="${vaga.titulo}"
+            data-descricao="${vaga.descricao || 'Sem descrição.'}"
+            data-area="${vaga.area || 'Geral'}"
+            data-modalidade="${vaga.modalidade || 'Não informada'}"
+            data-escolaridade="${vaga.escolaridade || 'Não informada'}"
+            data-escala="${vaga.escala || 'Não informada'}"
+            data-salario="${vaga.salario || 'A combinar'}"
+            data-experiencia="${vaga.experiencia || 'Sem experiência'}"
+        >Ver mais</button>
+    `;
+    containerVagas.insertBefore(novoCard, barraPaginacao);
+});
 
     const botoes = document.querySelectorAll('.btn-paginacao');
     if (botoes.length >= 2) {
@@ -134,6 +138,8 @@ function inicializarModal() {
         }
     });
 
+    
+
     if (btnVoltar) {
         btnVoltar.onclick = () => {
             modal.classList.remove('active');
@@ -141,3 +147,4 @@ function inicializarModal() {
         };
     }
 }
+

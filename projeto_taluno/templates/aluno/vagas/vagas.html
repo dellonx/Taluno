@@ -57,32 +57,50 @@
 
                 <form class="filtros-form">
                     <div class="campo-grupo">
-                        <label for="palavra-chave">Palavra chave</label>
+                        <label for="filtro-area">Área de Atuação</label>
                         <div class="input-wrapper">
-                            <input type="text" id="palavra-chave" name="palavra-chave">
-                            <span class="btn-limpar">&times;</span>
-                                
+                            <select id="filtro-area" name="area">
+                                <option value="">Todas as áreas</option>
+                                <option value="Design e UX">Design e UX</option>
+                                <option value="Desenvolvimento">Desenvolvimento</option>
+                                <option value="Administrativo">Administrativo</option>
+                                <option value="Marketing">Marketing</option>
+                            </select>
                         </div>
-                    </div>
+                        </div>
 
                     <div class="campo-grupo">
-                        <label for="palavra-chave">Cidade</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="Cidade" name="Cidade">
-                            <span class="btn-limpar">&times;</span>
-                                
+                        <label for="filtro-cidade">Cidade</label>
+                            <div class="input-wrapper">
+                                <select id="filtro-cidade" class="input-estilizado">
+                                    <option value="">Todas as cidades</option>
+                                    <option value="Recife">Recife</option>
+                                    <option value="Caruaru">Caruaru</option>
+                                    <option value="Garanhuns">Garanhuns</option>
+                                    <option value="Paulista">Paulista</option>
+                                    <option value="Petrolina">Petrolina</option>
+                                    <option value="Serra Talhada">Serra Talhada</option>
+                                    <option value="Vitória de Santo Antão">Vitória de Santo Antão</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
+                    
 
                     <div class="campo-grupo">
-                        <label for="palavra-chave">Tipo de vaga</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="Tipo de vaga" name="tipo-vaga">
-                            <span class="btn-limpar">&times;</span>        
-                        </div>
+                        <label for="filtro-tipo">Tipo de Contrato</label>
+                            <div class="input-wrapper">
+                                <select id="filtro-tipo" name="tipo">
+                                    <option value="">Todos os tipos</option>
+                                    <option value="CLT">CLT</option>
+                                    <option value="PJ">PJ</option>
+                                    <option value="Estágio">Estágio</option>
+                                    <option value="Freelancer">Freelancer</option>
+                                </select>
+                            </div>
                     </div>
+                </div>
 
-                    <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
+                    <button type="submit" class="btn-aplicar" id="btn-aplicar-filtros">Aplicar Filtros</button>
                 </form>
             </div>
         </aside>
