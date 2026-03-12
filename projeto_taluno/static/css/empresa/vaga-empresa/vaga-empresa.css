@@ -264,7 +264,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     display: flex;
     flex-direction: column;
     gap: 5px;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 /*Aqui é responsável pelo botão de adicionar vaga, onde poestariomente chamará um modal*/
@@ -290,7 +290,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-adicionar-vaga:hover {
-    background-color: #004494; /* Tom mais escuro para o feedback de hover */
+    background-color: #3b62ff; /* Tom mais escuro para o feedback de hover */
     transform: scale(1.05); /* Aumenta o botão ao deixar o cursor em cima */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -370,6 +370,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 .btn-gerenciar:hover{
     transform: scale(1.05); /*aumenta o tamanho do botão ao passar o cursor em cima*/
+    background-color: #3b62ff;
 }
 
 .btn-pgn{
@@ -386,7 +387,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 .btn-paginacao {
     background-color: #f1f3f5; /*cor do background do caracter do botão   */
-    color: #888; /* cor do botão  */
+    color: #333; /* cor do botão  */
     border: none; /* aqui remove a borda do botão*/
     width: 45px; /*Espaçamento entre os botões*/
     height: 45px;
@@ -484,7 +485,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Título principal com o roxo padrão da marca */
 .titulo-modal {
-    color: #a600a6; /* Cor característica do projeto */
+    color: #333; /* Cor característica do projeto */
     font-size: 24px;
     margin-bottom: 5px;
 }
@@ -505,7 +506,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 /* Estilização dos rótulos (labels) para dar destaque e clareza */
 .campo-vaga label {
     font-size: 14px;
-    color: #a600a6; /* Mantém a identidade visual nos campos */
+    color: #666; /* Mantém a identidade visual nos campos */
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -515,7 +516,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .campo-vaga select,
 .campo-vaga textarea {
     padding: 12px;
-    border: 1px solid #a600a6; /* Mantém a identidade visual com a borda roxa */
+    border: 1px solid #555; /* Mantém a identidade visual com a borda roxa */
     border-radius: 12px;
     outline: none; /* Remove o contorno padrão do navegador ao focar no campo */
     font-family: inherit;
@@ -538,7 +539,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .divisor-requisitos {
     text-align: center;
     margin: 20px 0;
-    color: #a600a6;
+    color: #333;
 }
 
 /* Alinhamento dos botões de ação no final do modal */
@@ -551,7 +552,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Botões do Modal */
 .btn-vaga-publicar {
-    background-color: #9600ff; /* Rosa/Roxo do botão Publicar */
+    background-color: #274dc6; /* Rosa/Roxo do botão Publicar */
     color: white;
     border: none;
     padding: 12px 30px;
@@ -559,18 +560,6 @@ body { font-family: 'Segoe UI', sans-serif; }
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-}
-
-/* Botão principal de ação (Publicar) */
-.btn-vaga-publicar {
-    background-color: #9600ff; /* Cor de destaque (Rosa/Roxo) */
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s; /* Suaviza a mudança de cor no hover */
 }
 
 /* Botão de desistência (Cancelar) */
@@ -584,7 +573,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Efeito ao passar o mouse: escurece a cor e sobe levemente o botão */
 .btn-vaga-publicar:hover {
-    background-color: #7a00cc; 
+    background-color: #3b62ff; 
     transform: translateY(-2px); /* Feedback visual de "clicável" */
 }
 

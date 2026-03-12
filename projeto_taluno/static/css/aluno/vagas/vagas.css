@@ -57,7 +57,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Container cinza com cards */
 .vagas-container {
-    background-color: #eef1f7;
+    background-color: #f4f7f9;
     flex: 1; 
     padding: 20px; 
     max-width: 1600px; 
@@ -131,8 +131,8 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-paginacao {
-    background-color: #e0e0e0; /*cor do background do caracter do botão   */
-    color: #888; /* cor do botão  */
+    background-color: #f1f3f5; /*cor do background do caracter do botão   */
+    color: #333; /* cor do botão  */
     border: none; /* aqui remove a borda do botão*/
     width: 45px; /*Espaçamento entre os botões*/
     height: 45px;
@@ -154,7 +154,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-ver-mais{
-    background-color: #004494;
+    background-color: #274dc6;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -169,7 +169,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .btn-ver-mais:hover {
     transform: scale(1.05);
     opacity: 0.9;
-    background-color: #0052cc;
+    background-color: #3b62ff;
     transition: all 0.3s ease; /* 'all' vigia tudo, '0.3s' é a duração, 'ease' é o ritmo suave */
 }
 
@@ -574,6 +574,11 @@ body { font-family: 'Segoe UI', sans-serif; }
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #555 #f0f0f0;
+    overflow-x: hidden;
+    white-space: normal;      
+    overflow-wrap: break-word; 
+    word-wrap: break-word;   
+    word-break: break-word;    
 }
 
 
