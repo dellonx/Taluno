@@ -257,7 +257,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*Aqui é responsavel pelo container cinza onde terá os cards de vagas da empresa*/
 .container-vaga-empresa {
-     background-color: #eef1f7;
+     background-color: #f4f7f9;
     flex: 1; 
     padding: 20px; 
     max-width: 1600px; 
@@ -271,7 +271,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .btn-adicionar-vaga {
     align-self: flex-end; /* O botão ignora o pai e vai sozinho para a DIREITA */
     width: auto; /* Garante que ele não estique */
-    background-color: #0056b3; /* Azul padrão do seu botão Candidatar */
+    background-color: #274dc6; /* Azul padrão do seu botão Candidatar */
     color: white;
     border: none;
     padding: 12px 24px;
@@ -335,7 +335,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*Aqui serve para dar azul destaque aos dados dos cards*/
 .metrica-valor{
-    color: #0056b3;
+    color: #8810a9;
     font-weight: bold;
     margin-left: 4px;
 }
@@ -358,7 +358,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*layout do botão de gerenciar vagas*/
 .btn-gerenciar{
-    background-color: #004494;
+    background-color: #274dc6;
     color: white;
     border: none;
     padding: 10px 25px;
@@ -385,7 +385,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-paginacao {
-    background-color: #e0e0e0; /*cor do background do caracter do botão   */
+    background-color: #f1f3f5; /*cor do background do caracter do botão   */
     color: #888; /* cor do botão  */
     border: none; /* aqui remove a borda do botão*/
     width: 45px; /*Espaçamento entre os botões*/
