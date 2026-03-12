@@ -60,7 +60,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     background-color: #eef1f7;
     flex: 1; 
     padding: 20px; 
-    /*max-width: 1600px; */
+    max-width: 1600px; 
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -82,6 +82,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     padding: 20px 30px;
     cursor: pointer; /* altera o cursor do mouse para mãozinha */
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* o efeito de sombreamento nos cards de vagas*/
+    margin-top: 20PX;
 }
 
 
@@ -217,104 +218,182 @@ body { font-family: 'Segoe UI', sans-serif; }
 
  }
 
-/* Estilo dos Grupos (Mantém igual) */
-.campo-grupo {
-    text-align: left;
+.filtro-cvs {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    height: fit-content;
+    width: 280px;      
+    margin-left: auto;  
+    margin-right: auto; 
+    margin-top: 20px;   
+}
+
+
+.filtro-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-voltar {
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+}
+
+.filtro-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.campo-busca {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.campo-busca input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Acordeão de Filtros */
+.lista-filtros {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #eef1f8;
+}
+
+.filtro-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+    user-select: none;
+}
+
+.filtro-opcoes {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #d8c7f0;
+}
+
+.filtro-opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.filtro-opcoes span {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.filtro-opcoes input[type="checkbox"] {
+    accent-color: #6a00ff;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.filtro-opcoes input[type="checkbox"]:checked {
+    transform: scale(1.15);
+}
+
+.filtro-opcoes input[type="checkbox"]:checked + span {
+    color: #6a00ff;
+    font-weight: 600;
+    transform: translateX(4px);
+    display: inline-block;
+}
+
+/* Slider Salarial */
+.filtro-salarial {
+    background: #eef1f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.salarial-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6a00ff;
     margin-bottom: 15px;
 }
 
-.campo-grupo label {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 1px;
-    color: #555;
-}
-
-.input-wrapper {
+.slider-container {
     position: relative;
-}
-
-/* APLICA O ESTILO TANTO PARA INPUT QUANTO PARA SELECT */
-.input-wrapper input, 
-.input-wrapper select {
     width: 100%;
-    padding: 10px 15px; /* Ajustei para ficar uniforme */
-    border: 1px solid #555;
-    border-radius: 12px;
-    outline: none;
-    background-color: white; /* Garante fundo branco no select */
-    font-family: inherit;
-    appearance: none; /* Remove a seta padrão do navegador */
-    -webkit-appearance: none;
-    cursor: pointer;
-}
-
-/* Espaçamento extra apenas para o input que tem o "X" */
-.input-wrapper input {
-    padding-right: 35px;
-}
-
-/* Seta customizada apenas para o Select (para não ficar vazio) */
-.input-wrapper select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-}
-
-.btn-limpar {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #333;
-    color: white;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    cursor: pointer;
 }
 
-/* Botão Aplicar (Mantém igual) */
-.btn-aplicar {
-    width: 80%;
-    margin-top: 10px;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    background: #a600a6;
-    transition: transform 0.2s;
-    display: block; /* Garante que o margin: auto funcione se quiser centralizar */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.btn-aplicar:hover {
-    transform: scale(1.05);
-}
-
-
-.input-busca {
+.slider-track {
+    position: absolute;
     width: 100%;
-    max-width: 400px; /* Ajuste a largura como preferir */
-    padding: 12px 25px;
-    
-    /* O SEGREDO DO VISUAL: */
-    border: 1px solid #999; /* Traçado fino ao redor */
-    border-radius: 50px;    /* Valor alto para criar o efeito arredondado (pílula) */
-    
-    background-color: transparent;
-    font-size: 16px;
-    color: #555;
-    text-align: center;     /* Centraliza o texto "Pesquisar vagas" */
-    outline: none;
-    transition: all 0.3s ease;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.slider-container input[type="range"] {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    pointer-events: none;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    pointer-events: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #6a00ff;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
 }
 
 /* Efeito ao clicar para digitar */
@@ -389,7 +468,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*AQUI O BOTÃO DE CANDIDATAR */
 .btn-candidatar {
-    background: #9600ff; 
+    background: #274dc6; 
     color: white;
     border: none;
     padding: 12px 30px;
@@ -437,7 +516,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 /* Lado Esquerdo  */
 .modal-sidebar-empresa {
     width: 35%;
-    border-right: 1px solid #7a2cb5; /* Linha roxa divisória */
+    border-right: 1px solid #333; /* Linha roxa divisória */
     padding-right: 25px;
     display: flex;
     flex-direction: column;
@@ -466,7 +545,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*aqui é responsável pelas tags badges*/
 .badge {
-    background-color: #E00080;
+    background-color: #8810a9;
     color: white;
     padding: 6px 12px;  
     border-radius: 8px;

@@ -48,7 +48,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*COnfiguração do fundo da página para destacar o card*/
 .dashboard-container{
-    background-color: #e9ecef;/*Um cinza claro para dar contraste com o branco*/
+    background-color: #f0f0f6;/*Um cinza claro para dar contraste com o branco*/
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -263,7 +263,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .badge {
-    background-color: #E00080;
+    background-color: #8810a9;
     color: #fff;
     padding: 6px 15px;
     border-radius: 6px;
