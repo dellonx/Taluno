@@ -423,7 +423,7 @@ section {
 .empresario-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 36px;
 }
 
 /* CARD */
@@ -490,63 +490,6 @@ section {
     }
 }
 
-/*pacerias/*
-
-/* ===============================
-   SEÇÃO: PARCERIAS
-   =============================== */
-
-.parcerias-section {
-    background-color: #ffffff;
-}
-
-.parcerias-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* TÍTULO */
-.title-parcerias {
-    font-family: 'Poppins', sans-serif;
-    font-size: 32px;
-    font-weight: 800;
-    color: #0066ff;
-    margin-bottom: 12px;
-    text-align: center;
-}
-
-/* GRID DE LOGOS */
-.parcerias-logos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 55px;
-    align-items: center;
-}
-
-/* ITEM */
-.parceria-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
-/* LOGO */
-.parceria-item img {
-    width: 160px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px ;
-}
-
-/* NOME */
-.parceria-item span {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #000;
-}
 
 /* RESPONSIVO */
 @media (max-width: 900px) {
@@ -563,12 +506,12 @@ section {
 /*perguntas frequentes*/
  .title-blue-landing {
     background: none;
-    color:  #8a00ff; /* escolha a cor desejada */
+    color:  #5C009E; /* escolha a cor desejada */
     -webkit-text-fill-color: unset;
 }
 
 .faq-section {
-    background: linear-gradient(180deg, #8a00ff, #5a00c7);
+    background: #5C009E;
     color: #fff;
     text-align: center;
 }

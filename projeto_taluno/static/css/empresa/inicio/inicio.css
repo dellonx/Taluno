@@ -1,5 +1,5 @@
 .empresa-dashboard {
-    background: #d9d9d9;
+    background: #F4F7F9;
     padding: 40px 0;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
 .cta-box {
     width: 80%;
     max-width: 1000px;
-    background: #eeeeee;
+    background: #ffff;
     padding: 18px 25px;
     border-radius: 12px;
     display: flex;
@@ -39,7 +39,7 @@
 
 /* Cor do botão restaurada para o roxo sólido original */
 .cta-box button {
-    background: #6a1b9a;
+    background: #5C009E;
     border: none;
     color: white;
     padding: 8px 22px;
@@ -56,7 +56,7 @@
 .vagas-box {
     width: 80%;
     max-width: 1000px;
-    background: linear-gradient(180deg, #7b1fa2, #6a1b9a);
+    background: #5C009E;
     padding: 25px;
     border-radius: 10px;
     color: white;
