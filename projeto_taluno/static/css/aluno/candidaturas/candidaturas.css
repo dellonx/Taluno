@@ -1,177 +1,78 @@
-/* Estilo da Seção Principal */
 .main-candidaturas {
     padding: 60px 0;
-    background-color: #f4f7f9;
-    min-height: 70vh;
+    background-color: #f4f7f9; /* Fundo solicitado */
+    min-height: 80vh;
 }
 
-/* Container de conteúdo centralizado */
 .content-wrapper {
-    max-width: 900px !important;
+    max-width: 1200px !important; /* Expansão dos cards */
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Filtros */
 .filtro-area {
-    margin-bottom: 35px;
-}
-
-.filtro-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.filtro-wrapper label {
-    font-weight: 700;
-    color: #444;
+    margin-bottom: 40px;
 }
 
 .select-customizado select {
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
     background: #fff;
-    font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    outline: none;
-    transition: border-color 0.3s;
 }
 
-.select-customizado select:focus {
-    border-color: #0084ff;
-}
-
-/* Lista de Cards */
 .lista-candidaturas {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 .card-candidatura {
     background: #fff;
-    border-radius: 15px;
-    padding: 25px 35px;
+    border-radius: 20px;
+    padding: 35px 50px; /* Cards maiores alinhados */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
-.card-candidatura:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
-
-/* Esconder cards via JS */
-.card-candidatura.hidden {
-    display: none;
-}
-
-/* Informações da Vaga */
 .info-vaga h3 {
-    color: #0084ff;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    color: #333333; /* Cor da letra solicitada */
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-.info-vaga .empresa {
-    font-weight: 600;
-    color: #333;
-}
-
-.info-vaga .local {
-    color: #888;
-    font-size: 0.85rem;
-}
-
-/* Badges e Status */
 .status-wrapper {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
 }
 
 .badge {
-    padding: 10px 25px;
-    border-radius: 10px;
+    padding: 14px 0;
+    border-radius: 14px;
     color: #fff;
     font-weight: 700;
-    min-width: 155px;
+    width: 190px;
     text-align: center;
-    font-size: 0.9rem;
-    text-transform: capitalize;
 }
 
-/* Cores dos Status */
 .status-concluido { background-color: #4cd137; }
 .status-andamento { background-color: #ffb92e; }
 .status-cancelado { background-color: #d63031; }
 
-/* Botão de Fechar (X) */
-.btn-fechar {
-    background: #333;
-    color: #fff;
+.btn-excluir {
+    background: transparent;
+    color: #e3005a; /* Lixeira rosa */
     border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    font-size: 1.5rem;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s;
+    transition: transform 0.2s;
 }
 
-.btn-fechar:hover {
-    background: #e6005c; /* Cor de destaque ao deletar */
-}
-
-/* Paginação */
-.paginacao-candidaturas {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 40px;
-}
-
-.btn-page {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background-color: #e0e0e0;
-    color: #777;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    transition: 0.3s;
-}
-
-.btn-page:hover {
-    background-color: #0084ff;
-    color: #fff;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .card-candidatura {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .status-wrapper {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .badge {
-        width: 100%;
-    }
-}
+.btn-excluir:hover { transform: scale(1.2); }
