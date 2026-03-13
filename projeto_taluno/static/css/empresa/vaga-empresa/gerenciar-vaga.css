@@ -116,7 +116,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* O Botão de candidatos conforme gradiente */
 .btn-candidatos {
-    background: #9600ff; /* Gradiente roxo para rosa */
+    background: #274dc6; /* Gradiente roxo para rosa */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -131,6 +131,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 .btn-candidatos:hover {
     transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    background-color:#3b62ff ;
 }
 
 
