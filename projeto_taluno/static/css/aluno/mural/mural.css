@@ -1,7 +1,7 @@
 /*CONTAINER PRINCIPAL*/
 
 main.container{
-    max-width: 900px;
+    max-width: 119  0px;
     margin: 40px auto;
 }
    /* BANNER DO MURAL */
@@ -15,7 +15,7 @@ main.container{
     color: white;
     font-size: 18px;
     font-weight: 500;
-    background: #6a19eb;
+    background: #5C009E;
     margin-bottom: 30px;
 }
 
@@ -74,7 +74,7 @@ main.container{
 .btn-publicar{
     align-self:flex-end;
     margin-top:10px;
-    background:#6a19eb;
+    background:#274DC6;
     color:white;
     border:none;
     padding:8px 16px;
