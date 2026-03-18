@@ -1,11 +1,11 @@
 .mural-container {
-    background-color: #e4e4e4;
+    background-color: #F4F7F9;
     padding: 40px 20px;
     min-height: calc(100vh - 200px);
 }
 
 .mural-lista {
-    max-width: 900px;
+    max-width: 1160px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -14,6 +14,7 @@
 
 .mural-card {
     background: #fff;
+    width: 1165px;
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -41,7 +42,7 @@
 
 .mural-conteudo p {
     font-size: 14px;
-    color: #555;
+    color: #333;
     line-height: 1.4;
 }
 
@@ -64,7 +65,7 @@
 }
 
 .acao-like.ativo {
-    color: #7a00ff;
+    color: #1eff83;
 }
 
 .acao-like {
@@ -75,16 +76,16 @@
     display: none;
 }
 
-/*padrão*/
+/* padrão */
 .acao-like i {
     color: #9ca3af;
-    font-size: 22px;
+    font-size: 23px;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/*ativo*/
+/* ativo */
 .like-toggle:checked + i {
-    font-size: 22px;
-    color: #7a00ff;
+    font-size: 25px;
+    color: #274DC6;
     transform: scale(1.2);
 }
