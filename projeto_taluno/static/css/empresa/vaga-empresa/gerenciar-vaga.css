@@ -521,7 +521,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .cabecalho-roxo {
-    background-color: #a600a6;
+    background-color: #3b62ff;
     color: white;
 }
 
@@ -588,7 +588,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-avancar-fase {
-    background: #9600ff ; /* Degradê azul/roxo */
+    background: #274dc6 ; /* Degradê azul/roxo */
     color: white;
     border: none;
     padding: 10px 30px;
@@ -598,7 +598,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-avancar-fase:hover{
-    background-color: #a600a6;
+    background-color: #3b62ff;
 }
 
 /* Note que NÃO tem espaço entre o 'a' e o '.nome-perfil' */
@@ -606,7 +606,7 @@ a.nome-perfil {
     text-decoration: none !important; /* Remove o traçado */
     color: #000000 !important;        /* Força a cor preta */
     font-weight: bold;                 /* Mantém o destaque */
-}
+}btn-avanc
 
 /* Efeito ao passar o mouse */
 a.nome-perfil:hover {
