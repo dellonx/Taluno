@@ -57,10 +57,10 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Container cinza com cards */
 .vagas-container {
-    background-color: #eef1f7;
+    background-color: #f4f7f9;
     flex: 1; 
     padding: 20px; 
-    /*max-width: 1600px; */
+    max-width: 1600px; 
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -82,6 +82,7 @@ body { font-family: 'Segoe UI', sans-serif; }
     padding: 20px 30px;
     cursor: pointer; /* altera o cursor do mouse para mãozinha */
     box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* o efeito de sombreamento nos cards de vagas*/
+    margin-top: 20PX;
 }
 
 
@@ -130,8 +131,8 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-paginacao {
-    background-color: #e0e0e0; /*cor do background do caracter do botão   */
-    color: #888; /* cor do botão  */
+    background-color: #f1f3f5; /*cor do background do caracter do botão   */
+    color: #333; /* cor do botão  */
     border: none; /* aqui remove a borda do botão*/
     width: 45px; /*Espaçamento entre os botões*/
     height: 45px;
@@ -153,7 +154,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-ver-mais{
-    background-color: #004494;
+    background-color: #274dc6;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -168,7 +169,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .btn-ver-mais:hover {
     transform: scale(1.05);
     opacity: 0.9;
-    background-color: #0052cc;
+    background-color: #3b62ff;
     transition: all 0.3s ease; /* 'all' vigia tudo, '0.3s' é a duração, 'ease' é o ritmo suave */
 }
 
@@ -217,82 +218,182 @@ body { font-family: 'Segoe UI', sans-serif; }
 
  }
 
+.filtro-cvs {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    height: fit-content;
+    width: 280px;      
+    margin-left: auto;  
+    margin-right: auto; 
+    margin-top: 20px;   
+}
 
-/*  Estilo dos Inputs Internos com o "X" */
-.campo-grupo {
-    text-align: left;
+
+.filtro-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-voltar {
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+}
+
+.filtro-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.campo-busca {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.campo-busca input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Acordeão de Filtros */
+.lista-filtros {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #eef1f8;
+}
+
+.filtro-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+    user-select: none;
+}
+
+.filtro-opcoes {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #d8c7f0;
+}
+
+.filtro-opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.filtro-opcoes span {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.filtro-opcoes input[type="checkbox"] {
+    accent-color: #6a00ff;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.filtro-opcoes input[type="checkbox"]:checked {
+    transform: scale(1.15);
+}
+
+.filtro-opcoes input[type="checkbox"]:checked + span {
+    color: #6a00ff;
+    font-weight: 600;
+    transform: translateX(4px);
+    display: inline-block;
+}
+
+/* Slider Salarial */
+.filtro-salarial {
+    background: #eef1f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.salarial-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6a00ff;
     margin-bottom: 15px;
 }
 
-.campo-grupo label {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 1px;
-    color: #555;
-}
-
-.input-wrapper {
+.slider-container {
     position: relative;
-}
-
-.input-wrapper input {
     width: 100%;
-    padding: 10px 35px 10px 15px;
-    border: 1px solid #555;
-    border-radius: 12px;
-    outline: none;
-}
-
-.btn-limpar {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #333;
-    color: white;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    cursor: pointer;
 }
 
-/*  Botão Gradiente Taluno */
-.btn-aplicar {
-    width: 80%;
-    margin-top: 10px;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    background: #a600a6;
-    transition: transform 0.2s;
-}
-
-.btn-aplicar:hover {
-    transform: scale(1.05);
-}
-
-.input-busca {
+.slider-track {
+    position: absolute;
     width: 100%;
-    max-width: 400px; /* Ajuste a largura como preferir */
-    padding: 12px 25px;
-    
-    /* O SEGREDO DO VISUAL: */
-    border: 1px solid #999; /* Traçado fino ao redor */
-    border-radius: 50px;    /* Valor alto para criar o efeito arredondado (pílula) */
-    
-    background-color: transparent;
-    font-size: 16px;
-    color: #555;
-    text-align: center;     /* Centraliza o texto "Pesquisar vagas" */
-    outline: none;
-    transition: all 0.3s ease;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.slider-container input[type="range"] {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    pointer-events: none;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    pointer-events: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #6a00ff;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
 }
 
 /* Efeito ao clicar para digitar */
@@ -367,7 +468,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*AQUI O BOTÃO DE CANDIDATAR */
 .btn-candidatar {
-    background: #9600ff; 
+    background: #274dc6; 
     color: white;
     border: none;
     padding: 12px 30px;
@@ -415,7 +516,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 /* Lado Esquerdo  */
 .modal-sidebar-empresa {
     width: 35%;
-    border-right: 1px solid #7a2cb5; /* Linha roxa divisória */
+    border-right: 1px solid #333; /* Linha roxa divisória */
     padding-right: 25px;
     display: flex;
     flex-direction: column;
@@ -433,6 +534,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 
 
+
 .tags-detalhes-vertical {
     display: flex;
     flex-direction: column; 
@@ -443,7 +545,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*aqui é responsável pelas tags badges*/
 .badge {
-    background-color: #E00080;
+    background-color: #8810a9;
     color: white;
     padding: 6px 12px;  
     border-radius: 8px;
@@ -472,6 +574,11 @@ body { font-family: 'Segoe UI', sans-serif; }
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #555 #f0f0f0;
+    overflow-x: hidden;
+    white-space: normal;      
+    overflow-wrap: break-word; 
+    word-wrap: break-word;   
+    word-break: break-word;    
 }
 
 

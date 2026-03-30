@@ -41,51 +41,70 @@
     <main class="vagas-layout"> 
             
             <!--Aqui é responsavel pelo fundo branco onde tem o formulario-->
-        <aside class="filtros-sidebar">
-        <div class="filtros-container2">
+        <aside class="filtro-cvs">
+        <div class="filtro-header">
             
-            <input type="text" placeholder="Pesquisar Vagas" class="input-busca">
-        </div> 
-            
+            <h3>Filtrar vagas</h3>
+        </div>
 
-            
+        <div class="campo-busca">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar por palavra chave...">
+        </div>
 
-            <div class="filtros-container">
-        
-                <h2 class="filtros-titulo">Filtro Avançado</h2>
-                
-
-                <form class="filtros-form">
-                    <div class="campo-grupo">
-                        <label for="palavra-chave">Palavra chave</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="palavra-chave" name="palavra-chave">
-                            <span class="btn-limpar">&times;</span>
-                                
-                        </div>
-                    </div>
-
-                    <div class="campo-grupo">
-                        <label for="palavra-chave">Cidade</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="Cidade" name="Cidade">
-                            <span class="btn-limpar">&times;</span>
-                                
-                        </div>
-                    </div>
-
-                    <div class="campo-grupo">
-                        <label for="palavra-chave">Tipo de vaga</label>
-                        <div class="input-wrapper">
-                            <input type="text" id="Tipo de vaga" name="tipo-vaga">
-                            <span class="btn-limpar">&times;</span>        
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-aplicar">Aplicar Filtros</button>
-                </form>
+        <div class="filtro-salarial">
+            <div class="salarial-header">
+                <span id="valorMin">R$ 1.000</span>
+                <span id="valorMax">Todos</span>
             </div>
-        </aside>
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack"></div>
+                <input type="range" min="1000" max="15000" value="1000" id="sliderMin" step="500">
+                <input type="range" min="1000" max="15000" value="15000" id="sliderMax" step="500">
+            </div>
+        </div>
+
+        <ul class="lista-filtros">
+            <li class="filtro-grupo">
+                <div class="filtro-titulo">Área <i class="fas fa-chevron-down"></i></div>
+                <div class="filtro-opcoes">
+                    <label><input type="checkbox" value="ti"> <span>T.I. / Tecnologia</span></label>
+                    <label><input type="checkbox" value="adm"> <span>Administração</span></label>
+                    <label><input type="checkbox" value="saude"> <span>Saúde</span></label>
+                </div>
+            </li>
+
+            <li class="filtro-grupo">
+                <div class="filtro-titulo">Especialização <i class="fas fa-chevron-down"></i></div>
+                <div class="filtro-opcoes">
+                    <label><input type="checkbox" value="frontend"> <span>Front-end</span></label>
+                    <label><input type="checkbox" value="backend"> <span>Back-end</span></label>
+                    <label><input type="checkbox" value="dados"> <span>Banco de Dados</span></label>
+                    <label><input type="checkbox" value="redes"> <span>Redes e Infra</span></label>
+                    <label><input type="checkbox" value="rh"> <span>Recursos Humanos</span></label>
+                </div>
+            </li>
+
+            <li class="filtro-grupo">
+                <div class="filtro-titulo">Experiência <i class="fas fa-chevron-down"></i></div>
+                <div class="filtro-opcoes">
+                    <label><input type="checkbox" value="aprendiz"> <span>Jovem Aprendiz</span></label>
+                    <label><input type="checkbox" value="estagio"> <span>Estagiário</span></label>
+                    <label><input type="checkbox" value="junior"> <span>Júnior</span></label>
+                    <label><input type="checkbox" value="senior"> <span>Pleno / Sênior</span></label>
+                </div>
+            </li>
+
+            <li class="filtro-grupo">
+                <div class="filtro-titulo">Escolaridade <i class="fas fa-chevron-down"></i></div>
+                <div class="filtro-opcoes">
+                    <label><input type="checkbox" value="medio"> <span>Ensino Médio</span></label>
+                    <label><input type="checkbox" value="tecnico"> <span>Ensino Técnico</span></label>
+                    <label><input type="checkbox" value="superior"> <span>Ensino Superior</span></label>
+                </div>
+            </li>
+        </ul>
+    </aside>
 
         <section class="vagas-container">
 

@@ -48,7 +48,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*COnfiguração do fundo da página para destacar o card*/
 .dashboard-container{
-    background-color: #e9ecef;/*Um cinza claro para dar contraste com o branco*/
+    background-color: #f0f0f6;/*Um cinza claro para dar contraste com o branco*/
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -116,7 +116,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* O Botão de candidatos conforme gradiente */
 .btn-candidatos {
-    background: #9600ff; /* Gradiente roxo para rosa */
+    background: #274dc6; /* Gradiente roxo para rosa */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -131,6 +131,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 .btn-candidatos:hover {
     transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    background-color:#3b62ff ;
 }
 
 
@@ -180,10 +181,16 @@ body { font-family: 'Segoe UI', sans-serif; }
     background-color: #f1f3f5;
     padding: 25px;
     border-radius: 12px;
-    /* Adicione estas linhas abaixo: */
-    width: 100%;            /* Garante que ocupe a largura da coluna */
-    overflow-wrap: break-word; /* Força a quebra de palavras gigantes */
-    word-wrap: break-word;     /* Compatibilidade para navegadores antigos */
+    
+    max-height: 550px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #f0f0f0;
+    overflow-x: hidden;
+    white-space: normal;      
+    overflow-wrap: break-word; 
+    word-wrap: break-word;   
+    word-break: break-word;    
 }
 
 /* Alvo específico para o texto dentro da descrição */
@@ -263,7 +270,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .badge {
-    background-color: #E00080;
+    background-color: #8810a9;
     color: #fff;
     padding: 6px 15px;
     border-radius: 6px;
@@ -315,7 +322,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-editar {
-    background-color: #3b82f6; /* Azul vibrante */
+    background-color: #274dc6; /* Azul vibrante */
     color: white;
     border: none;
     padding: 12px 30px;
@@ -326,7 +333,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-editar:hover {
-    background-color: #2563eb;
+    background-color: #3b62ff;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     scale: 1.03;
 }
@@ -378,78 +385,76 @@ body { font-family: 'Segoe UI', sans-serif; }
     margin-bottom: 25px;
 }
 
+/* Título principal com o roxo padrão da marca */
 .titulo-modal {
-    color: #a600a6; /* Roxo padrão */
+    color: #333; /* Cor característica do projeto */
     font-size: 24px;
     margin-bottom: 5px;
 }
 
+/* Subtítulo informativo em cinza para não competir com o título */
 .subtitulo-modal {
     font-size: 14px;
     color: #666;
 }
 
-/* Campos do formulário */
+/* Container individual de cada campo (Label + Input/Select) */
 .campo-vaga {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column; /* Alinha o label acima do campo */
     margin-bottom: 15px;
 }
 
+/* Estilização dos rótulos (labels) para dar destaque e clareza */
 .campo-vaga label {
     font-size: 14px;
-    color: #a600a6; 
+    color: #666; /* Mantém a identidade visual nos campos */
     font-weight: bold;
     margin-bottom: 5px;
-    text-align: left;
 }
 
+/* Estilização geral de todos os campos de entrada */
 .campo-vaga input,
 .campo-vaga select,
 .campo-vaga textarea {
     padding: 12px;
-    border: 1px solid #a600a6; 
+    border: 1px solid #555; /* Mantém a identidade visual com a borda roxa */
     border-radius: 12px;
-    outline: none; 
+    outline: none; /* Remove o contorno padrão do navegador ao focar no campo */
     font-family: inherit;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-/* Sistema de grade (lado a lado) */
+.campo-vaga textarea {
+    min-height: 100px; /* Tamanho inicial */
+    max-height: 600px; /* Limite para não deformar demais o modal */
+    resize: none; /* Impede o usuário de puxar o cantinho manualmente */
+}
+
+/* Sistema de grade para colocar dois campos na mesma linha */
 .linha-vaga-dupla {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 20px; 
+    grid-template-columns: 1fr 1fr; /* Divide o espaço em duas colunas iguais */
+    gap: 20px; /* Espaçamento entre os campos da mesma linha */
 }
 
-/* Divisor de Requisitos */
+/* Divisor visual para a seção de requisitos/informações adicionais */
 .divisor-requisitos {
     text-align: center;
     margin: 20px 0;
-    color: #a600a6;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    color: #333;
 }
 
-.divisor-requisitos h3 {
-    font-size: 18px;
-}
-
-/* Botões do final do Modal */
+/* Alinhamento dos botões de ação no final do modal */
 .footer-modal-vaga {
     display: flex;
-    justify-content: flex-end; /* Alinha os botões à direita */
+    justify-content: flex-end; /* Empurra os botões para a direita */
     gap: 15px;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee; /* Linha sutil para separar do formulário */
-    width: 100%;
+    margin-top: 20px;
 }
 
-/* Botão Salvar (Rosa/Roxo de destaque) */
+/* Botões do Modal */
 .btn-vaga-publicar {
-    background-color: #9600ff; 
+    background-color: #274dc6; /* Rosa/Roxo do botão Publicar */
     color: white;
     border: none;
     padding: 12px 30px;
@@ -459,27 +464,24 @@ body { font-family: 'Segoe UI', sans-serif; }
     transition: 0.3s;
 }
 
-.btn-vaga-publicar:hover {
-    background-color: #7a00cc; 
-    transform: translateY(-2px);
-}
-
-/* Botão Cancelar */
+/* Botão de desistência (Cancelar) */
 .btn-vaga-cancelar {
-    color: #666;
+     color: #666;
     border: 1px solid #ccc;
-    border: none;
     padding: 12px 25px;
     border-radius: 12px;
     cursor: pointer;
-    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse: escurece a cor e sobe levemente o botão */
+.btn-vaga-publicar:hover {
+    background-color: #3b62ff; 
+    transform: translateY(-2px); /* Feedback visual de "clicável" */
 }
 
 .btn-vaga-cancelar:hover {
-    background-color: #f5f5f5;
     transform: translateY(-2px);
 }
-
 /*AQUI É RESPONSÁVEL PELO MODAL DE CANDIDATOS */
 
 
@@ -519,7 +521,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .cabecalho-roxo {
-    background-color: #a600a6;
+    background-color: #3b62ff;
     color: white;
 }
 
@@ -586,7 +588,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-avancar-fase {
-    background: #9600ff ; /* Degradê azul/roxo */
+    background: #274dc6 ; /* Degradê azul/roxo */
     color: white;
     border: none;
     padding: 10px 30px;
@@ -596,7 +598,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-avancar-fase:hover{
-    background-color: #a600a6;
+    background-color: #3b62ff;
 }
 
 /* Note que NÃO tem espaço entre o 'a' e o '.nome-perfil' */
@@ -604,7 +606,7 @@ a.nome-perfil {
     text-decoration: none !important; /* Remove o traçado */
     color: #000000 !important;        /* Força a cor preta */
     font-weight: bold;                 /* Mantém o destaque */
-}
+}btn-avanc
 
 /* Efeito ao passar o mouse */
 a.nome-perfil:hover {
