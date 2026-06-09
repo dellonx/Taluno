@@ -50,8 +50,8 @@ body { font-family: 'Segoe UI', sans-serif; }
 .vagas-layout{
     background-color: #fff;
     display: flex;
-    gap: 5px; /* Espaço entre o formulário e o container cinza */
-    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 0px; /* Espaço entre o formulário e o container cinza */
+    align-items: stretch; /* Alinha os itens no topo */
     min-height: 120vh; /* Dá uma "folga" vertical para o scroll */
 }
 
@@ -76,132 +76,202 @@ body { font-family: 'Segoe UI', sans-serif; }
     
 }
 
-.input-busca {
-    width: 100%;
-    padding: 10px 35px 10px 15px;
-    margin-top: 10px;
-    border: 1px solid #7f7f7f; 
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
+.filtro-cvs {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    height: fit-content;
+    width: 280px;      
+    margin-left: auto;  
+    margin-right: auto; 
+    margin-top: 20px;   
 }
 
 
-.barra-pesquisa {
-    
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
+.filtro-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 20px;
 }
-/*  O Container de Filtros  */
-.filtros-container {
-    background-color: white;
-    border: 1px solid #ccc; 
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    text-align: center;
-    margin: 10px;
-}
 
-/*Aqui mexe com o titulo acima da barra de pesquisa */
-.titulo-principal{
-    font-weight: bold;
+.btn-voltar {
     font-size: 18px;
-    margin-bottom: 0px;
+    cursor: pointer;
+    color: #333;
 }
 
-/*Aqui mexe com a estrutura dos titulos do formulario*/
-.filtros-titulo {
-    font-size: 1.0rem;
-    margin-top: 20px;
+.filtro-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.campo-busca {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.campo-busca input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Acordeão de Filtros */
+.lista-filtros {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
     margin-bottom: 10px;
-    color: #3c3c3c;
+    border-radius: 8px;
+    background: #eef1f8;
 }
 
-/* Estilo dos Inputs Internos com o "X" */
-.campo-grupo {
-    text-align: left;
+.filtro-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+    user-select: none;
+}
+
+.filtro-opcoes {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #d8c7f0;
+}
+
+.filtro-opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.filtro-opcoes span {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.filtro-opcoes input[type="checkbox"] {
+    accent-color: #6a00ff;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.filtro-opcoes input[type="checkbox"]:checked {
+    transform: scale(1.15);
+}
+
+.filtro-opcoes input[type="checkbox"]:checked + span {
+    color: #6a00ff;
+    font-weight: 600;
+    transform: translateX(4px);
+    display: inline-block;
+}
+
+/* Slider Salarial */
+.filtro-salarial {
+    background: #eef1f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.salarial-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6a00ff;
     margin-bottom: 15px;
 }
 
-/*Ele agrupa o título do campo*/
-.campo-grupo label {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 1px;
-    color: #555;
-}
-
-.input-wrapper {
+.slider-container {
     position: relative;
-}
-
-/*visual moderno e funcional para as caixas de texto*/
-.input-wrapper input {
-    width: 100%; /*ocupa toda a largura disponivel no container*/
-    padding: 10px 35px 10px 15px; /*cria um espaço interno para o texto não ficar tão perto das bordas*/
-    border: 1px solid #555; /*define uma borda fina e cinza escura*/
-    border-radius: 12px;/*arrendodamento das laterais */
-    outline: none; /*remove aquela borda azul ou preta padrão do navegador*/
-}
-
-/*Aqui é responsavel pelos botões (x) que servem para limpar o filtro*/
-.btn-limpar {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #333;
-    color: white;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+    width: 100%;
+    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    cursor: pointer;
 }
 
-/*Botão Gradiente Taluno */
-.btn-aplicar {
-    width: 80%;
-    margin-top: 10px;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    background: #a600a6;
-    transition: transform 0.2s;
+.slider-track {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 4px;
+    z-index: 1;
 }
 
-.btn-aplicar:hover {
-    transform: scale(1.05);
+.slider-container input[type="range"] {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    pointer-events: none;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
 }
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    pointer-events: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #6a00ff;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
 
 /*Aqui é responsavel pelo container cinza onde terá os cards de vagas da empresa*/
 .container-vaga-empresa {
-    background-color: #eef1f7;
-    flex: 1;
-    padding: 40px; /* Um respiro uniforme em todos os lados */
-    min-height: 80vh;
+     background-color: #f4f7f9;
+    flex: 1; 
+    padding: 20px; 
+    max-width: 1600px; 
     display: flex;
     flex-direction: column;
-    width: 100%;
-    gap: 20px; /* Espaço entre botão e cards */
-    align-items: flex-start; /* ISSO impede que o botão e os cards estiquem sozinhos! */
-    align-self: stretch ;
+    gap: 5px;
+    min-height: 100vh;
 }
 
 /*Aqui é responsável pelo botão de adicionar vaga, onde poestariomente chamará um modal*/
 .btn-adicionar-vaga {
     align-self: flex-end; /* O botão ignora o pai e vai sozinho para a DIREITA */
     width: auto; /* Garante que ele não estique */
-    background-color: #0056b3; /* Azul padrão do seu botão Candidatar */
+    background-color: #274dc6; /* Azul padrão do seu botão Candidatar */
     color: white;
     border: none;
     padding: 12px 24px;
@@ -220,7 +290,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .btn-adicionar-vaga:hover {
-    background-color: #004494; /* Tom mais escuro para o feedback de hover */
+    background-color: #3b62ff; /* Tom mais escuro para o feedback de hover */
     transform: scale(1.05); /* Aumenta o botão ao deixar o cursor em cima */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -265,7 +335,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*Aqui serve para dar azul destaque aos dados dos cards*/
 .metrica-valor{
-    color: #0056b3;
+    color: #8810a9;
     font-weight: bold;
     margin-left: 4px;
 }
@@ -288,7 +358,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /*layout do botão de gerenciar vagas*/
 .btn-gerenciar{
-    background-color: #004494;
+    background-color: #274dc6;
     color: white;
     border: none;
     padding: 10px 25px;
@@ -300,6 +370,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 .btn-gerenciar:hover{
     transform: scale(1.05); /*aumenta o tamanho do botão ao passar o cursor em cima*/
+    background-color: #3b62ff;
 }
 
 .btn-pgn{
@@ -310,13 +381,13 @@ body { font-family: 'Segoe UI', sans-serif; }
     display: flex;
     justify-content: center; /* deixa os botões centralizados no container cinza*/
     gap:20px;
-    margin-top: 10px; /* Espaço após o último card */
-    padding-bottom: 0px; /*  Quase a mesma coisa do de cima, mas inversamente  */
+    margin-top: 0px; /* Espaço após o último card */
+    padding-bottom: 20px; /*  Quase a mesma coisa do de cima, mas inversamente  */
 }
 
 .btn-paginacao {
-    background-color: #e0e0e0; /*cor do background do caracter do botão   */
-    color: #888; /* cor do botão  */
+    background-color: #f1f3f5; /*cor do background do caracter do botão   */
+    color: #333; /* cor do botão  */
     border: none; /* aqui remove a borda do botão*/
     width: 45px; /*Espaçamento entre os botões*/
     height: 45px;
@@ -414,7 +485,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Título principal com o roxo padrão da marca */
 .titulo-modal {
-    color: #a600a6; /* Cor característica do projeto */
+    color: #333; /* Cor característica do projeto */
     font-size: 24px;
     margin-bottom: 5px;
 }
@@ -435,7 +506,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 /* Estilização dos rótulos (labels) para dar destaque e clareza */
 .campo-vaga label {
     font-size: 14px;
-    color: #a600a6; /* Mantém a identidade visual nos campos */
+    color: #666; /* Mantém a identidade visual nos campos */
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -445,7 +516,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .campo-vaga select,
 .campo-vaga textarea {
     padding: 12px;
-    border: 1px solid #a600a6; /* Mantém a identidade visual com a borda roxa */
+    border: 1px solid #555; /* Mantém a identidade visual com a borda roxa */
     border-radius: 12px;
     outline: none; /* Remove o contorno padrão do navegador ao focar no campo */
     font-family: inherit;
@@ -468,7 +539,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 .divisor-requisitos {
     text-align: center;
     margin: 20px 0;
-    color: #a600a6;
+    color: #333;
 }
 
 /* Alinhamento dos botões de ação no final do modal */
@@ -481,7 +552,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Botões do Modal */
 .btn-vaga-publicar {
-    background-color: #9600ff; /* Rosa/Roxo do botão Publicar */
+    background-color: #274dc6; /* Rosa/Roxo do botão Publicar */
     color: white;
     border: none;
     padding: 12px 30px;
@@ -489,18 +560,6 @@ body { font-family: 'Segoe UI', sans-serif; }
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-}
-
-/* Botão principal de ação (Publicar) */
-.btn-vaga-publicar {
-    background-color: #9600ff; /* Cor de destaque (Rosa/Roxo) */
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s; /* Suaviza a mudança de cor no hover */
 }
 
 /* Botão de desistência (Cancelar) */
@@ -514,7 +573,7 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* Efeito ao passar o mouse: escurece a cor e sobe levemente o botão */
 .btn-vaga-publicar:hover {
-    background-color: #7a00cc; 
+    background-color: #3b62ff; 
     transform: translateY(-2px); /* Feedback visual de "clicável" */
 }
 
